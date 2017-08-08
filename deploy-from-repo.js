@@ -7,6 +7,12 @@ const [,,gitUrl,targetDirectory] = process.argv
 makeDir(targetDirectory)
 const tempDirectory = createTempDirectory()
 
+console.log(`Deleting from ${targetDirectory}`)
+
+sh`
+rm -rf ${targetDirectory}
+`
+
 console.log(`Created ${tempDirectory}`)
 
 
