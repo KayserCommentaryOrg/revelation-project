@@ -1,4 +1,6 @@
 import mannish from 'mannish'
+import makeAsrStateWatcher from 'asr-active-state-watcher'
+import svelteQuerystringRouter from 'svelte-querystring-router'
 
 import views from './globbed-views'
 import statefulServices from './globbed-services'
@@ -21,6 +23,12 @@ views.map(createView => createView(mediator)).forEach(state => {
 		console.error('Error adding', state)
 		throw e
 	}
+})
+
+const stateWatcher = makeAsrStateWatcher(stateRouter)
+
+stateWatcher.addDomApiAttachListener(domApi => {
+	svelteQuerystringRouter.attachQuerystringData(domApi)
 })
 
 stateRouter.on('routeNotFound', (route, parameters) => {
