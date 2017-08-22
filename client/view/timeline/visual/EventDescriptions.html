@@ -1,0 +1,92 @@
+{{#each timeline as timelineEvent, index @slug}}
+	<EfficientVisibility
+		parent="{{self}}"
+		parentProperty="slugToVisibility"
+		key="{{timelineEvent.slug}}"
+		updateOnChange="{{displayPositionIdentifier(index)}}"
+	>
+		<div
+			class="event-description"
+			style="
+				border-color: {{timelineEvent.color}};
+				{{outline(timelineEvent)}}
+			"
+		>
+			{{timelineEvent.title}}
+		</div>
+	</EfficientVisibility>
+{{/each}}
+
+<style>
+.event-description {
+	border-width: 2px;
+	border-style: solid;
+	padding: 4px 8px;
+	margin: 8px 0px;
+}
+</style>
+
+<script>
+
+import EfficientVisibility from './efficient-visibility-wrapper.js'
+
+function getOutlineCssString(hoveredEvent, timelineEvent) {
+	return hoveredEvent.slug === timelineEvent.slug
+		? 'outline: 4px solid ' + timelineEvent.color + ';'
+		: ''
+}
+
+const noopString = () => ''
+
+const anOrderOfMagnitudeMoreThanTheMostDescriptionsThatCouldConceivableBeDisplayed = 100
+
+export default {
+	oncreate() {
+		this.set({ self: this })
+	},
+	data() {
+		return {
+			descriptionHeight: 40,
+			buffer: 4,
+			slugToVisibility: null,
+		}
+	},
+	computed: {
+		numberOfEvents: timeline => timeline.length,
+		numberOfEventsIdentifier: numberOfEvents => numberOfEvents * anOrderOfMagnitudeMoreThanTheMostDescriptionsThatCouldConceivableBeDisplayed,
+		displayPositionIdentifier: numberOfEventsIdentifier => index => numberOfEventsIdentifier + index,
+		outline: hoveredEvent =>
+			hoveredEvent
+				? timelineEvent => getOutlineCssString(hoveredEvent, timelineEvent)
+				: noopString,
+		slugToPoints: slugToVisibility => {
+			if (!slugToVisibility) {
+				return null
+			}
+
+			const map = {}
+
+			Object.entries(slugToVisibility)
+				.filter(([ , visibility ]) => visibility.visible)
+				.forEach(([slug, visibility ]) => {
+					map[slug] = {
+						x: visibility.left,
+						y: visibility.verticalCenter,
+					}
+
+					if (!visibility.left) {
+						console.error('No slugToLeft for', slug)
+					}
+					if (!visibility.verticalCenter) {
+						console.error('No slugToVerticalCenter for', slug)
+					}
+				})
+
+			return map
+		}
+	},
+	components: {
+		EfficientVisibility
+	},
+}
+</script>

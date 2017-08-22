@@ -1,0 +1,134 @@
+{{#each timeline as timelineEvent, index @slug}}
+	{{#if timelineEvent.axis.end === timelineEvent.axis.start}}
+		<VCenter
+			left="{{multiplyIndentByWidth(timelineEvent.indentLevel)}}"
+			point="{{multiplyDaysByHeight(timelineEvent.axisAfterStart)}}"
+		>
+			<EfficientVisibilityWrapper
+				parent="{{self}}"
+				parentProperty="slugToVisibility"
+				key="{{timelineEvent.slug}}"
+				updateOnChange="{{index}}"
+			>
+				<div
+					class="event"
+					style="
+						height: {{singleDayHeight}}px;
+						background-color: {{timelineEvent.color}};
+					"
+					on:mouseover="fire('startHover', timelineEvent)"
+					on:mouseleave="fire('endHover', timelineEvent)"
+				/>
+			</EfficientVisibilityWrapper>
+		</VCenter>
+	{{else}}
+		<Link
+			parameters="{{ clickable ? { zoom: timelineEvent.slug } : null }}"
+		>
+			<EfficientVisibilityWrapper
+				parent="{{self}}"
+				parentProperty="slugToVisibility"
+				key="{{timelineEvent.slug}}"
+				updateOnChange="{{index}}"
+			>
+				<div
+					id="{{timelineEvent.slug}}"
+					style="
+						top: {{multiplyDaysByHeight(timelineEvent.axisAfterStart)}}px;
+						left: {{multiplyIndentByWidth(timelineEvent.indentLevel)}}px;
+						height: {{multiplyDaysByHeight(timelineEvent.visibleDays)}}px;
+						background-color: {{timelineEvent.color}};
+						margin-bottom: {{bottomOfScreenMargin}}px;
+					"
+					class="event"
+					data-cut-off-at-start="{{timelineEvent.axis.cutOffAtStart}}"
+					data-cut-off-at-end="{{timelineEvent.axis.cutOffAtEnd}}"
+					on:mouseover="fire('startHover', timelineEvent)"
+					on:mouseleave="fire('endHover', timelineEvent)"
+				/>
+			</EfficientVisibilityWrapper>
+		</Link>
+	{{/if}}
+{{/each}}
+
+<style>
+[data-clickable=true] {
+	cursor: pointer;
+}
+.event {
+	position: absolute;
+
+	width: 48px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+.event[data-cut-off-at-start=true] {
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-top-left-radius: 0;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+.event[data-cut-off-at-end=true] {
+	-webkit-border-bottom-right-radius: 0;
+	-webkit-border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+.event:hover {
+	background-color: red;
+}
+
+</style>
+
+<script>
+// import Visibility from './Visibility.html'
+import EfficientVisibilityWrapper from './efficient-visibility-wrapper.js'
+import VCenter from './VerticallyCentered.html'
+
+import { multiplyIndentByWidth } from 'lib/timeline/spacer-functions.js'
+import svelteQuerystringRouter from 'svelte-querystring-router'
+
+// This is a dirty hack that wouldn't be necessary if the relatively
+// positioned containers grew to containe the timeline bars
+const bottomOfScreenMargin = window.document.documentElement.clientHeight * .4
+
+export default {
+	oncreate() {
+		this.set({ self: this })
+	},
+	data() {
+		return {
+			clickable: false,
+			slugToVisibility: null,
+			ignoreType: [],
+			bottomOfScreenMargin,
+		}
+	},
+	helpers: {
+		multiplyIndentByWidth,
+	},
+	computed: {
+		multiplyDaysByHeight: dayHeight => days => days * dayHeight,
+		singleDayHeight: dayHeight => Math.max(dayHeight, 8),
+		ignoreTypeMap: ignoreType => ignoreType.reduce((map, type) => (map[type] = true, map), Object.create(null)),
+		nonIgnoredEvents: (timeline, ignoreTypeMap) => timeline.filter(event => !ignoreTypeMap[event.type]),
+		visibleEvents: (nonIgnoredEvents, slugToVisibility) => slugToVisibility
+			? nonIgnoredEvents
+				.filter(event => slugToVisibility[event.slug] && slugToVisibility[event.slug].visible)
+				.map(event => Object.assign({
+					topRatio: slugToVisibility[event.slug].topRatio,
+					bottomRatio: slugToVisibility[event.slug].bottomRatio,
+					top: slugToVisibility[event.slug].top,
+					bottom: slugToVisibility[event.slug].bottom,
+					right: slugToVisibility[event.slug].right,
+				}, event))
+			: [],
+	},
+	components: {
+		VCenter,
+		Link: svelteQuerystringRouter.Link,
+		EfficientVisibilityWrapper,
+	},
+}
+</script>

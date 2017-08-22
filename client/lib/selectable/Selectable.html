@@ -1,0 +1,27 @@
+<span 
+	on:mousedown="possibleSelection()"
+	data-selectable="{{selectable}}"
+>
+	{{yield}}
+</span>
+
+<script>
+export default {
+	data() {
+		return {
+			identifier: 'default',
+			currentlySelectableIdentifier: 'default',
+			alwaysSelectable: false
+		}
+	},
+	computed: {
+		selectable: (alwaysSelectable, identifier, currentlySelectableIdentifier) => 
+			alwaysSelectable || identifier === currentlySelectableIdentifier
+	},
+	methods: {
+		possibleSelection() {
+			this.fire('selection possibility', this.get('identifier'))
+		}
+	}
+}
+</script>

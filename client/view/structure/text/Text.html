@@ -1,0 +1,205 @@
+<div class="intro">
+	<h1>
+		Revelation
+	</h1>
+	<p>
+		<small>
+			<Link parameters="{{toggledTranslationParameters}}">
+			{{#if currentTranslation === translations.greek}}
+				English
+			{{else}}
+				Greek
+			{{/if}}
+			</Link>
+		</small>
+	</p>
+</div>
+
+<div class="text-body" data-chiasm-selected="{{!!currentChiasm}}">
+	{{#each structuredText as section}}
+		<div
+			class="chiasm-section"
+			data-is-selected="{{!!currentChiasm && currentChiasm === section.identifier}}"
+		>
+			{{#if subsectionIsSelected}}
+				<div class="color-bar unselectable">
+					{{sectionLabel(section)}}
+				</div>
+			{{else}}
+				<Link
+					className="color-bar chiasm-color-bar unselectable"
+					style="background-color: {{chiasmColorBarColor(section.identifier)}}"
+					parameters="{{ getLinkParameters(section.identifier) }}"
+				>
+					{{sectionLabel(section)}}
+				</Link>
+			{{/if}}
+
+			<div class="section-body">
+				{{#if !currentSubsection}}
+				<ColorBarAndContent
+					description="{{section.description}}"
+					contentClass="section-content-description-directly-below"
+					descriptionClass="header-section-description"
+					anchor="{{sectionIsVisible(section) && section.anchor}}"
+					siblingAnchor="{{section.siblingAnchor}}"
+					siblingIsDown="{{section.siblingIsDown}}"
+					range="{{getSectionRange(section)}}"
+				>
+					<Selectable identifier="meta">
+						<h1 style="color: {{getChiasmColor(section.identifier)}}">
+							{{section.title}}
+						</h1>
+					</Selectable>
+				</ColorBarAndContent>
+				{{/if}}
+
+				{{#if section.introduction}}
+					{{#if section.introduction.subsections}}
+						<ChiasmSubsections
+							subsections="{{section.introduction.subsections}}"
+							chiasmIdentifier="{{section.identifier}}"
+							currentSubsection="{{currentSubsection}}"
+							verses="{{introductionVerses(section)}}"
+							sermons="{{introductionSermons(section)}}"
+							showColorBar="{{!!currentChiasm}}"
+							useAnchors="{{sectionIsVisible(section)}}"
+						/>
+					{{elseif !currentSubsection || currentSubsection === 'introduction'}}
+						<ColorBarAndContent
+							description="{{section.introduction.title}}"
+							chiasmIdentifier="{{section.identifier}}"
+							sectionIdentifier="introduction"
+							zoomedIn="{{subsectionIsSelected}}"
+							showColorBar="{{!!currentChiasm}}"
+							anchor="{{sectionIsVisible(section) && section.introduction.anchor}}"
+							siblingAnchor="{{section.introduction.siblingAnchor}}"
+							siblingIsDown="{{section.introduction.siblingIsDown}}"
+							range="{{section.introduction.range}}"
+							sermons="{{introductionSermons(section)}}"
+							verses="{{introductionVerses(section)}}"
+						/>
+					{{/if}}
+				{{/if}}
+
+				{{#if section.subsections}}
+					<ChiasmSubsections
+						subsections="{{section.subsections}}"
+						chiasmIdentifier="{{section.identifier}}"
+						currentSubsection="{{currentSubsection}}"
+						verses="{{sectionVerses(section)}}"
+						sermons="{{sectionSermons(section)}}"
+						showColorBar="{{!!currentChiasm}}"
+						useAnchors="{{sectionIsVisible(section)}}"
+					/>
+				{{elseif !currentSubsection}}
+					<ColorBarAndContent
+						range="{{section.range}}"
+						sermons="{{section.sermons}}"
+						verses="{{sectionVerses(section)}}"
+					/>
+				{{/if}}
+			</div>
+		</div>
+	{{/each}}
+</div>
+
+<style>
+.intro {
+	padding-bottom: 3em;
+	text-align: center;
+	font-size: 1.3em;
+}
+
+[data-chiasm-selected=true] [data-is-selected=false] {
+	display: none;
+}
+
+[data-chiasm-selected=true] [data-is-selected=true] {
+	margin-bottom: 20px;
+}
+</style>
+
+<script>
+import ChiasmSubsections from './ChiasmSubsections.html'
+import ColorBarAndContent from './ColorBarAndContent.html'
+
+import Selectable from 'lib/selectable'
+import getSectionRange from 'lib/structure/get-section-range'
+
+import svelteQuerystringRouter from 'svelte-querystring-router'
+const { Link } = svelteQuerystringRouter
+
+import structure from 'lib/structure/data/structure'
+import sermons from 'lib/structure/data/sermons'
+
+import sectionLabel from 'lib/structure/section-label'
+import extractRangeFromVerses from 'lib/structure/extract-range-from-verses'
+import extractRangeFromSermons from 'lib/structure/extract-range-from-sermons'
+import getChiasmColor from 'lib/structure/identifier-color'
+import combineStructureWithVerses from 'lib/structure/combine-structure-with-verses'
+import combineStructureWithSermons from 'lib/structure/combine-structure-with-sermons'
+import getParametersWithTranslationToggled from 'lib/structure/toggle-translation-parameter'
+
+const structureWithSermons = combineStructureWithSermons(structure, sermons)
+
+export default {
+	data() {
+		return {
+			querystringParameters: {}
+		}
+	},
+	computed: {
+		toggledTranslationParameters: (querystringParameters) => {
+			return getParametersWithTranslationToggled(querystringParameters)
+		},
+		currentChiasm: querystringParameters => {
+			return querystringParameters.chiasm
+		},
+		currentSubsection: querystringParameters => {
+			return querystringParameters.section
+		},
+		subsectionIsSelected: currentSubsection => !!currentSubsection,
+		getLinkParameters: currentChiasm => {
+			return chiasmIdentifier => {
+				return currentChiasm === chiasmIdentifier
+					? {}
+					: { chiasm: chiasmIdentifier }
+			}
+		},
+		chiasmColorBarColor(currentChiasm) {
+			if (currentChiasm) {
+				return () => '#d8d8d8'
+			} else {
+				return getChiasmColor
+			}
+		},
+		currentTranslation: (querystringParameters, translations) => {
+			return querystringParameters.translation === 'greek'
+				? translations.greek
+				: translations.english
+		},
+		structuredText: currentTranslation => {
+			return combineStructureWithVerses(structureWithSermons, currentTranslation)
+		},
+		sectionIsVisible: currentChiasm => {
+			return section => !currentChiasm || currentChiasm === section.identifier
+		},
+	},
+	components: {
+		ChiasmSubsections,
+		ColorBarAndContent,
+		Link,
+		Selectable,
+	},
+	helpers: {
+		sectionLabel,
+		getChiasmColor,
+		introductionVerses: section => extractRangeFromVerses(section.verses, section.introduction.range),
+		sectionVerses: section => extractRangeFromVerses(section.verses, section.range),
+		introductionSermons: section => extractRangeFromSermons(section.sermons, section.introduction.range),
+		sectionSermons: section => extractRangeFromSermons(section.sermons, section.range),
+		getSectionRange,
+	}
+}
+</script>

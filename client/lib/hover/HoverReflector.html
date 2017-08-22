@@ -1,0 +1,23 @@
+<span
+	data-sibling-hovered="{{siblingHovered}}"
+>
+	{{yield}}
+</span>
+
+<script>
+export default {
+	data() {
+		return {
+			currentlyHoveredData: null
+		}
+	},
+	computed: {
+		matchesTarget: (targetIdentifier, shouldReflectChange) => {
+			return currentlyHoveredData => shouldReflectChange(targetIdentifier, currentlyHoveredData)
+		},
+		siblingHovered: (matchesTarget, currentlyHoveredData) => {
+			return !!currentlyHoveredData && matchesTarget(currentlyHoveredData)
+		}
+	}
+}
+</script>

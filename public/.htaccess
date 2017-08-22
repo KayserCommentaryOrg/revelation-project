@@ -12,4 +12,13 @@ ExpiresByType text/css A90
 
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+RewriteCond %{HTTP_HOST} !localhost [NC]
+RewriteRule ^(.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !^/static/ [NC]
+RewriteRule (.*) index.html

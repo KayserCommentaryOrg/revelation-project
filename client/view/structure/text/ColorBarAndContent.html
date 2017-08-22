@@ -1,0 +1,112 @@
+{{#if anchor}}<a id="{{anchor}}"></a>{{/if}}
+<div class="section-line" data-zoomed-in="{{zoomedIn}}" data-visible="{{visible}}">
+	{{#if sectionIdentifier && showColorBar}}
+	<Link
+		className="color-bar septet-color-bar unselectable"
+		style="background-color: {{getChiasmColor(sectionIdentifier)}}"
+		parameters="{{ linkParameters }}"
+	>
+		{{shortSeptetLabel(sectionIdentifier)}}
+	</Link>
+	{{else}}
+	<div class="color-bar septet-color-bar"></div>
+	{{/if}}
+
+	{{#if verses}}
+		<Paragraphs
+			verses="{{verses}}"
+			descriptionClass="{{descriptionClass}}"
+			siblingAnchor="{{siblingAnchor}}"
+			siblingIsDown="{{siblingIsDown}}"
+			description="{{description}}"
+			range="{{range}}"
+			sermons="{{sermons}}"
+			contentClass="{{contentClass}}"
+		/>
+	{{else}}
+		<div class="section-horizontal-units">
+			<div class="section-content {{contentClass}}">
+				<ParagraphDescription
+					descriptionClass="{{descriptionClass}}"
+					siblingAnchor="{{siblingAnchor}}"
+					siblingIsDown="{{siblingIsDown}}"
+					description="{{description}}"
+					range="{{range}}"
+					sermons="{{sermons}}"
+				/>
+				<div class="section-text">
+					{{yield}}
+				</div>
+			</div>
+		</div>
+	{{/if}}
+</div>
+
+<style>
+[data-zoomed-in=true] .color-bar {
+	opacity: 0.5;
+}
+
+.sibling-link {
+	text-decoration: none;
+}
+
+[data-visible=false] {
+	display: none;
+}
+
+[data-sibling-hovered=true] {
+	color: #ba4460;
+}
+
+</style>
+
+<script>
+import ParagraphDescription from './ParagraphDescription.html'
+import Paragraphs from './Paragraphs.html'
+
+import getChiasmColor from 'lib/structure/identifier-color'
+import svelteQuerystringRouter from 'svelte-querystring-router'
+const { Link } = svelteQuerystringRouter
+import septetLabel from 'lib/structure/septet-label'
+
+import sermonHover from 'lib/structure/sermon-hover-instance'
+import verseHover from 'lib/structure/verse-hover-instance'
+
+export default {
+	data() {
+		return {
+			descriptionClass: '',
+			contentClass: '',
+			chiasmIdentifier: null,
+			sectionIdentifier: null,
+			zoomedIn: false,
+			showColorBar: true,
+			visible: true,
+			sermons: []
+		}
+	},
+	components: {
+		Link,
+		SermonHoverDetector: sermonHover.HoverDetector,
+		VerseHoverReflector: verseHover.HoverReflector,
+		ParagraphDescription,
+		Paragraphs
+	},
+	computed: {
+		linkParameters: (chiasmIdentifier, sectionIdentifier, zoomedIn) => {
+			return zoomedIn
+				? { chiasm: chiasmIdentifier }
+				: { chiasm: chiasmIdentifier, section: sectionIdentifier }
+		}
+	},
+	helpers: {
+		getChiasmColor,
+		shortSeptetLabel(identifier) {
+			const label = septetLabel(identifier)
+
+			return label.length > 1 ? '' : label
+		}
+	}
+}
+</script>

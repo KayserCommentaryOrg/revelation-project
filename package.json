@@ -4,12 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build-index && npm run update-timeline && npm run update-structure",
-    "build-index": "rollup -c",
+    "test": "tape client/**/*-test.js",
+    "build": "npm run create-symlinks && rollup -c",
     "watch": "rollup -c -w --dev",
     "update-timeline": "node deploy-from-repo.js git@github.com:TehShrike/revelation-timeline.git public/timeline",
     "update-structure": "node deploy-from-repo.js git@github.com:TehShrike/revelation-visualized.git public/structure",
-    "start": "serve public"
+    "start": "serve public",
+    "watch-glob": "watch \"npm run glob\" client/service client/view",
+    "glob": "npm run glob-services && npm run glob-views",
+    "glob-services": "glob-module-file --pattern=\"client/service/**/*.js\" --format=es --pathPrefix=../ --outputPath=client/globbed-services.js",
+    "glob-views": "glob-module-file --pattern=\"client/view/**/*.js\" --format=es --pathPrefix=../ --outputPath=client/globbed-views.js",
+    "create-symlinks": "rm -r client/node_modules/; mkdir client/node_modules/ && pushd client/node_modules && ln -s ../component/ component && ln -s ../lib/ lib && popd"
   },
   "repository": {
     "type": "git",
@@ -22,14 +27,30 @@
   },
   "homepage": "https://github.com/KayserCommentaryOrg/revelation-project#readme",
   "devDependencies": {
-    "serve": "6.0.6"
+    "serve": "6.0.6",
+    "tape": "4.8.0",
+    "watch": "1.0.2"
   },
   "dependencies": {
+    "abstract-state-router": "5.16.2",
     "babel-core": "6.25.0",
     "babel-plugin-external-helpers": "6.22.0",
     "babel-preset-es2015": "6.24.1",
+    "better-match": "1.0.2",
+    "chromatism": "2.6.0",
+    "date-fns": "1.28.5",
+    "eventemitter3": "2.0.3",
     "github": "9.2.0",
+    "glob-module-file": "2.0.0",
+    "hash-brown-router": "3.3.0",
+    "iso-next-tick": "1.0.0",
+    "key-master": "3.1.0",
+    "majority-text-family-35-revelation": "1.0.1",
     "make-dir": "1.0.0",
+    "mannish": "3.0.0",
+    "multi-part-range-compare": "1.0.3",
+    "one-to-many-array-zip": "1.0.2",
+    "revelation": "2.0.1",
     "revelation-project-menu": "^1.0.1",
     "rollup": "0.45.2",
     "rollup-plugin-babel": "3.0.1",
@@ -38,8 +59,13 @@
     "rollup-plugin-node-resolve": "3.0.0",
     "rollup-plugin-svelte": "3.0.1",
     "rollup-watch": "4.3.1",
+    "sausage-router": "1.1.2",
     "shell-tag": "1.0.1",
+    "svelte-querystring-router": "1.1.1",
+    "svelte-state-renderer": "1.2.2",
     "sync-github-to-fs": "2.1.0",
-    "tempy": "0.1.0"
+    "tape-catch": "1.0.6",
+    "tempy": "0.1.0",
+    "verse-reference-regex": "1.1.0"
   }
 }

@@ -1,0 +1,100 @@
+<canvas
+	ref:canvas
+	width="{{width}}"
+	height="{{height}}"
+	style="top: {{top}}px; left: {{left}}px;"
+></canvas>
+
+<style>
+canvas {
+	position: fixed;
+	pointer-events: none;
+}
+</style>
+
+<script>
+import motionEventEmitter from 'lib/motion-event.js'
+
+const greatest = (a, b, property) => a[property] > b[property] ? a : b
+const least = (a, b, property) => a[property] > b[property] ? b : a
+
+export default {
+	data() {
+		return {
+			drawingOnNextFrame: false
+		}
+	},
+	oncreate() {
+		this.drawOnNextFrame()
+
+		const listener = () => this.drawOnNextFrame()
+
+		this.observe('from', listener)
+		this.observe('to', listener)
+		this.observe('color', listener)
+
+		motionEventEmitter.on('update', listener)
+
+		this.set({
+			listener
+		})
+	},
+	ondestroy() {
+		const listener = this.get('listener')
+		motionEventEmitter.removeListener('update', listener)
+	},
+	computed: {
+		leftmostPoint: (from, to) => least(from, to, 'x'),
+		rightmostPoint: (from, to) => greatest(from, to, 'x'),
+		topmostPoint: (from, to) => least(from, to, 'y'),
+		bottommostPoint: (from, to) => greatest(from, to, 'y'),
+		top: (from, to) => Math.min(from.y, to.y),
+		left: (from, to) => Math.min(from.x, to.x),
+		width: (leftmostPoint, rightmostPoint) => rightmostPoint.x - leftmostPoint.x,
+		height: (topmostPoint, bottommostPoint) => bottommostPoint.y - topmostPoint.y,
+	},
+	methods: {
+		drawOnNextFrame() {
+			this.set({
+				drawingOnNextFrame: true
+			})
+			window.requestAnimationFrame(() => {
+				this.draw()
+				this.set({
+					drawingOnNextFrame: false
+				})
+			})
+		},
+		draw() {
+			if (!this.refs.canvas || this._destroyed) {
+				return
+			}
+
+			const { width, height, leftmostPoint, topmostPoint, color } = this.get()
+
+			const topLeftToBottomRight = leftmostPoint === topmostPoint
+			const bottomLeftToTopRight = !topLeftToBottomRight
+
+			const startLeft = {
+				x: 0,
+				y: topLeftToBottomRight ? 0 : height
+			}
+			const endRight = {
+				x: width,
+				y: bottomLeftToTopRight ? 0 : height
+			}
+
+			const context = this.refs.canvas.getContext('2d')
+			context.lineWidth = 2
+			context.lineCap = 'stroke'
+
+			context.strokeStyle = color
+			context.clearRect(0, 0, width, height)
+			context.beginPath()
+			context.moveTo(startLeft.x, startLeft.y)
+			context.bezierCurveTo(width * .3, height * .7, width * .7, height * .3, endRight.x, endRight.y);
+			context.stroke()
+		}
+	}
+}
+</script>

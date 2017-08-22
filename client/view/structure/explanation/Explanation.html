@@ -1,0 +1,147 @@
+<div class="content">
+	<div class="intro">
+		<h1>Revelation's structure</h1>
+	</div>
+	<p id="tldr">
+		<strong>The really short instructions:</strong> click on the colored bars to zoom in and compare that section with its matching section, click on the grayed out bars to zoom back out, click on the little blue arrows to skip to the matching section without zooming in, and press the "g" key to toggle between Greek and English.
+	</p>
+	<h2>
+		This page:
+	</h2>
+	<nav>
+		<ol>
+			<li>
+				<a href="#purpose">Purpose</a>
+			</li>
+			<li>
+				<a href="#the-pattern">The overall pattern of Revelation</a>
+			</li>
+			<li>
+				<a href="#the-septets">The septets that make up each section</a>
+			</li>
+			<li>
+				<a href="#the-middle-chiasm">The chiasm at the center of the book</a>
+			</li>
+			<li>
+				<a href="#credits">Credits</a>
+			</li>
+		</ol>
+	</nav>
+	<h2 id="purpose">Purpose</h2>
+	<p>
+		The purpose of this site is to:
+	</p>
+	<ul>
+		<li>
+			Be a good way to read Revelation
+		</li>
+		<li>
+			Make it easy to focus on related sections of the book
+		</li>
+		<li>
+			Educate about the structure of Revelation
+		</li>
+	</ul>
+	<h2 id="the-pattern">The overall pattern of Revelation</h2>
+	<p>
+		The book of Revelation is written in a symmetrical A, B, C, B, A pattern.  This pattern is common to Hebrew literature.  It is often known as a "chiasm" structure.
+	</p>
+	<p>
+		This is the outline of the chiasm:
+	</p>
+	<div>
+		<Outline></Outline>
+	</div>
+	<p>
+		Click on the letters to go to that section in the main view.
+	</p>
+	<p>
+		<strong>
+			In the main view, clicking on the colored bar to the left of each chiasm section will zoom in on that section plus its mirror section.
+		</strong>
+	</p>
+	<h2 id="the-septets">
+		The septets that make up each section
+	</h2>
+	<p>
+		Other than the prologue and epilogue, each section of the chiasm is comprised of an introduction, and a "septet" (7 parts).
+	</p>
+	<p>
+		Each piece of the septet often relates to its matching piece in the mirror section of the overall chiasm.  Here are the septets within each chiasm section:
+	</p>
+	<div>
+		<Subsections></Subsections>
+	</div>
+	<p>
+		In the main view, after you have zoomed in to a specific part of the overall chiasm, you can see the septets identified with colored bars.
+	</p>
+	<p>
+		<strong>
+			In the main view, click on the colored bar next to a septet section to compare that part to its mirror septet section.
+		</strong>
+	</p>
+	<h2 id="the-middle-chiasm">
+		The chiasm at the center of the book
+	</h2>
+	<p>
+		The introduction to section E, the middle part of the Revelation chiasm, is itself another chiasm:
+	</p>
+	<div>
+		<InnerChiasm></InnerChiasm>
+	</div>
+	<h2 id="credits">
+		Credits
+	</h2>
+	<h3>
+		Wilbur Pickering
+	</h3>
+	<p>
+		This English translation of The Revelation of Jesus Christ is based on Wilbur Pickering's <a href="http://www.prunch.org/new-translation-of-the-nt.php">New Translation based on the Majority Text</a>.
+	</p>
+	<p>
+		Some changes have been made to his revised translation - for more details, and a list of the changes, see <a href="https://github.com/TehShrike/pickering-majority-text-revelation">this repository on Github</a>.
+	</p>
+	<p>
+		The Greek translation is Pickering's <a href="http://www.prunch.org/new-greek-text-of-the-nt.php">collation of the majority (Byzantine) text</a>.
+	</p>
+	<p>
+		From his bio at <a href="http://www.walkinhiscommandments.com/">walkinhiscommandments.com</a>:
+	</p>
+	<blockquote cite="http://www.walkinhiscommandments.com/">
+		<p>
+			Wilbur N. Pickering is a Christian missionary in Valparaíso, Brazil. He has a ThM and a PhD in Linguistics. Of those actively involved in textual criticism, no one holds a more radical view in defense of the inerrancy and objective authority of the Sacred Text. This includes the position that the precise original wording has been preserved to our day and that we can know what it is.
+		</p>
+	</blockquote>
+	<h3>
+		Phillip Kayser
+	</h3>
+	<p>
+		This chiastic outline was identified by Phil Kayser.  It builds upon insights from over 20 scholars who see the book as following a chiastic structure but have been puzzled by the position of chapter 12 and have not been able to agree on the relationship of apparently disparate features (the introductions to the septets and the interludes).
+	</p>
+	<p>
+		<a href="https://kaysercommentary.com/about.md">Phil Kayser</a> is the senior pastor at Dominion Covenant Church.
+	</p>
+	<h3>
+		Josh Duff
+	</h3>
+	<p>
+		<a href="https://joshduff.com/">Josh</a> transcribed Pickering's translation and Kayser's chiastic structure into the software you see here.
+	</p>
+	<p>
+		The code is open source and <a href="https://github.com/TehShrike/revelation-visualized">available online</a>.  If you have any issues or questions, <a href="https://github.com/TehShrike/revelation-visualized/issues">go here</a>.
+	</p>
+</div>
+
+<script>
+import InnerChiasm from './InnerChiasm.html'
+import Outline from './Outline.html'
+import Subsections from './Subsections.html'
+
+export default {
+	components: {
+		InnerChiasm,
+		Outline,
+		Subsections,
+	}
+}
+</script>

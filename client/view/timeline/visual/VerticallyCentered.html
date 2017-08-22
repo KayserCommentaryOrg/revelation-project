@@ -1,0 +1,31 @@
+<div ref:container style="top: {{top}}px; left: {{left}}px;" class="vcentered">
+	{{yield}}	
+</div>
+
+<style>
+	.vcentered {
+		position: absolute;
+	}
+</style>
+
+<script>
+export default {
+	data() {
+		return {
+			point: 0,
+			left: 0
+		}
+	},
+	oncreate() {
+		const { container } = this.refs
+		const height = container.clientHeight
+		
+		this.set({
+			height
+		})
+	},
+	computed: {
+		top: (point, height) => (point - (height / 2))
+	}
+}
+</script>

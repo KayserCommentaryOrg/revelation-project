@@ -1,0 +1,152 @@
+<div class="link">
+	<Link parameters="{{ { sort: sort === 'bydate' ? 'byverse' : 'bydate' } }}" className="link">
+		View {{sort === 'bydate' ? 'by verse' : 'by date'}}
+	</Link>
+</div>
+
+<table class="pure-table pure-table-bordered">
+	<thead>
+		<tr>
+			{{#each columnOrder as column}}
+				<th>
+					{{column.header}}
+				</th>
+			{{/each}}
+		</tr>
+	</thead>
+	<tbody>
+		{{#each events as row}}
+			<tr>
+			{{#each columnOrder as column}}
+				<td data-wrap="{{column.wrap}}">
+					{{formatters[column.property](row)}}
+				</td>
+			{{/each}}
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+<style>
+.link {
+	text-align: center;
+	margin: 8px;
+}
+
+[data-wrap=false] {
+	white-space: nowrap;
+}
+</style>
+
+<script>
+import match from 'better-match'
+import { createRegex, extractRangeFromMatch } from 'verse-reference-regex'
+import multiPartRangeCompare from 'multi-part-range-compare'
+const { relative: sortRange } = multiPartRangeCompare
+
+import routerInstance from 'svelte-querystring-router'
+const { Link } = routerInstance
+
+import RevelationProjectMenu from 'revelation-project-menu'
+
+
+const referenceRegex = createRegex()
+
+const flatMap = (fn, ary) => ary.reduce((acc, element) => [ ...acc, ...fn(element) ], [])
+const relationToTempleBurning = amd => amd - 1486668
+const referenceToRange = ({ chapter, verse }) => [ chapter, verse || 0 ]
+const referenceToString = ({ chapter, verse }) => {
+	return verse
+		? `${chapter}:${verse}`
+		: chapter.toString()
+}
+const referenceRangeToString = ({ start, end }) => {
+	const same = end && end.chapter === start.chapter && end.verse === start.verse
+
+	return same
+		? referenceToString(start)
+		: `${referenceToString(start)}–${referenceToString(end)}`
+}
+
+
+function getColumnOrders() {
+	const c = (property, header, wrap = true) => ({ property, header, wrap})
+	const columns = {
+		date: c('date', 'Date'),
+		temple: c('templeRange', 'Days from temple burning', false),
+		reference: c('reference', 'Revelation', false),
+		revelationReferences: c('revelationReferences', 'Revelation', false),
+		title: c('title', 'Event title'),
+	}
+
+	return {
+		bydate: [columns.date, columns.temple, columns.revelationReferences, columns.title],
+		byverse: [columns.reference, columns.date, columns.temple, columns.title]
+	}
+}
+
+const columnOrders = getColumnOrders()
+
+const formatters = {
+	date: ({ hebrew }) => hebrew.start === hebrew.end ? hebrew.start : hebrew.start + ' to ' + hebrew.end,
+	templeRange: ({ amd }) => {
+		return amd.end === amd.start
+			? relationToTempleBurning(amd.start).toString()
+			: `${relationToTempleBurning(amd.start)} to ${relationToTempleBurning(amd.end)}`
+	},
+	reference: ({ reference }) => referenceRangeToString(reference),
+	revelationReferences: ({ revelationReferences }) => revelationReferences
+		.map(referenceRangeToString)
+		.join(', '),
+	title: ({ title }) => title
+}
+
+export default {
+	data() {
+		return {
+			formatters
+		}
+	},
+	computed: {
+		sort: querystringParameters => querystringParameters.sort === 'bydate' ? 'bydate' : 'byverse',
+		columnOrder: sort => columnOrders[sort],
+		eventsWithVerses: timelineData => timelineData
+		.filter(event => event.type !== 'top')
+		.map(event => {
+			const referenceMatches = match(referenceRegex, event.reference)
+
+			const revelationReferences = []
+
+			referenceMatches.forEach(matches => {
+				const range = extractRangeFromMatch([ null, ...matches ])
+				if (range.book === 'Revelation') {
+					const { start, end } = range
+					revelationReferences.push({ start, end })
+				}
+			})
+
+			return Object.assign({
+				revelationReferences
+			}, event)
+		}),
+		eventsByReference: eventsWithVerses => flatMap(({ title, amd, hebrew, revelationReferences }) => {
+			return revelationReferences.map(reference => Object.assign({ reference }, {
+				title,
+				amd,
+				hebrew,
+			}))
+		}, eventsWithVerses).sort((a, b) => {
+			return sortRange(
+				referenceToRange(b.reference.start),
+				referenceToRange(b.reference.start),
+				referenceToRange(a.reference.start)
+			)
+		}),
+		events: (sort, eventsByReference, eventsWithVerses) => sort === 'bydate' ? eventsWithVerses : eventsByReference
+	},
+	components: {
+		Link,
+		RevelationProjectMenu,
+	}
+}
+</script>

@@ -1,0 +1,122 @@
+<div class="section-horizontal-units">
+	{{#each paragraphs as paragraph, paragraphIndex}}
+		<span class="section-content {{contentClass}}">
+			{{#if paragraphIndex === 0}}
+				<ParagraphDescription
+					descriptionClass="{{descriptionClass}}"
+					siblingAnchor="{{siblingAnchor}}"
+					siblingIsDown="{{siblingIsDown}}"
+					description="{{description}}"
+					range="{{range}}"
+					sermons="{{sermonsForVerses(paragraph)}}"
+				/>
+			{{else}}
+				<ParagraphDescription
+					sermons="{{sermonsForVerses(paragraph)}}"
+				/>
+			{{/if}}
+
+			<p class="section-text">
+				<Selectable alwaysSelectable="{{true}}">
+				{{#each paragraph as chunk}}
+					<SermonHoverReflector targetIdentifier="{{chunkReference(chunk)}}">
+						<VerseHoverDetector identifier="{{chunkReference(chunk)}}">
+							<span
+								data-chapter-number="{{chunk.chapterNumber}}"
+								data-verse-number="{{chunk.verseNumber}}"
+								data-section-number="{{chunk.sectionNumber}}"
+							>
+
+								{{chunk.text}}
+							</span>
+						</VerseHoverDetector>
+					</SermonHoverReflector>
+				{{/each}}
+				</Selectable>
+			</p>
+		</span>
+	{{/each}}
+</div>
+
+<style>
+[data-sibling-hovered=true] {
+	color: #ba4460;
+}
+</style>
+
+<script>
+import Selectable from 'lib/selectable'
+
+import sermonHover from 'lib/structure/sermon-hover-instance'
+import verseHover from 'lib/structure/verse-hover-instance'
+
+import extractRangeFromSermons from 'lib/structure/extract-range-from-sermons'
+
+import ParagraphDescription from './ParagraphDescription.html'
+
+function paragraphsOfJustVerses(chunks) {
+	const paragraphs = []
+	let currentParagraph = []
+
+	function finishParagraph() {
+		if (currentParagraph.length > 0) {
+			paragraphs.push(currentParagraph)
+			currentParagraph = []
+		}
+	}
+
+	chunks.forEach(chunk => {
+		if (chunk.type === 'paragraph break') {
+			finishParagraph()
+		} else if (chunk.type === 'verse') {
+			currentParagraph.push(chunk)
+		}
+	})
+
+	finishParagraph()
+
+	return paragraphs
+}
+
+function getRangeFromVerses(verses) {
+	return [
+		[
+			verses[0].chapterNumber,
+			verses[0].verseNumber,
+			verses[0].sectionNumber
+		], [
+			verses[verses.length - 1].chapterNumber,
+			verses[verses.length - 1].verseNumber,
+			verses[verses.length - 1].sectionNumber
+		]
+	]
+}
+
+export default {
+	data() {
+		return {
+			verses: [],
+			sermons: []
+		}
+	},
+	computed: {
+		paragraphs(verses) {
+			return paragraphsOfJustVerses(verses)
+		},
+		sermonsForVerses(sermons) {
+			return verses => extractRangeFromSermons(sermons, getRangeFromVerses(verses))
+		}
+	},
+	helpers: {
+		chunkReference(chunk) {
+			return [ chunk.chapterNumber, chunk.verseNumber, chunk.sectionNumber ]
+		}
+	},
+	components: {
+		SermonHoverReflector: sermonHover.HoverReflector,
+		VerseHoverDetector: verseHover.HoverDetector,
+		ParagraphDescription,
+		Selectable,
+	}
+}
+</script>

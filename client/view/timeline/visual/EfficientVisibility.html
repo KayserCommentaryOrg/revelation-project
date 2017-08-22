@@ -1,0 +1,89 @@
+<div ref:element>
+	{{yield}}
+</div>
+
+<script>
+import globalUpdateEmitter from 'lib/motion-event.js'
+import nextTick from 'iso-next-tick'
+
+const average = (a, b) => (a + b) / 2
+
+export default {
+	oncreate() {
+		const componentListener = () => this.updateVisibility()
+		globalUpdateEmitter.on('update', componentListener)
+
+		this.set({
+			listener: componentListener
+		})
+
+		try {
+			this.updateVisibility()
+		} catch (e) {
+			console.error('Error in oncreate for some reason', e)
+		}
+
+
+		this.observe('updateOnChange', () => nextTick(() => this.updateVisibility()))
+	},
+	ondestroy() {
+		const componentListener = this.get('listener')
+		globalUpdateEmitter.removeListener('update', componentListener)
+		this.setNotVisible()
+	},
+	methods: {
+		setNotVisible() {
+			if (this.get('visible')) {
+				this.set({ visible: false })
+				this.fire('change', {
+					parent: this.get('parent'),
+					parentProperty: this.get('property'),
+					key: this.get('key'),
+					visible: false,
+					top: null,
+					bottom: null,
+					left: null,
+					right: null,
+					verticalCenter: null,
+					topRatio: null,
+					bottomRatio: null,
+				})
+			}
+		},
+		updateVisibility() {
+			if (!this.refs.element) {
+				this.setNotVisible()
+				return
+			}
+
+			const relativeToViewport = this.refs.element.firstElementChild.getBoundingClientRect()
+			const viewportHeight = window.document.documentElement.clientHeight
+			const visible = relativeToViewport.bottom >= 0 && relativeToViewport.top <= viewportHeight
+
+			if (visible) {
+				const topRatio = relativeToViewport.top / viewportHeight
+				const bottomRatio = relativeToViewport.bottom / viewportHeight
+
+				this.set({ visible })
+
+				this.fire('change', {
+					parent: this.get('parent'),
+					parentProperty: this.get('parentProperty'),
+					key: this.get('key'),
+					visible,
+					top: relativeToViewport.top,
+					bottom: relativeToViewport.bottom,
+					left: relativeToViewport.left,
+					right: relativeToViewport.right,
+					verticalCenter: average(relativeToViewport.top, relativeToViewport.bottom),
+					topRatio,
+					bottomRatio
+				})
+			} else {
+				// this.log('No longer visible')
+				this.setNotVisible()
+			}
+		},
+	}
+}
+</script>

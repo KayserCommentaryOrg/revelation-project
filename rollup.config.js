@@ -8,8 +8,8 @@ export default {
 	format: 'iife',
 	moduleName: 'revelationStructure',
 	entry: './client/index.js',
-	dest: './public/index-bundle.js',
-	// sourceMap: true,
+	dest: './public/static/index-bundle.js',
+	sourceMap: true,
 	plugins: [
 		svelte(),
 		commonjs(),

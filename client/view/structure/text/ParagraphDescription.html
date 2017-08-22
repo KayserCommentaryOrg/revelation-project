@@ -1,0 +1,76 @@
+<div class="section-description {{descriptionClass || ''}}">
+	<Selectable identifier="meta">
+	{{#if siblingAnchor}}
+		<a
+			href="#{{siblingAnchor}}"
+			class="sibling-link everblue"
+		>
+			{{#if siblingIsDown}}&#8609;{{else}}&#8607;{{/if}}
+		</a>
+	{{/if}}
+	{{description || ''}}
+
+	{{#if range}}<small><VerseRange range="{{range}}" /></small>{{/if}}
+
+	{{#each sermons as sermon}}
+		<small class="sermon">
+			<VerseHoverReflector targetIdentifier="{{sermon.range}}">
+				<SermonHoverDetector identifier="{{sermon.range}}">
+					{{sermon.title}}
+					&middot;
+					<a
+						href="https://kaysercommentary.com/{{encodeURI(sermon.filename)}}"
+						target="_blank"
+						rel="external noopener"
+					>
+						text
+					</a>
+					{{#if sermon.audioId}}
+						&middot;
+						<a
+							href="http://www.dominioncovenantchurch.com/sermons/?sermon_id={{sermon.audioId}}"
+							target="_blank"
+							rel="external noopener"
+						>
+							audio
+						</a>
+					{{/if}}
+				</SermonHoverDetector>
+			</VerseHoverReflector>
+		</small>
+	{{/each}}
+	</Selectable>
+</div>
+
+<style>
+.sermon {
+	display: block;
+	color: #a9a9a9;
+}
+.sermon:hover {
+	color: #7d7d7d;
+}
+</style>
+
+<script>
+import sermonHover from 'lib/structure/sermon-hover-instance'
+import verseHover from 'lib/structure/verse-hover-instance'
+
+import Selectable from 'lib/selectable'
+
+import VerseRange from 'component/VerseRange.html'
+
+export default {
+	data() {
+		return {
+			descriptionClass: '',
+		}
+	},
+	components: {
+		SermonHoverDetector: sermonHover.HoverDetector,
+		VerseHoverReflector: verseHover.HoverReflector,
+		VerseRange,
+		Selectable,
+	}
+}
+</script>

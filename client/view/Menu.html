@@ -1,0 +1,107 @@
+<div class="menu">
+	{{#each menu as item}}
+		<span class="parent-menu-box">
+			<a
+				href="{{asr.makePath(item.state)}}"
+				class="menu-item"
+				data-active="{{asr.stateIsActive(item.state)}}"
+			>
+				{{item.name}}
+			</a>
+		</span>
+	{{/each}}
+</div>
+{{#if activeParentMenuItem && activeParentMenuItem.children}}
+<span class="menu child-menu">
+	{{#each activeParentMenuItem.children as child}}
+		<a
+			href="{{asr.makePath(child.state)}}"
+			class="child-item"
+			data-active="{{asr.stateIsActive(child.state)}}"
+		>
+			{{child.name}}
+		</a>
+	{{/each}}
+</span>
+{{/if}}
+
+<style>
+a {
+	white-space: nowrap;
+	display: block;
+}
+
+.menu {
+	display: flex;
+	flex-wrap: wrap;
+
+	font-family: Verdana, sans-serif;
+	font-size: 16px;
+}
+
+.parent-menu-box {
+	margin: 4px;
+}
+
+.menu-item {
+	padding: 8px 16px;
+	background-color: #e0e0e0;
+	color: black;
+	border-radius: 2px;
+}
+.menu-item[data-active=true] {
+	font-weight: bold;
+}
+
+.child-menu {
+	padding-left: 4px;
+	padding-right: 4px;
+}
+
+.child-item {
+	padding: 4px 8px;
+	color: black;
+	background-color: #f5f5f5;
+
+	font-size: 14px;
+}
+.child-item[data-active=true] {
+	font-weight: bold;
+}
+</style>
+
+<script>
+export default {
+	data() {
+		return {
+			menu: [{
+				name: 'Project Home',
+				state: 'main.home'
+			}, {
+				name: 'Historical timeline',
+				state: 'main.timeline',
+				children: [{
+					name: 'Timeline',
+					state: 'main.timeline.visual',
+				}, {
+					name: 'Table of dates',
+					state: 'main.timeline.table',
+				}]
+			}, {
+				name: 'The structure of Revelation',
+				state: 'structure',
+				children: [{
+					name: 'Explanation',
+					state: 'main.structure.explanation',
+				}, {
+					name: 'The book',
+					state: 'main.structure.text',
+				}]
+			}]
+		}
+	},
+	computed: {
+		activeParentMenuItem: (menu, asr) => menu.find(item => asr.stateIsActive(item.state))
+	},
+}
+</script>

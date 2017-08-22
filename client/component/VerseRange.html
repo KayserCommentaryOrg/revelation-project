@@ -1,0 +1,62 @@
+<span class="verse-range">
+	{{readableRange}}
+</span>
+
+<style>
+.verse-range {
+	white-space: nowrap;
+	color: #a9a9a9;
+}
+
+</style>
+
+<script>
+
+import { VERSE_SECTION_RANGE_MIN, VERSE_SECTION_RANGE_MAX } from 'lib/structure/constants'
+
+const verseSectionFriendlyNames = ['a', 'b', 'c', 'd', 'e']
+function friendlyName(sectionNumber) {
+	return verseSectionFriendlyNames[sectionNumber - 1]
+}
+
+export default {
+	computed: {
+		rangeStart: range => range[0],
+		rangeEnd: range => range[1],
+		readableRange: (rangeStart, rangeEnd) => {
+			const [ startChapter, startVerse, startSection ] = rangeStart
+			const [ endChapter, endVerse, endSection ] = rangeEnd
+
+			if (startChapter === endChapter && startVerse === endVerse) {
+				const chapterVerse = `${startChapter}:${startVerse}`
+				const subVerseRange = startSection > VERSE_SECTION_RANGE_MIN
+					|| endSection < VERSE_SECTION_RANGE_MAX
+
+				if (subVerseRange) {
+					const verseWithStartRangeName = `${chapterVerse}${friendlyName(startSection)}`
+					if (startSection === endSection) {
+						return verseWithStartRangeName
+					} else if (endSection === VERSE_SECTION_RANGE_MAX) {
+						return verseWithStartRangeName
+					} else {
+						const verseWithEndRangeName = `${chapterVerse}${friendlyName(endSection)}`
+						return `${verseWithStartRangeName}-${verseWithEndRangeName}`
+					}
+				} else {
+					return chapterVerse
+				}
+			} else {
+				const start = startSection > VERSE_SECTION_RANGE_MIN
+					? `${startChapter}:${startVerse}${friendlyName(startSection)}`
+					: `${startChapter}:${startVerse}`
+				const end = endSection < VERSE_SECTION_RANGE_MAX
+					? `${endChapter}:${endVerse}${friendlyName(endSection)}`
+					: `${endChapter}:${endVerse}`
+
+				return `${start}-${end}`
+			}
+
+		}
+	}
+}
+</script>

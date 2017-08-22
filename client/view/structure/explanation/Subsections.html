@@ -1,0 +1,86 @@
+<ol>
+{{#each structure as section}}
+	<li>
+		<strong class="section-label">
+			{{sectionLabel(section)}}
+		</strong>
+		<ol>
+			{{#if !section.introduction && !section.subsections}}
+			<li>
+				<span class="tiny-color-bar">&nbsp;</span>
+				<strong class="subsection-label"></strong>
+				{{section.description}} <small><VerseRange range="{{section.range}}" /></small>
+			</li>
+			{{/if}}
+
+			{{#if section.introduction}}
+			<li>
+				<span
+					class="tiny-color-bar"
+					style="background-color: {{getColor('introduction')}}"
+				>
+				</span>
+				<strong class="subsection-label">
+					<a href="./#{{section.introduction.anchor}}">Intro.</a>
+				</strong>
+				{{section.introduction.title}} <small><VerseRange range="{{section.introduction.range}}" /></small>
+			</li>
+			{{/if}}
+
+			{{#if section.subsections}}
+			{{#each section.subsections as subsection}}
+			<li>
+				<span
+					class="tiny-color-bar"
+					style="background-color: {{subsection.identifier ? getColor(subsection.identifier) : 'inherit'}}"
+				>
+				</span>
+				<strong class="subsection-label">
+					<a href="./#{{subsection.anchor}}">
+						{{septetLabel(subsection.identifier)}}.
+					</a>
+				</strong>
+				{{subsection.title}} <small><VerseRange range="{{subsection.range}}" /></small>
+			</li>
+			{{/each}}
+			{{/if}}
+		</ol>
+	</li>
+{{/each}}
+</ol>
+
+<style>
+.subsection-label {
+	min-width: 5em;
+	display: inline-block;
+}
+.section-label {
+	font-size: larger;
+}
+</style>
+
+<script>
+import structure from 'lib/structure/data/structure'
+import getColor from 'lib/structure/identifier-color'
+import sectionLabel from 'lib/structure/section-label'
+import septetLabel from 'lib/structure/septet-label'
+
+import VerseRange from 'component/VerseRange.html'
+
+export default {
+	data() {
+		return {
+			structure
+		}
+	},
+	components: {
+		VerseRange
+	},
+	helpers: {
+		sectionLabel,
+		getColor,
+		septetLabel
+	}
+}
+
+</script>

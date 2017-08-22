@@ -1,0 +1,46 @@
+{{#each subsectionsWithVersesAndSermons as subsection}}
+<ColorBarAndContent
+	description="{{subsection.title}}"
+	chiasmIdentifier="{{chiasmIdentifier}}"
+	sectionIdentifier="{{subsection.identifier}}"
+	zoomedIn="{{!!currentSubsection}}"
+	showColorBar="{{showColorBar}}"
+	anchor="{{useAnchors && subsection.anchor}}"
+	siblingAnchor="{{subsection.siblingAnchor}}"
+	siblingIsDown="{{subsection.siblingIsDown}}"
+	visible="{{subsectionIsVisible(subsection)}}"
+	range="{{subsection.range}}"
+	sermons="{{subsection.sermons}}"
+	verses="{{subsection.verses}}"
+/>
+{{/each}}
+
+<script>
+import combineStructureWithVerses from 'lib/structure/combine-structure-with-verses'
+import combineStructureWithSermons from 'lib/structure/combine-structure-with-sermons'
+
+import pipe from 'lib/pipe'
+
+import ColorBarAndContent from './ColorBarAndContent.html'
+
+export default {
+	data() {
+		return {
+			useAnchors: true
+		}
+	},
+	components: {
+		ColorBarAndContent
+	},
+	computed: {
+		subsectionIsVisible: currentSubsection => {
+			return subsection => !currentSubsection || subsection.identifier === currentSubsection
+		},
+		subsectionsWithVersesAndSermons: (subsections, verses, sermons) => {
+			return pipe(subsections,
+				subsections => combineStructureWithVerses(subsections, verses),
+				subsections => combineStructureWithSermons(subsections, sermons))
+		}
+	}
+}
+</script>

@@ -1,0 +1,370 @@
+<div id="container">
+	{{#if currentZoom.type !== 'top'}}
+		<Link parameters="{{ {} }}">
+			« Back to top level
+		</Link>
+	{{/if}}
+
+	<div class="timeline-container">
+		<div class="timeline-column" style="width: 100px; margin-right: 10px;">
+			{{#each axis as date}}
+			<VCenter point="{{multiplyDaysByHeight(distanceFromStartDay(date.axisPoint))}}">
+				<div class="axis" data-relevant="{{axisIsRelevant(date.amd)}}">
+					{{#if date.type === 'snip'}}
+						...snip ({{date.days}} days)
+					{{else}}
+						{{date.hebrew || date.amd}}
+					{{/if}}
+				</div>
+			</VCenter>
+			{{/each}}
+		</div>
+		<div class="timeline-column" style="width: {{multiplyIndentByWidth(indentLevels + 1)}}px">
+			<Events
+				timeline="{{relevantEventsWithAxis}}"
+				on:startHover="startHover(event)"
+				on:endHover="endHover(event)"
+				dayHeight="{{currentZoom.dayHeight}}"
+				clickable="{{true}}"
+				ignoreType="{{currentZoom.ignoreType}}"
+				bind:visibleEvents
+			/>
+		</div>
+		{{#each connectingLines as line @slug}}
+			<CurvyLine from="{{line.from}}" to="{{line.to}}" color="{{line.color}}" slug="{{line.slug}}" />
+		{{/each}}
+		<div class="timeline-column">
+			<div class="event-description-column">
+				<div>
+					<EventDescriptions
+						timeline="{{eventsToHighlight}}"
+						hoveredEvent="{{hoveredEvent}}"
+						bind:slugToPoints="slugToVisibleDescriptionPoints"
+					/>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+.timeline-container {
+	margin-top: 16px;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+}
+.timeline-column {
+	position: relative;
+}
+.axis {
+	font-size: 10px;
+	width: 100px;
+	text-align: right;
+}
+.axis[data-relevant=true] {
+	color: red;
+}
+.event-description-column {
+	display: flex;
+	align-items: center;
+
+	position: fixed;
+	top: 0;
+	height: 100%;
+	z-index: -1;
+}
+</style>
+
+<script>
+import RevelationProjectMenu from 'revelation-project-menu'
+
+import VCenter from './VerticallyCentered.html'
+import Events from './Events.html'
+import EventDescriptions from './EventDescriptions.html'
+import CurvyLine from './CurvyLine.html'
+
+import createTimelineAxis from 'lib/timeline/create-timeline-axis.js'
+import { multiplyIndentByWidth } from 'lib/timeline/spacer-functions.js'
+import addIndentAndAxisAfterStart from 'lib/timeline/add-timeline-event-indent.js'
+
+import addAxisPoints from 'lib/timeline/add-axis-points-to-timeline-data.js'
+import sortRange from 'lib/timeline/sort-range.js'
+
+import pipe from 'lib/pipe.js'
+
+import svelteQuerystringRouter from 'svelte-querystring-router'
+const { Link } = svelteQuerystringRouter
+
+import chromatism from 'chromatism'
+
+const EMPTY_ARRAY = []
+
+const defaultZoomedDayHeight = 0.5
+const topZoom = {
+	dayHeight: 0.1,
+	start: 1471937,
+	end: 1488003,
+	snipSectionsLongerThan: 10000,
+	snipBuffer: 1500,
+	type: 'top',
+	ignoreType: []
+}
+
+function eventOverlapsRange(eventRange, zoomRange) {
+	const solidlyInside = eventRange.start >= zoomRange.start && eventRange.end <= zoomRange.end
+	const overlapsBeginning = eventRange.end >= zoomRange.start && eventRange.start < zoomRange.start
+	const overlapsEnd = eventRange.start <= zoomRange.end && eventRange.end > zoomRange.end
+
+	return solidlyInside || overlapsBeginning || overlapsEnd
+}
+
+function daysThatOverlapRange(eventRange, zoomRange) {
+	const eventDays = eventRange.end - eventRange.start
+	const lostAtStart = Math.max(zoomRange.start - eventRange.start, 0)
+	const lostAtEnd = Math.max(eventRange.end - zoomRange.end, 0)
+
+	return eventDays - lostAtStart - lostAtEnd
+}
+
+// const startingColor = '#2900ff'
+// const startingColor = '#00cdd4'
+// const endingColor = '#00ccd4'
+const startingColor = '#0074D9'
+const endingColor = '#2ECC40'
+// const eventColors = chromatism.adjacent(20, 5, startingColor).hex
+const eventColors = chromatism.fade(4, startingColor, endingColor).hex
+const hoverColors = eventColors.map(color => chromatism.contrast(3, color).hex)
+
+function addColorToEvents(events) {
+	return events.map(event => Object.assign({
+		color: eventColors[event.indentLevel % eventColors.length],
+		hoverColor: hoverColors[event.indentLevel % eventColors.length]
+	}, event))
+}
+
+function filterToRelevantEvents(timelineData, currentZoom) {
+	return timelineData.filter(
+		event => eventOverlapsRange(event.amd, currentZoom)
+			&& (!currentZoom.type || currentZoom.type === event.type)
+	)
+}
+
+function sortEventsForDisplay(timelineData, currentZoom) {
+	return sortRange(timelineData,
+		event => event.type === 'top'
+			? [ 0, -daysThatOverlapRange(event.amd, currentZoom), 0 ]
+			: [ 1, event.amd.start, -daysThatOverlapRange(event.amd, currentZoom) ]
+	)
+}
+
+const viewportHighlightRatio = 0.6
+const topMarginRatio = (1 - viewportHighlightRatio) / 2
+const bottomMarginRatio = viewportHighlightRatio + topMarginRatio
+const numberOfEventsToHighlight = 6
+
+const A_IS_FIRST = -1
+const B_IS_FIRST = 1
+
+const distanceToCenter = event => Math.abs(0.5 - event.centerPointRatio)
+const sortByClosestToCenter = (eventA, eventB) => {
+	const distanceA = distanceToCenter(eventA)
+	const distanceB = distanceToCenter(eventB)
+
+	if (distanceA < distanceB) {
+		return A_IS_FIRST
+	} else if (distanceB < distanceA) {
+		return B_IS_FIRST
+	} else {
+		return 0
+	}
+}
+
+// needed to filter:
+// centerPointRatio
+// isInsideCenter
+// indentLevel
+
+function filterToHighlightedEvents(events, hoveredEvent) {
+	const viewportHeight = window.document.documentElement.clientHeight
+
+	const eventsWithCalculations = events.map(event => {
+		const topIsInCenter = event.topRatio >= topMarginRatio && event.topRatio <= bottomMarginRatio
+		const bottomIsInCenter = event.bottomRatio <= bottomMarginRatio && event.bottomRatio >= topMarginRatio
+		const eventCoversCenter = (event.topRatio <= topMarginRatio && event.bottomRatio >= bottomMarginRatio)
+
+		const isInsideCenter = topIsInCenter && bottomIsInCenter
+		const overlapsCenter = topIsInCenter || bottomIsInCenter || eventCoversCenter
+
+		const visibleTopRatio = Math.max(event.topRatio, 0)
+		const visibleBottomRatio = Math.min(event.bottomRatio, 1)
+		const centerPointRatio = (visibleTopRatio + visibleBottomRatio) / 2
+
+		const visibleTop = Math.max(event.top, 0)
+		const visibleBottom = Math.min(event.bottom, viewportHeight)
+		const centerPoint = (visibleTop + visibleBottom) / 2
+
+		return Object.assign({
+			isInsideCenter,
+			centerPointRatio,
+			overlapsCenter,
+			centerPoint,
+		}, event)
+	})
+
+	// console.log('centerPointRatio', eventsWithCalculations
+	// 	.filter(event => event.overlapsCenter)
+	// 	.sort((eventA, eventB) => eventA.amd.start - eventB.amd.start)
+	// 	.map(event => event.centerPointRatio)
+	// )
+
+	const prioritizedEvents = eventsWithCalculations
+	.filter(event => event.overlapsCenter)
+	.sort((eventA, eventB) => {
+		if (eventA.isInsideCenter && !eventB.isInsideCenter) {
+			return A_IS_FIRST
+		} else if (eventB.isInsideCenter && !eventA.isInsideCenter) {
+			return B_IS_FIRST
+		} else if (eventA.isInsideCenter && eventB.isInsideCenter) {
+			return sortByClosestToCenter(eventA, eventB)
+		} else if (eventA.indentLevel === eventB.indentLevel) {
+			return sortByClosestToCenter(eventA, eventB)
+		} else if (eventA.indentLevel > eventB.indentLevel) {
+			return A_IS_FIRST
+		} else if (eventB.indentLevel > eventA.indentLevel) {
+			return B_IS_FIRST
+		}
+
+		throw new Error('Missed a case')
+	})
+
+	const bestEventsToShow = prioritizedEvents.slice(0, numberOfEventsToHighlight)
+	const needToAddHoveredEvent = hoveredEvent
+		&& bestEventsToShow.every(event => event.slug !== hoveredEvent.slug)
+
+	const eventsToShow = needToAddHoveredEvent ? [ hoveredEvent, ...bestEventsToShow ] : bestEventsToShow
+
+	return eventsToShow
+		.sort((eventA, eventB) => eventA.centerPointRatio - eventB.centerPointRatio)
+}
+
+export default {
+	data() {
+		return {
+			visibleEvents: [],
+			slugToVisibleDescriptionPoints: null,
+			slugToTimelineRight: null,
+		}
+	},
+	computed: {
+		zooms: timelineData => timelineData.reduce((map, event) => {
+			map[event.slug] = {
+				start: event.amd.start,
+				end: event.amd.end,
+				dayHeight: event.dayHeight || defaultZoomedDayHeight,
+				snipSectionsLongerThan: 300,
+				snipBuffer: 50,
+				ignoreType: event.ignoreType || [ 'top' ]
+			}
+			return map
+		}, {
+			top: topZoom
+		}),
+		multiplyDaysByHeight: currentZoom => days => days * currentZoom.dayHeight,
+		relevantEvents: (timelineData, currentZoom) => pipe(timelineData,
+			_ => filterToRelevantEvents(_, currentZoom),
+			_ => sortEventsForDisplay(_, currentZoom)
+		),
+		axis: (relevantEvents, currentZoom) => createTimelineAxis({
+			timelineData: relevantEvents,
+			snipSectionsLongerThan: currentZoom.snipSectionsLongerThan,
+			snipBuffer: currentZoom.snipBuffer,
+			start: currentZoom.start,
+			end: currentZoom.end,
+		}),
+		relevantEventsWithAxis: (axis, relevantEvents, currentZoom) => pipe(relevantEvents,
+			_ => addAxisPoints(axis, _),
+			_ => addIndentAndAxisAfterStart(_, currentZoom.start, currentZoom.end),
+			addColorToEvents
+		),
+		distanceFromStartDay: currentZoom => day => day - currentZoom.start,
+		axisIsRelevant: hoveredEvent => amdDay => !!hoveredEvent
+			&& (hoveredEvent.amd.start === amdDay || hoveredEvent.amd.end === amdDay),
+		currentZoom: (querystringParameters, zooms) =>
+			(querystringParameters.zoom && zooms[querystringParameters.zoom])
+				? zooms[querystringParameters.zoom]
+				: topZoom,
+		indentLevels: relevantEventsWithAxis => relevantEventsWithAxis.reduce((max, event) => {
+			return max < event.indentLevel ? event.indentLevel : max
+		}, 0),
+		eventsToHighlight: (visibleEvents, hoveredEvent) => filterToHighlightedEvents(visibleEvents, hoveredEvent),
+		connectingLines: (eventsToHighlight, slugToVisibleDescriptionPoints) => {
+			if (!slugToVisibleDescriptionPoints) {
+				// console.log('returning dummy array')
+				return EMPTY_ARRAY
+			}
+
+			// const viewportHeight = window.document.documentElement.clientHeight
+			// const ratioToPoint = ratio => viewportHeight * ratio
+
+			// eventsToHighlight.forEach(({ slug }) => {
+			// 	if (!slugToVisibleDescriptionPoints[slug]) {
+			// 		console.error('no VisibleDescriptionPoint found for', slug)
+			// 	}
+			// })
+
+			// console.log(slugToVisibleDescriptionPoints)
+
+			// console.log(
+			// 	eventsToHighlight.filter(({ slug }) => {
+			// 		return slugToVisibleDescriptionPoints[slug]
+			// 	}).map(event => `${event.title}, ${event.centerPoint}`)
+			// )
+
+			const linesToDraw = eventsToHighlight.filter(({ slug }) => {
+				return slugToVisibleDescriptionPoints[slug]
+			}).map(event => ({
+				from: {
+					y: event.centerPoint,
+					x: event.right,
+				},
+				to: slugToVisibleDescriptionPoints[event.slug],
+				color: event.color,
+				hoverColor: event.hoverColor,
+				slug: event.slug,
+				// y: event.amd.start === event.amd.end ? ratioToPoint(event.centerPointRatio) : null
+			}))
+
+			// console.log(linesToDraw)
+
+			// console.log(JSON.stringify(linesToDraw, null, '\t'))
+			// console.log('highlighted:', eventsToHighlight.length, 'displayable:', linesToDraw.length)
+
+			return linesToDraw
+		},
+	},
+	helpers: {
+		multiplyIndentByWidth,
+	},
+	methods: {
+		startHover(event) {
+			this.set({
+				hoveredEvent: event
+			})
+		},
+		endHover() {
+			this.set({
+				hoveredEvent: null
+			})
+		},
+	},
+	components: {
+		VCenter,
+		Events,
+		EventDescriptions,
+		CurvyLine,
+		RevelationProjectMenu,
+		Link,
+	},
+}
+</script>

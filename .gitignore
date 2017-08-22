@@ -2,3 +2,5 @@ node_modules
 public/structure
 public/timeline
 *bundle*.js
+*bundle*.js.map
+client/globbed-*.js

@@ -1,0 +1,64 @@
+<ol>
+{{#each structure as section}}
+	<li
+		style="padding-left: {{indentLevel(section.identifier)}}em"
+		on:mouseenter="set({ currentlyHovered: section.identifier })"
+		on:mouseleave="set({ currentlyHovered: null })"
+		data-unhighlighted="{{!!currentlyHovered && currentlyHovered !== section.identifier}}"
+	>
+		<span
+			class="tiny-color-bar"
+			style="background-color: {{getColor(section.identifier)}}"
+		>
+			&nbsp;
+		</span>
+
+		<strong>
+			<a href="./#{{section.anchor}}">
+				{{sectionLabel(section)}}:
+			</a>
+		</strong>
+
+		{{section.title}}
+
+		<small>
+			<VerseRange range="{{getSectionRange(section)}}" />
+		</small>
+	</li>
+{{/each}}
+</ol>
+
+<script>
+import structure from 'lib/structure/data/structure'
+import getColor from 'lib/structure/identifier-color'
+import sectionLabel from 'lib/structure/section-label'
+import getSectionRange from 'lib/structure/get-section-range'
+
+import VerseRange from 'component/VerseRange.html'
+
+export default {
+	data() {
+		return {
+			structure
+		}
+	},
+	components: {
+		VerseRange,
+	},
+	helpers: {
+		sectionLabel,
+		getColor,
+		getSectionRange,
+		indentLevel(identifier) {
+			return {
+				A: 0,
+				B: 1,
+				C: 2,
+				D: 3,
+				E: 4
+			}[identifier]
+		}
+	}
+}
+
+</script>

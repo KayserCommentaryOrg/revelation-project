@@ -1,0 +1,59 @@
+<ol>
+{{#each section.subsections as subsection}}
+	<li
+		style="padding-left: {{indentLevel(subsection.identifier)}}em"
+		on:mouseenter="set({ currentlyHovered: subsection.identifier })"
+		on:mouseleave="set({ currentlyHovered: null })"
+		data-unhighlighted="{{!!currentlyHovered && currentlyHovered !== subsection.identifier}}"
+	>
+		<span
+			class="tiny-color-bar"
+			style="background-color: {{getColor(subsection.identifier)}}"
+		>
+			&nbsp;
+		</span>
+		<strong>
+			<a href="./#{{subsection.anchor}}">
+				{{sectionLabel(subsection)}}:
+			</a>
+		</strong> {{subsection.title}} <small><VerseRange range="{{subsection.range}}" /></small>
+	</li>
+{{/each}}
+</ol>
+
+<script>
+import structure from 'lib/structure/data/structure'
+import getColor from 'lib/structure/identifier-color'
+
+import VerseRange from 'component/VerseRange.html'
+
+const section = structure[4].introduction
+
+export default {
+	data() {
+		return {
+			section
+		}
+	},
+	components: {
+		VerseRange
+	},
+	helpers: {
+		sectionLabel(section) {
+			return section.prime ? `${section.identifier}′` : section.identifier
+		},
+		getColor,
+		indentLevel(identifier) {
+			return {
+				Ea: 0,
+				Eb: 1,
+				Ec: 2,
+				Ed: 3,
+				Ee: 4,
+				Ef: 5
+			}[identifier]
+		}
+	}
+}
+
+</script>
