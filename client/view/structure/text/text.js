@@ -9,8 +9,10 @@ export default mediator => ({
 	template: Text,
 	resolve() {
 		return Promise.resolve({
-			english,
-			greek,
+			translations: {
+				english,
+				greek,
+			},
 		})
 	},
 })

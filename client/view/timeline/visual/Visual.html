@@ -94,7 +94,7 @@ import sortRange from 'lib/timeline/sort-range.js'
 import pipe from 'lib/pipe.js'
 
 import svelteQuerystringRouter from 'svelte-querystring-router'
-const { Link } = svelteQuerystringRouter
+const { Link, getCurrentParameters } = svelteQuerystringRouter
 
 import chromatism from 'chromatism'
 
@@ -254,6 +254,7 @@ export default {
 			visibleEvents: [],
 			slugToVisibleDescriptionPoints: null,
 			slugToTimelineRight: null,
+			querystringParameters: getCurrentParameters(),
 		}
 	},
 	computed: {

@@ -45,7 +45,7 @@ import multiPartRangeCompare from 'multi-part-range-compare'
 const { relative: sortRange } = multiPartRangeCompare
 
 import routerInstance from 'svelte-querystring-router'
-const { Link } = routerInstance
+const { Link, getCurrentParameters } = routerInstance
 
 import RevelationProjectMenu from 'revelation-project-menu'
 
@@ -104,7 +104,8 @@ const formatters = {
 export default {
 	data() {
 		return {
-			formatters
+			formatters,
+			querystringParameters: getCurrentParameters()
 		}
 	},
 	computed: {
