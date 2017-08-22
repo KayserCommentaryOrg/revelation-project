@@ -32,7 +32,14 @@ mediator.provide('onStateRouter', (event, cb) => {
 
 const moduleInitializationPromises = statefulServices.map(module => module(mediator))
 
-views.map(createView => createView(mediator)).forEach(stateRouter.addState)
+views.map(createView => createView(mediator)).forEach(state => {
+	try {
+		stateRouter.addState(state)
+	} catch (e) {
+		console.error('Error adding', state)
+		throw e
+	}
+})
 
 stateRouter.on('routeNotFound', (route, parameters) => {
 	stateRouter.go('not-found', { route, parameters }, { replace: true })
@@ -44,6 +51,6 @@ stateRouter.on('stateError', error => console.error(error))
 stateRouter.on('stateChangeEnd', (state, params) => console.log('stateChangeEnd', state.name, params))
 
 Promise.all(moduleInitializationPromises).then(() => {
-	stateRouter.evaluateCurrentRoute('index')
+	stateRouter.evaluateCurrentRoute('main')
 })
 

@@ -1,7 +1,7 @@
 import Explanation from './Explanation.html'
 
 export default mediator => ({
-	name: 'explanation',
+	name: 'main.structure.explanation',
 	route: 'explanation',
 	template: Explanation,
 })

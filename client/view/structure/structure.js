@@ -1,8 +1,8 @@
 import JustChildState from 'component/JustChildState.html'
 
 export default mediator => ({
-	name: 'structure',
+	name: 'main.structure',
 	route: 'structure',
 	template: JustChildState,
-	defaultChild: 'text'
+	defaultChild: 'text',
 })

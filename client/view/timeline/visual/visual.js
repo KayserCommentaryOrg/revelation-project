@@ -1,7 +1,7 @@
 import Visual from './Visual.html'
 
 export default mediator => ({
-	name: 'visual',
+	name: 'main.timeline.visual',
 	route: 'visual',
 	template: Visual,
 })
