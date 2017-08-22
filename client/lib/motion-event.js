@@ -1,7 +1,7 @@
-import EventEmitter from 'eventemitter3'
-import debounce from './debounce-to-animation-frame.js'
+import createEmitter from 'better-emitter'
+import debounce from 'lib/debounce-to-animation-frame.js'
 
-const globalUpdateEmitter = new EventEmitter()
+const globalUpdateEmitter = createEmitter()
 
 const listener = debounce(() => globalUpdateEmitter.emit('update'))
 

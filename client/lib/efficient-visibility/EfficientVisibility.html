@@ -10,11 +10,10 @@ const average = (a, b) => (a + b) / 2
 
 export default {
 	oncreate() {
-		const componentListener = () => this.updateVisibility()
-		globalUpdateEmitter.on('update', componentListener)
+		const removeListener = globalUpdateEmitter.on('update', () => this.updateVisibility())
 
 		this.set({
-			listener: componentListener
+			removeListener
 		})
 
 		try {
@@ -27,8 +26,7 @@ export default {
 		this.observe('updateOnChange', () => nextTick(() => this.updateVisibility()))
 	},
 	ondestroy() {
-		const componentListener = this.get('listener')
-		globalUpdateEmitter.removeListener('update', componentListener)
+		this.get('removeListener')()
 		this.setNotVisible()
 	},
 	methods: {

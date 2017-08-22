@@ -33,15 +33,14 @@ export default {
 		this.observe('to', listener)
 		this.observe('color', listener)
 
-		motionEventEmitter.on('update', listener)
+		const removeListener = motionEventEmitter.on('update', listener)
 
 		this.set({
-			listener
+			removeListener
 		})
 	},
 	ondestroy() {
-		const listener = this.get('listener')
-		motionEventEmitter.removeListener('update', listener)
+		this.get('removeListener')()
 	},
 	computed: {
 		leftmostPoint: (from, to) => least(from, to, 'x'),

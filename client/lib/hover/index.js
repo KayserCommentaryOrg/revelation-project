@@ -1,4 +1,4 @@
-import EventEmitter from 'eventemitter3'
+import createEmitter from 'better-emitter'
 
 import HoverDetector from './HoverDetector.html'
 import HoverReflector from './HoverReflector.html'
@@ -8,7 +8,7 @@ function defaultReflectionDecider(target, hoveredData) {
 }
 
 export default function createHoverComponents(shouldReflectChange = defaultReflectionDecider) {
-	const emitter = new EventEmitter()
+	const emitter = createEmitter()
 	let currentlyHoveredData = null
 
 	function emit(hoverData) {
@@ -31,19 +31,16 @@ export default function createHoverComponents(shouldReflectChange = defaultRefle
 		HoverReflector: function reflectorProxy(options) {
 			const initializationOptions = Object.assign({}, options, {
 				data: Object.assign({}, options.data, {
-					shouldReflectChange
-				})
+					shouldReflectChange,
+				}),
 			})
 			const component = new HoverReflector(initializationOptions)
-			function identifierChangeListener(hoverData) {
-				component.set({
-					currentlyHoveredData: hoverData
-				})
-			}
-			emitter.on('hover', identifierChangeListener)
-			component.on('teardown', () => emitter.removeListener('hover', identifierChangeListener))
+			const removeListener = emitter.on('hover',
+				currentlyHoveredData => component.set({ currentlyHoveredData })
+			)
+			component.on('teardown', removeListener)
 
 			return component
-		}
+		},
 	}
 }

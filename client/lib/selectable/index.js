@@ -1,22 +1,20 @@
 import Selectable from './Selectable.html'
-import EventEmitter from 'eventemitter3'
+import createEmitter from 'better-emitter'
 
 export default createInstance()
 
 function createInstance() {
-	const emitter = new EventEmitter()
+	const emitter = createEmitter()
 
 	return function SelectableProxy(options) {
 		const component = new Selectable(options)
 
-		const emitterListener = identifier => component.set({
-			currentlySelectableIdentifier: identifier
-		})
-
-		emitter.on('selection possibility', emitterListener)
+		const removeListener = emitter.on('selection possibility',
+			identifier => component.set({ currentlySelectableIdentifier: identifier })
+		)
 
 		component.on('selection possibility', identifier => emitter.emit('selection possibility', identifier))
-		component.on('destroy', () => emitter.removeListener('selection possibility', emitterListener))
+		component.on('destroy', removeListener)
 
 		return component
 	}
