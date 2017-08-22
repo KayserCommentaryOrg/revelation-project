@@ -1,0 +1,32 @@
+<a
+	href="asr.makePath(state, params, options)"
+	data-active="{{asr.stateIsActive(state, params)}}"
+	on:click="navigate(event)"
+	class="{{className}}"
+>
+	{{yield}}
+</a>
+
+<script>
+import stateRouter from 'lib/asr-instance'
+
+export default {
+	data() {
+		return {
+			asr: stateRouter,
+			params: {},
+			inherit: false,
+			className: '',
+		}
+	},
+	methods: {
+		navigate(event) {
+			event.preventDefault()
+
+			const { asr, state, params, inherit } = this.get()
+
+			asr.go(state, params, { inherit })
+		}
+	}
+}
+</script>

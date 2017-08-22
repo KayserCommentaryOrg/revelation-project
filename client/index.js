@@ -1,29 +1,11 @@
-import StateRouter from 'abstract-state-router'
-import sausage from 'sausage-router'
-import makeRouter from 'hash-brown-router'
-
-import makeSvelteStateRenderer from 'svelte-state-renderer'
 import mannish from 'mannish'
 
 import views from './globbed-views'
 import statefulServices from './globbed-services'
 
+import stateRouter from 'lib/asr-instance'
+
 const mediator = mannish()
-
-const renderer = makeSvelteStateRenderer({
-	methods: {
-		call: mediator.call,
-	},
-})
-
-const stateRouter = StateRouter(
-	renderer,
-	document.getElementById('target'),
-	{
-		pathPrefix: '',
-		router: makeRouter(sausage()),
-	},
-)
 
 mediator.provide('stateGo', stateRouter.go)
 mediator.provide('onStateRouter', (event, cb) => {

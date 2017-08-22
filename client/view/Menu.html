@@ -1,26 +1,25 @@
 <div class="menu">
 	{{#each menu as item}}
 		<span class="parent-menu-box">
-			<a
+			<StateLink
+				state="{{item.state}}"
 				href="{{asr.makePath(item.state)}}"
-				class="menu-item"
-				data-active="{{asr.stateIsActive(item.state)}}"
+				className="menu-item"
 			>
 				{{item.name}}
-			</a>
+			</StateLink>
 		</span>
 	{{/each}}
 </div>
 {{#if activeParentMenuItem && activeParentMenuItem.children}}
 <span class="menu child-menu">
 	{{#each activeParentMenuItem.children as child}}
-		<a
-			href="{{asr.makePath(child.state)}}"
-			class="child-item"
-			data-active="{{asr.stateIsActive(child.state)}}"
+		<StateLink
+			state="{{child.state}}"
+			className="child-item"
 		>
 			{{child.name}}
-		</a>
+		</StateLink>
 	{{/each}}
 </span>
 {{/if}}
@@ -71,6 +70,8 @@ a {
 </style>
 
 <script>
+import StateLink from 'component/StateLink.html'
+
 export default {
 	data() {
 		return {
@@ -103,5 +104,8 @@ export default {
 	computed: {
 		activeParentMenuItem: (menu, asr) => menu.find(item => asr.stateIsActive(item.state))
 	},
+	components: {
+		StateLink
+	}
 }
 </script>
