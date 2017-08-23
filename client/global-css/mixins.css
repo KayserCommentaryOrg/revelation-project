@@ -1,4 +1,4 @@
-@define-mixin content-section-padding {
+@define-mixin content-section-margin {
 	margin-left: 16px;
 	margin-right: 0;
 
