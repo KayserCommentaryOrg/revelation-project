@@ -1,4 +1,4 @@
-<div id="container">
+<div class="timeline-ui-container">
 	{{#if currentZoom.type !== 'top'}}
 		<Link parameters="{{ {} }}">
 			« Back to top level
@@ -48,6 +48,18 @@
 </div>
 
 <style>
+.timeline-ui-container {
+	border-radius: 25px;
+	max-width: 900px;
+	padding: 20px 50px;
+}
+
+@media (max-width: 900px) {
+	.timeline-ui-container {
+		padding: 5px 2px;
+	}
+}
+
 .timeline-container {
 	margin-top: 16px;
 	display: flex;

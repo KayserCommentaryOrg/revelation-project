@@ -1,6 +1,12 @@
 @import "constants";
 @import "mixins";
 
+.centered-container {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 .unselectable, [data-selectable=false] {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
