@@ -1,0 +1,13 @@
+@define-mixin content-section-padding {
+	margin-left: 16px;
+	margin-right: 0;
+
+	@media (max-width: 900px) {
+		margin-right: 16px;
+	}
+}
+
+@define-mixin header-margin {
+	margin-top: 24px;
+	margin-bottom: 24px;
+}

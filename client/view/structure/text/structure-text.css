@@ -1,0 +1,124 @@
+@import "mixins";
+@import "constants";
+
+.text-body {
+	font-size: 1.3em;
+}
+
+.chiasm-section {
+	display: flex;
+}
+
+.section-body {
+	display: flex;
+	flex-grow: 1;
+	flex-direction: column;
+}
+
+.section-line {
+	display: flex;
+	flex-direction: row;
+}
+
+.section-horizontal-units {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.section-content {
+	padding: calc($paragraphMargin / 2) 0;
+	display: flex;
+	flex-grow: 1;
+	flex-direction: row-reverse;
+	justify-content: center;
+	> p {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+.section-text {
+	@mixin content-section-padding;
+	flex-grow: 1;
+	min-width: 300px;
+	max-width: 800px;
+}
+
+.section-description {
+	@mixin content-section-padding;
+	flex-shrink: 0;
+	flex-grow: 0;
+	width: 400px;
+	color: $darkGray;
+}
+
+.header-section-description {
+	@mixin header-margin;
+}
+
+.color-bar {
+	width: 50px;
+	flex-shrink: 0;
+	text-align: center;
+	text-decoration: none;
+	font-family: Verdana, sans-serif;
+	font-size: 40px;
+	padding-top: 20px;
+}
+
+.color-bar:link {
+	color: $lightGray;
+}
+.color-bar:visited {
+	color: $lightGray;
+}
+
+[data-chiasm-selected=true] .chiasm-color-bar {
+	color: $darkGray;
+	border-radius: $colorBarRounding;
+}
+
+.septet-color-bar {
+	border-top-right-radius: $colorBarRounding;
+	border-bottom-right-radius: $colorBarRounding;
+	margin: calc($paragraphMargin / 2) 0;
+}
+
+[data-zoomed-in=true] .septet-color-bar {
+	border-radius: $colorBarRounding;
+}
+
+@media (max-width: 1100px) {
+	.section-description {
+		width: 250px;
+	}
+}
+
+@media (max-width: $smallScreen) {
+	.section-content {
+		flex-direction: column;
+	}
+	.section-line {
+		flex-direction: row-reverse;
+	}
+	.section-description {
+		width: initial;
+		flex-grow: 1;
+		padding-bottom: 8px;
+	}
+	.header-section-description {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	.section-content-description-directly-below {
+		flex-direction: column-reverse;
+	}
+	.section-content-description-directly-below .section-description {
+		margin-top: 0;
+	}
+
+	.septet-color-bar {
+		border-radius: $colorBarRounding;
+	}
+}

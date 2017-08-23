@@ -1,0 +1,58 @@
+@import "constants";
+
+.explanation-page {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+
+	.intro {
+		padding-bottom: 2em;
+		text-align: center;
+		font-size: 1.3em;
+	}
+
+	nav ol {
+		list-style-type: disc;
+		padding-left: 1rem;
+	}
+
+	ul {
+		padding-left: 1rem;
+	}
+
+	ol {
+		list-style-type: none;
+		padding: 0;
+	}
+	ol ol {
+		margin-left: 1rem;
+	}
+
+	li {
+		padding-top: .1rem;
+		padding-bottom: .1rem;
+	}
+
+	.tiny-color-bar {
+		width: .9rem;
+		height: .9rem;
+		margin-right: .25rem;
+		border-radius: .1rem;
+		display: inline-block;
+	}
+
+	[data-unhighlighted=true] {
+		animation-name: lighten;
+		animation-duration: .3s;
+		color: $barelyReadableGray;
+	}
+
+	@keyframes lighten {
+		0% {
+			color: $black;
+		}
+		100% {
+			color: $barelyReadableGray;
+		}
+	}
+}

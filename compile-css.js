@@ -10,6 +10,7 @@ const autoprefixer = require('autoprefixer')
 
 const reasonablePrecss = precss({
 	import: {
+		path: [ 'client/global-css' ],
 		prefix: '',
 	},
 })
