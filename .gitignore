@@ -3,3 +3,4 @@ public/**/*.css*
 *bundle*.js
 *bundle*.js.map
 client/globbed-*.js
+stats.html

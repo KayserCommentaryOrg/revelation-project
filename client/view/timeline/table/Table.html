@@ -54,9 +54,6 @@ const { relative: sortRange } = multiPartRangeCompare
 import routerInstance from 'svelte-querystring-router'
 const { Link, getCurrentParameters } = routerInstance
 
-import RevelationProjectMenu from 'revelation-project-menu'
-
-
 const referenceRegex = createRegex()
 
 const flatMap = (fn, ary) => ary.reduce((acc, element) => [ ...acc, ...fn(element) ], [])
@@ -154,7 +151,6 @@ export default {
 	},
 	components: {
 		Link,
-		RevelationProjectMenu,
 	}
 }
 </script>

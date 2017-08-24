@@ -3,6 +3,7 @@ import resolve from 'rollup-plugin-node-resolve'
 import babel from 'rollup-plugin-babel'
 import svelte from 'rollup-plugin-svelte'
 import json from 'rollup-plugin-json'
+import visualizer from 'rollup-plugin-visualizer'
 
 export default {
 	format: 'iife',
@@ -15,7 +16,7 @@ export default {
 		commonjs(),
 		json(),
 		resolve({
-			browser: true
+			browser: true,
 		}),
 		babel({
 			exclude: 'node_modules/**',
@@ -24,13 +25,14 @@ export default {
 				[
 					'es2015',
 					{
-						modules: false
-					}
-				]
+						modules: false,
+					},
+				],
 			],
 			plugins: [
-				'external-helpers'
-			]
+				'external-helpers',
+			],
 		}),
-	]
+		visualizer(),
+	],
 }
