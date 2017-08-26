@@ -150,11 +150,10 @@ const structureWithSermons = combineStructureWithSermons(structure, sermons)
 
 export default {
 	oncreate() {
-		const removePositionPreserver = positionPreserver(svelteQuerystringRouter)
-		this.set({ removePositionPreserver })
+		this.cleanup = positionPreserver(svelteQuerystringRouter)
 	},
 	ondestroy() {
-		this.get('removePositionPreserver')()
+		this.cleanup()
 	},
 	data() {
 		return {
