@@ -1,3 +1,5 @@
+<:Window on:keydown="keydown(event)" />
+
 <div class="intro">
 	<h1>
 		Revelation
@@ -15,7 +17,7 @@
 	</p>
 </div>
 
-<div class="text-body" data-chiasm-selected="{{!!currentChiasm}}">
+<div class="text-body" data-chiasm-selected="{{!!currentChiasm}}" ref:textContainer>
 	{{#each structuredText as section}}
 		<div
 			class="chiasm-section"
@@ -128,7 +130,7 @@ import Selectable from 'lib/selectable'
 import getSectionRange from 'lib/structure/get-section-range'
 
 import svelteQuerystringRouter from 'svelte-querystring-router'
-const { Link } = svelteQuerystringRouter
+const { navigate, Link } = svelteQuerystringRouter
 
 import structure from 'lib/structure/data/structure'
 import sermons from 'lib/structure/data/sermons'
@@ -140,10 +142,20 @@ import getChiasmColor from 'lib/structure/identifier-color'
 import combineStructureWithVerses from 'lib/structure/combine-structure-with-verses'
 import combineStructureWithSermons from 'lib/structure/combine-structure-with-sermons'
 import getParametersWithTranslationToggled from 'lib/structure/toggle-translation-parameter'
+import inViewport from 'lib/in-viewport'
+import { code_g } from 'lib/key-codes'
+import positionPreserver from 'lib/position-preserver'
 
 const structureWithSermons = combineStructureWithSermons(structure, sermons)
 
 export default {
+	oncreate() {
+		const removePositionPreserver = positionPreserver(svelteQuerystringRouter)
+		this.set({ removePositionPreserver })
+	},
+	ondestroy() {
+		this.get('removePositionPreserver')()
+	},
 	data() {
 		return {
 			querystringParameters: {}
@@ -200,6 +212,21 @@ export default {
 		introductionSermons: section => extractRangeFromSermons(section.sermons, section.introduction.range),
 		sectionSermons: section => extractRangeFromSermons(section.sermons, section.range),
 		getSectionRange,
+	},
+	methods: {
+		keydown(event) {
+			if (event.keyCode === code_g) {
+				event.preventDefault()
+				navigate({
+					parameters: this.get('toggledTranslationParameters'),
+					element: this.firstAnchorInViewport()
+				})
+			}
+		},
+		firstAnchorInViewport() {
+			return [...this.refs.textContainer.querySelectorAll('a')]
+				.find(element => element.id && inViewport(element))
+		}
 	}
 }
 </script>

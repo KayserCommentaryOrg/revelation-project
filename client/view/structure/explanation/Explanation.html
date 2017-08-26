@@ -1,9 +1,11 @@
+<:Window on:keydown="keydown(event)" />
+
 <div class="centered-container explanation-page">
 	<div class="intro">
 		<h1>Revelation's structure</h1>
 	</div>
 	<p id="tldr">
-		<strong>The really short instructions:</strong> click on the colored bars to zoom in and compare that section with its matching section, click on the grayed out bars to zoom back out, click on the little blue arrows to skip to the matching section without zooming in, and press the "g" key to toggle between Greek and English.
+		<strong>The really short instructions:</strong> click on the colored bars to zoom in and compare that section with its matching section, click on the grayed out bars to zoom back out, click on the little blue arrows to skip to the matching section without zooming in, and press the "g" key to toggle between Greek and English. {{#if easterEggActivated}}lol, not on this page, I don't have a greek translation of this explanation text.{{/if}}
 	</p>
 	<h2>
 		This page:
@@ -137,11 +139,23 @@ import InnerChiasm from './InnerChiasm.html'
 import Outline from './Outline.html'
 import Subsections from './Subsections.html'
 
+import { code_g } from 'lib/key-codes'
+
 export default {
 	components: {
 		InnerChiasm,
 		Outline,
 		Subsections,
+	},
+	methods: {
+		keydown(event) {
+			if (event.keyCode === code_g) {
+				event.preventDefault()
+				this.set({
+					easterEggActivated: true
+				})
+			}
+		}
 	}
 }
 </script>
