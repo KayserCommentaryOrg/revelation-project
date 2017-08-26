@@ -1,5 +1,5 @@
 <a
-	href="asr.makePath(state, params, options)"
+	href="{{asr.makePath(state, params, options)}}"
 	data-active="{{asr.stateIsActive(state, params)}}"
 	on:click="navigate(event)"
 	class="{{className}}"
@@ -11,6 +11,13 @@
 import stateRouter from 'lib/asr-instance'
 
 export default {
+	oncreate() {
+		this.stateChangeListener = () => this.set({ asr: stateRouter })
+		stateRouter.on('stateChangeEnd', this.stateChangeListener)
+	},
+	ondestroy() {
+		stateRouter.removeListener('stateChangeEnd', this.stateChangeListener)
+	},
 	data() {
 		return {
 			asr: stateRouter,
