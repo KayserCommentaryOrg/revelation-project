@@ -1,3 +1,5 @@
+<:Window ref:window on:resize="drawOnNextFrame()" on:scroll="drawOnNextFrame()" />
+
 <canvas
 	ref:canvas
 	width="{{width}}"
@@ -13,8 +15,6 @@ canvas {
 </style>
 
 <script>
-import motionEventEmitter from 'lib/motion-event.js'
-
 const greatest = (a, b, property) => a[property] > b[property] ? a : b
 const least = (a, b, property) => a[property] > b[property] ? b : a
 
@@ -26,21 +26,6 @@ export default {
 	},
 	oncreate() {
 		this.drawOnNextFrame()
-
-		const listener = () => this.drawOnNextFrame()
-
-		this.observe('from', listener)
-		this.observe('to', listener)
-		this.observe('color', listener)
-
-		const removeListener = motionEventEmitter.on('update', listener)
-
-		this.set({
-			removeListener
-		})
-	},
-	ondestroy() {
-		this.get('removeListener')()
 	},
 	computed: {
 		leftmostPoint: (from, to) => least(from, to, 'x'),
@@ -65,7 +50,7 @@ export default {
 			})
 		},
 		draw() {
-			if (!this.refs.canvas || this._destroyed) {
+			if (!this.refs.canvas) {
 				return
 			}
 

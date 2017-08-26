@@ -31,11 +31,26 @@ const applyChanges = debounce(() => {
 export default function EfficientVisibilityWrapper(options) {
 	const component = new EfficientVisibility(options)
 
+	let notVisibleChange = null
+
+	component.observe('notVisibleChange', change => {
+		if (change.parent) {
+			notVisibleChange = change
+		}
+	})
+
 	component.on('change', change => {
 		if (change.parent) {
 			changeTracker.add(component, change)
+			applyChanges()
 		}
-		applyChanges()
+	})
+
+	component.on('destroy', () => {
+		if (notVisibleChange) {
+			changeTracker.add(component, notVisibleChange)
+			applyChanges()
+		}
 	})
 
 	return component

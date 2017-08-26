@@ -1,51 +1,44 @@
+<:Window on:resize="updateVisibility()" on:scroll="updateVisibility()" />
+
 <div ref:element>
 	{{yield}}
 </div>
 
 <script>
-import globalUpdateEmitter from 'lib/motion-event.js'
 import nextTick from 'iso-next-tick'
 
 const average = (a, b) => (a + b) / 2
 
 export default {
 	oncreate() {
-		const removeListener = globalUpdateEmitter.on('update', () => this.updateVisibility())
-
-		this.set({
-			removeListener
-		})
-
 		try {
 			this.updateVisibility()
 		} catch (e) {
 			console.error('Error in oncreate for some reason', e)
 		}
 
-
 		this.observe('updateOnChange', () => nextTick(() => this.updateVisibility()))
 	},
-	ondestroy() {
-		this.get('removeListener')()
-		this.setNotVisible()
+	computed: {
+		notVisibleChange: (parent, property, key) => ({
+			parent: parent,
+			parentProperty: property,
+			key: key,
+			visible: false,
+			top: null,
+			bottom: null,
+			left: null,
+			right: null,
+			verticalCenter: null,
+			topRatio: null,
+			bottomRatio: null,
+		})
 	},
 	methods: {
 		setNotVisible() {
 			if (this.get('visible')) {
 				this.set({ visible: false })
-				this.fire('change', {
-					parent: this.get('parent'),
-					parentProperty: this.get('property'),
-					key: this.get('key'),
-					visible: false,
-					top: null,
-					bottom: null,
-					left: null,
-					right: null,
-					verticalCenter: null,
-					topRatio: null,
-					bottomRatio: null,
-				})
+				this.fire('change', this.get('notVisibleChange'))
 			}
 		},
 		updateVisibility() {
