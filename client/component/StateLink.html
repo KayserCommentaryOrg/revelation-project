@@ -10,6 +10,10 @@
 <script>
 import stateRouter from 'lib/asr-instance'
 
+// stolen with love from React Router https://github.com/ReactTraining/react-router/blob/59a4fbc184f3a3cf4c25ee39a7e97f72efed7849/packages/react-router-dom/modules/Link.js#L45-L48
+const isModifiedEvent = event => !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey)
+const isRightClick = event => event.button === 0
+
 export default {
 	oncreate() {
 		this.stateChangeListener = () => this.set({ asr: stateRouter })
@@ -28,11 +32,13 @@ export default {
 	},
 	methods: {
 		navigate(event) {
-			event.preventDefault()
+			if (!isModifiedEvent(event) && !isRightClick(event)) {
+				event.preventDefault()
 
-			const { asr, state, params, inherit } = this.get()
+				const { asr, state, params, inherit } = this.get()
 
-			asr.go(state, params, { inherit })
+				asr.go(state, params, { inherit })
+			}
 		}
 	}
 }
