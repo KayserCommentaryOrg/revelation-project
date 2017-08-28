@@ -38,4 +38,4 @@ jobs:
       - run: npm test
 
       - deploy:
-          command:
+          command: echo "eventually, this will be a real deploy step"
