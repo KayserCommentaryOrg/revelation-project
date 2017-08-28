@@ -10,9 +10,7 @@
 <script>
 import stateRouter from 'lib/asr-instance'
 
-// stolen with love from React Router https://github.com/ReactTraining/react-router/blob/59a4fbc184f3a3cf4c25ee39a7e97f72efed7849/packages/react-router-dom/modules/Link.js#L45-L48
-const isModifiedEvent = event => !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey)
-const isRightClick = event => event.button === 0
+import shouldInterceptClick from 'click-should-be-intercepted-for-navigation'
 
 export default {
 	oncreate() {
@@ -32,7 +30,7 @@ export default {
 	},
 	methods: {
 		navigate(event) {
-			if (!isModifiedEvent(event) && !isRightClick(event)) {
+			if (shouldInterceptClick(event)) {
 				event.preventDefault()
 
 				const { asr, state, params, inherit } = this.get()
