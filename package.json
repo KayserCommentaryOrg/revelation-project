@@ -12,7 +12,7 @@
     "glob": "npm run glob-services && npm run glob-views",
     "glob-services": "glob-module-file --pattern=\"client/service/**/*.js\" --format=es --pathPrefix=../ --outputPath=client/globbed-services.js",
     "glob-views": "glob-module-file --pattern=\"client/view/**/*.js\" --format=es --pathPrefix=../ --outputPath=client/globbed-views.js",
-    "create-symlinks": "rm -r client/node_modules/ && mkdir client/node_modules/ && pushd client/node_modules && ln -s ../component/ component && ln -s ../lib/ lib && popd",
+    "create-symlinks": "mkdir -p client/node_modules/ && rm -r client/node_modules/ && mkdir client/node_modules/ && pushd client/node_modules && ../../symlink.js ../component/ component && ../../symlink.js ../lib/ lib && popd",
     "build-css": "node compile-css.js",
     "watch-css": "node compile-css.js watch"
   },
