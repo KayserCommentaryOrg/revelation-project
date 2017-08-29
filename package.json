@@ -15,7 +15,7 @@
     "create-symlinks": "mkdir -p client/node_modules/ && rm -r client/node_modules/ && mkdir client/node_modules/ && cd client/node_modules && ../../symlink.js ../component/ component && ../../symlink.js ../lib/ lib && cd ../../",
     "build-css": "node compile-css.js",
     "watch-css": "node compile-css.js watch",
-    "deploy": "scp -r ./public/* revelation_bb@revelation.biblicalblueprints.org:/home/revelation_bb/revelation.biblicalblueprints.org"
+    "deploy": "scp -r ./public/. revelation_bb@revelation.biblicalblueprints.org:/home/revelation_bb/revelation.biblicalblueprints.org"
   },
   "repository": {
     "type": "git",
