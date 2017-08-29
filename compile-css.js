@@ -1,6 +1,7 @@
 const pify = require('pify')
 const path = require('path')
 const { readFile, writeFile } = pify(require('fs'))
+const { sync: makeDirSync } = require('make-dir')
 
 const globby = require('globby')
 
@@ -25,6 +26,8 @@ main(process.argv[2] === 'watch').catch(e => {
 async function main(debug) {
 	const cssGlob = './client/view/**/*.css'
 	const output = './public/static/style.css'
+
+	makeDirSync(path.dirname(output))
 
 	await build(cssGlob, output)
 
