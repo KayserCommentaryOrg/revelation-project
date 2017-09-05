@@ -1,0 +1,2533 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"stateCha",
+				"stateChangeListener"
+			],
+			[
+				"secon",
+				"secondFiredTimes"
+			],
+			[
+				"second",
+				"secondFiredTimes"
+			],
+			[
+				"Revel",
+				"RevelationProjectMenu"
+			],
+			[
+				"slg",
+				"slugToLeft"
+			],
+			[
+				"hoverCol",
+				"hoverColor"
+			],
+			[
+				"slugToRi",
+				"slugToRightInternal"
+			],
+			[
+				"hover",
+				"hoveredEvent"
+			],
+			[
+				"dista",
+				"distanceA"
+			],
+			[
+				"indentLe",
+				"indentLevel"
+			],
+			[
+				"visibleEv",
+				"visibleEventSlugs"
+			],
+			[
+				"start",
+				"startingColor"
+			],
+			[
+				"indent",
+				"indentLevel"
+			],
+			[
+				"add",
+				"addColorToEvents"
+			],
+			[
+				"timeli",
+				"timelineData"
+			],
+			[
+				"cutOff",
+				"cutOffAtStart"
+			],
+			[
+				"click",
+				"clickable"
+			],
+			[
+				"cos",
+				"console"
+			],
+			[
+				"origin",
+				"originVisits"
+			],
+			[
+				"relevant",
+				"relevantEventsWithAxis"
+			],
+			[
+				"timel",
+				"timelineData"
+			],
+			[
+				"re",
+				"references"
+			],
+			[
+				"refe",
+				"reference"
+			],
+			[
+				"trans",
+				"transitionTo"
+			],
+			[
+				"hove",
+				"hoveredEvent"
+			],
+			[
+				"pro",
+				"property"
+			],
+			[
+				"time",
+				"timelineData"
+			],
+			[
+				"provid",
+				"providerChannels"
+			],
+			[
+				"out",
+				"outputChapter"
+			],
+			[
+				"mat",
+				"matchingBrackets"
+			],
+			[
+				"heb",
+				"hebrewAndSurrounding"
+			],
+			[
+				"footn",
+				"footnoteId"
+			],
+			[
+				"reference",
+				"references"
+			],
+			[
+				"referenc",
+				"referenceIdentifier"
+			],
+			[
+				"map",
+				"pMap"
+			],
+			[
+				"origina",
+				"originalIdentifierToNewIdentifier"
+			],
+			[
+				"original",
+				"originalFootnoteNumber"
+			],
+			[
+				"ori",
+				"originalAnchor"
+			],
+			[
+				"orig",
+				"originalAnchorToNewAnchor"
+			],
+			[
+				"chapt",
+				"chapterIdentifierRegex"
+			],
+			[
+				"diag",
+				"diagnostic"
+			],
+			[
+				"diagno",
+				"diagnosticOutput"
+			],
+			[
+				"asse",
+				"assertWrapper"
+			],
+			[
+				"as",
+				"assertWrapper"
+			],
+			[
+				"isVali",
+				"isValidTap"
+			],
+			[
+				"parseInt",
+				"parseIntegerRange"
+			],
+			[
+				"parseIn",
+				"parseIntegerRange"
+			],
+			[
+				"socket",
+				"socketioclient"
+			],
+			[
+				"http",
+				"httpServer"
+			],
+			[
+				"html",
+				"htmlWithMenus"
+			],
+			[
+				"filepa",
+				"filepaths"
+			],
+			[
+				"possi",
+				"possibleSelection"
+			],
+			[
+				"compon",
+				"componentListener"
+			],
+			[
+				"listene",
+				"listenerB"
+			],
+			[
+				"emi",
+				"emitterA"
+			],
+			[
+				"transfo",
+				"transformTableMatches"
+			],
+			[
+				"tran",
+				"transformTableMatches"
+			],
+			[
+				"repl",
+				"replace"
+			],
+			[
+				"string",
+				"stringWithFootnoteNumbers"
+			],
+			[
+				"transf",
+				"transformForType"
+			],
+			[
+				"m",
+				"matchAll"
+			],
+			[
+				"footnote",
+				"footnoteIds"
+			],
+			[
+				"guara",
+				"guaranteeNoTopLevelForks"
+			],
+			[
+				"regexS",
+				"regexString"
+			],
+			[
+				"nor",
+				"normalize"
+			],
+			[
+				"norma",
+				"normalizeAndCombine"
+			],
+			[
+				"char",
+				"character"
+			],
+			[
+				"normali",
+				"normalizeRegexToString"
+			],
+			[
+				"captu",
+				"capture"
+			],
+			[
+				"fixer",
+				"fixerFunction"
+			],
+			[
+				"replace",
+				"replacerFunction"
+			],
+			[
+				"repla",
+				"replacerFunction"
+			],
+			[
+				"content",
+				"contentsWithFixedImages"
+			],
+			[
+				"glob",
+				"globPattern"
+			],
+			[
+				"manuscr",
+				"manuscriptDirectory"
+			],
+			[
+				"manu",
+				"manuscriptDirectory"
+			],
+			[
+				"path",
+				"joinPath"
+			],
+			[
+				"KayserCom",
+				"KayserCommentaryOrg"
+			],
+			[
+				"join",
+				"joinFootnoteToChapters"
+			],
+			[
+				"outpu",
+				"outputFolder"
+			],
+			[
+				"header",
+				"headerChunk"
+			],
+			[
+				"outp",
+				"outputFolder"
+			],
+			[
+				"extra",
+				"extracdMediaArg"
+			],
+			[
+				"outf",
+				"outputFolder"
+			],
+			[
+				"filename",
+				"filenameWithExtension"
+			],
+			[
+				"cn",
+				"console"
+			],
+			[
+				"modi",
+				"modifiedInit"
+			],
+			[
+				"allCol",
+				"allColumnRangeQueries"
+			],
+			[
+				"columnNa",
+				"columnNames"
+			],
+			[
+				"colu",
+				"column"
+			],
+			[
+				"receiptEm",
+				"receiptEmailData"
+			],
+			[
+				"set404",
+				"set404Context"
+			],
+			[
+				"no40",
+				"no404Context"
+			],
+			[
+				"createRou",
+				"createRouteMatcher"
+			],
+			[
+				"methods",
+				"methodsToRouteMaps"
+			],
+			[
+				"subscri",
+				"subscriptionDescription"
+			],
+			[
+				"stripe",
+				"STRIPE_PLAN_ID"
+			],
+			[
+				"de",
+				"donodeify"
+			],
+			[
+				"create",
+				"createRegex"
+			],
+			[
+				"value",
+				"valueOr"
+			],
+			[
+				"valueOr",
+				"valueOrNull"
+			],
+			[
+				"endRa",
+				"endRangeValue"
+			],
+			[
+				"END_FIRST",
+				"END_FIRST_VALUE"
+			],
+			[
+				"END_SECOND",
+				"END_SECOND_VALUE"
+			],
+			[
+				"valueO",
+				"valueOrNull"
+			],
+			[
+				"STA",
+				"START_VERSE"
+			],
+			[
+				"expe",
+				"expected"
+			],
+			[
+				"hasR",
+				"hasReferenceWithoutVerse"
+			],
+			[
+				"hasRef",
+				"hasReferenceWithVerse"
+			],
+			[
+				"hasRe",
+				"hasReferenceWithVerse"
+			],
+			[
+				"START",
+				"START_VERSE"
+			],
+			[
+				"dateTo",
+				"dateToIdAndTitle"
+			],
+			[
+				"ln",
+				"linkIdRegex"
+			],
+			[
+				"Li",
+				"LineDescription"
+			],
+			[
+				"curren",
+				"currentlyHoveredIdentifier"
+			],
+			[
+				"Hover",
+				"HoverDetector"
+			],
+			[
+				"highligh",
+				"highlightedRange"
+			],
+			[
+				"highli",
+				"highlightedRange"
+			],
+			[
+				"guarante",
+				"guaranteeRangeSection"
+			],
+			[
+				"highil",
+				"highlightedRange"
+			],
+			[
+				"extract",
+				"extractRangeFromSermons"
+			],
+			[
+				"struc",
+				"structure"
+			],
+			[
+				"revel",
+				"revelationComponent"
+			],
+			[
+				"addA",
+				"addDays"
+			],
+			[
+				"paragr",
+				"paragraphBreak"
+			],
+			[
+				"curre",
+				"currentParagraphBreak"
+			],
+			[
+				"para",
+				"paragraphBreakVerses"
+			],
+			[
+				"struct",
+				"structuredText"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "client/view/timeline/visual/EventDescriptions.html",
+			"settings":
+			{
+				"buffer_size": 2087,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/view/timeline/visual/CurvyLine.html",
+			"settings":
+			{
+				"buffer_size": 2029,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/lib/efficient-visibility/EfficientVisibility.html",
+			"settings":
+			{
+				"buffer_size": 1905,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 79 files for \"ondestroy\" (regex)\n\n/Users/josh/code/revelation-project/client/view/structure/text/Text.html:\n  154  \t\tthis.set({ removePositionPreserver })\n  155  \t},\n  156: \tondestroy() {\n  157  \t\tthis.get('removePositionPreserver')()\n  158  \t},\n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 275,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "client/view/structure/text/Text.html",
+			"settings":
+			{
+				"buffer_size": 7024,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/view/Menu.html",
+			"settings":
+			{
+				"buffer_size": 1866,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/component/StateLink.html",
+			"settings":
+			{
+				"buffer_size": 1149,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "rollup.config.js",
+			"settings":
+			{
+				"buffer_size": 729,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 67.0,
+		"last_filter": "javascr",
+		"selected_items":
+		[
+			[
+				"javascr",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"word wr",
+				"Word Wrap: Toggle"
+			],
+			[
+				"markdo",
+				"Set Syntax: Markdown"
+			],
+			[
+				"settings",
+				"Preferences: Settings"
+			],
+			[
+				"disable pa",
+				"Package Control: Disable Package"
+			],
+			[
+				"json",
+				"Set Syntax: JSON"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"install pa",
+				"Package Control: Install Package"
+			],
+			[
+				"list pack",
+				"Package Control: List Packages"
+			],
+			[
+				"sublimelinter lint mod",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"enable pa",
+				"Package Control: Enable Package"
+			],
+			[
+				"plain text",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"package list",
+				"Package Control: List Packages"
+			],
+			[
+				"eslint format",
+				"ESLint Formatter: Format this file"
+			],
+			[
+				"sublimelinter",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"lint",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"enable pack",
+				"Package Control: Enable Package"
+			],
+			[
+				"sublimelint",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"disable pack",
+				"Package Control: Disable Package"
+			],
+			[
+				"convert space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"convert tab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"indentation",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"tab",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"setting",
+				"Preferences: Settings"
+			],
+			[
+				"package control",
+				"Package Control: Discover Packages"
+			],
+			[
+				"markd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"htmlpre",
+				"HTMLPrettify"
+			],
+			[
+				"eslint form",
+				"ESLint Formatter: Format this file"
+			],
+			[
+				"xml",
+				"Set Syntax: XML"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"sql",
+				"Set Syntax: SQL"
+			],
+			[
+				"htmlpret",
+				"HTMLPrettify"
+			],
+			[
+				"htmlbe",
+				"HTMLBeautify"
+			],
+			[
+				"project",
+				"Project: Close"
+			],
+			[
+				"list packa",
+				"Package Control: List Packages"
+			],
+			[
+				"bash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"remove pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"markdown",
+				"Set Syntax: Markdown"
+			],
+			[
+				"javscr",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javascri",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javsacr",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"package disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"disable ",
+				"Package Control: Disable Package"
+			],
+			[
+				"disab",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"less",
+				"Set Syntax: LESS"
+			],
+			[
+				"toggle lint",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"disable lin",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"sublime lint mod",
+				"SublimeLinter: Choose Lint Mode"
+			],
+			[
+				"sublimelint setting",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"sublimelint sett",
+				"Preferences: SublimeLinter Settings – Default"
+			],
+			[
+				"remvoe pa",
+				"Package Control: Remove Package"
+			],
+			[
+				"jshin",
+				"JSHint"
+			],
+			[
+				"jshint",
+				"JSHint"
+			],
+			[
+				"package cont disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"refresh",
+				"Project: Refresh Folders"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"java",
+				"Set Syntax: Java"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"enable lint",
+				"SublimeLinter: Enable Linter"
+			],
+			[
+				"lint this",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"install pack",
+				"Package Control: Install Package"
+			],
+			[
+				"htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"plain",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"text",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"convert ta",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"disable lint",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"lint ",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"lint di",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"lint tog",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"lint togg",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"convert to ta",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"push",
+				"Git: Push"
+			],
+			[
+				"quick com",
+				"Git: Quick Commit"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"git commi",
+				"Git: Commit"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"git com",
+				"Git: Quick Commit"
+			],
+			[
+				"commit",
+				"Git: Commit"
+			],
+			[
+				"git dif",
+				"Git: Diff All Files"
+			],
+			[
+				"quick",
+				"Git: Quick Commit"
+			],
+			[
+				"git di",
+				"Git: Diff All Files"
+			],
+			[
+				"toggle lin",
+				"SublimeLinter: Toggle Linter"
+			],
+			[
+				"enable lin",
+				"SublimeLinter: Enable Linter"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"plain te",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"disable",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"lint dis",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"javsc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"linter",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"markdown ext",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"markdown ",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"markdown ex",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"package install",
+				"Package Control: Install Package"
+			],
+			[
+				"linter disa",
+				"SublimeLinter: Disable Linter"
+			],
+			[
+				"linter enable",
+				"SublimeLinter: Enable Linter"
+			],
+			[
+				"syntax c",
+				"Set Syntax: C"
+			],
+			[
+				"spaces",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"convert to",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"wrap to",
+				"Word Wrap: Toggle"
+			],
+			[
+				"javac",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"linter view",
+				"SublimeLinter: Lint This View"
+			],
+			[
+				"lint enab",
+				"SublimeLinter: Enable Linting"
+			],
+			[
+				"lint enable",
+				"SublimeLinter: Enable Linter"
+			],
+			[
+				"linter enab",
+				"SublimeLinter: Enable Linter"
+			],
+			[
+				"install p",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax C",
+				"Set Syntax: C"
+			]
+		],
+		"width": 692.0
+	},
+	"console":
+	{
+		"height": 352.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/josh/code/revelation-project",
+		"/Users/josh/code/revelation-project/client",
+		"/Users/josh/code/revelation-project/client/global-css",
+		"/Users/josh/code/revelation-project/client/lib",
+		"/Users/josh/code/revelation-project/client/lib/structure",
+		"/Users/josh/code/revelation-project/client/view",
+		"/Users/josh/code/revelation-project/client/view/timeline",
+		"/Users/josh/code/revelation-project/client/view/timeline/visual"
+	],
+	"file_history":
+	[
+		"/Users/josh/code/KayserCommentary/.gitignore",
+		"/Users/josh/code/revelation-project/client/lib/efficient-visibility/index.js",
+		"/Users/josh/code/revelation-project/client/lib/motion-event.js",
+		"/Users/josh/code/revelation-project/client/lib/keyboard-shortcut.js",
+		"/Users/josh/code/revelation-project/deploy-from-repo.js",
+		"/Users/josh/code/state-router-example/node_modules/svelte-state-renderer/index.js",
+		"/Users/josh/code/svelte-state-renderer/index.js",
+		"/Users/josh/code/state-router-example/implementations/svelte/app/topics/tasks/tasks.js",
+		"/Users/josh/code/state-router-example/implementations/svelte/app/topics/topics.js",
+		"/Users/josh/code/revelation-project/client/global-css/mixins.css",
+		"/Users/josh/code/revelation-project/client/view/structure/text/structure-text.css",
+		"/Users/josh/code/revelation-project/rollup.config.js",
+		"/Users/josh/code/state-router-example/package.json",
+		"/Users/josh/code/svelte-state-renderer/.gitignore",
+		"/Users/josh/code/state-router-example/implementations/svelte/app/topics/tasks/tasks.html",
+		"/Users/josh/code/state-router-example/implementations/svelte/app/topics/topics.html",
+		"/Users/josh/code/revelation-project/client/lib/position-preserver.js",
+		"/Users/josh/code/revelation-project/client/lib/structure/keypress-watcher.js",
+		"/Users/josh/code/revelation-project/.gitignore",
+		"/Users/josh/code/revelation-project/client/index.js",
+		"/Users/josh/code/revelation-project/client/view/Main.html",
+		"/Users/josh/code/revelation-project/client/view/timeline/visual/Visual.html",
+		"/Users/josh/code/revelation-project/client/view/timeline/table/Table.html",
+		"/Users/josh/code/revelation-project/client/Index.html",
+		"/Users/josh/code/revelation-project/client/view/structure/text/Text.html",
+		"/Users/josh/code/revelation-project/client/view/structure/explanation/Explanation.html",
+		"/Users/josh/code/revelation-project/client/view/style.css",
+		"/Users/josh/code/revelation-project/client/view/structure/explanation/structure-explanation.css",
+		"/Users/josh/code/revelation-project/client/view/home/Home.html",
+		"/Users/josh/code/revelation-project/client/lib/selectable/index.js",
+		"/Users/josh/code/chromatism/.npmignore",
+		"/Users/josh/code/chromatism/.gitignore",
+		"/Users/josh/code/revelation-visualized/client/mixins.css",
+		"/Users/josh/code/revelation-project/client/view/timeline/table/timeline-table.css",
+		"/Users/josh/code/revelation-project/client/view/timeline/timeline.css",
+		"/Users/josh/code/revelation-timeline/public/style.css",
+		"/Users/josh/code/revelation-project/client/view/button.css",
+		"/Users/josh/code/revelation-project/client/view/pure-tables-min.css",
+		"/Users/josh/code/revelation-timeline/public/pure-tables-min.css",
+		"/Users/josh/code/revelation-timeline/public/button.css",
+		"/Users/josh/code/revelation-timeline/public/shared-style.css",
+		"/Users/josh/code/revelation-project/public/static/style.css",
+		"/Users/josh/code/revelation-visualized/client/shared-style.css",
+		"/Users/josh/code/revelation-project/compile-css.js",
+		"/Users/josh/code/revelation-visualized/client/index-style.css",
+		"/Users/josh/code/revelation-project/client/global-css/constants.css",
+		"/Users/josh/code/revelation-visualized/client/constants.css",
+		"/Users/josh/code/revelation-visualized/client/explanation-index.js",
+		"/Users/josh/code/revelation-project/package.json",
+		"/Users/josh/code/revelation-project/client/lib/debounce-to-animation-frame.js",
+		"/Users/josh/code/revelation-project/client/lib/structure/sermon-hover-instance.js",
+		"/Users/josh/code/revelation-project/client/lib/hover/index.js",
+		"/Users/josh/code/revelation-project/public/index.html",
+		"/Users/josh/code/revelation-visualized/compile-css.js",
+		"/Users/josh/code/revelation-project/client/lib/in-viewport.js",
+		"/Users/josh/code/revelation-project/client/lib/efficient-visibility/EfficientVisibility.html",
+		"/Users/josh/code/revelation-project/client/lib/scroll-events.js",
+		"/Users/josh/code/revelation-project/client/view/timeline/visual/CurvyLine.html",
+		"/Users/josh/code/revelation-project/client/lib/structure/verse-hover-instance.js",
+		"/Users/josh/code/revelation-project/client/view/timeline/visual/visual.js",
+		"/Users/josh/code/revelation-project/client/view/Menu.html",
+		"/Users/josh/code/revelation-project/client/component/StateLink.html",
+		"/Users/josh/code/revelation-project/client/lib/asr-instance.js",
+		"/Users/josh/code/revelation-project/client/view/timeline/table/table.js",
+		"/Users/josh/code/revelation-project/client/component/ClickHandler.html",
+		"/Users/josh/code/revelation-project/client/service/asr-click.js",
+		"/Users/josh/code/revelation-project/client/view/structure/text/text.js",
+		"/Users/josh/code/revelation-project/client/view/main.js",
+		"/Users/josh/code/revelation-project/revelation-project.sublime-project",
+		"/Users/josh/code/revelation-project/client/globbed-views.js",
+		"/Users/josh/code/revelation-project/client/view/timeline/visual/EventDescriptions.html",
+		"/Users/josh/code/revelation-project/client/view/timeline/visual/Events.html",
+		"/Users/josh/code/revelation-project/client/view/structure/explanation/explanation.js",
+		"/Users/josh/code/revelation-project/client/view/timeline/timeline.js",
+		"/Users/josh/code/revelation-project/client/view/structure/structure.js",
+		"/Users/josh/code/revelation-project/client/view/structure/text/ParagraphDescription.html",
+		"/Users/josh/code/revelation-project/client/view/structure/explanation/Subsections.html",
+		"/Users/josh/code/revelation-project/client/view/structure/explanation/InnerChiasm.html",
+		"/Users/josh/code/revelation-project/client/view/structure/text/Paragraphs.html",
+		"/Users/josh/code/revelation-project/client/lib/structure/identifier-color.js",
+		"/Users/josh/code/revelation-project/client/lib/structure/guarantee-range-section.js",
+		"/Users/josh/code/revelation-project/client/lib/selectable/Selectable.html",
+		"/Users/josh/code/revelation-project/client/view/structure/text/ColorBarAndContent.html",
+		"/Users/josh/code/revelation-visualized/client/lib/selectable/index.js",
+		"/Users/josh/code/revelation-project/client/view/structure/explanation/Outline.html",
+		"/Users/josh/code/revelation-project/client/component/VerseRange.html",
+		"/Users/josh/code/revelation-project/client/view/structure/text/ChiasmSubsections.html",
+		"/Users/josh/code/revelation-project/client/view/structure/text/Title.html",
+		"/Users/josh/code/revelation-project/client/view/structure/text/VerseRange.html",
+		"/Users/josh/code/revelation-project/client/lib/structure/data/structure.js",
+		"/Users/josh/code/revelation-project/.sublime-project",
+		"/Users/josh/code/revelation-project/client/lib/structure/data/sermons.js",
+		"/Users/josh/code/revelation-project/client/lib/timeline/create-timeline-axis.js",
+		"/Users/josh/code/revelation-timeline/package.json",
+		"/Users/josh/code/revelation-project/client/view/timeline/visual/efficient-visibility-wrapper.js",
+		"/Users/josh/code/revelation-project/client/lib/timeline/efficient-visibility-wrapper.js",
+		"/Users/josh/code/revelation-project/client/lib/structure/combine-structure-with-verses.js",
+		"/Users/josh/code/revelation-project/client/lib/structure/combine-structure-with-sermons.js",
+		"/Users/josh/code/revelation-timeline/client/EfficientVisibility.html",
+		"/Users/josh/code/revelation-project/client/view/timeline/visual/EfficientVisibility.html",
+		"/Users/josh/code/revelation-visualized/public/explanation.html",
+		"/Users/josh/code/revelation-visualized/client/index.js",
+		"/Users/josh/code/revelation-visualized/client/component/Revelation.html",
+		"/Users/josh/code/revelation-visualized/public/explanation-style.css",
+		"/Users/josh/code/revelation-project/public/static/explanation-style.css",
+		"/Users/josh/code/revelation-timeline/table-client/TableMain.html",
+		"/Users/josh/code/revelation-timeline/table-client/index.js",
+		"/Users/josh/code/.eslintrc-fixable.js",
+		"/Users/josh/code/revelation-project/public/static/shared-style.css",
+		"/Users/josh/code/revelation-project-menu/Menu.html",
+		"/Users/josh/code/better-emitter/package.json",
+		"/Users/josh/code/better-emitter/readme.md",
+		"/Users/josh/code/better-emitter/index.js",
+		"/Users/josh/code/svelte-querystring-router/index.js",
+		"/Users/josh/code/svelte-querystring-router/create-instance.js",
+		"/Users/josh/code/svelte-querystring-router/hash.js",
+		"/private/etc/apache2/httpd.conf",
+		"/Users/josh/code/revelation-project/readme.md",
+		"/Users/josh/code/revelation-project/public/.htaccess",
+		"/Users/josh/code/svelte-querystring-router/readme.md",
+		"/Users/josh/code/svelte-querystring-router/link.js",
+		"/Users/josh/code/revelation-project/client/lib/timeline/Main.html",
+		"/Users/josh/code/revelation-project/client/lib/timeline/index.js",
+		"/Users/josh/code/better-emitter/test.js",
+		"/Users/josh/code/better-emitter/build.js",
+		"/Users/josh/code/better-emitter/.gitignore",
+		"/Users/josh/code/revelation-project/client/lib/pipe.js",
+		"/Users/josh/code/revelation-timeline/client/motion-event.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/josh/code/revelation-project/client/",
+			"/Users/josh/code/revelation-project/client/view/",
+			"/Users/josh/code/revelation-project/client/",
+			"/Users/josh/code/revelation-project/client/view/timeline",
+			"/Users/josh/code/revelation-project/client",
+			"/Users/josh/code/revelation-project/",
+			"/Users/josh/code/revelation-project/client",
+			"/Users/josh/code/revelation-project/client,*.html",
+			"/Users/josh/code/revelation-project/client",
+			"/Users/josh/code/revelation-project",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl",
+			"/Users/josh/,.sublime-project",
+			"/Users/josh/code/KayserCommentary/Markdown/",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/CanonOfScripture",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/CanonOfScripture",
+			"/Users/josh/code/,package.json",
+			"/Users/josh/code/revelation-timeline/client",
+			"/Users/josh/code/revelation-visualized/client",
+			"/Users/josh/code/revelation-visualized",
+			"/Users/josh/code/flash-card-webapp",
+			"/Users/josh/code/covenantedchristianvoters.com",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books",
+			"/Users/josh/code/KayserCommentary",
+			"/Users/josh/code/revelation-timeline/client,-*bundle.*,-*build.js",
+			"/Users/josh/code/revelation-visualized/client,-*bundle.*,-*build.js",
+			"/Users/josh/code/revelation-timeline/client,-*bundle.*,-*build.js",
+			"/Users/josh/code/revelation-visualized/client,-*bundle.*,-*build.js",
+			"/Users/josh/code/revelation-visualized,-*bundle.*,-*build.js",
+			"/Users/josh/code/revelation-visualized,-*bundle.*",
+			"/Users/josh/code/revelation-timeline,-*bundle.*",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/CanonOfScriptureVol1",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/CanonOfScripture",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books",
+			"/Users/josh/code/revelation-timeline,-*bundle.*",
+			"/Users/josh/code/revelation-timeline,-bundle.*",
+			"/Users/josh/code/revelation-timeline",
+			"/Users/josh/code/KayserCommentary/Markdown",
+			"/Users/josh/code/revelation-timeline/,-bundle*.js*",
+			"/Users/josh/code/revelation-timeline/",
+			"/Users/josh/code/revelation-timeline/timeline-data",
+			"/Users/josh/code/revelation-timeline",
+			"/Users/josh/code/way-over-the-top",
+			"/Users/josh/code/revelation-visualized",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/,*.md,-book.md",
+			"/Users/josh/code/revelation-timeline,*.js",
+			"/Users/josh/code/ava,*.js",
+			"/Users/josh/code/ava",
+			"/Users/josh/code/tap-dealio/test",
+			"/Users/josh/code/revelation-visualized",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/,*.md,-book.md",
+			"/Users/josh/code/rollup-socketio-test",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/,*.md,-book.md",
+			"/Users/josh/code/revelation-visualized",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/,*.js",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl,*.md,-book.md",
+			"/Users/josh/code/abstract-state-router/lib",
+			"/Users/josh/code/abstract-state-router",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/ConceptionControl,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/",
+			"/Users/josh/code/KayserCommentaryDeployer/",
+			"/Users/josh/code/KayserCommentary/",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/DeathPenalty,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/,*.md,-book.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/,*.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books,*.md",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl",
+			"/Users/josh/code/revelation-visualized/client",
+			"/Users/josh/code/revelation-visualized/client,*.html",
+			"/Users/josh/code/revelation-visualized/client",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/",
+			"/Users/josh/code/KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl",
+			"/Users/josh/code/state-router-example",
+			"",
+			"~/code/,*.js",
+			"~/code/KayserCommentary/Markdown",
+			"~/code/KayserCommentaryDeployer",
+			"~/code/KayserCommentary",
+			"~/code/abstract-state-router/test",
+			"~/code/abstract-state-router/lib",
+			"~/code/abstract-state-router",
+			"~/code/hash-brown-router",
+			"~/code/abstract-state-router",
+			"~/code/stripe-donation",
+			"~/code/,package.json",
+			"~/code/,.travis.yml",
+			"~/code/revelation-visualized/client",
+			"~/code/revelation-visualized/",
+			"~/code/revelation-visualized/client",
+			"*.html",
+			"",
+			"/Users/josh/code/majority-text-family-35-revelation/",
+			"/Users/josh/code/,*.js",
+			"/Users/josh/code/",
+			"/Users/josh/code/revelation-visualized",
+			"/Users/josh/code/pickering-majority-text-revelation",
+			"",
+			"/Users/josh/code/revelation-visualized",
+			"/Users/josh/code/elm-core",
+			"~/code/inventory-pos/server",
+			"~/code/inventory-pos/",
+			"~/code/inventory-pos/server",
+			"~/code/inventory-pos",
+			"~/code/abstract-state-router",
+			"~/code/inventory-pos/client",
+			"~/code/inventory-pos/server",
+			"~/code/abstract-state-router",
+			"~/code/inventory-pos/client,*.js",
+			"~/code/inventory-pos/server,*.js",
+			"~/code/inventory-pos,*.js",
+			"~/code/,*.js"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"isRightClick",
+			"listener",
+			"ondestroy",
+			"debounce-to-animation-frame",
+			"motion-event",
+			"this.get(",
+			"destroy",
+			"domApi",
+			"render",
+			"_handlers",
+			"createComponentResetter",
+			"asrReset",
+			"topicId",
+			"svelte",
+			"topicId",
+			"saveTask",
+			"position-preserver",
+			"keyboard-shortcut",
+			"keypress-watcher",
+			"revelation-project-menu",
+			"RevelationProjectMenu",
+			"content-section-padding",
+			"content",
+			"[89]00",
+			"container",
+			"#container",
+			"timeline-container",
+			"container",
+			"#container",
+			"<td",
+			"container",
+			"<td",
+			"td",
+			"hr",
+			"./",
+			".",
+			"tape",
+			"from",
+			"= '",
+			"watch",
+			"sortByDepth",
+			"destination",
+			"var",
+			"regularBuild",
+			"watch",
+			"autoprefixer",
+			"debug",
+			"eventemitter3",
+			"scroll-events",
+			"motion-event",
+			"eventemitter3",
+			"motion-event",
+			"remove",
+			"eventemitter3",
+			"on:click",
+			"href",
+			"\t\t\t>",
+			"<a",
+			"properties",
+			"call",
+			"stateIsActive",
+			"lib/",
+			"sermon",
+			"VerseRang",
+			"lib/",
+			"lib",
+			"lib/",
+			"hover",
+			"lib/",
+			"יִשְׁכַּב",
+			"folder_exclude_patterns",
+			"../timeline-data",
+			"'./",
+			"lib/",
+			"component",
+			"lib/",
+			"component",
+			"import ",
+			"InnerChiasm",
+			"timelineData",
+			"var ",
+			"document:",
+			"\\^0-1\\]",
+			"\\^1-1\\]",
+			"\\^1-1",
+			"expires_module",
+			"    ",
+			"VirtualHost",
+			"Listen",
+			"ServerName",
+			"80",
+			"VirtualHost",
+			"listen",
+			"80",
+			"root",
+			"url",
+			"babel-cli",
+			"once",
+			"on",
+			"listeners",
+			"event",
+			"type",
+			"Type",
+			"type",
+			"Type",
+			"type",
+			"firstFired",
+			"()",
+			"'",
+			"motion-event",
+			"eventemitter3",
+			"Text",
+			"text",
+			"Text",
+			"text",
+			"timeline",
+			"Timeline",
+			"structure",
+			"Structure",
+			"defaultChild",
+			"default",
+			"structure",
+			"Text",
+			"structure",
+			"Structure",
+			"pathname",
+			"structure",
+			"Structure"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"content-section-margin",
+			"\\t",
+			"[\\1] ",
+			"\\1(\\2)",
+			"\\n",
+			" \\1",
+			"\\n",
+			" ",
+			"",
+			"\\t",
+			"import \\1 from \\2",
+			"export default",
+			"import \\1 from \\2",
+			"GRABME \\1",
+			"\\1",
+			"",
+			"\\t",
+			"\\n## \\1\\n",
+			"\\1 window",
+			"[^",
+			"\\1\\2",
+			"    <\\1>",
+			"\\1",
+			"\\t",
+			"chemotherapy",
+			"dominion\\1mandate",
+			"dominion mandate",
+			"",
+			"  ",
+			"",
+			"\\1 \\2",
+			"image\\1.png",
+			"rm -rf \\1/*\nnode convert/process-markdown.js \"\\1-pandoc/book.md\" \"\\1\"\necho \"Copying media\"\nmkdir \\1/images\ncp \\1-pandoc/media/* \\1/images/\\n",
+			"rm -rf \\1/*\nnode convert/process-markdown.js \"\\1-pandoc/book.md\" \"\\1\"\necho \"Copying media\"\nmkdir \\1/images\ncp \\1-pandoc/media/* \\1/images/\\n\\n",
+			"rm -rf \\1/*\nnode convert/process-markdown.js \"\\1-pandoc/book.md\" \"\\1\"\necho \"Copying media\"\nmkdir \\1/images\ncp \\1-pandoc/media/* \\1/images/",
+			"[^\\1]:\\n    {#footnote-\\1}\\n    \\2",
+			"import \\1 from \\2",
+			"\\1-\\2-\\3-\\4-\\5-\\6-\\7-\\8",
+			"\\1",
+			"categories:\\1\\2",
+			"categories:\\1\"\\2",
+			"\\t",
+			"Josephus War:",
+			"- Josephus War: ",
+			"- Josephus War:",
+			"{ name: '\\2', aliases: [ '\\1' ] },",
+			"\\t",
+			"./constants",
+			"constants.css",
+			"\\t",
+			"require('./drop-keys",
+			"require('./db-helpers')",
+			"require('./joi-everything-optional-except')",
+			"require('./saver')",
+			"\\t",
+			"scanner.select-strain",
+			"scanner.select-room",
+			"scanner.add-plant",
+			"\\1../\\2",
+			"\\t",
+			"export default",
+			"import \\2 from \\3",
+			"\\t",
+			"implementations/ractive-redux",
+			"plantGrowthPhaseChange",
+			"inventory",
+			"Inventory",
+			"Plant",
+			"plant",
+			"schema.js;",
+			"    ",
+			"\\t",
+			"",
+			"export function",
+			"\\t\\t",
+			"\\t",
+			"'\\1', ",
+			"\\\\n",
+			"\\t",
+			" ",
+			"",
+			"\\t",
+			"savingInput { context: customer, saving: saving.customer, saved: saved.customer, key: '\\1' }",
+			"savingInput { value: customer.\\1, saving: saving.customer.\\1, saved: saved.customer.\\1 }",
+			"\\t",
+			"\\1",
+			"\\t",
+			"\\n\\1: \\2",
+			"\\n\\1",
+			"\\t",
+			"t.equal(\\1, \\2)",
+			"test(\\1, function\\(t",
+			"\\t",
+			"t.equal(\\1, \\2)",
+			"test(\\1, function\\(t",
+			"\\t",
+			"'tape-catch'",
+			"\\t",
+			"\\1 \\2",
+			"\\t",
+			"\\1 \\2",
+			"\\t",
+			"'\\1'",
+			"\\t\\t",
+			"require('tape-catch')",
+			"\\t",
+			"var test = require('tape')",
+			"\\t",
+			"require('tape')",
+			"\\t",
+			"\\\\'",
+			"\\\\n",
+			"\\t",
+			"\"",
+			"\\t",
+			"'",
+			"\"",
+			"\\n<item>",
+			"\\t",
+			"\"",
+			"\\1. ",
+			"- ",
+			"\\n",
+			"\\\\n\\n",
+			" ",
+			">",
+			"",
+			"<hr/>"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 6,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "client/view/timeline/visual/EventDescriptions.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2087,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 352.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "client/view/timeline/visual/CurvyLine.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2029,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1111,
+								1111
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "client/lib/efficient-visibility/EfficientVisibility.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1905,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								705,
+								705
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 240.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 275,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										184,
+										193
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								188,
+								188
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "client/view/structure/text/Text.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7024,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4906,
+								4906
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2066.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "client/view/Menu.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1866,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								424,
+								429
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "client/component/StateLink.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								980,
+								980
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "rollup.config.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 729,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								427,
+								427
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.channel_repository_tools":
+	{
+		"height": 370.0
+	},
+	"output.exec":
+	{
+		"height": 327.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 124.0
+	},
+	"output.markdown":
+	{
+		"height": 124.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 106.0
+	},
+	"pinned_build_system": "Packages/User/node.sublime-build",
+	"project": "revelation-project.sublime-project",
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"statelink",
+				"client/component/StateLink.html"
+			],
+			[
+				"menu",
+				"client/view/Menu.html"
+			],
+			[
+				"motion-ev",
+				"client/lib/motion-event.js"
+			],
+			[
+				"eventvis",
+				"client/lib/efficient-visibility/EfficientVisibility.html"
+			],
+			[
+				"curvyli",
+				"client/view/timeline/visual/CurvyLine.html"
+			],
+			[
+				"rollup",
+				"rollup.config.js"
+			],
+			[
+				"eventdescr",
+				"client/view/timeline/visual/EventDescriptions.html"
+			],
+			[
+				"position-pre",
+				"client/lib/position-preserver.js"
+			],
+			[
+				"keypre",
+				"client/lib/structure/keypress-watcher.js"
+			],
+			[
+				"key",
+				"client/lib/keyboard-shortcut.js"
+			],
+			[
+				"visual.htm",
+				"client/view/timeline/visual/Visual.html"
+			],
+			[
+				"mixin",
+				"client/global-css/mixins.css"
+			],
+			[
+				"compile-css",
+				"revelation-project/compile-css.js"
+			],
+			[
+				"-instance",
+				"client/lib/structure/verse-hover-instance.js"
+			],
+			[
+				"menu.ht",
+				"client/view/Menu.html"
+			],
+			[
+				"timelinevisual",
+				"revelation-project/client/view/timeline/visual/Visual.html"
+			],
+			[
+				"efficient-visi",
+				"revelation-project/client/view/timeline/visual/efficient-visibility-wrapper.js"
+			],
+			[
+				"textparagraphs",
+				"revelation-project/client/view/structure/text/Paragraphs.html"
+			],
+			[
+				"subsections",
+				"revelation-project/client/view/structure/explanation/Subsections.html"
+			],
+			[
+				"identifier-col",
+				"revelation-project/client/lib/structure/identifier-color.js"
+			],
+			[
+				"guaranteerangese",
+				"revelation-project/client/lib/structure/guarantee-range-section.js"
+			],
+			[
+				"paragraphdescr",
+				"revelation-project/client/view/structure/text/ParagraphDescription.html"
+			],
+			[
+				"colorbarandcont",
+				"revelation-project/client/view/structure/text/ColorBarAndContent.html"
+			],
+			[
+				"projectselectable",
+				"revelation-project/client/lib/selectable/Selectable.html"
+			],
+			[
+				"selectable",
+				"revelation-visualized/client/lib/selectable/index.js"
+			],
+			[
+				"structuretext",
+				"revelation-project/client/view/structure/text/Text.html"
+			],
+			[
+				"projectverserange",
+				"revelation-project/client/view/structure/text/VerseRange.html"
+			],
+			[
+				"structuredatastruct",
+				"revelation-project/client/lib/structure/data/structure.js"
+			],
+			[
+				"projinnerchia",
+				"revelation-project/client/view/structure/explanation/InnerChiasm.html"
+			],
+			[
+				"prodata/sermons",
+				"revelation-project/client/lib/structure/data/sermons.js"
+			],
+			[
+				"create-timline",
+				"revelation-project/client/lib/timeline/create-timeline-axis.js"
+			],
+			[
+				"projcurvyline",
+				"revelation-project/client/view/timeline/visual/CurvyLine.html"
+			],
+			[
+				"efficientvisibilitywrapp",
+				"revelation-project/client/lib/timeline/efficient-visibility-wrapper.js"
+			],
+			[
+				"procombine-struc",
+				"revelation-project/client/lib/structure/combine-structure-with-verses.js"
+			],
+			[
+				"visualefficient",
+				"revelation-project/client/view/timeline/visual/EfficientVisibility.html"
+			],
+			[
+				"procombinestructurewithserm",
+				"revelation-project/client/lib/structure/combine-structure-with-sermons.js"
+			],
+			[
+				"efficientvisi",
+				"revelation-timeline/client/EfficientVisibility.html"
+			],
+			[
+				"explanation.js",
+				"revelation-project/client/view/structure/explanation/explanation.js"
+			],
+			[
+				"viewexplanation",
+				"revelation-project/client/view/structure/explanation/explanation.js"
+			],
+			[
+				"clientviewtimeline",
+				"revelation-project/client/view/timeline/timeline.js"
+			],
+			[
+				"clientviewstructu",
+				"revelation-project/client/view/structure/structure.js"
+			],
+			[
+				"menu.htm",
+				"revelation-project/client/view/Menu.html"
+			],
+			[
+				"entity",
+				"covenantedchristianvoters.com/bin/EntityFramework.xml"
+			],
+			[
+				"vcenter",
+				"revelation-timeline/client/VerticallyCentered.html"
+			],
+			[
+				"motion-event",
+				"revelation-timeline/client/motion-event.js"
+			],
+			[
+				"events.ht",
+				"revelation-timeline/client/Events.html"
+			],
+			[
+				"explanation-build",
+				"revelation-visualized/public/explanation-build.js"
+			],
+			[
+				"position-preser",
+				"revelation-visualized/client/lib/position-preserver.js"
+			],
+			[
+				"constants.js",
+				"revelation-visualized/client/lib/constants.js"
+			],
+			[
+				"hover-insta",
+				"revelation-visualized/client/lib/hover-instance.js"
+			],
+			[
+				"get-section-ra",
+				"revelation-visualized/client/lib/get-section-range.js"
+			],
+			[
+				"hover-instanc",
+				"revelation-visualized/client/lib/hover-instance.js"
+			],
+			[
+				"bundle.js",
+				"revelation-timeline/docs/bundle.js"
+			],
+			[
+				"main.htm",
+				"revelation-timeline/client/Main.html"
+			],
+			[
+				"in-view",
+				"revelation-visualized/client/lib/in-viewport.js"
+			],
+			[
+				"add-timeline",
+				"revelation-timeline/client/add-timeline-event-indent.js"
+			],
+			[
+				"visibil",
+				"revelation-timeline/client/Visibility.html"
+			],
+			[
+				"process-mark",
+				"KayserCommentary/scripts/book-tweakers/process-markdown.js"
+			],
+			[
+				"conceptioncontrol04",
+				"KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/04-what-was-the-sin-of-onan.md"
+			],
+			[
+				"visib",
+				"revelation-timeline/client/Visibility.html"
+			],
+			[
+				"timelinedatajs",
+				"revelation-timeline/timeline-data/timeline-data.js"
+			],
+			[
+				"flaw00",
+				"KayserCommentary/Markdown/biblical-blueprints-books/FlawOfNaturalLaw/00-introduction.md"
+			],
+			[
+				"december00",
+				"KayserCommentary/Markdown/biblical-blueprints-books/December25JewishStyleVol1/00-introduction-to-volume-1.md"
+			],
+			[
+				"canon00",
+				"KayserCommentary/Markdown/biblical-blueprints-books/CanonOfScriptureVol1/00-part-1.md"
+			],
+			[
+				"infant05",
+				"KayserCommentary/Markdown/biblical-blueprints-books/InfantBaptism/05-principle-5.md"
+			],
+			[
+				"glory00",
+				"KayserCommentary/Markdown/biblical-blueprints-books/GloryAndCoverings/00-introduction.md"
+			],
+			[
+				"ransompaid00",
+				"KayserCommentary/Markdown/biblical-blueprints-books/RansomPaid/00-both-arminians-and-calvinists-oppose-universalism.md"
+			],
+			[
+				"musicalinstrum",
+				"KayserCommentary/Markdown/biblical-blueprints-books/MusicalInstruments/04-chapter-5.md"
+			],
+			[
+				"gloryandcoverings04",
+				"KayserCommentary/Markdown/biblical-blueprints-books/GloryAndCoverings/04-appendix-b-five-myths-about-corinthian-headwear.md"
+			],
+			[
+				"biblicalromanceintrod",
+				"KayserCommentary/Markdown/biblical-blueprints-books/BiblicalRomance/00-introduction.md"
+			],
+			[
+				"valueofscrip",
+				"KayserCommentary/Markdown/biblical-blueprints-books/WrittenOnYourHeart/00-the-value-of-scripture-memorization.md"
+			],
+			[
+				"maturedaught",
+				"KayserCommentary/Markdown/biblical-blueprints-books/MatureDaughters/00-table-of-contents.md"
+			],
+			[
+				"decemberintroduction",
+				"KayserCommentary/Markdown/biblical-blueprints-books/December25JewishStyleVol1/00-introduction-to-volume-1.md"
+			],
+			[
+				"notes.txt",
+				"revelation-timeline/notes.txt"
+			],
+			[
+				"spacef",
+				"revelation-timeline/client/spacer-functions.js"
+			],
+			[
+				"timelinedata",
+				"revelation-timeline/timeline-data/timeline-data.js"
+			],
+			[
+				"demo-inp",
+				"revelation-timeline/timeline-data/demo-input.md"
+			],
+			[
+				"create-time",
+				"revelation-timeline/client/create-timeline-axis.js"
+			],
+			[
+				"ransompaidbotharm",
+				"KayserCommentary/Markdown/biblical-blueprints-books/RansomPaid/00-both-arminians-and-calvinists-oppose-universalism.md"
+			],
+			[
+				"churchmembershipmd",
+				"KayserCommentary/Markdown/biblical-blueprints-books/ChurchMembership/02-summary.md"
+			],
+			[
+				"ransompaidboth",
+				"KayserCommentary/Markdown/biblical-blueprints-books/RansomPaid/00-both-arminians-and-calvinists-oppose-universalism.md"
+			],
+			[
+				"canonpart1",
+				"KayserCommentary/Markdown/biblical-blueprints-books/CanonOfScriptureVol1/00-part-1.md"
+			],
+			[
+				"musicalinstruments",
+				"KayserCommentary/Markdown/biblical-blueprints-books/MusicalInstruments/00-chapter-1.md"
+			],
+			[
+				"filterand",
+				"revelation-timeline/timeline-data/filter-and-sort.js"
+			],
+			[
+				"puretable",
+				"revelation-timeline/docs/pure-tables-min.css"
+			],
+			[
+				"filter",
+				"revelation-timeline/timeline-data/filter-and-sort.js"
+			],
+			[
+				"demo",
+				"revelation-timeline/timeline-data/demo-input.md"
+			],
+			[
+				"filtersort",
+				"revelation-timeline/timeline-data/filter-and-sort.js"
+			],
+			[
+				"createtimelineax",
+				"revelation-timeline/timeline-data/create-timeline-axis.js"
+			],
+			[
+				"conception00-introduction",
+				"KayserCommentary/Markdown/biblical-blueprints-books/FlawOfNaturalLaw/00-introduction.md"
+			],
+			[
+				"lib/pipe",
+				"revelation-visualized/client/lib/pipe.js"
+			],
+			[
+				"idempoten",
+				"KayserCommentary/scripts/book-tweakers/idempotent-chapter-fixers.js"
+			],
+			[
+				"revelationtimeline",
+				"KayserCommentary/Markdown/Web/Sermons/New Testament/Revelation/Revelation timeline.md"
+			],
+			[
+				"conception-control",
+				"KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/12-ethical-principles-that-restrict-conception-control.md"
+			],
+			[
+				"sinofonan",
+				"KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/04-what-was-the-sin-of-onan.md"
+			],
+			[
+				"pushleanpubtransfo",
+				"KayserCommentary/ci/push-to-leanpub/transforms.js"
+			],
+			[
+				"conception04",
+				"KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/04-what-was-the-sin-of-onan.md"
+			],
+			[
+				"hebrew-te",
+				"KayserCommentary/Markdown/biblical-blueprints-books/convert/hebrew-test.js"
+			],
+			[
+				"linterindex",
+				"KayserCommentary/ci/custom-markdown-linter/index.js"
+			],
+			[
+				"idempot",
+				"KayserCommentary/Markdown/biblical-blueprints-books/convert/idempotent-chapter-fixers.js"
+			],
+			[
+				"convert/index",
+				"KayserCommentary/Markdown/biblical-blueprints-books/convert/index.js"
+			],
+			[
+				"what-wasthesin",
+				"KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/04-what-was-the-sin-of-onan.md"
+			],
+			[
+				"book.md",
+				"KayserCommentary/Markdown/biblical-blueprints-books/ObjectionsToInerrancy/book.md"
+			],
+			[
+				"fivemyths",
+				"KayserCommentary/Markdown/biblical-blueprints-books/GloryAndCoverings/04-appendix-b-five-myths-about-corinthian-headwear.md"
+			],
+			[
+				"conservati",
+				"KayserCommentary/Markdown/Web/Sermons/New Testament/Acts/Acts 15/A Conservative Chronology of Paul.md"
+			],
+			[
+				"sin-of-onan",
+				"KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/04-what-was-the-sin-of-onan.md"
+			],
+			[
+				"consevative",
+				"KayserCommentary/Markdown/Web/Sermons/New Testament/Acts/Acts 15/A Conservative Chronology of Paul.md"
+			],
+			[
+				"appendix-b-five",
+				"KayserCommentary/Markdown/biblical-blueprints-books/GloryAndCoverings/04-appendix-b-five-myths-about-corinthian-headwear.md"
+			],
+			[
+				"revelation1_2c",
+				"KayserCommentary/Markdown/Web/Sermons/New Testament/Revelation/Revelation 1_1-11/Revelation 1_2c.md"
+			],
+			[
+				"christiannationpart3",
+				"KayserCommentary/Markdown/Web/Blogs/Christian Nation - Part 3.md"
+			],
+			[
+				"separatefromfalseuni",
+				"KayserCommentary/Markdown/Web/Blogs/God's Call To Separate From False Unity - Part 1.md"
+			],
+			[
+				"index.htm",
+				"revelation-timeline/public/index.html"
+			],
+			[
+				"timelinejs",
+				"revelation-timeline/timeline-data/timeline-data.js"
+			],
+			[
+				"12-ethical-prin",
+				"KayserCommentary/Markdown/biblical-blueprints-books/ConceptionControl/12-ethical-principles-that-restrict-conception-control.md"
+			],
+			[
+				"biblicalconvert.js",
+				"KayserCommentary/Markdown/biblical-blueprints-books/convert/table-test.js"
+			],
+			[
+				"canpleasurenever",
+				"ConceptionControl/10-can-pleasure-never-be-separated-from-procreation.md"
+			],
+			[
+				"table-te",
+				"KayserCommentary/Markdown/biblical-blueprints-books/convert/table-test.js"
+			],
+			[
+				"conceptionchapter12",
+				"ConceptionControl/12-chapter-12.md"
+			],
+			[
+				"firstdaysabbathconc",
+				"KayserCommentary/Markdown/biblical-blueprints-books/SundayAsFirstDaySabbath/00-the-first-day-sabbath-concept.md"
+			],
+			[
+				"romancechapter3",
+				"KayserCommentary/Markdown/biblical-blueprints-books/BiblicalRomance/03-chapter-3.md"
+			],
+			[
+				"convertregex",
+				"KayserCommentary/Markdown/biblical-blueprints-books/convert/regex.js"
+			],
+			[
+				"idempo",
+				"KayserCommentary/Markdown/biblical-blueprints-books/convert/idempotent-chapter-fixers.js"
+			],
+			[
+				".gitigno",
+				"svelte-querystring-router/.gitignore"
+			],
+			[
+				"conceptionbook.md",
+				"KayserCommentary/Markdown/biblical-blueprints-books/pandoc/ConceptionControl/book.md"
+			],
+			[
+				"acts15-james",
+				"KayserCommentary/Markdown/Web/Sermons/New Testament/Acts/Acts 15/Acts 15 - James.md"
+			],
+			[
+				"img",
+				"KayserCommentary/Markdown/Web/img"
+			],
+			[
+				"acts15james",
+				"KayserCommentary/Markdown/Autoconverted/Sermons/Acts Series/Acts 15/Acts 15 - James.md"
+			],
+			[
+				"post",
+				"KayserCommentary/Markdown/Web/post"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "random",
+		"selected_items":
+		[
+			[
+				"random",
+				"~/code/random.sublime-project"
+			],
+			[
+				"kayser",
+				"~/kayser-commentary.sublime-project"
+			],
+			[
+				"revelation",
+				"~/revelation.sublime-workspace"
+			],
+			[
+				"rano",
+				"~/code/random.sublime-project"
+			],
+			[
+				"rand",
+				"~/code/random.sublime-project"
+			],
+			[
+				"",
+				"~/code/inventory-pos.sublime-project"
+			],
+			[
+				"kay",
+				"~/kayser-commentary.sublime-project"
+			],
+			[
+				"ra",
+				"~/code/random.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 47.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 392.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 345.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
