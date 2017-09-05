@@ -1,0 +1,96 @@
+<div class="centered-container">
+	<div class="intro">
+		<h1>The Revelation Sermons</h1>
+		<p>Preached by Phil Kayser at Dominion Covenant Church</p>		
+	</div>
+
+	<table class="pure-table pure-table-bordered">
+		<thead>
+			<tr>
+				<th>
+					Preached
+				</th>
+				<th>
+					Title
+				</th>
+				<th>
+					
+				</th>
+				<th>
+					
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each sermonsDescending as sermon}}
+				<tr>
+					<td>
+						{{displayDate(sermon.date)}} 
+					</td>
+					<td>
+						{{sermon.title}} 
+					</td>
+					<td>
+						<a
+							href="https://kaysercommentary.com/{{encodeURI(sermon.filename)}}"
+							target="_blank"
+							rel="external noopener"
+						>
+							text
+						</a>					
+					</td>
+					<td>
+						{{#if sermon.audioId}}
+							<a
+								href="http://www.dominioncovenantchurch.com/sermons/?sermon_id={{sermon.audioId}}"
+								target="_blank"
+								rel="external noopener"
+							>
+								audio
+							</a>					
+						{{/if}}			
+					</td>
+				</tr>
+			{{/each}}		
+		</tbody>
+	</table>	
+</div>
+
+
+
+<script>
+
+import parseDate from 'date-fns/parse'
+
+const months = [
+	'January',
+	'February',
+	'March',
+	'April',
+	'May',
+	'June',
+	'July',
+	'August',
+	'September',
+	'October',
+	'November',
+	'December',
+]
+
+export default {
+	data() {
+		return {
+			sermons: []
+		}
+	},
+	computed: {
+		sermonsDescending: sermons => sermons.slice().reverse()
+	},
+	helpers: {
+		displayDate(dateString) {
+			const date = parseDate(dateString)
+			return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
+		}
+	}
+}
+</script>
