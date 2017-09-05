@@ -542,5 +542,29 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 12/Revelation 12_10-11.md",
 		"date": "2017-05-28",
 		"audioId": 1038
+	},
+	{
+		"title": "Joy & Woe",
+		"passage": "Revelation 12:12-13",
+		"range": [[12,12], [12,13]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 12/Revelation 12_12.md",
+		"date": "2017-06-04",
+		"audioId": 1040
+	},
+	{
+		"title": "Persecution",
+		"passage": "Revelation 12:13-14",
+		"range": [[12,13], [12,14]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 12/Revelation 12_13-14.md",
+		"date": "2017-08-20",
+		"audioId": 1062
+	},
+	{
+		"title": "How God Protected the Remnant",
+		"passage": "Revelation 12:15-17",
+		"range": [[12,15], [12,17]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 12/Revelation 12_15-17.md",
+		"date": "2017-08-27",
+		"audioId": 1064
 	}
 ]

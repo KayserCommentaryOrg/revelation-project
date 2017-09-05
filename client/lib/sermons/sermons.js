@@ -1,4 +1,4 @@
-import sermons from 'lib/structure/data/sermons.json'
+import sermons from 'lib/sermons/sermons.json'
 import guaranteeRangeSection from 'lib/structure/guarantee-range-section'
 
 export default sermons.map(sermon => {
