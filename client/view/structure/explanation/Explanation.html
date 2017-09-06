@@ -98,16 +98,16 @@
 		Wilbur Pickering
 	</h3>
 	<p>
-		This English translation of The Revelation of Jesus Christ is based on Wilbur Pickering's <a href="http://www.prunch.org/new-translation-of-the-nt.php">New Translation based on the Majority Text</a>.
+		This English translation of The Revelation of Jesus Christ is based on Wilbur Pickering's <ExternalLink href="http://www.prunch.org/new-translation-of-the-nt.php">New Translation based on the Majority Text</ExternalLink>.
 	</p>
 	<p>
-		Some changes have been made to his revised translation - for more details, and a list of the changes, see <a href="https://github.com/TehShrike/pickering-majority-text-revelation">this repository on Github</a>.
+		Some changes have been made to his revised translation - for more details, and a list of the changes, see <ExternalLink href="https://github.com/TehShrike/pickering-majority-text-revelation">this repository on Github</ExternalLink>.
 	</p>
 	<p>
-		The Greek translation is Pickering's <a href="http://www.prunch.org/new-greek-text-of-the-nt.php">collation of the majority (Byzantine) text</a>.
+		The Greek translation is Pickering's <ExternalLink href="http://www.prunch.org/new-greek-text-of-the-nt.php">collation of the majority (Byzantine) text</ExternalLink>.
 	</p>
 	<p>
-		From his bio at <a href="http://www.walkinhiscommandments.com/">walkinhiscommandments.com</a>:
+		From his bio at <ExternalLink href="http://www.walkinhiscommandments.com/">walkinhiscommandments.com</ExternalLink>:
 	</p>
 	<blockquote cite="http://www.walkinhiscommandments.com/">
 		<p>
@@ -121,16 +121,13 @@
 		This chiastic outline was identified by Phil Kayser.  It builds upon insights from over 20 scholars who see the book as following a chiastic structure but have been puzzled by the position of chapter 12 and have not been able to agree on the relationship of apparently disparate features (the introductions to the septets and the interludes).
 	</p>
 	<p>
-		<a href="https://kaysercommentary.com/about.md">Phil Kayser</a> is the senior pastor at Dominion Covenant Church.
+		<ExternalLink href="https://kaysercommentary.com/about.md">Phil Kayser</ExternalLink> is the senior pastor at Dominion Covenant Church.
 	</p>
 	<h3>
 		Josh Duff
 	</h3>
 	<p>
-		<a href="https://joshduff.com/">Josh</a> transcribed Pickering's translation and Kayser's chiastic structure into the software you see here.
-	</p>
-	<p>
-		The code is open source and <a href="https://github.com/TehShrike/revelation-visualized">available online</a>.  If you have any issues or questions, <a href="https://github.com/TehShrike/revelation-visualized/issues">go here</a>.
+		<ExternalLink href="https://joshduff.com/">Josh</ExternalLink> transcribed Pickering's translation and Kayser's chiastic structure into the software you see here.
 	</p>
 </div>
 
@@ -139,6 +136,8 @@ import InnerChiasm from './InnerChiasm.html'
 import Outline from './Outline.html'
 import Subsections from './Subsections.html'
 
+import ExternalLink from 'component/ExternalLink.html'
+
 import { code_g } from 'lib/key-codes'
 
 export default {
@@ -146,6 +145,7 @@ export default {
 		InnerChiasm,
 		Outline,
 		Subsections,
+		ExternalLink
 	},
 	methods: {
 		keydown(event) {

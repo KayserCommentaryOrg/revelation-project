@@ -1,7 +1,7 @@
 <div class="centered-container">
 	<div class="intro">
 		<h1>The Revelation Sermons</h1>
-		<p>Preached by Phil Kayser at Dominion Covenant Church</p>		
+		<p>Preached by Phil Kayser at Dominion Covenant Church</p>
 	</div>
 
 	<table class="pure-table pure-table-bordered">
@@ -14,10 +14,10 @@
 					Title
 				</th>
 				<th>
-					
+
 				</th>
 				<th>
-					
+
 				</th>
 			</tr>
 		</thead>
@@ -25,35 +25,27 @@
 			{{#each sermonsDescending as sermon}}
 				<tr>
 					<td>
-						{{displayDate(sermon.date)}} 
+						{{displayDate(sermon.date)}}
 					</td>
 					<td>
-						{{sermon.title}} 
+						{{sermon.title}}
 					</td>
 					<td>
-						<a
-							href="https://kaysercommentary.com/{{encodeURI(sermon.filename)}}"
-							target="_blank"
-							rel="external noopener"
-						>
+						<ExternalLink href="https://kaysercommentary.com/{{encodeURI(sermon.filename)}}">
 							text
-						</a>					
+						</ExternalLink>
 					</td>
 					<td>
 						{{#if sermon.audioId}}
-							<a
-								href="http://www.dominioncovenantchurch.com/sermons/?sermon_id={{sermon.audioId}}"
-								target="_blank"
-								rel="external noopener"
-							>
+							<ExternalLink href="http://www.dominioncovenantchurch.com/sermons/?sermon_id={{sermon.audioId}}">
 								audio
-							</a>					
-						{{/if}}			
+							</ExternalLink>
+						{{/if}}
 					</td>
 				</tr>
-			{{/each}}		
+			{{/each}}
 		</tbody>
-	</table>	
+	</table>
 </div>
 
 
@@ -61,6 +53,7 @@
 <script>
 
 import parseDate from 'date-fns/parse'
+import ExternalLink from 'component/ExternalLink.html'
 
 const months = [
 	'January',
@@ -91,6 +84,9 @@ export default {
 			const date = parseDate(dateString)
 			return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 		}
+	},
+	components: {
+		ExternalLink
 	}
 }
 </script>

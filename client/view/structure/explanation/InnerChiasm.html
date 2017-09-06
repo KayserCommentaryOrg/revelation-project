@@ -13,9 +13,9 @@
 			&nbsp;
 		</span>
 		<strong>
-			<a href="./#{{subsection.anchor}}">
+			<StateLink state="main.structure.text" params="{{ { chiasm: 'E' } }}" anchor="{{subsection.anchor}}">
 				{{sectionLabel(subsection)}}:
-			</a>
+			</StateLink>
 		</strong> {{subsection.title}} <small><VerseRange range="{{subsection.range}}" /></small>
 	</li>
 {{/each}}
@@ -26,6 +26,7 @@ import structure from 'lib/structure/data/structure'
 import getColor from 'lib/structure/identifier-color'
 
 import VerseRange from 'component/VerseRange.html'
+import StateLink from 'component/StateLink.html'
 
 const section = structure[4].introduction
 
@@ -36,7 +37,8 @@ export default {
 		}
 	},
 	components: {
-		VerseRange
+		VerseRange,
+		StateLink,
 	},
 	helpers: {
 		sectionLabel(section) {

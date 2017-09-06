@@ -1,7 +1,7 @@
 <div class="centered-container">
 	<div class="intro">
 		<h1>The Revelation Project</h1>
-		<h2>By Biblical Blueprints</h2>		
+		<h2>By Biblical Blueprints</h2>
 	</div>
 
 	<p>
@@ -15,7 +15,7 @@
 	</p>
 	<h3>Historical timeline</h3>
 	<p>
-		Pastor Kayser is compiling a historical timeline of the events described in Revelation, and they are available in a visual <a href="/timeline/">timeline</a>.
+		Pastor Kayser is compiling a historical timeline of the events described in Revelation, and they are available in a visual <StateLink state="main.timeline">timeline</StateLink>.
 	</p>
 	<p>
 		The timeline is still in a very early state, in terms of both data and usability.  We will be updating it over time to make it easier to navigate, tweak dates and add more events as research continues, add more detailed descriptions of the events with links to the verses describing them.
@@ -27,10 +27,10 @@
 		Revelation has more textual critical issues (and thus translational differences) than any other book of the Bible. Rather than constantly discussing the technical issues of textual criticism and reasons why we differ from various translations, we chose to use Wilbur Pickering’s translation of Revelation. It is based on family 35 of the Byzantine tradition, which Pastor Kayser considers the best representative of the Ecclesiastical Text.
 	</p>
 	<p>
-		It is this translation that is <a href="/structure/">displayed here</a>.
+		It is this translation that is <StateLink state="main.structure.text">displayed here</StateLink>.
 	</p>
 	<p>
-		The text is laid out in the <a href="/structure/explanation.html#the-pattern">chiastic structure</a> identified by Pastor Kayser instead of by chapter number, making it easier to read.
+		The text is laid out in the <StateLink state="main.structure.explanation" anchor="the-pattern">chiastic structure</StateLink> identified by Pastor Kayser instead of by chapter number, making it easier to read.
 	</p>
 	<p>
 		Click on the colored bars to view the patterns inside each paired section.  Sermon text and audio recordings are aligned next to the relevant verses.
@@ -86,4 +86,22 @@
 		Biblical Blueprints runs on donations - to support this work on Revelation so that we can produce more, <a href="https://donations.biblicalblueprints.org/">donate now!</a>
 	</p>
 
+	<h3>This site</h3>
+	<p>
+		The code for this site is open source and <ExternalLink href="https://github.com/KayserCommentaryOrg/revelation-project/">available online</ExternalLink>.  If you have any issues or questions, <ExternalLink href="https://github.com/KayserCommentaryOrg/revelation-project/issues">go here</ExternalLink>.
+	</p>
+
 </div>
+
+<script>
+import StateLink from 'component/StateLink.html'
+import ExternalLink from 'component/ExternalLink.html'
+
+export default {
+	components: {
+		StateLink,
+		ExternalLink
+	}
+}
+</script>
+

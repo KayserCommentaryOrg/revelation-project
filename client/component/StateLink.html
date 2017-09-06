@@ -39,6 +39,18 @@ function afterTransitionTo(stateRouter, stateName, params, cb) {
 	}
 }
 
+function disableScrolling() {
+	if ('scrollRestoration' in history) {
+		const initialState = history.scrollRestoration
+		history.scrollRestoration = 'manual'
+		return () => history.scrollRestoration = initialState
+	}
+
+	return () => {}
+}
+
+const scrollToTop = () => window.scrollTo(0, 0)
+
 export default {
 	oncreate() {
 		this.stateChangeListener = () => this.set({ asr: stateRouter })
@@ -67,17 +79,24 @@ export default {
 
 				const { asr, state, params, inherit, hashFragment, anchor } = this.get()
 
+				const resetAutoScrolling = disableScrolling()
 				asr.go(state, params, { inherit })
 
-				if (anchor) {
-					afterTransitionTo(asr, state, params, () => {
+				afterTransitionTo(asr, state, params, () => {
+					if (anchor) {
+						window.location.replace(hashFragment)
+
 						const element = document.getElementById(anchor)
 						if (element) {
 							element.scrollIntoView()
+						} else {
+							scrollToTop()
 						}
-						window.location.replace(hashFragment)
-					})
-				}
+					} else {
+						scrollToTop()
+					}
+					resetAutoScrolling()
+				})
 			}
 		}
 	}

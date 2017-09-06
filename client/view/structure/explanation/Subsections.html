@@ -21,7 +21,13 @@
 				>
 				</span>
 				<strong class="subsection-label">
-					<a href="./#{{section.introduction.anchor}}">Intro.</a>
+					<StateLink
+						state="main.structure.text"
+						params="{{ { chiasm: section.identifier } }}"
+						anchor="{{section.introduction.anchor}}"
+					>
+						Intro.
+					</StateLink>
 				</strong>
 				{{section.introduction.title}} <small><VerseRange range="{{section.introduction.range}}" /></small>
 			</li>
@@ -36,9 +42,13 @@
 				>
 				</span>
 				<strong class="subsection-label">
-					<a href="./#{{subsection.anchor}}">
+					<StateLink
+						state="main.structure.text"
+						params="{{ { chiasm: section.identifier } }}"
+						anchor="{{subsection.anchor}}"
+					>
 						{{septetLabel(subsection.identifier)}}.
-					</a>
+					</StateLink>
 				</strong>
 				{{subsection.title}} <small><VerseRange range="{{subsection.range}}" /></small>
 			</li>
@@ -66,6 +76,7 @@ import sectionLabel from 'lib/structure/section-label'
 import septetLabel from 'lib/structure/septet-label'
 
 import VerseRange from 'component/VerseRange.html'
+import StateLink from 'component/StateLink.html'
 
 export default {
 	data() {
@@ -74,7 +85,8 @@ export default {
 		}
 	},
 	components: {
-		VerseRange
+		VerseRange,
+		StateLink
 	},
 	helpers: {
 		sectionLabel,

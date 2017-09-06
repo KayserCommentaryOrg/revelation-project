@@ -18,22 +18,18 @@
 				<SermonHoverDetector identifier="{{sermon.range}}">
 					{{sermon.title}}
 					&middot;
-					<a
+					<ExternalLink
 						href="https://kaysercommentary.com/{{encodeURI(sermon.filename)}}"
-						target="_blank"
-						rel="external noopener"
 					>
 						text
-					</a>
+					</ExternalLink>
 					{{#if sermon.audioId}}
 						&middot;
-						<a
+						<ExternalLink
 							href="http://www.dominioncovenantchurch.com/sermons/?sermon_id={{sermon.audioId}}"
-							target="_blank"
-							rel="external noopener"
 						>
 							audio
-						</a>
+						</ExternalLink>
 					{{/if}}
 				</SermonHoverDetector>
 			</VerseHoverReflector>
@@ -59,6 +55,7 @@ import verseHover from 'lib/structure/verse-hover-instance'
 import Selectable from 'lib/selectable'
 
 import VerseRange from 'component/VerseRange.html'
+import ExternalLink from 'component/ExternalLink.html'
 
 export default {
 	data() {
@@ -71,6 +68,7 @@ export default {
 		VerseHoverReflector: verseHover.HoverReflector,
 		VerseRange,
 		Selectable,
+		ExternalLink
 	}
 }
 </script>
