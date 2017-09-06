@@ -1,9 +1,23 @@
-<h1>Page not found</h1>
-{{#if route}}
-	<div>
-		Can't match route:<pre>{{route}}</pre>
+<div class="centered-container">
+	<div class="intro">
+		<h1>
+			Not Found
+		</h1>
+		{{#if route}}
+			<p>No route for {{route}}</p>
+		{{/if}}
+		<p>
+			<StateLink state="main.home">Home</StateLink>
+		</p>
 	</div>
-{{/if}}
-<p>
-	<a href="{{asr.makePath('index')}}">Home</a>
-</p>
+</div>
+
+<script>
+import StateLink from 'component/StateLink.html'
+
+export default {
+	components: {
+		StateLink
+	}
+}
+</script>

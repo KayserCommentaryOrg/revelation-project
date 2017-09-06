@@ -6,6 +6,10 @@ export default mediator => ({
 	querystringParameters: [ 'route', 'parameters' ],
 	template: NotFound,
 	resolve(data, parameters) {
-		return Promise.resolve(parameters)
-	}
+		const paramsCopy = Object.assign({}, parameters)
+		const route = paramsCopy.route
+		delete paramsCopy.route
+
+		return Promise.resolve({ route, parameters: paramsCopy })
+	},
 })

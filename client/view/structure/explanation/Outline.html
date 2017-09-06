@@ -14,9 +14,12 @@
 		</span>
 
 		<strong>
-			<a href="./#{{section.anchor}}">
+			<StateLink
+				state="main.structure.text"
+				anchor="{{section.anchor}}"
+			>
 				{{sectionLabel(section)}}:
-			</a>
+			</StateLink>
 		</strong>
 
 		{{section.title}}
@@ -35,6 +38,7 @@ import sectionLabel from 'lib/structure/section-label'
 import getSectionRange from 'lib/structure/get-section-range'
 
 import VerseRange from 'component/VerseRange.html'
+import StateLink from 'component/StateLink.html'
 
 export default {
 	data() {
@@ -44,6 +48,7 @@ export default {
 	},
 	components: {
 		VerseRange,
+		StateLink
 	},
 	helpers: {
 		sectionLabel,

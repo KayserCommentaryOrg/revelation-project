@@ -32,7 +32,7 @@ stateWatcher.addDomApiAttachListener(domApi => {
 })
 
 stateRouter.on('routeNotFound', (route, parameters) => {
-	stateRouter.go('not-found', { route, parameters }, { replace: true })
+	stateRouter.go('main.not-found', Object.assign({ route }, parameters), { replace: true })
 })
 
 stateRouter.on('stateChangeStart', (state, params) => console.log('stateChangeStart', state.name, params))

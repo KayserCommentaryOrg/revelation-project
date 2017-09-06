@@ -1,5 +1,5 @@
 <a
-	href="{{asr.makePath(state, params, options)}}"
+	href="{{href}}"
 	data-active="{{asr.stateIsActive(state, params)}}"
 	on:click="navigate(event)"
 	class="{{className}}"
@@ -9,8 +9,35 @@
 
 <script>
 import stateRouter from 'lib/asr-instance'
+import deepEqual from 'lib/deep-equal'
 
 import shouldInterceptClick from 'click-should-be-intercepted-for-navigation'
+
+
+function once(emitter, event, listener) {
+	emitter.once(event, listener)
+	return () => emitter.removeListener(event, listener)
+}
+
+function afterTransitionTo(stateRouter, stateName, params, cb) {
+	const cancelFunctions = [
+		once(stateRouter, 'stateChangeEnd', listener),
+		once(stateRouter, 'stateChangeError', cancel),
+		once(stateRouter, 'stateError', cancel),
+		once(stateRouter, 'routeNotFound', cancel),
+		once(stateRouter, 'stateChangeCancelled', cancel),
+	]
+	function listener(endState, endParams) {
+		if (endState.name === stateName && deepEqual(params, endParams)) {
+			cb()
+		} else {
+			cancel()
+		}
+	}
+	function cancel() {
+		cancelFunctions.forEach(fn => fn())
+	}
+}
 
 export default {
 	oncreate() {
@@ -26,16 +53,31 @@ export default {
 			params: {},
 			inherit: false,
 			className: '',
+			anchor: '',
 		}
+	},
+	computed: {
+		hashFragment: anchor => anchor ? `#${anchor}` : '',
+		href: (asr, state, params, options, hashFragment) => asr.makePath(state, params, options) + hashFragment
 	},
 	methods: {
 		navigate(event) {
 			if (shouldInterceptClick(event)) {
 				event.preventDefault()
 
-				const { asr, state, params, inherit } = this.get()
+				const { asr, state, params, inherit, hashFragment, anchor } = this.get()
 
 				asr.go(state, params, { inherit })
+
+				if (anchor) {
+					afterTransitionTo(asr, state, params, () => {
+						const element = document.getElementById(anchor)
+						if (element) {
+							element.scrollIntoView()
+						}
+						window.location.replace(hashFragment)
+					})
+				}
 			}
 		}
 	}
