@@ -49,6 +49,7 @@ export default function watchScrollPosition(stateRouter) {
 	})
 
 	historyState.onBeforePushState(updatePosition)
+	window.addEventListener('beforeunload', updatePosition)
 
 	const updatePositionDebounced = debounce(updatePosition, 100)
 
