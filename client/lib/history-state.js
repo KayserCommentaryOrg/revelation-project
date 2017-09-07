@@ -16,7 +16,7 @@ const historyState = makeEmitter({
 		const actualState = Object.assign({}, window.history.state, { [KEY]: coolState })
 		callHistoryMethod(originalReplaceState, actualState, '', window.location.href)
 	},
-	onBeforePushState(fn) {
+	addBeforePushStateMiddleware(fn) {
 		beforePushStateMiddleware.push(fn)
 	},
 	get() {
@@ -30,7 +30,7 @@ window.history.replaceState = (initialState, ...otherArgs) => {
 }
 
 window.history.pushState = (initialState = {}, ...otherArgs) => {
-	const coolState = beforePushStateMiddleware.reduce((state, fn) => fn(state), getCoolState())
+	const coolState = beforePushStateMiddleware.reduce((state, fn) => fn(state), getCoolState() || {})
 	historyState.update(coolState)
 
 	const newState = Object.assign({}, initialState, { [KEY]: {} })

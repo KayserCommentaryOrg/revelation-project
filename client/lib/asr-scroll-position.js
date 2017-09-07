@@ -10,6 +10,8 @@ const scrollToElement = element => element && element.scrollIntoView()
 const getElementById = id => id && document.getElementById(id)
 const scrollToTop = () => window.scrollTo(0, 0)
 const atTop = () => window.scrollX === 0 && window.scrollY === 0
+const windowListener = (event, listener) => window.addEventListener(event, listener)
+const currentPosition = () => ({ x: window.scrollX, y: window.scrollY })
 
 export default function watchScrollPosition(stateRouter) {
 	if ('scrollRestoration' in history) {
@@ -27,10 +29,7 @@ export default function watchScrollPosition(stateRouter) {
 		if (!changingStates) {
 			console.log('updating position to', window.scrollX, window.scrollY)
 			historyState.update({
-				position: {
-					x: window.scrollX,
-					y: window.scrollY,
-				},
+				position: currentPosition(),
 			})
 		}
 	}
@@ -51,13 +50,13 @@ export default function watchScrollPosition(stateRouter) {
 		})
 	})
 
-	historyState.onBeforePushState(updatePosition)
-	window.addEventListener('beforeunload', updatePosition)
+	historyState.addBeforePushStateMiddleware(state => Object.assign(state, { position: currentPosition() }))
+	windowListener('beforeunload', updatePosition)
 
 	const updatePositionDebounced = debounce(updatePosition, 100)
 
-	window.addEventListener('scroll', updatePositionDebounced)
-	window.addEventListener('resize', updatePositionDebounced)
+	windowListener('scroll', updatePositionDebounced)
+	windowListener('resize', updatePositionDebounced)
 
 	historyState.on('old state', ({ position }) => {
 		console.log('transitioned to old state, position is', position)
@@ -67,11 +66,24 @@ export default function watchScrollPosition(stateRouter) {
 
 function debounce(fn, interval) {
 	let last = null
+	let finalTimeout = null
+
+	function resetFinalTimeout() {
+		if (finalTimeout) {
+			clearTimeout(finalTimeout)
+			finalTimeout = null
+		}
+	}
+
 	return function debounced() {
 		const now = Date.now()
+
+		resetFinalTimeout()
 		if (!last || now - last >= interval) {
 			last = now
 			fn()
+		} else {
+			finalTimeout = setTimeout(debounced, interval)
 		}
 	}
 }
