@@ -6,6 +6,7 @@ import views from './globbed-views'
 import statefulServices from './globbed-services'
 
 import stateRouter from 'lib/asr-instance'
+import watchScrollPosition from 'lib/asr-scroll-position'
 
 const mediator = mannish()
 
@@ -41,6 +42,7 @@ stateRouter.on('stateError', error => console.error(error))
 stateRouter.on('stateChangeEnd', (state, params) => console.log('stateChangeEnd', state.name, params))
 
 Promise.all(moduleInitializationPromises).then(() => {
+	watchScrollPosition(stateRouter)
 	stateRouter.evaluateCurrentRoute('main')
 })
 

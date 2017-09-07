@@ -10,14 +10,9 @@
 <script>
 import stateRouter from 'lib/asr-instance'
 import deepEqual from 'lib/deep-equal'
+import once from 'lib/better-once'
 
 import shouldInterceptClick from 'click-should-be-intercepted-for-navigation'
-
-
-function once(emitter, event, listener) {
-	emitter.once(event, listener)
-	return () => emitter.removeListener(event, listener)
-}
 
 function afterTransitionTo(stateRouter, stateName, params, cb) {
 	const cancelFunctions = [
@@ -38,18 +33,6 @@ function afterTransitionTo(stateRouter, stateName, params, cb) {
 		cancelFunctions.forEach(fn => fn())
 	}
 }
-
-function disableScrolling() {
-	if ('scrollRestoration' in history) {
-		const initialState = history.scrollRestoration
-		history.scrollRestoration = 'manual'
-		return () => history.scrollRestoration = initialState
-	}
-
-	return () => {}
-}
-
-const scrollToTop = () => window.scrollTo(0, 0)
 
 export default {
 	oncreate() {
@@ -79,23 +62,12 @@ export default {
 
 				const { asr, state, params, inherit, hashFragment, anchor } = this.get()
 
-				const resetAutoScrolling = disableScrolling()
 				asr.go(state, params, { inherit })
 
 				afterTransitionTo(asr, state, params, () => {
 					if (anchor) {
 						window.location.replace(hashFragment)
-
-						const element = document.getElementById(anchor)
-						if (element) {
-							element.scrollIntoView()
-						} else {
-							scrollToTop()
-						}
-					} else {
-						scrollToTop()
 					}
-					resetAutoScrolling()
 				})
 			}
 		}
