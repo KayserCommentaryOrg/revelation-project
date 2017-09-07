@@ -9,6 +9,7 @@ const currentAnchor = () => window.location.hash.replace(/^#/, '')
 const scrollToElement = element => element && element.scrollIntoView()
 const getElementById = id => id && document.getElementById(id)
 const scrollToTop = () => window.scrollTo(0, 0)
+const atTop = () => window.scrollX === 0 && window.scrollY === 0
 
 export default function watchScrollPosition(stateRouter) {
 	if ('scrollRestoration' in history) {
@@ -41,6 +42,8 @@ export default function watchScrollPosition(stateRouter) {
 			if (anchorElement) {
 				console.log('Scrolling to anchor')
 				scrollToElement(anchorElement)
+			} else if (atTop()) {
+				updatePosition()
 			} else {
 				console.log('Scrolling to top')
 				scrollToTop()
