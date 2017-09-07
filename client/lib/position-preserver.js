@@ -1,19 +1,19 @@
 // Heavily inspired by https://github.com/vvo/in-viewport/blob/f1bd60ba41bbaccff22ea7e9232dacbef260340b/in-viewport.js#L132-L173
 
-export default function positionPreserver(router, options = defaultOptions()) {
-	return onNavigateByElement(router, element => {
+export default function positionPreserver(querystringRouter, options = defaultOptions()) {
+	return onNavigateByElement(querystringRouter, element => {
 		const originalViewport = getViewport(options)
 		const originalRelationshipToViewport = originalViewport.top - element.getBoundingClientRect().top + 1
 
-		router.once('after navigate', ({ element }) => {
+		querystringRouter.once('after navigate', ({ element }) => {
 			const destination = element.offsetTop + originalRelationshipToViewport
 			window.scrollTo(originalViewport.left, destination)
 		})
 	})
 }
 
-function onNavigateByElement(router, callback) {
-	return router.on('before navigate', ({ element }) => {
+function onNavigateByElement(querystringRouter, callback) {
+	return querystringRouter.on('before navigate', ({ element }) => {
 		if (element) {
 			callback(element)
 		}
