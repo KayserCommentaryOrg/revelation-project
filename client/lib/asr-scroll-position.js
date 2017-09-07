@@ -73,11 +73,15 @@ function debounce(fn, interval) {
 	}
 }
 
-function scrollToStatePosition(position) {
+function scrollToStatePosition(position, mayRetry = true) {
 	if (position) {
 		const { x, y } = position
 		console.log('calling scrollTo', x, y)
 		window.scrollTo(x, y)
+
+		if (mayRetry && window.scrollX < x || window.scrollY < y) {
+			setTimeout(() => scrollToStatePosition(position, false), 0)
+		}
 	}
 }
 
