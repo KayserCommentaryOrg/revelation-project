@@ -552,14 +552,6 @@
 		"audioId": 1040
 	},
 	{
-		"title": "The Beast of Revelation 13, part 1",
-		"passage": "Revelation 13:1-10, part 1",
-		"range": [[13,1], [13,10]],
-		"filename": "Sermons/New Testament/Revelation/Revelation 13/Revelation 13-1-10, part1.md",
-		"date": "2017-08-20",
-		"audioId": 1062
-	},
-	{
 		"title": "Persecution",
 		"passage": "Revelation 12:13-14",
 		"range": [[12,13], [12,14]],
@@ -574,5 +566,13 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 12/Revelation 12_15-17.md",
 		"date": "2017-08-27",
 		"audioId": 1064
+	},
+	{
+		"title": "The Beast of Revelation 13, part 1",
+		"passage": "Revelation 13:1",
+		"range": [[13,1], [13,1]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 13/Revelation 13-1.md",
+		"date": "2017-09-03",
+		"audioId": 1066
 	}
 ]
