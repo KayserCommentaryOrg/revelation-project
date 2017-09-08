@@ -6,6 +6,7 @@
   "scripts": {
     "test": "tape client/**/*-test.js",
     "build": "npm run create-symlinks && npm run glob && npm run build-css && rollup -c",
+    "build-podcast": "node ./compile-podcast.js",
     "watch": "rollup -c -w --dev",
     "start": "serve public",
     "watch-glob": "watch \"npm run glob\" client/service client/view",
@@ -57,8 +58,10 @@
     "multi-part-range-compare": "~1.0.3",
     "one-to-many-array-zip": "~1.0.2",
     "pify": "3.0.0",
+    "podcast2": "~1.0.0",
     "postcss": "6.0.9",
     "precss": "2.0.0",
+    "reify": "0.12.1",
     "revelation": "2.0.1",
     "rollup": "0.45.2",
     "rollup-plugin-babel": "3.0.1",
