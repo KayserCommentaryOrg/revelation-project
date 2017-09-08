@@ -61,8 +61,18 @@ async function main() {
 
 	// print(revelationPosts)
 
+	const audioIdsSeenAlready = new Set()
+
 	const postsAndAudio = revelationPosts.map(({ filename, passage, date, title }) => {
 		const isoDateString = formatDate(nextSunday(date), 'YYYY-MM-DD')
+		const audioId = dateToIdAndTitle[isoDateString] && dateToIdAndTitle[isoDateString].id
+
+		if (audioId) {
+			if (audioIdsSeenAlready.has(audioId)) {
+				throw new Error(`Can't add sermon audioId ${audioId} to the sermon list twice!`)
+			}
+			audioIdsSeenAlready.add(audioId)
+		}
 		// console.log(isoDateString, dateToId[isoDateString])
 		const range = isoDateString === '2015-04-26' ? [ [ 21, 1 ], [ 21, 1 ] ] : passageToRange(passage)
 		return {
