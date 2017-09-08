@@ -13,7 +13,11 @@ const podcastInfo = {
 	feed_url: 'https://revelation.biblicalblueprints.org/static/podcast.xml',
 	site_url: 'https://revelation.biblicalblueprints.org/sermons',
 	webMaster: 'me@JoshDuff.com',
-	language: 'English',
+	language: 'en',
+	itunesOwner: {
+		name: 'Phil Kayser',
+		email: 'josh@biblicalblueprints.org',
+	},
 /*
 * `categories` _optional_ **array of strings**  One or more categories this feed belongs to.
 * `itunesAuthor` _optional_  **string** (iTunes specific) author of the podcast

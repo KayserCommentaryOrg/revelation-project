@@ -5,16 +5,16 @@
 		<description><![CDATA[A sermon series explaining Revelation, a paragraph at a time.]]></description>
 		<link>https://revelation.biblicalblueprints.org/sermons</link>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Fri, 08 Sep 2017 20:20:27 GMT</lastBuildDate>
+		<lastBuildDate>Fri, 08 Sep 2017 20:30:05 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
-		<language><![CDATA[English]]></language>
+		<language><![CDATA[en]]></language>
 		<webMaster><![CDATA[me@JoshDuff.com]]></webMaster>
 		<itunes:author>Phil Kayser</itunes:author>
 		<itunes:summary>A sermon series explaining Revelation, a paragraph at a time.</itunes:summary>
 		<itunes:owner>
 			<itunes:name>Phil Kayser</itunes:name>
-			<itunes:email></itunes:email>
+			<itunes:email>josh@biblicalblueprints.org</itunes:email>
 		</itunes:owner>
 		<itunes:explicit>No</itunes:explicit>
 		<item>
