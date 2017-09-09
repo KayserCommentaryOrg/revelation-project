@@ -1,14 +1,10 @@
-require('reify')
-
 const podcast = require('podcast2')
 const fs = require('fs')
-
-const sermons = require('./client/lib/sermons/sermons.js').default
 
 const podcastInfo = {
 	indent: true,
 	title: 'Revelation Project: Sermons',
-	description: 'A sermon series explaining Revelation, a paragraph at a time.',
+	description: 'A series of sermons explaining the book of Revelation.',
 	author: 'Phil Kayser',
 	feed_url: 'https://revelation.biblicalblueprints.org/static/podcast.xml',
 	site_url: 'https://revelation.biblicalblueprints.org/sermons',
@@ -18,6 +14,7 @@ const podcastInfo = {
 		name: 'Phil Kayser',
 		email: 'josh@biblicalblueprints.org',
 	},
+	categories: [ 'Religion & Spirituality' ],
 /*
 * `categories` _optional_ **array of strings**  One or more categories this feed belongs to.
 * `itunesAuthor` _optional_  **string** (iTunes specific) author of the podcast
@@ -34,14 +31,22 @@ const podcastInfo = {
 */
 }
 
-const podcastItems = sermons.map(sermon => ({
-	title: sermon.title,
-	description: sermon.passage,
-	url: `http://www.dominioncovenantchurch.com/sermons/?sermon_id=${sermon.audioId}`,
-	guid: sermon.audioId,
-	date: sermon.date,
-}))
 
-const xml = podcast(podcastInfo, podcastItems)
+module.exports = sermons => {
+	const podcastItems = sermons.map(({ title, passage, audioId, date, enclosure }) => ({
+		title: title,
+		description: passage,
+		url: `http://www.dominioncovenantchurch.com/sermons/?sermon_id=${audioId}`,
+		guid: audioId,
+		date: date,
+		enclosure: {
+			url: enclosure.url,
+			mime: enclosure.type,
+			size: parseInt(enclosure.length, 10),
+		},
+	}))
 
-fs.writeFileSync('public/static/podcast.xml', xml, { encoding: 'utf8' })
+	const xml = podcast(podcastInfo, podcastItems)
+
+	fs.writeFileSync('../public/static/podcast.xml', xml, { encoding: 'utf8' })
+}

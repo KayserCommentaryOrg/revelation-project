@@ -61,7 +61,6 @@
     "podcast2": "~1.0.0",
     "postcss": "6.0.9",
     "precss": "2.0.0",
-    "reify": "0.12.1",
     "revelation": "2.0.1",
     "rollup": "0.45.2",
     "rollup-plugin-babel": "3.0.1",

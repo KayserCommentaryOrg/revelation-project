@@ -13,6 +13,7 @@ const addDays = require('date-fns/add_days')
 
 const getSermonAudioData = require('./sermon-rss')
 const passageToRange = require('./passage-to-range')
+const createPodcastXmlFile = require('./compile-podcast')
 
 sh`
 cd /Users/josh/code/KayserCommentary
@@ -37,8 +38,8 @@ async function main() {
 		getPosts(), getSermonAudioData(),
 	])
 
-	const dateToIdAndTitle = sermonAudioData.reduce((map, { id, title, dateString }) => {
-		map[dateString] = { id, title }
+	const dateToIdAndTitle = sermonAudioData.reduce((map, { id, title, dateString, enclosure }) => {
+		map[dateString] = { id, title, enclosure }
 		return map
 	}, Object.create(null))
 
@@ -82,11 +83,19 @@ async function main() {
 			filename,
 			date: isoDateString,
 			audioId: dateToIdAndTitle[isoDateString] && dateToIdAndTitle[isoDateString].id,
-			// audioTitle: dateToIdAndTitle[isoDateString] && dateToIdAndTitle[isoDateString].title
+			enclosure: dateToIdAndTitle[isoDateString] && dateToIdAndTitle[isoDateString].enclosure,
 		}
 	})
 
-	save(postsAndAudio)
+	createPodcastXmlFile(postsAndAudio)
+
+	save(trimToPropertiesThatNeedToBeDownloadedToClient(postsAndAudio))
+}
+
+function trimToPropertiesThatNeedToBeDownloadedToClient(structure) {
+	return structure.map(({ title, passage, range, filename, date, audioId }) =>
+		({ title, passage, range, filename, date, audioId })
+	)
 }
 
 const rangeRegex = /"range": \[\s*\[\s*(\d+),\s*(\d+)\s*\],\s*\[\s*(\d+),\s*(\d+)\s*\]\s*\]/mg
