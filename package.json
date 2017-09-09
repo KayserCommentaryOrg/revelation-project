@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "tape client/**/*-test.js",
-    "build": "npm run create-symlinks && npm run glob && npm run build-css && rollup -c",
+    "build": "npm run create-symlinks && npm run glob && npm run build-css && npm run build-js",
+    "build-js": "rollup -c && rollup -c -i client/lib/structure/data/structure.js -o public/static/structure.js && cp client/lib/sermons/sermons.json public/static/ && cp client/lib/timeline/data/timeline-data.json public/static/",
     "build-podcast": "node ./compile-podcast.js",
     "watch": "rollup -c -w --dev",
     "start": "serve public",
@@ -17,8 +18,7 @@
     "build-css": "node compile-css.js",
     "watch-css": "node compile-css.js watch",
     "deploy": "scp -r ./public/. revelation_bb@revelation.biblicalblueprints.org:/home/revelation_bb/revelation.biblicalblueprints.org",
-    "update-sermons": "cd sermon-text-and-audio-correlater && node index.js",
-    "update-timeline": "node timeline-json-generator/transform-timeline-to-json.js"
+    "update-sermons": "cd sermon-text-and-audio-correlater && node index.js"
   },
   "repository": {
     "type": "git",
@@ -64,6 +64,7 @@
     "postcss": "6.0.9",
     "precss": "2.0.0",
     "regex-fun": "2.0.1",
+    "reify": "0.12.1",
     "revelation": "2.0.1",
     "rollup": "0.45.2",
     "rollup-plugin-babel": "3.0.1",

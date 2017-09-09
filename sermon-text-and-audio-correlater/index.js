@@ -1,3 +1,5 @@
+require('reify')
+
 require('loud-rejection')()
 
 const Butler = require('noddity-butler')
@@ -14,6 +16,8 @@ const addDays = require('date-fns/add_days')
 const getSermonAudioData = require('./sermon-rss')
 const passageToRange = require('./passage-to-range')
 const createPodcastXmlFile = require('./compile-podcast')
+
+const guaranteeRange = require('../client/lib/structure/guarantee-range').default
 
 sh`
 cd /Users/josh/code/KayserCommentary
@@ -89,7 +93,13 @@ async function main() {
 
 	createPodcastXmlFile(postsAndAudio)
 
-	save(trimToPropertiesThatNeedToBeDownloadedToClient(postsAndAudio))
+	save(
+		guaranteeRangeSections(
+			trimToPropertiesThatNeedToBeDownloadedToClient(
+				postsAndAudio
+			)
+		)
+	)
 }
 
 function trimToPropertiesThatNeedToBeDownloadedToClient(structure) {
@@ -98,12 +108,12 @@ function trimToPropertiesThatNeedToBeDownloadedToClient(structure) {
 	)
 }
 
-const rangeRegex = /"range": \[\s*\[\s*(\d+),\s*(\d+)\s*\],\s*\[\s*(\d+),\s*(\d+)\s*\]\s*\]/mg
+const rangeRegex = /"range": \[\s*\[\s*(\d+),\s*(\d+),\s*(\d+)\s*\],\s*\[\s*(\d+),\s*(\d+),\s*(\d+)\s*\]\s*\]/mg
 
 function toJson(structure) {
 	const json = JSON.stringify(structure, null, '\t')
-	return json.replace(rangeRegex, (match, startChapter, startVerse, endChapter, endVerse) => {
-		return `"range": [[${startChapter},${startVerse}], [${endChapter},${endVerse}]]`
+	return json.replace(rangeRegex, (match, startChapter, startVerse, startSection, endChapter, endVerse, endSection) => {
+		return `"range": [[${startChapter},${startVerse},${startSection}], [${endChapter},${endVerse},${endSection}]]`
 	})
 }
 
@@ -114,6 +124,14 @@ function print(structure) {
 function save(structure) {
 	const json = toJson(structure)
 	require('fs').writeFileSync('../client/lib/sermons/sermons.json', json)
+}
+
+function guaranteeRangeSections(sermons) {
+	return sermons.map(sermon => {
+		return Object.assign({}, sermon, {
+			range: guaranteeRange([ sermon.range[0], sermon.range[1] ]),
+		})
+	})
 }
 
 function nextSunday(date) {

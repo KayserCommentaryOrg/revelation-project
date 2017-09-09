@@ -5,7 +5,7 @@ import {
 	VERSE_SECTION_RANGE_MIN,
 	VERSE_SECTION_RANGE_MAX,
 } from 'lib/structure/constants'
-import guaranteeRangeSection from 'lib/structure/guarantee-range-section'
+import guaranteeRange from 'lib/structure/guarantee-range'
 
 export default pipe([
 	{
@@ -181,11 +181,8 @@ function s(title, range, identifier) {
 	return { title, range, identifier }
 }
 
-function r(rangeStart, randeEnd) {
-	return [
-		guaranteeRangeSection(rangeStart, VERSE_SECTION_RANGE_MIN),
-		guaranteeRangeSection(randeEnd, VERSE_SECTION_RANGE_MAX),
-	]
+function r(rangeStart, rangeEnd) {
+	return guaranteeRange([ rangeStart, rangeEnd ])
 }
 
 function addPrimeBooleanToChiasmSections(sections) {

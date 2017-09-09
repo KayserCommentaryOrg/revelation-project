@@ -1,5 +1,8 @@
 node_modules
 public/**/*.css*
+public/**/sermons.json
+public/**/timeline*.json
+public/**/structure.js*
 *bundle*.js
 *bundle*.js.map
 client/globbed-*.js
