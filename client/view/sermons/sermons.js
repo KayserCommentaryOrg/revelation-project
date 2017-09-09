@@ -1,14 +1,16 @@
-import Sermons from './Sermons.html'
+import pProps from 'p-props'
 
-import sermons from 'lib/sermons/sermons'
+import load from 'dynamic-import-iife'
+
+import Sermons from './Sermons.html'
 
 export default mediator => ({
 	name: 'main.sermons',
 	route: 'sermons',
 	template: Sermons,
 	resolve() {
-		return Promise.resolve({
-			sermons,
+		return pProps({
+			sermons: load('/static/sermons.json', { type: 'json' }),
 		})
 	},
 })

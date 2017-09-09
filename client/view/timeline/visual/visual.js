@@ -1,14 +1,15 @@
-import Visual from './Visual.html'
+import load from 'dynamic-import-iife'
+import pProps from 'p-props'
 
-import timelineData from 'lib/timeline/data/timeline-data.js'
+import Visual from './Visual.html'
 
 export default mediator => ({
 	name: 'main.timeline.visual',
 	route: 'visual',
 	template: Visual,
 	resolve() {
-		return Promise.resolve({
-			timelineData,
+		return pProps({
+			timelineData: load('/static/timeline-data.json', { type: 'json' }),
 		})
 	},
 })

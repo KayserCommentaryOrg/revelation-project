@@ -132,21 +132,15 @@ import getSectionRange from 'lib/structure/get-section-range'
 import svelteQuerystringRouter from 'svelte-querystring-router'
 const { navigate, Link } = svelteQuerystringRouter
 
-import structure from 'lib/structure/data/structure'
-import sermons from 'lib/sermons/sermons'
-
 import sectionLabel from 'lib/structure/section-label'
 import extractRangeFromVerses from 'lib/structure/extract-range-from-verses'
 import extractRangeFromSermons from 'lib/structure/extract-range-from-sermons'
 import getChiasmColor from 'lib/structure/identifier-color'
 import combineStructureWithVerses from 'lib/structure/combine-structure-with-verses'
-import combineStructureWithSermons from 'lib/structure/combine-structure-with-sermons'
 import getParametersWithTranslationToggled from 'lib/structure/toggle-translation-parameter'
 import inViewport from 'lib/in-viewport'
 import { code_g } from 'lib/key-codes'
 import positionPreserver from 'lib/position-preserver'
-
-const structureWithSermons = combineStructureWithSermons(structure, sermons)
 
 export default {
 	oncreate() {
@@ -190,7 +184,7 @@ export default {
 				? translations.greek
 				: translations.english
 		},
-		structuredText: currentTranslation => {
+		structuredText: (structureWithSermons, currentTranslation) => {
 			return combineStructureWithVerses(structureWithSermons, currentTranslation)
 		},
 		sectionIsVisible: currentChiasm => {

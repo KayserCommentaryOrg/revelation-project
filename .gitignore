@@ -3,6 +3,7 @@ public/**/*.css*
 public/**/sermons.json
 public/**/timeline*.json
 public/**/structure.js*
+public/**/revelation.js*
 *bundle*.js
 *bundle*.js.map
 client/globbed-*.js
