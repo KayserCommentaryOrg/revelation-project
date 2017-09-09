@@ -17,7 +17,8 @@
     "build-css": "node compile-css.js",
     "watch-css": "node compile-css.js watch",
     "deploy": "scp -r ./public/. revelation_bb@revelation.biblicalblueprints.org:/home/revelation_bb/revelation.biblicalblueprints.org",
-    "update-sermons": "cd sermon-text-and-audio-correlater && node index.js"
+    "update-sermons": "cd sermon-text-and-audio-correlater && node index.js",
+    "update-timeline": "node timeline-json-generator/transform-timeline-to-json.js"
   },
   "repository": {
     "type": "git",
@@ -49,6 +50,7 @@
     "github": "9.2.0",
     "glob-module-file": "~2.0.0",
     "globby": "6.1.0",
+    "got": "7.1.0",
     "hash-brown-router": "~3.3.0",
     "iso-next-tick": "1.0.0",
     "key-master": "~3.1.0",
@@ -61,6 +63,7 @@
     "podcast2": "~1.0.0",
     "postcss": "6.0.9",
     "precss": "2.0.0",
+    "regex-fun": "2.0.1",
     "revelation": "2.0.1",
     "rollup": "0.45.2",
     "rollup-plugin-babel": "3.0.1",
