@@ -8,7 +8,7 @@ const podcastInfo = {
 	author: 'Phil Kayser',
 	feed_url: 'https://revelation.biblicalblueprints.org/static/podcast.xml',
 	site_url: 'https://revelation.biblicalblueprints.org/sermons',
-	webMaster: 'me@JoshDuff.com',
+	webMaster: 'me@JoshDuff.com (Josh Duff)',
 	language: 'en',
 	itunesOwner: {
 		name: 'Phil Kayser',
