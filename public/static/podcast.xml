@@ -4,8 +4,13 @@
 		<title><![CDATA[Revelation Project: Sermons]]></title>
 		<description><![CDATA[A series of sermons explaining the book of Revelation.]]></description>
 		<link>https://revelation.biblicalblueprints.org/sermons</link>
+		<image>
+			<url>https://revelation.biblicalblueprints.org/static/blood-moon-large.png</url>
+			<title>Revelation Project: Sermons</title>
+			<link>https://revelation.biblicalblueprints.org/sermons</link>
+		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Sat, 09 Sep 2017 22:16:13 GMT</lastBuildDate>
+		<lastBuildDate>Sat, 09 Sep 2017 22:18:01 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -18,6 +23,7 @@
 			<itunes:email>josh@biblicalblueprints.org</itunes:email>
 		</itunes:owner>
 		<itunes:explicit>No</itunes:explicit>
+		<itunes:image href="https://revelation.biblicalblueprints.org/static/blood-moon-large.png"/>
 		<item>
 			<title><![CDATA[From Creation To Recreation]]></title>
 			<description><![CDATA[Genesis; Revelation]]></description>
