@@ -16,6 +16,12 @@ const podcastInfo = {
 		email: 'josh@biblicalblueprints.org',
 	},
 	categories: [ 'Religion & Spirituality' ],
+	itunesCategory: [{
+		text: 'Religion & Spirituality',
+		subcats: [{
+			text: 'Christianity',
+		}],
+	}],
 /*
 * `categories` _optional_ **array of strings**  One or more categories this feed belongs to.
 * `itunesAuthor` _optional_  **string** (iTunes specific) author of the podcast
