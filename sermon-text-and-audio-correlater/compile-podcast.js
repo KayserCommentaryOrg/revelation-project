@@ -38,7 +38,7 @@ module.exports = sermons => {
 		title: title,
 		description: passage,
 		url: `http://www.dominioncovenantchurch.com/sermons/?sermon_id=${audioId}`,
-		guid: audioId,
+		guid: `phil-kayser-revelation-project-sermon-audio-${audioId}`,
 		date: date,
 		enclosure: {
 			url: enclosure.url,
