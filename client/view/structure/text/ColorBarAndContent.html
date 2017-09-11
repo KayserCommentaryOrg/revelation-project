@@ -1,17 +1,5 @@
 {{#if anchor}}<a id="{{anchor}}"></a>{{/if}}
 <div class="section-line" data-zoomed-in="{{zoomedIn}}" data-visible="{{visible}}">
-	{{#if sectionIdentifier && showColorBar}}
-	<Link
-		className="color-bar septet-color-bar unselectable"
-		style="background-color: {{getChiasmColor(sectionIdentifier)}}"
-		parameters="{{ linkParameters }}"
-	>
-		{{shortSeptetLabel(sectionIdentifier)}}
-	</Link>
-	{{else}}
-	<div class="color-bar septet-color-bar"></div>
-	{{/if}}
-
 	{{#if verses}}
 		<Paragraphs
 			verses="{{verses}}"
@@ -39,6 +27,18 @@
 				</div>
 			</div>
 		</div>
+	{{/if}}
+
+	{{#if sectionIdentifier}}
+		<Link
+			className="color-bar septet-color-bar unselectable"
+			style="background-color: {{getChiasmColor(sectionIdentifier)}}"
+			parameters="{{ linkParameters }}"
+		>
+			{{shortSeptetLabel(sectionIdentifier)}}
+		</Link>
+	{{else}}
+		<div class="color-bar septet-color-bar"></div>
 	{{/if}}
 </div>
 
@@ -81,7 +81,6 @@ export default {
 			chiasmIdentifier: null,
 			sectionIdentifier: null,
 			zoomedIn: false,
-			showColorBar: true,
 			visible: true,
 			sermons: []
 		}

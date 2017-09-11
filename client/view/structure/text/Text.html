@@ -68,7 +68,6 @@
 							currentSubsection="{{currentSubsection}}"
 							verses="{{introductionVerses(section)}}"
 							sermons="{{introductionSermons(section)}}"
-							showColorBar="{{!!currentChiasm}}"
 							useAnchors="{{sectionIsVisible(section)}}"
 						/>
 					{{elseif !currentSubsection || currentSubsection === 'introduction'}}
@@ -77,7 +76,6 @@
 							chiasmIdentifier="{{section.identifier}}"
 							sectionIdentifier="introduction"
 							zoomedIn="{{subsectionIsSelected}}"
-							showColorBar="{{!!currentChiasm}}"
 							anchor="{{sectionIsVisible(section) && section.introduction.anchor}}"
 							siblingAnchor="{{section.introduction.siblingAnchor}}"
 							siblingIsDown="{{section.introduction.siblingIsDown}}"
@@ -95,7 +93,6 @@
 						currentSubsection="{{currentSubsection}}"
 						verses="{{sectionVerses(section)}}"
 						sermons="{{sectionSermons(section)}}"
-						showColorBar="{{!!currentChiasm}}"
 						useAnchors="{{sectionIsVisible(section)}}"
 					/>
 				{{elseif !currentSubsection}}

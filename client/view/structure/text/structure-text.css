@@ -99,9 +99,6 @@
 	.section-content {
 		flex-direction: column;
 	}
-	.section-line {
-		flex-direction: row-reverse;
-	}
 	.section-description {
 		width: initial;
 		flex-grow: 1;
