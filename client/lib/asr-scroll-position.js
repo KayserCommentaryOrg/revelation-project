@@ -94,7 +94,8 @@ function scrollToStatePosition(position, mayRetry = true) {
 		console.log('calling scrollTo', x, y)
 		window.scrollTo(x, y)
 
-		if (mayRetry && window.scrollX < x || window.scrollY < y) {
+		const scrolledFarEnough = window.scrollX >= x && window.scrollY >= y
+		if (mayRetry && !scrolledFarEnough) {
 			setTimeout(() => scrollToStatePosition(position, false), 0)
 		}
 	}

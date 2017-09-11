@@ -34,6 +34,10 @@ function afterTransitionTo(stateRouter, stateName, params, cb) {
 	}
 }
 
+function currentPath() {
+	return window.location.pathname
+}
+
 export default {
 	oncreate() {
 		this.stateChangeListener = () => this.set({ asr: stateRouter })
@@ -53,22 +57,24 @@ export default {
 	},
 	computed: {
 		hashFragment: anchor => anchor ? `#${anchor}` : '',
-		href: (asr, state, params, options, hashFragment) => asr.makePath(state, params, options) + hashFragment
+		path: (asr, state, params, options) => asr.makePath(state, params, options),
+		href: (path, hashFragment) => path + hashFragment
 	},
 	methods: {
 		navigate(event) {
 			if (shouldInterceptClick(event)) {
 				event.preventDefault()
 
-				const { asr, state, params, inherit, hashFragment, anchor } = this.get()
+				const { asr, state, params, inherit, hashFragment, anchor, path } = this.get()
+				const goToHash = () => anchor && window.location.replace(hashFragment)
 
-				asr.go(state, params, { inherit })
+				if (path === currentPath()) {
+					goToHash()
+				} else {
+					asr.go(state, params, { inherit })
 
-				afterTransitionTo(asr, state, params, () => {
-					if (anchor) {
-						window.location.replace(hashFragment)
-					}
-				})
+					afterTransitionTo(asr, state, params, goToHash)
+				}
 			}
 		}
 	}
