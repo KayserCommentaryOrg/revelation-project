@@ -1,5 +1,5 @@
 {{#if anchor}}<a id="{{anchor}}"></a>{{/if}}
-<div class="section-line" data-zoomed-in="{{zoomedIn}}" data-visible="{{visible}}">
+<div class="section-line" data-visible="{{visible}}">
 	{{#if verses}}
 		<Paragraphs
 			verses="{{verses}}"
@@ -43,10 +43,6 @@
 </div>
 
 <style>
-[data-zoomed-in=true] .color-bar {
-	opacity: 0.5;
-}
-
 .sibling-link {
 	text-decoration: none;
 }

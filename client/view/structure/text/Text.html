@@ -21,25 +21,24 @@
 	<Outline />
 </div>
 
-<div class="text-body" data-chiasm-selected="{{!!currentChiasm}}" ref:textContainer>
+<div
+	class="text-body"
+	data-chiasm-selected="{{!!currentChiasm}}"
+	data-septet-selected="{{!!currentSubsection}}"
+	ref:textContainer
+>
 	{{#each structuredText as section}}
 		<div
 			class="chiasm-section"
 			data-is-selected="{{!!currentChiasm && currentChiasm === section.identifier}}"
 		>
-			{{#if subsectionIsSelected}}
-				<div class="color-bar unselectable">
-					{{sectionLabel(section)}}
-				</div>
-			{{else}}
-				<Link
-					className="color-bar chiasm-color-bar unselectable"
-					style="background-color: {{chiasmColorBarColor(section.identifier)}}"
-					parameters="{{ getLinkParameters(section.identifier) }}"
-				>
-					{{sectionLabel(section)}}
-				</Link>
-			{{/if}}
+			<Link
+				className="color-bar chiasm-color-bar unselectable"
+				style="background-color: {{chiasmColorBarColor(section.identifier)}}"
+				parameters="{{ getLinkParameters(section.identifier) }}"
+			>
+				{{sectionLabel(section)}}
+			</Link>
 
 			<div class="section-body">
 				{{#if !currentSubsection}}
@@ -170,15 +169,15 @@ export default {
 			return querystringParameters.section
 		},
 		subsectionIsSelected: currentSubsection => !!currentSubsection,
-		getLinkParameters: currentChiasm => {
+		getLinkParameters: (currentChiasm, currentSubsection) => {
 			return chiasmIdentifier => {
-				return currentChiasm === chiasmIdentifier
+				return currentChiasm === chiasmIdentifier && !currentSubsection
 					? {}
 					: { chiasm: chiasmIdentifier }
 			}
 		},
-		chiasmColorBarColor(currentChiasm) {
-			if (currentChiasm) {
+		chiasmColorBarColor(currentChiasm, currentSubsection) {
+			if (currentChiasm && currentSubsection) {
 				return () => '#d8d8d8'
 			} else {
 				return getChiasmColor
