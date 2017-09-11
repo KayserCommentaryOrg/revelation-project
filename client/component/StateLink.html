@@ -35,7 +35,7 @@ function afterTransitionTo(stateRouter, stateName, params, cb) {
 }
 
 function currentPath() {
-	return window.location.pathname
+	return window.location.pathname + window.location.search
 }
 
 export default {
@@ -66,14 +66,17 @@ export default {
 				event.preventDefault()
 
 				const { asr, state, params, inherit, hashFragment, anchor, path } = this.get()
-				const goToHash = () => anchor && window.location.replace(hashFragment)
 
-				if (path === currentPath()) {
-					goToHash()
-				} else {
+				if (path !== currentPath()) {
 					asr.go(state, params, { inherit })
 
-					afterTransitionTo(asr, state, params, goToHash)
+					afterTransitionTo(asr, state, params, () => {
+						if (anchor) {
+							window.location.replace(hashFragment)
+						}
+					})
+				} else {
+					window.location = hashFragment
 				}
 			}
 		}
