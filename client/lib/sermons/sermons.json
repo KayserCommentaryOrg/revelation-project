@@ -574,5 +574,12 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 13/Revelation 13-1.md",
 		"date": "2017-09-03",
 		"audioId": 1066
+	},
+	{
+		"title": "The Beast of Revelation 13, part 2",
+		"passage": "Revelation 13:2-4",
+		"range": [[13,2,1], [13,4,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 13/Revelation 13-2-4.md",
+		"date": "2017-09-10"
 	}
 ]
