@@ -17,6 +17,10 @@
 	</p>
 </div>
 
+<div class="outline">
+	<Outline />
+</div>
+
 <div class="text-body" data-chiasm-selected="{{!!currentChiasm}}" ref:textContainer>
 	{{#each structuredText as section}}
 		<div
@@ -108,9 +112,12 @@
 
 <style>
 .intro {
-	padding-bottom: 3em;
-	text-align: center;
-	font-size: 1.3em;
+	padding-bottom: 0;
+}
+
+.outline {
+	display: flex;
+	justify-content: center;
 }
 
 [data-chiasm-selected=true] [data-is-selected=false] {
@@ -123,6 +130,7 @@
 </style>
 
 <script>
+import Outline from '../Outline.html'
 import ChiasmSubsections from './ChiasmSubsections.html'
 import ColorBarAndContent from './ColorBarAndContent.html'
 
@@ -196,6 +204,7 @@ export default {
 		ColorBarAndContent,
 		Link,
 		Selectable,
+		Outline,
 	},
 	helpers: {
 		sectionLabel,

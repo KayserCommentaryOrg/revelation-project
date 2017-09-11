@@ -1,0 +1,16 @@
+ul {
+	padding-left: 1rem;
+}
+
+ol {
+	list-style-type: none;
+	padding: 0;
+}
+ol ol {
+	margin-left: 1rem;
+}
+
+li {
+	padding-top: .1rem;
+	padding-bottom: .1rem;
+}

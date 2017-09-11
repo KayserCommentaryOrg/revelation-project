@@ -1,27 +1,7 @@
 @import "constants";
 
-.explanation-page {
-	nav ol {
-		list-style-type: disc;
-		padding-left: 1rem;
-	}
-
-	ul {
-		padding-left: 1rem;
-	}
-
-	ol {
-		list-style-type: none;
-		padding: 0;
-	}
-	ol ol {
-		margin-left: 1rem;
-	}
-
-	li {
-		padding-top: .1rem;
-		padding-bottom: .1rem;
-	}
+.section-list {
+	display: inline-block;
 
 	.tiny-color-bar {
 		width: .9rem;
