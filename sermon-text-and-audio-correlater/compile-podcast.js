@@ -40,18 +40,20 @@ const podcastInfo = {
 
 
 module.exports = sermons => {
-	const podcastItems = sermons.map(({ title, passage, audioId, date, enclosure }) => ({
-		title: title,
-		description: passage,
-		url: `http://www.dominioncovenantchurch.com/sermons/?sermon_id=${audioId}`,
-		guid: `phil-kayser-revelation-project-sermon-audio-${audioId}`,
-		date: date,
-		enclosure: {
-			url: enclosure.url,
-			mime: enclosure.type,
-			size: parseInt(enclosure.length, 10),
-		},
-	}))
+	const podcastItems = sermons
+		.filter(({ enclosure }) => enclosure)
+		.map(({ title, passage, audioId, date, enclosure }) => ({
+			title: title,
+			description: passage,
+			url: `http://www.dominioncovenantchurch.com/sermons/?sermon_id=${audioId}`,
+			guid: `phil-kayser-revelation-project-sermon-audio-${audioId}`,
+			date: date,
+			enclosure: {
+				url: enclosure.url,
+				mime: enclosure.type,
+				size: parseInt(enclosure.length, 10),
+			},
+		}))
 
 	const xml = podcast(podcastInfo, podcastItems)
 
