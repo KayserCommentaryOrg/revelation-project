@@ -14,12 +14,21 @@
 		</span>
 
 		<strong>
-			<StateLink
-				state="main.structure.text"
-				anchor="{{section.anchor}}"
-			>
-				{{sectionLabel(section)}}:
-			</StateLink>
+			{{#if linkToSameState}}
+				<QuerystringLink
+					parameters="{{ {} }}"
+					anchor="{{section.anchor}}"
+				>
+					{{sectionLabel(section)}}:
+				</QuerystringLink>
+			{{else}}
+				<StateLink
+					state="main.structure.text"
+					anchor="{{section.anchor}}"
+				>
+					{{sectionLabel(section)}}:
+				</StateLink>
+			{{/if}}
 		</strong>
 
 		{{section.title}}
@@ -40,15 +49,21 @@ import getSectionRange from 'lib/structure/get-section-range'
 import VerseRange from 'component/VerseRange.html'
 import StateLink from 'component/StateLink.html'
 
+import svelteQuerystringRouter from 'svelte-querystring-router'
+const { Link } = svelteQuerystringRouter
+
+
 export default {
 	data() {
 		return {
-			structure
+			structure,
+			linkToSameState: false
 		}
 	},
 	components: {
 		VerseRange,
-		StateLink
+		StateLink,
+		QuerystringLink: Link
 	},
 	helpers: {
 		sectionLabel,
