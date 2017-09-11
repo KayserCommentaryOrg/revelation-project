@@ -13,8 +13,8 @@ export default function positionPreserver(querystringRouter, options = defaultOp
 }
 
 function onNavigateByElement(querystringRouter, callback) {
-	return querystringRouter.on('before navigate', ({ element }) => {
-		if (element) {
+	return querystringRouter.on('before navigate', ({ element, hash }) => {
+		if (element && !hash) {
 			callback(element)
 		}
 	})
