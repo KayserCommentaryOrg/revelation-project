@@ -32,13 +32,12 @@
 			class="chiasm-section"
 			data-is-selected="{{!!currentChiasm && currentChiasm === section.identifier}}"
 		>
-			<Link
-				className="color-bar chiasm-color-bar unselectable"
+			<div
+				class="color-bar chiasm-color-bar unselectable"
 				style="background-color: {{chiasmColorBarColor(section.identifier)}}"
-				parameters="{{ getLinkParameters(section.identifier) }}"
 			>
 				{{sectionLabel(section)}}
-			</Link>
+			</div>
 
 			<div class="section-body">
 				{{#if !currentSubsection}}

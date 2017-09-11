@@ -67,6 +67,9 @@
 	padding-top: 20px;
 }
 
+.color-bar {
+	color: $lightGray;
+}
 .color-bar:link {
 	color: $lightGray;
 }
