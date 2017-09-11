@@ -7,6 +7,9 @@ export default mediator => ({
 	name: 'main.timeline.table',
 	route: 'table',
 	template: Table,
+	defaultParameters: {
+		sort: 'bydate',
+	},
 	resolve() {
 		return pProps({
 			timelineData: load('/static/timeline-data.json', { type: 'json' }),
