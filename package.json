@@ -79,7 +79,7 @@
     "sausage-router": "1.1.2",
     "shell-tag": "1.0.1",
     "svelte": "1.32.0",
-    "svelte-querystring-router": "1.4.0",
+    "svelte-querystring-router": "1.5.3",
     "svelte-state-renderer": "~1.2.4",
     "tape": "4.8.0",
     "tape-catch": "1.0.6",
