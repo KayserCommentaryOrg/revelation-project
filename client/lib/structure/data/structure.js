@@ -1,11 +1,7 @@
 import pipe from 'lib/pipe'
+import guaranteeRange from 'lib/structure/guarantee-range'
 
 const identifiers = [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]
-import {
-	VERSE_SECTION_RANGE_MIN,
-	VERSE_SECTION_RANGE_MAX,
-} from 'lib/structure/constants'
-import guaranteeRange from 'lib/structure/guarantee-range'
 
 export default pipe([
 	{
