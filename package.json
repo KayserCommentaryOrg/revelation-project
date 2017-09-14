@@ -44,7 +44,7 @@
     "babel-preset-es2015": "6.24.1",
     "better-emitter": "1.0.2",
     "better-match": "1.0.2",
-    "chromatism": "2.6.0",
+    "chromatism": "3.0.0",
     "click-should-be-intercepted-for-navigation": "~1.0.0",
     "date-fns": "1.28.5",
     "dynamic-import-iife": "1.0.3",
