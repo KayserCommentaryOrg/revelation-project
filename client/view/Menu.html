@@ -1,7 +1,7 @@
 <div class="menu">
 	{{#each menu as item}}
 		<span class="parent-menu-box">
-			<a class="parent-placeholder bold-placeholder">{{item.name}}</a>
+			<a class="parent-placeholder bold-placeholder" aria-hidden="true">{{item.name}}</a>
 			<StateLink
 				state="{{item.state}}"
 				href="{{asr.makePath(item.state)}}"
@@ -17,7 +17,7 @@
 <span class="menu">
 	{{#each activeParentMenuItem.children as child}}
 		<span class="child-menu-box">
-			<a class="bold-placeholder child-placeholder">{{child.name}}</a>
+			<a class="bold-placeholder child-placeholder" aria-hidden="true">{{child.name}}</a>
 			<StateLink
 				state="{{child.state}}"
 				className="child-item"
