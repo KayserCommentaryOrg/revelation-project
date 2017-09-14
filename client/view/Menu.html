@@ -1,6 +1,7 @@
 <div class="menu">
 	{{#each menu as item}}
 		<span class="parent-menu-box">
+			<a class="parent-placeholder bold-placeholder">{{item.name}}</a>
 			<StateLink
 				state="{{item.state}}"
 				href="{{asr.makePath(item.state)}}"
@@ -11,15 +12,19 @@
 		</span>
 	{{/each}}
 </div>
+<hr />
 {{#if activeParentMenuItem && activeParentMenuItem.children}}
-<span class="menu child-menu">
+<span class="menu">
 	{{#each activeParentMenuItem.children as child}}
-		<StateLink
-			state="{{child.state}}"
-			className="child-item"
-		>
-			{{child.name}}
-		</StateLink>
+		<span class="child-menu-box">
+			<a class="bold-placeholder child-placeholder">{{child.name}}</a>
+			<StateLink
+				state="{{child.state}}"
+				className="child-item"
+			>
+				{{child.name}}
+			</StateLink>
+		</span>
 	{{/each}}
 </span>
 {{/if}}
@@ -28,6 +33,10 @@
 a {
 	white-space: nowrap;
 	display: block;
+}
+
+hr {
+	margin: 0;
 }
 
 .menu {
@@ -39,33 +48,49 @@ a {
 }
 
 .parent-menu-box {
-	margin: 4px;
+	text-align: center;
+	margin-bottom: 8px;
+	margin-right: 8px;
+}
+.parent-menu-box:last-of-type {
+	margin-right: 0;
 }
 
 .menu-item {
-	padding: 8px 16px;
+	padding: 8px;
 	background-color: #e0e0e0;
 	color: black;
 	border-radius: 2px;
+}
+.parent-placeholder {
+	padding: 0 8px;
 }
 .menu-item[data-active=true] {
 	font-weight: bold;
 }
 
-.child-menu {
-	padding-left: 4px;
-	padding-right: 4px;
+.child-menu-box {
+	text-align: center;
 }
 
 .child-item {
-	padding: 4px 8px;
+	padding: 4px;
 	color: black;
 	background-color: #f5f5f5;
 
 	font-size: 14px;
 }
+.child-placeholder {
+	padding: 0 4px;
+}
 .child-item[data-active=true] {
 	font-weight: bold;
+}
+
+.bold-placeholder {
+	font-weight: bold;
+	visibility: hidden;
+	height: 0px;
 }
 </style>
 

@@ -1,5 +1,34 @@
-<Menu asr="{{asr}}" />
+<div class="top-bar">
+	<img src="/static/image/dragon-sword.svg" class="logo" />
+	<div class="menu-container">
+		<Menu asr="{{asr}}" />
+	</div>
+</div>
+
 <uiView></uiView>
+
+<style>
+.top-bar {
+	display: flex;
+}
+.logo {
+	width: 150px;
+	height: 150px;
+}
+@media (max-width: 450px) {
+	.top-bar {
+		flex-direction: column;
+	}
+	.logo {
+		align-self: center;
+	}
+}
+
+.menu-container {
+	min-height: 150px;
+	padding: 8px;
+}
+</style>
 
 <script>
 import Menu from './Menu.html'
