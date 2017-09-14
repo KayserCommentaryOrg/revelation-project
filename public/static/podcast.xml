@@ -5,12 +5,12 @@
 		<description><![CDATA[A series of sermons explaining the book of Revelation.]]></description>
 		<link>https://revelation.biblicalblueprints.org/sermons</link>
 		<image>
-			<url>https://revelation.biblicalblueprints.org/static/blood-moon-large.png</url>
+			<url>https://revelation.biblicalblueprints.org/static/image/dragon-sword-1400-graybg.png</url>
 			<title>Revelation Project: Sermons</title>
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Sat, 09 Sep 2017 22:39:25 GMT</lastBuildDate>
+		<lastBuildDate>Thu, 14 Sep 2017 16:20:19 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -26,7 +26,7 @@
 		<itunes:category text="Religion &amp; Spirituality">
 			<itunes:category text="Christianity"/>
 		</itunes:category>
-		<itunes:image href="https://revelation.biblicalblueprints.org/static/blood-moon-large.png"/>
+		<itunes:image href="https://revelation.biblicalblueprints.org/static/image/dragon-sword-1400-graybg.png"/>
 		<item>
 			<title><![CDATA[From Creation To Recreation]]></title>
 			<description><![CDATA[Genesis; Revelation]]></description>

@@ -8,7 +8,7 @@ const podcastInfo = {
 	author: 'Phil Kayser',
 	feed_url: 'https://revelation.biblicalblueprints.org/static/podcast.xml',
 	site_url: 'https://revelation.biblicalblueprints.org/sermons',
-	image_url: 'https://revelation.biblicalblueprints.org/static/blood-moon-large.png',
+	image_url: 'https://revelation.biblicalblueprints.org/static/image/dragon-sword-1400-graybg.png',
 	webMaster: 'me@JoshDuff.com (Josh Duff)',
 	language: 'en',
 	itunesOwner: {

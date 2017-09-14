@@ -7,7 +7,6 @@
     "test": "tape client/**/*-test.js",
     "build": "npm run create-symlinks && npm run glob && npm run build-css && npm run build-js",
     "build-js": "rollup -c -i client/revelation.js -o public/static/revelation.js && rollup -c rollup-minify.config.js -i client/lib/structure/data/structure.js -o public/static/structure.js && rollup -c rollup-minify.config.js && cp client/lib/sermons/sermons.json public/static/ && cp client/lib/timeline/data/timeline-data.json public/static/",
-    "build-podcast": "node ./compile-podcast.js",
     "watch": "rollup -c -w --dev",
     "start": "serve public",
     "watch-glob": "watch \"npm run glob\" client/service client/view",
