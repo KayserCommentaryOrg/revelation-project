@@ -15,7 +15,7 @@ mediator.provide('onStateRouter', (event, cb) => {
 	stateRouter.on(event, cb)
 })
 
-const moduleInitializationPromises = statefulServices.map(module => module(mediator))
+const moduleInitializationPromises = statefulServices.map(module => Promise.resolve(module(mediator)))
 
 views.map(createView => createView(mediator)).forEach(state => {
 	try {

@@ -35,7 +35,7 @@
     "watch": "1.0.2"
   },
   "dependencies": {
-    "abstract-state-router": "~5.16.2",
+    "abstract-state-router": "5.17.0",
     "asr-active-state-watcher": "~1.0.2",
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",

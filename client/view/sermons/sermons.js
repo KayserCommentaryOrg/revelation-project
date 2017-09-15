@@ -8,6 +8,9 @@ export default mediator => ({
 	name: 'main.sermons',
 	route: 'sermons',
 	template: Sermons,
+	data: {
+		title: `Sermons`
+	},
 	resolve() {
 		return pProps({
 			sermons: load('/static/sermons.json', { type: 'json' }),
