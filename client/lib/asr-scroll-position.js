@@ -105,5 +105,10 @@ function setUpInitialPosition(stateRouter) {
 	const initialState = historyState.get()
 	if (initialState && initialState.position) {
 		afterSuccessfulStateChange(stateRouter, () => scrollToStatePosition(initialState.position))
+	} else {
+		const anchor = currentAnchor()
+		if (anchor) {
+			afterSuccessfulStateChange(stateRouter, () => scrollToElement(getElementById(currentAnchor())))
+		}
 	}
 }
