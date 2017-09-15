@@ -4,8 +4,6 @@ export default mediator => {
 	const makeTitleText = title => title ? `${title} | Revelation Project` : `Revelation Project`
 	const changeTitle = title => titleElement.text = makeTitleText(title)
 
-	console.log('initialized')
-
 	return Promise.all([
 		mediator.call('onStateRouter', 'stateChangeStart', () => changeTitle()),
 		mediator.call('onStateRouter', 'stateChangeEnd', (state, params, states) => {
