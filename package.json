@@ -64,7 +64,7 @@
     "podcast2": "~1.0.0",
     "postcss": "6.0.9",
     "precss": "2.0.0",
-    "regex-fun": "2.0.1",
+    "regex-fun": "~2.0.2",
     "reify": "0.12.1",
     "revelation": "2.0.1",
     "rollup": "0.45.2",
@@ -84,6 +84,6 @@
     "tape": "4.8.0",
     "tape-catch": "1.0.6",
     "tempy": "0.1.0",
-    "verse-reference-regex": "~1.1.0"
+    "verse-reference-regex": "~1.1.1"
   }
 }
