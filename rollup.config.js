@@ -6,11 +6,13 @@ import json from 'rollup-plugin-json'
 import visualizer from 'rollup-plugin-visualizer'
 
 export default {
-	format: 'iife',
-	moduleName: 'revelationStructure',
-	entry: './client/index.js',
-	dest: './public/static/index-bundle.js',
-	sourceMap: true,
+	name: 'revelationStructure',
+	input: './client/index.js',
+	output: {
+		file: './public/static/index-bundle.js',
+		format: 'iife',
+	},
+	sourcemap: true,
 	plugins: [
 		svelte(),
 		commonjs(),
