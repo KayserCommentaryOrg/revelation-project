@@ -90,7 +90,7 @@ function getColumnOrders() {
 }
 
 const columnOrders = getColumnOrders()
-const dateRange = date => date && date.start === date.end ? date.start : date.start + ' to ' + date.end
+const dateRange = date => date && (date.start === date.end ? date.start : date.start + ' to ' + date.end)
 
 const formatters = {
 	date: ({ gregorian, hebrew }) => dateRange(gregorian) || dateRange(hebrew),
