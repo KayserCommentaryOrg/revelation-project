@@ -17,7 +17,8 @@
     "build-css": "node compile-css.js",
     "watch-css": "node compile-css.js watch",
     "deploy": "scp -r ./public/. revelation_bb@revelation.biblicalblueprints.org:/home/revelation_bb/revelation.biblicalblueprints.org",
-    "update-sermons": "cd sermon-text-and-audio-correlater && node index.js"
+    "update-sermons": "cd sermon-text-and-audio-correlater && node index.js",
+    "dev": "npm run glob && sh -c 'npm run watch-glob & npm run watch-css & npm run watch && kill 0'"
   },
   "repository": {
     "type": "git",
