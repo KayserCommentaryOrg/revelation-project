@@ -90,9 +90,10 @@ function getColumnOrders() {
 }
 
 const columnOrders = getColumnOrders()
+const dateRange = date => date && date.start === date.end ? date.start : date.start + ' to ' + date.end
 
 const formatters = {
-	date: ({ hebrew }) => hebrew.start === hebrew.end ? hebrew.start : hebrew.start + ' to ' + hebrew.end,
+	date: ({ gregorian, hebrew }) => dateRange(gregorian) || dateRange(hebrew),
 	templeRange: ({ amd }) => {
 		return amd.end === amd.start
 			? relationToTempleBurning(amd.start).toString()
