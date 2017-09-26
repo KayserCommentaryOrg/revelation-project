@@ -27,7 +27,6 @@ export default function watchScrollPosition(stateRouter) {
 
 	function updatePosition() {
 		if (!changingStates) {
-			console.log('updating position to', window.scrollX, window.scrollY)
 			historyState.update({
 				position: currentPosition(),
 			})
@@ -39,12 +38,10 @@ export default function watchScrollPosition(stateRouter) {
 			const anchorElement = getElementById(currentAnchor())
 
 			if (anchorElement) {
-				console.log('Scrolling to anchor')
 				scrollToElement(anchorElement)
 			} else if (atTop()) {
 				updatePosition()
 			} else {
-				console.log('Scrolling to top')
 				scrollToTop()
 			}
 		})
@@ -59,7 +56,6 @@ export default function watchScrollPosition(stateRouter) {
 	windowListener('resize', updatePositionDebounced)
 
 	historyState.on('old state', ({ position }) => {
-		console.log('transitioned to old state, position is', position)
 		scrollToStatePosition(position)
 	})
 }
@@ -91,7 +87,6 @@ function debounce(fn, interval) {
 function scrollToStatePosition(position, mayRetry = true) {
 	if (position) {
 		const { x, y } = position
-		console.log('calling scrollTo', x, y)
 		window.scrollTo(x, y)
 
 		const scrolledFarEnough = window.scrollX >= x && window.scrollY >= y
