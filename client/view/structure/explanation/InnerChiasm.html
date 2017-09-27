@@ -22,18 +22,15 @@
 </ol>
 
 <script>
-import structure from 'lib/structure/data/structure'
 import getColor from 'lib/structure/identifier-color'
 
 import VerseRange from 'component/VerseRange.html'
 import StateLink from 'component/StateLink.html'
 
-const section = structure[4].introduction
-
 export default {
 	data() {
 		return {
-			section
+			section: null
 		}
 	},
 	components: {

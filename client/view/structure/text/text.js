@@ -5,9 +5,10 @@ import pProps from 'p-props'
 
 import combineStructureWithSermons from 'lib/structure/combine-structure-with-sermons'
 
+const structurePromise = load('/static/structure.js')
 const structureWithSermonsPromise = Promise.all([
 	load('/static/sermons.json', { type: 'json' }),
-	load('/static/structure.js'),
+	structurePromise,
 ]).then(([ sermons, structure ]) => {
 	return combineStructureWithSermons(structure, sermons)
 })
@@ -20,6 +21,7 @@ export default mediator => ({
 		return pProps({
 			translations: load('/static/revelation.js'),
 			structureWithSermons: structureWithSermonsPromise,
+			structure: structurePromise,
 		})
 	},
 })

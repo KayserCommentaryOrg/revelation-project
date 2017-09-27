@@ -70,7 +70,6 @@
 </style>
 
 <script>
-import structure from 'lib/structure/data/structure'
 import getColor from 'lib/structure/identifier-color'
 import sectionLabel from 'lib/structure/section-label'
 import septetLabel from 'lib/structure/septet-label'
@@ -81,7 +80,7 @@ import StateLink from 'component/StateLink.html'
 export default {
 	data() {
 		return {
-			structure
+			structure: null
 		}
 	},
 	components: {

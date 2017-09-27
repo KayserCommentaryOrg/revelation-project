@@ -41,7 +41,6 @@
 </ol>
 
 <script>
-import structure from 'lib/structure/data/structure'
 import getColor from 'lib/structure/identifier-color'
 import sectionLabel from 'lib/structure/section-label'
 import getSectionRange from 'lib/structure/get-section-range'
@@ -56,7 +55,7 @@ const { Link } = svelteQuerystringRouter
 export default {
 	data() {
 		return {
-			structure,
+			structure: null,
 			linkToSameState: false
 		}
 	},
