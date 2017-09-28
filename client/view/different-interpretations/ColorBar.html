@@ -1,0 +1,29 @@
+<span class="bar" style="{{style}}">
+	<slot>&nbsp;</slot>
+</span>
+
+<style>
+.bar {
+	white-space: nowrap;
+
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+</style>
+
+<script>
+import { contrastRatio } from 'chromatism'
+
+const join = (...args) => args.filter(value => value).join(' ')
+
+export default {
+	computed: {
+		foregroundColor: color => contrastRatio(color).hex,
+		colorStyle:  (color, foregroundColor) => `background-color: ${color}; color: ${foregroundColor};`,
+		widthStyle: width => width && `width: ${width};`,
+		widthOrPaddingStyle: widthStyle => widthStyle || `padding: 4px 8px;`,
+		style: (widthOrPaddingStyle, colorStyle) => join(widthOrPaddingStyle, colorStyle)
+	}
+}
+</script>

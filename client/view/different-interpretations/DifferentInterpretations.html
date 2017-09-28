@@ -1,0 +1,314 @@
+<div class="intro">
+	<h1>
+		Summary of different interpretations of Revelation
+	</h1>
+</div>
+
+<div class="explanation-bars">
+	<ColorBar color="{{colors.apostolic}}">Apostolic age</ColorBar>
+	<ColorBar color="{{colors.persecution}}">Persecution of the church by Israel and Rome</ColorBar>
+	<ColorBar color="{{colors.current}}">First century to second coming</ColorBar>
+	<ColorBar color="{{colors.eternity}}">Eternity</ColorBar>
+</div>
+
+<div>
+	<h2>
+		Chapters of Revelation
+	</h2>
+	<div class="chapter-delineations">
+		{{#each chapterChunks as delineation}}
+		<div class="chapter-delineation" style="width: {{ chapterWidth(delineation.chapters.length) }};">
+			<span class="delineation-title">
+				{{delineation.title}}
+			</span>
+			<div class="chapter-numbers">
+				{{#each delineation.chapters as number}}
+					<span
+						class="chapter-number"
+						style="{{ chapterNumberStyle(number) }}"
+					>
+						{{number}}
+					</span>
+				{{/each}}
+			</div>
+		</div>
+		{{/each}}
+	</div>
+
+	<div class="belief-container">
+		<h3>Partial Preterist</h3>
+		<div class="belief-bars">
+			<ColorBar color="{{colors.apostolic}}" width="{{ chapterWidth(3) }}"></ColorBar>
+			<ColorBar color="{{colors.persecution}}" width="{{ chapterWidth(16) }}"></ColorBar>
+			<ColorBar color="{{colors.current}}" width="{{ chapterWidth(1) }}"></ColorBar>
+			<ColorBar color="{{colors.eternity}}" width="{{ chapterWidth(2) }}"></ColorBar>
+		</div>
+		<div class="belief-elaboration">
+			<h4>Representatives of Preterism</h4>
+			<ul>
+				<li>
+					<strong>Amillennial:</strong>
+					Jay Adams
+				</li>
+				<li>
+					<strong>Postmillennial:</strong>
+					Augustine, Moses Stuart, Marcellus Kik, Greg Bahnsen, David Chilton, Kenneth Gentry, R.C. Sproul, Douglas Wilson, Joseph R. Balyeat, David Clark, Gary DeMar, Phillip Kayser, Glenn Durham, Kelly Birks
+				</li>
+				<li>
+					<strong>Premillennial:</strong>
+					<em>Note: many of the Historicist Premillennialists listed below are preteristic on chapters like 1-6,12-13,17</em>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="belief-container">
+		<h3>Full Preterist</h3>
+		<div class="belief-bars">
+			<ColorBar color="{{colors.apostolic}}" width="{{ chapterWidth(22) }}"></ColorBar>
+		</div>
+		<div class="belief-elaboration">
+			<p>
+				The full preterist (sometimes called hyper-preterist or pantelist) sees everything in Revelation as being fulfilled by 70 AD.
+			</p>
+			<h4>Representatives of Full Preterism</h4>
+			<ul>
+				<li>
+					<strong>Amillennial:</strong>
+					Max R. King, J.E. Leonard, Arthur M. Ogden, Foy E. Wallace, J. Stuart Russel
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="belief-container">
+		<h3>Historicist</h3>
+		<div class="belief-bars">
+			<ColorBar color="{{colors.current}}" width="{{ chapterWidth(22) }}"></ColorBar>
+		</div>
+		<div class="belief-elaboration">
+			<p>
+				Progressive unfolding of history from the first century until the Second Coming and beyond (with key dates such as 30 AD, 70 AD, 97 AD, 1073 AD, 1217 AD, 1295 AD, 1300 AD, 1301 AD, 1305 AD, etc.)
+			</p>
+			<h4>Representatives of Historicism</h4>
+			<ul>
+				<li>
+					<strong>Amillennial:</strong>
+					Ralph Woodrow, Martin Luther, A. J. Gordon
+				</li>
+				<li>
+					<strong>Postmillennial:</strong>
+					The original Geneva Study Bible, Jonathan Edwards, A H. Strong
+				</li>
+				<li>
+					<strong>Premillennial:</strong>
+					Henry Alford, Philip Mauro, J. Barton Payne, E.B. Elliott, W. J. Erdman, A.R. Faussett
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<hr>
+
+	<div class="belief-container">
+		<h3>Idealist</h3>
+		<div class="belief-bars">
+			<ColorBar color="{{colors.abstract}}" width="{{ chapterWidth(22) }}"></ColorBar>
+		</div>
+		<div class="belief-elaboration">
+			<p>
+				Unhistorical approach. The idealist sees Revelation as presenting ideas and principles, not “happenings.”
+			</p>
+			<h4>Representatives of Idealism:</h4>
+			<ul>
+				<li>
+					<strong>Amillennial:</strong>
+					Siegbert W. Becker, Michael Wilcock
+				</li>
+			</ul>
+		</div>
+	</div>
+
+</div>
+
+
+<style>
+/*
+make better on small screens
+- prevent chapter delineator names from wrapping
+- decrease font size on smaller screens so it doesn't want to wrap
+*/
+.explanation-bars {
+	display: flex;
+	flex-wrap: wrap;
+}
+.explanation-bars > * {
+	margin-right: 8px;
+	margin-bottom: 4px;
+}
+
+.chapter-delineations {
+	width: 100%;
+	min-width: 700px;
+	display: flex;
+}
+
+.chapter-delineation {
+	display: flex;
+	flex-direction: column;
+
+	text-align: center;
+}
+
+.delineation-title {
+	font-size: 12px;
+
+	border-left: .5px solid black;
+	border-right: .5px solid black;
+}
+.chapter-delineation:first-child .delineation-title {
+	border-left: 1px solid black;
+}
+.chapter-delineation:last-child .delineation-title {
+	border-right: 1px solid black;
+}
+
+.chapter-numbers {
+	display: flex;
+}
+.chapter-number {
+	flex-shrink: 0;
+	flex-grow: 1;
+}
+
+.belief-bars {
+	display: flex;
+}
+
+.belief-bars .bar {
+	height: 24px;
+}
+
+.belief-elaboration {
+	padding-left: 16px;
+	padding-right: 16px;
+
+	max-width: 800px;
+}
+
+</style>
+
+
+<script>
+import ColorBar from './ColorBar.html'
+import VerseRange from 'component/VerseRange.html'
+
+import { getChapterColor } from 'lib/structure/identifier-color.js'
+
+import { contrastRatio } from 'chromatism'
+
+const chapterChunks = [{
+	chapters: [1, 2, 3],
+	title: 'Letters',
+}, {
+	chapters: [4, 5, 6, 7],
+	title: 'Seals',
+}, {
+	chapters: [8, 9, 10, 11],
+	title: 'Trumpets',
+}, {
+	chapters: [12, 13, 14],
+	title: 'Visions',
+}, {
+	chapters: [15, 16],
+	title: 'Bowls',
+}, {
+	chapters: [17, 18],
+	title: 'Babylon',
+}, {
+	chapters: [19],
+	title: 'Battle',
+}, {
+	chapters: [20],
+	title: '1000 years',
+}, {
+	chapters: [21, 22],
+	title: 'New creation',
+}]
+
+const yellow = '#FFDC00'
+const red = '#FF4136'
+const aqua = '#7FDBFF'
+const orange = '#FF851B'
+const gray = '#AAAAAA'
+
+const colors = {
+	apostolic: yellow,
+	persecution: red,
+	current: aqua,
+	eternity: orange,
+	abstract: gray,
+}
+
+function combine(first, second, titleContainer) {
+	return {
+		range: [ first.range[0], second.range[1] ],
+		title: titleContainer.title
+	}
+}
+
+function shortenTitle(chunk) {
+	const pieces = chunk.title.split('–')
+
+	return Object.assign({}, chunk, {
+		title: pieces[pieces.length - 1].trim()
+	})
+}
+
+export default {
+	data() {
+		return {
+			colors,
+			chapterChunks
+		}
+	},
+	components: {
+		ColorBar,
+		VerseRange,
+	},
+	computed: {
+		chapterDelineations(structure) {
+			const simplified = structure.map(({ title, range }) => ({ title, range }))
+			console.log('simplified:', simplified)
+			const PROLOGUE = 0
+			const FIRST_SEPTET = 1
+			const first = combine(simplified[PROLOGUE], simplified[FIRST_SEPTET], simplified[FIRST_SEPTET])
+			const EPILOGUE = simplified.length - 1
+			const SEVENTH_SEPTET = EPILOGUE - 1
+			const last = combine(simplified[SEVENTH_SEPTET], simplified[EPILOGUE], simplified[SEVENTH_SEPTET])
+
+			const rest = simplified.slice(2, simplified.length - 3)
+
+			return [
+				first,
+				...rest,
+				last,
+			].map(shortenTitle)
+		}
+	},
+	helpers: {
+		chapterWidth(chapters) {
+			const chaptersInBook = 22
+			return `${(100 / chaptersInBook) * chapters}%`
+		},
+		chapterNumberStyle(chapterNumber) {
+			const chapterColor = getChapterColor(chapterNumber)
+			return `background-color: ${chapterColor}; color: ${contrastRatio(chapterColor).hex};`
+		},
+	}
+}
+</script>
