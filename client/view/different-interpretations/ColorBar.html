@@ -15,15 +15,23 @@
 <script>
 import { contrastRatio } from 'chromatism'
 
-const join = (...args) => args.filter(value => value).join(' ')
+const joinTruthy = (...args) => args.filter(value => value).join(' ')
 
 export default {
 	computed: {
-		foregroundColor: color => contrastRatio(color).hex,
-		colorStyle:  (color, foregroundColor) => `background-color: ${color}; color: ${foregroundColor};`,
+		foregroundColor: color => Array.isArray(color)
+			? `linear-gradient(to right, ${ color.map(c => contrastRatio(c).hex).join(', ') })`
+			: contrastRatio(color).hex,
+		backgroundStyle: color => Array.isArray(color)
+			? `background: linear-gradient(to right, ${color.join(', ')})`
+			: `background-color: ${color}`,
+		colorStyle:  (backgroundStyle, foregroundColor) => `${backgroundStyle}; color: ${foregroundColor};`,
 		widthStyle: width => width && `width: ${width};`,
 		widthOrPaddingStyle: widthStyle => widthStyle || `padding: 4px 8px;`,
-		style: (widthOrPaddingStyle, colorStyle) => join(widthOrPaddingStyle, colorStyle)
+		style: (widthOrPaddingStyle, colorStyle) => joinTruthy(widthOrPaddingStyle, colorStyle)
+	},
+	oncreate() {
+		console.log(this.get('backgroundStyle'))
 	}
 }
 </script>
