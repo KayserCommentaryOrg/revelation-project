@@ -28,14 +28,14 @@
 	</h2>
 	<div class="chapter-delineations">
 		{{#each chapterChunks as delineation}}
-		<div class="chapter-delineation" style="width: {{ chapterWidth(delineation.chapters.length) }};">
-			<span class="delineation-title">
+		<div class="chapter-delineation separated-thing-container" style="width: {{ chapterWidth(delineation.chapters.length) }};">
+			<span class="delineation-title separated-thing">
 				{{delineation.title}}
 			</span>
 			<div class="chapter-numbers">
 				{{#each delineation.chapters as number}}
 					<span
-						class="chapter-number"
+						class="chapter-number separated-thing"
 						style="{{ chapterNumberStyle(number) }}"
 					>
 						{{number}}
@@ -287,14 +287,24 @@ h4 {
 
 .delineation-title {
 	font-size: 12px;
-
+}
+/*
+.separated-thing {
 	border-left: .5px solid black;
 	border-right: .5px solid black;
 }
-.chapter-delineation:first-child .delineation-title {
+.separated-thing-container:first-child .separated-thing:first-child {
 	border-left: 1px solid black;
 }
-.chapter-delineation:last-child .delineation-title {
+.separated-thing-container:last-child .separated-thing:last-child {
+	border-right: 1px solid black;
+}
+*/
+
+.separated-thing {
+	border-left: 1px solid black;
+}
+.separated-thing-container:last-child {
 	border-right: 1px solid black;
 }
 
