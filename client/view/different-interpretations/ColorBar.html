@@ -1,5 +1,7 @@
 <span class="bar" style="{{style}}">
-	<slot>&nbsp;</slot>
+	<span class="inner-padding">
+		<slot>&nbsp;</slot>
+	</span>
 </span>
 
 <style>
@@ -9,7 +11,17 @@
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
+
+.inner-padding {
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
 </style>
 
 <script>
@@ -20,15 +32,16 @@ const joinTruthy = (...args) => args.filter(value => value).join(' ')
 export default {
 	computed: {
 		foregroundColor: color => Array.isArray(color)
-			? `linear-gradient(to right, ${ color.map(c => contrastRatio(c).hex).join(', ') })`
+			? contrastRatio(color[0]).hex
 			: contrastRatio(color).hex,
 		backgroundStyle: color => Array.isArray(color)
 			? `background: linear-gradient(to right, ${color.join(', ')})`
 			: `background-color: ${color}`,
 		colorStyle:  (backgroundStyle, foregroundColor) => `${backgroundStyle}; color: ${foregroundColor};`,
 		widthStyle: width => width && `width: ${width};`,
-		widthOrPaddingStyle: widthStyle => widthStyle || `padding: 4px 8px;`,
-		style: (widthOrPaddingStyle, colorStyle) => joinTruthy(widthOrPaddingStyle, colorStyle)
+		widthOrPaddingStyle: widthStyle => widthStyle || `padding-top: 8px; padding-bottom: 8px;`,
+		fontStyle: fontSize => `font-size: ${fontSize === 'small' ? '12px' : '16px'};`,
+		style: (widthOrPaddingStyle, colorStyle, fontStyle) => joinTruthy(widthOrPaddingStyle, colorStyle, fontStyle)
 	},
 	oncreate() {
 		console.log(this.get('backgroundStyle'))

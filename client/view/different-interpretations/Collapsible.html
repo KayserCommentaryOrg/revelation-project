@@ -1,0 +1,50 @@
+<div data-collapsed="{{collapsed}}">
+	<div class="title" on:click="toggle()">
+		<div class="arrow">
+			{{#if collapsed}}
+				▶
+			{{else}}
+				▼
+			{{/if}}
+		</div>
+		<slot name="title"></slot>
+	</div>
+	<div class="content">
+		<slot></slot>
+	</div>
+</div>
+
+<style>
+.title {
+	cursor: pointer;
+
+	display: flex;
+	align-items: center;
+}
+
+.arrow {
+	width: 16px;
+	margin-right: 8px;
+}
+
+[data-collapsed=true] .content {
+	display: none;
+}
+</style>
+
+<script>
+export default {
+	data() {
+		return {
+			collapsed: true
+		}
+	},
+	methods: {
+		toggle() {
+			this.set({
+				collapsed: !this.get('collapsed')
+			})
+		}
+	}
+}
+</script>

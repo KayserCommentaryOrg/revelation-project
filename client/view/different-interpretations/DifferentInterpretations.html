@@ -5,11 +5,21 @@
 </div>
 
 <div class="explanation-bars">
-	<ColorBar color="{{colors.apostolic}}">Apostolic age</ColorBar>
-	<ColorBar color="{{colors.persecution}}">Persecution of the church by Israel and Rome</ColorBar>
-	<ColorBar color="{{colors.past}}">First century to now</ColorBar>
-	<ColorBar color="{{colors.future}}">Now to second coming and beyond</ColorBar>
-	<ColorBar color="{{colors.eternity}}">Eternity</ColorBar>
+	<ColorBar color="{{colors.apostolic}}">
+		Apostolic age (crucifixion to A.D. 70)
+	</ColorBar>
+	<ColorBar color="{{colors.persecution}}">
+		Persecution of the church by Israel and Rome (A.D. 62 to 68)
+	</ColorBar>
+	<ColorBar color="{{colors.past}}">
+		First century to now
+	</ColorBar>
+	<ColorBar color="{{colors.future}}">
+		Now to second coming and beyond
+	</ColorBar>
+	<ColorBar color="{{colors.eternity}}">
+		Eternity
+	</ColorBar>
 </div>
 
 <div>
@@ -39,27 +49,39 @@
 	<div class="belief-container">
 		<h3>Partial Preterist</h3>
 		<div class="belief-bars">
-			<ColorBar color="{{colors.apostolic}}" width="{{ chapterWidth(3) }}"></ColorBar>
-			<ColorBar color="{{colors.persecution}}" width="{{ chapterWidth(16) }}"></ColorBar>
-			<ColorBar color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(1) }}"></ColorBar>
-			<ColorBar color="{{colors.eternity}}" width="{{ chapterWidth(2) }}"></ColorBar>
+			<ColorBar fontSize="small" color="{{colors.apostolic}}" width="{{ chapterWidth(3) }}">
+				Apostolic age
+			</ColorBar>
+			<ColorBar fontSize="small" color="{{colors.persecution}}" width="{{ chapterWidth(16) }}">
+				Persecution of the church
+			</ColorBar>
+			<ColorBar fontSize="small" color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(1) }}">
+				Now
+			</ColorBar>
+			<ColorBar fontSize="small" color="{{colors.eternity}}" width="{{ chapterWidth(2) }}">
+				Eternity
+			</ColorBar>
 		</div>
 		<div class="belief-elaboration">
-			<h4>Representatives of Preterism</h4>
-			<ul>
-				<li>
-					<strong>Amillennial:</strong>
-					Jay Adams
-				</li>
-				<li>
-					<strong>Postmillennial:</strong>
-					Augustine, Moses Stuart, Marcellus Kik, Greg Bahnsen, David Chilton, Kenneth Gentry, R.C. Sproul, Douglas Wilson, Joseph R. Balyeat, David Clark, Gary DeMar, Phillip Kayser, Glenn Durham, Kelly Birks
-				</li>
-				<li>
-					<strong>Premillennial:</strong>
-					<em>Note: many of the Historicist Premillennialists listed below are preteristic on chapters like 1-6,12-13,17</em>
-				</li>
-			</ul>
+			<Collapsible>
+				<h4 slot='title'>Representatives of Partial Preterism</h4>
+				<slot>
+					<ul>
+						<li>
+							<strong>Amillennial:</strong>
+							Jay Adams
+						</li>
+						<li>
+							<strong>Postmillennial:</strong>
+							Augustine, Moses Stuart, Marcellus Kik, Greg Bahnsen, David Chilton, Kenneth Gentry, R.C. Sproul, Douglas Wilson, Joseph R. Balyeat, David Clark, Gary DeMar, Phillip Kayser, Glenn Durham, Kelly Birks
+						</li>
+						<li>
+							<strong>Premillennial:</strong>
+							<em>Note: many of the Historicist Premillennialists listed below are preteristic on chapters like 1-6,12-13,17</em>
+						</li>
+					</ul>
+				</slot>
+			</Collapsible>
 		</div>
 	</div>
 
@@ -68,19 +90,23 @@
 	<div class="belief-container">
 		<h3>Full Preterist</h3>
 		<div class="belief-bars">
-			<ColorBar color="{{colors.apostolic}}" width="{{ chapterWidth(22) }}"></ColorBar>
+			<ColorBar fontSize="small" color="{{ [ colors.apostolic, colors.persecution ] }}" width="{{ chapterWidth(22) }}"></ColorBar>
 		</div>
 		<div class="belief-elaboration">
 			<p>
 				The full preterist (sometimes called hyper-preterist or pantelist) sees everything in Revelation as being fulfilled by 70 AD.
 			</p>
-			<h4>Representatives of Full Preterism</h4>
-			<ul>
-				<li>
-					<strong>Amillennial:</strong>
-					Max R. King, J.E. Leonard, Arthur M. Ogden, Foy E. Wallace, J. Stuart Russel
-				</li>
-			</ul>
+			<Collapsible>
+				<h4 slot="title">Representatives of Full Preterism</h4>
+				<slot>
+					<ul>
+						<li>
+							<strong>Amillennial:</strong>
+							Max R. King, J.E. Leonard, Arthur M. Ogden, Foy E. Wallace, J. Stuart Russel
+						</li>
+					</ul>
+				</slot>
+			</Collapsible>
 		</div>
 	</div>
 
@@ -89,27 +115,31 @@
 	<div class="belief-container">
 		<h3>Historicist</h3>
 		<div class="belief-bars">
-			<ColorBar color="{{ [ colors.past, colors.future ]}}" width="{{ chapterWidth(22) }}"></ColorBar>
+			<ColorBar fontSize="small" color="{{ [ colors.past, colors.future ]}}" width="{{ chapterWidth(22) }}"></ColorBar>
 		</div>
 		<div class="belief-elaboration">
 			<p>
 				Progressive unfolding of history from the first century until the Second Coming and beyond (with key dates such as 30 AD, 70 AD, 97 AD, 1073 AD, 1217 AD, 1295 AD, 1300 AD, 1301 AD, 1305 AD, etc.)
 			</p>
-			<h4>Representatives of Historicism</h4>
-			<ul>
-				<li>
-					<strong>Amillennial:</strong>
-					Ralph Woodrow, Martin Luther, A. J. Gordon
-				</li>
-				<li>
-					<strong>Postmillennial:</strong>
-					The original Geneva Study Bible, Jonathan Edwards, A H. Strong
-				</li>
-				<li>
-					<strong>Premillennial:</strong>
-					Henry Alford, Philip Mauro, J. Barton Payne, E.B. Elliott, W. J. Erdman, A.R. Faussett
-				</li>
-			</ul>
+			<Collapsible>
+				<h4 slot="title">Representatives of Historicism</h4>
+				<slot>
+					<ul>
+						<li>
+							<strong>Amillennial:</strong>
+							Ralph Woodrow, Martin Luther, A. J. Gordon
+						</li>
+						<li>
+							<strong>Postmillennial:</strong>
+							The original Geneva Study Bible, Jonathan Edwards, A H. Strong
+						</li>
+						<li>
+							<strong>Premillennial:</strong>
+							Henry Alford, Philip Mauro, J. Barton Payne, E.B. Elliott, W. J. Erdman, A.R. Faussett
+						</li>
+					</ul>
+				</slot>
+			</Collapsible>
 		</div>
 	</div>
 
@@ -118,19 +148,23 @@
 	<div class="belief-container">
 		<h3>Idealist</h3>
 		<div class="belief-bars">
-			<ColorBar color="{{ [ colors.abstract, '#f5f5f5', colors.abstract, '#f5f5f5', colors.abstract, '#f5f5f5', colors.abstract, '#f5f5f5', colors.abstract ] }}" width="{{ chapterWidth(22) }}"></ColorBar>
+			<ColorBar fontSize="small" color="{{ [ colors.abstract, '#d4d4d4', colors.abstract, '#d4d4d4', colors.abstract, '#d4d4d4', colors.abstract, '#d4d4d4', colors.abstract ] }}" width="{{ chapterWidth(22) }}"></ColorBar>
 		</div>
 		<div class="belief-elaboration">
 			<p>
 				Unhistorical approach. The idealist sees Revelation as presenting ideas and principles, not “happenings.”
 			</p>
-			<h4>Representatives of Idealism:</h4>
-			<ul>
-				<li>
-					<strong>Amillennial:</strong>
-					Siegbert W. Becker, Michael Wilcock
-				</li>
-			</ul>
+			<Collapsible>
+				<h4 slot="title">Representatives of Idealism:</h4>
+				<slot>
+					<ul>
+						<li>
+							<strong>Amillennial:</strong>
+							Siegbert W. Becker, Michael Wilcock
+						</li>
+					</ul>
+				</slot>
+			</Collapsible>
 		</div>
 	</div>
 
@@ -139,29 +173,33 @@
 	<div class="belief-container">
 		<h3>Recapitulationist</h3>
 		<div class="belief-bars">
-			<ColorBar color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(3) }}"></ColorBar>
-			<ColorBar color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(3) }}"></ColorBar>
-			<ColorBar color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(4) }}"></ColorBar>
-			<ColorBar color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(3) }}"></ColorBar>
-			<ColorBar color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(2) }}"></ColorBar>
-			<ColorBar color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(3) }}"></ColorBar>
-			<ColorBar color="{{ [ colors.past, colors.future, colors.eternity ] }}" width="{{ chapterWidth(3) }}"></ColorBar>
+			<ColorBar fontSize="small" color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(3) }}"></ColorBar>
+			<ColorBar fontSize="small" color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(4) }}"></ColorBar>
+			<ColorBar fontSize="small" color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(4) }}"></ColorBar>
+			<ColorBar fontSize="small" color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(3) }}"></ColorBar>
+			<ColorBar fontSize="small" color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(2) }}"></ColorBar>
+			<ColorBar fontSize="small" color="{{ [ colors.past, colors.future ] }}" width="{{ chapterWidth(3) }}"></ColorBar>
+			<ColorBar fontSize="small" color="{{ [ colors.past, colors.future, colors.eternity ] }}" width="{{ chapterWidth(3) }}"></ColorBar>
 		</div>
 		<div class="belief-elaboration">
 			<p>
 				Revelation is divided into seven sections each of which spans the entire dispensation from first coming to second coming. 7 different perspectives.
 			</p>
-			<h4>Representatives of Recapitulationism</h4>
-			<ul>
-				<li>
-					<strong>Amillennial:</strong>
-					William Hendriksen, Abraham Kuyper, R. B. Strimple
-				</li>
-				<li>
-					<strong>Postmillennial:</strong>
-					<em>While pure recapitulationism is usually Amillennial, many Postmillennialists borrow the concept in their structure of the book.</em>
-				</li>
-			</ul>
+			<Collapsible>
+				<h4 slot="title">Representatives of Recapitulationism</h4>
+				<slot>
+					<ul>
+						<li>
+							<strong>Amillennial:</strong>
+							William Hendriksen, Abraham Kuyper, R. B. Strimple
+						</li>
+						<li>
+							<strong>Postmillennial:</strong>
+							<em>While pure recapitulationism is usually Amillennial, many Postmillennialists borrow the concept in their structure of the book.</em>
+						</li>
+					</ul>
+				</slot>
+			</Collapsible>
 		</div>
 	</div>
 
@@ -170,27 +208,39 @@
 	<div class="belief-container">
 		<h3>Futurist</h3>
 		<div class="belief-bars">
-			<ColorBar color="{{colors.apostolic}}" width="{{ chapterWidth(3) }}"></ColorBar>
-			<ColorBar color="{{colors.future}}" width="{{ chapterWidth(16) }}"></ColorBar>
-			<ColorBar color="{{colors.future}}" width="{{ chapterWidth(1) }}"></ColorBar>
-			<ColorBar color="{{colors.eternity}}" width="{{ chapterWidth(2) }}"></ColorBar>
+			<ColorBar fontSize="small" color="{{colors.apostolic}}" width="{{ chapterWidth(3) }}">
+				Apostolic
+			</ColorBar>
+			<ColorBar fontSize="small" color="{{colors.future}}" width="{{ chapterWidth(16) }}">
+				 A description of a seven year period of tribulation shortly before millennium
+			</ColorBar>
+			<ColorBar fontSize="small" color="{{colors.future}}" width="{{ chapterWidth(1) }}">
+				Millennium
+			</ColorBar>
+			<ColorBar fontSize="small" color="{{colors.eternity}}" width="{{ chapterWidth(2) }}">
+				Eternity
+			</ColorBar>
 		</div>
 		<div class="belief-elaboration">
-			<h4>Representatives of Futurism</h4>
-			<ul>
-				<li>
-					<strong>Amillennial:</strong>
-					M. G. Kline, M. M. Kline and many pessimistic brands of amillennialism
-				</li>
-				<li>
-					<strong>Historic Premillennial:</strong>
-					George Eldon Ladd, Mounce
-				</li>
-				<li>
-					<strong>Dispensational Premillennial:</strong>
-					Most. Some (like William Newell) see each of the churches in chapters 1-3 as representing a different age of church history
-				</li>
-			</ul>
+			<Collapsible>
+				<h4 slot="title">Representatives of Futurism</h4>
+				<slot>
+					<ul>
+						<li>
+							<strong>Amillennial:</strong>
+							M. G. Kline, M. M. Kline and many pessimistic brands of amillennialism
+						</li>
+						<li>
+							<strong>Historic Premillennial:</strong>
+							George Eldon Ladd, Mounce
+						</li>
+						<li>
+							<strong>Dispensational Premillennial:</strong>
+							Most. Some (like William Newell) see each of the churches in chapters 1-3 as representing a different age of church history
+						</li>
+					</ul>
+				</slot>
+			</Collapsible>
 		</div>
 	</div>
 
@@ -206,6 +256,7 @@ make better on small screens
 .explanation-bars {
 	display: flex;
 	flex-wrap: wrap;
+	/*flex-direction: column;*/
 }
 .explanation-bars > * {
 	margin-right: 8px;
@@ -264,10 +315,14 @@ h4 {
 }
 
 .belief-elaboration {
-	padding-left: 16px;
-	padding-right: 16px;
-
 	max-width: 800px;
+}
+.belief-elaboration > * {
+	margin-top: 8px;
+	margin-bottom: 0;
+}
+.belief-elaboration ul {
+	padding-left: 24px;
 }
 
 </style>
@@ -276,6 +331,7 @@ h4 {
 <script>
 import ColorBar from './ColorBar.html'
 import VerseRange from 'component/VerseRange.html'
+import Collapsible from './Collapsible.html'
 
 import { getChapterColor } from 'lib/structure/identifier-color.js'
 
@@ -353,6 +409,7 @@ export default {
 	components: {
 		ColorBar,
 		VerseRange,
+		Collapsible,
 	},
 	computed: {
 		chapterDelineations(structure) {
@@ -380,6 +437,7 @@ export default {
 			return `${(100 / chaptersInBook) * chapters}%`
 		},
 		chapterNumberStyle(chapterNumber) {
+			return ``
 			const chapterColor = getChapterColor(chapterNumber)
 			return `background-color: ${chapterColor}; color: ${contrastRatio(chapterColor).hex};`
 		},
