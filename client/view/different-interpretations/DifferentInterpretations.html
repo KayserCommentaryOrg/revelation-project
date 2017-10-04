@@ -4,22 +4,25 @@
 	</h1>
 </div>
 
-<div class="explanation-bars">
-	<ColorBar color="{{colors.apostolic}}">
-		Apostolic age (crucifixion to A.D. 70)
-	</ColorBar>
-	<ColorBar color="{{colors.persecution}}">
-		Persecution of the church by Israel and Rome (A.D. 62 to 68)
-	</ColorBar>
-	<ColorBar color="{{colors.past}}">
-		First century to now
-	</ColorBar>
-	<ColorBar color="{{colors.future}}">
-		Now to second coming and beyond
-	</ColorBar>
-	<ColorBar color="{{colors.eternity}}">
-		Eternity
-	</ColorBar>
+<div class="legend-container">
+	<span class="explanation-bars bg-color-light-gray">
+		<h3>Legend</h3>
+		<ColorBar yPadding="4" color="{{colors.apostolic}}">
+			Apostolic age (crucifixion to A.D. 70)
+		</ColorBar>
+		<ColorBar yPadding="4" color="{{colors.persecution}}">
+			Persecution of the church by Israel and Rome (A.D. 62 to 68)
+		</ColorBar>
+		<ColorBar yPadding="4" color="{{colors.past}}">
+			First century to now
+		</ColorBar>
+		<ColorBar yPadding="4" color="{{colors.future}}">
+			Future
+		</ColorBar>
+		<ColorBar yPadding="4" color="{{colors.eternity}}">
+			Eternity
+		</ColorBar>
+	</span>
 </div>
 
 <div>
@@ -282,10 +285,19 @@ make better on small screens
 - prevent chapter delineator names from wrapping
 - decrease font size on smaller screens so it doesn't want to wrap
 */
+
+.legend-container {
+	display: inline-block;
+}
 .explanation-bars {
 	display: flex;
-	flex-wrap: wrap;
-	/*flex-direction: column;*/
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 4px 8px;
+
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
 }
 .explanation-bars > * {
 	margin-right: 8px;
