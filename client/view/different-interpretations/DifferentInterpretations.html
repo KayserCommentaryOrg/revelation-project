@@ -31,27 +31,25 @@
 	</h2>
 
 	<div class="chapters-and-beliefs">
-		<LockToTop>
-			<div class="chapter-delineations">
-				{{#each chapterChunks as delineation}}
-				<div class="chapter-delineation separated-thing-container" style="width: {{ chapterWidth(delineation.chapters.length) }};">
-					<span class="delineation-title separated-thing">
-						{{delineation.title}}
-					</span>
-					<div class="chapter-numbers">
-						{{#each delineation.chapters as number}}
-							<span
-								class="chapter-number separated-thing"
-								style="{{ chapterNumberStyle(number) }}"
-							>
-								{{number}}
-							</span>
-						{{/each}}
-					</div>
+		<div class="chapter-delineations sticky">
+			{{#each chapterChunks as delineation}}
+			<div class="chapter-delineation separated-thing-container" style="width: {{ chapterWidth(delineation.chapters.length) }};">
+				<span class="delineation-title separated-thing">
+					{{delineation.title}}
+				</span>
+				<div class="chapter-numbers">
+					{{#each delineation.chapters as number}}
+						<span
+							class="chapter-number separated-thing"
+							style="{{ chapterNumberStyle(number) }}"
+						>
+							{{number}}
+						</span>
+					{{/each}}
 				</div>
-				{{/each}}
 			</div>
-		</LockToTop>
+			{{/each}}
+		</div>
 
 		<div class="belief-container">
 			<h3>Partial Preterist</h3>
@@ -317,6 +315,8 @@ make better on small screens
 
 .chapter-delineations {
 	display: flex;
+
+	background-color: rgba(245, 245, 245, 0.7);
 }
 
 .chapter-delineation {

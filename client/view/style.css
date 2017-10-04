@@ -81,3 +81,8 @@ a:visited {
 a.everblue:visited {
 	color: $linkBlue;
 }
+
+.sticky {
+	position: sticky;
+	top: 0;
+}
