@@ -36,22 +36,34 @@ export default {
 		}
 	},
 	computed: {
-		foregroundColor: color => Array.isArray(color)
-			? contrastRatio(color[0]).hex
-			: contrastRatio(color).hex,
-		backgroundStyle: color => Array.isArray(color)
-			? `background: linear-gradient(to right, ${color.join(', ')})`
-			: `background-color: ${color}`,
-		widthStyle: width => width && `width: ${width};`,
-		colorStyle:  (backgroundStyle, foregroundColor) => `${backgroundStyle}; color: ${foregroundColor};`,
-		paddingStyle: yPadding => `padding-top: ${yPadding}px; padding-bottom: ${yPadding}px;`,
-		fontStyle: fontSize => `font-size: ${fontSize === 'small' ? '12px' : '16px'};`,
-		styleArray: (widthStyle, paddingStyle, colorStyle, fontStyle) =>
-			[widthStyle, paddingStyle, colorStyle, fontStyle],
-		style: styleArray => joinTruthy(...styleArray)
+		foregroundColor(color) {
+			return Array.isArray(color)
+				? contrastRatio(color[0]).hex
+				: contrastRatio(color).hex
+		},
+		backgroundStyle(color) {
+			return Array.isArray(color)
+				? `background: linear-gradient(to right, ${color.join(', ')})`
+				: `background-color: ${color}`
+		},
+		widthStyle(width) {
+			return width && `width: ${width};`
+		},
+		colorStyle(backgroundStyle, foregroundColor) {
+			return `${backgroundStyle}; color: ${foregroundColor};`
+		},
+		paddingStyle(yPadding) {
+			return `padding-top: ${yPadding}px; padding-bottom: ${yPadding}px;`
+		},
+		fontStyle(fontSize) {
+			return `font-size: ${fontSize === 'small' ? '12px' : '16px'};`
+		},
+		styleArray(widthStyle, paddingStyle, colorStyle, fontStyle) {
+			return [widthStyle, paddingStyle, colorStyle, fontStyle]
+		},
+		style(styleArray) {
+			return joinTruthy(...styleArray)
+		}
 	},
-	oncreate() {
-		console.log(this.get('backgroundStyle'))
-	}
 }
 </script>
