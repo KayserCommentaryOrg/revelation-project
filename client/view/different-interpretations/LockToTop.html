@@ -29,8 +29,9 @@ export default {
 			this.set({
 				containerHeight: this.refs.container.clientHeight,
 				placeholderWidth: this.refs.placeholder.clientWidth,
-				placeholderPosition: this.refs.placeholder.getBoundingClientRect(),
+				placeholderViewportPosition: this.refs.placeholder.getBoundingClientRect(),
 				placeholderTop: this.refs.placeholder.offsetTop,
+				placeholderLeft: this.refs.placeholder.offsetLeft,
 			})
 		}
 	},
@@ -38,18 +39,19 @@ export default {
 		placeholderStyle(containerHeight) {
 			return containerHeight ? `height: ${containerHeight}px;` : ``
 		},
-		containerStyle(placeholderPosition, placeholderWidth, placeholderTop) {
-			if (!placeholderPosition) {
+		containerStyle(placeholderViewportPosition, placeholderWidth, placeholderTop, placeholderLeft) {
+			if (!placeholderViewportPosition) {
 				return `display: none;`
 			}
 
-			const aboveViewport = placeholderPosition.top < 0
+			const aboveViewport = placeholderViewportPosition.top < 0
 
 			const top = aboveViewport ? 0 : placeholderTop
+			const left = aboveViewport ? placeholderViewportPosition.left : placeholderLeft
 			const position = aboveViewport ? 'fixed' : 'absolute'
 
 			return `
-				left: ${placeholderPosition.left}px;
+				left: ${left}px;
 				width: ${placeholderWidth}px;
 				position: ${position};
 				top: ${top}px;
