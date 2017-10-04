@@ -41,15 +41,15 @@ export default {
 
 			const aboveViewport = placeholderViewportPosition.top < 0
 
-			const top = aboveViewport ? 0 : placeholderTop
-			const left = aboveViewport ? placeholderViewportPosition.left : placeholderLeft
-			const position = aboveViewport ? 'fixed' : 'absolute'
+			const { top, left, position } = aboveViewport
+				? { top: 0, left: placeholderViewportPosition.left, position: 'fixed' }
+				: { top: placeholderTop, left: placeholderLeft, position: 'absolute '}
 
 			return `
-				left: ${left}px;
 				width: ${placeholderWidth}px;
-				position: ${position};
 				top: ${top}px;
+				left: ${left}px;
+				position: ${position};
 			`
 		}
 	}
