@@ -39,10 +39,7 @@
 				</span>
 				<div class="chapter-numbers">
 					{{#each delineation.chapters as number}}
-						<span
-							class="chapter-number separated-thing"
-							style="{{ chapterNumberStyle(number) }}"
-						>
+						<span class="chapter-number separated-thing">
 							{{number}}
 						</span>
 					{{/each}}
@@ -392,11 +389,6 @@ h4 {
 import VerseRange from 'component/VerseRange.html'
 import ColorBar from './ColorBar.html'
 import Collapsible from './Collapsible.html'
-import LockToTop from './LockToTop.html'
-
-import { getChapterColor } from 'lib/structure/identifier-color.js'
-
-import { contrastRatio } from 'chromatism2'
 
 const chapterChunks = [{
 	chapters: [1, 2, 3],
@@ -471,7 +463,6 @@ export default {
 		ColorBar,
 		VerseRange,
 		Collapsible,
-		LockToTop,
 	},
 	computed: {
 		chapterDelineations(structure) {
@@ -497,11 +488,6 @@ export default {
 		chapterWidth(chapters) {
 			const chaptersInBook = 22
 			return `${(100 / chaptersInBook) * chapters}%`
-		},
-		chapterNumberStyle(chapterNumber) {
-			return ``
-			const chapterColor = getChapterColor(chapterNumber)
-			return `background-color: ${chapterColor}; color: ${contrastRatio(chapterColor).hex};`
 		},
 	}
 }
