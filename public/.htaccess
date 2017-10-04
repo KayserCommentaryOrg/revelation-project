@@ -1,5 +1,15 @@
 AddOutputFilterByType DEFLATE text/html text/plain application/javascript text/css
 
+ExpiresActive On
+ExpiresDefault "access plus 4 hours"
+ExpiresByType application/javascript A5
+ExpiresByType application/x-javascript A5
+ExpiresByType text/javascript A5
+ExpiresByType application/json A5
+ExpiresByType text/html A5
+ExpiresByType text/plain A5
+ExpiresByType text/css A5
+
 RewriteEngine On
 RewriteCond %{HTTPS} !=on
 RewriteCond %{HTTP_HOST} !localhost [NC]
