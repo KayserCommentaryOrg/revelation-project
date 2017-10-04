@@ -598,5 +598,12 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 13/Revelation 13-11-15.md",
 		"date": "2017-09-24",
 		"audioId": 1072
+	},
+	{
+		"title": "The Mark of the Beast",
+		"passage": "Revelation 13:16-18",
+		"range": [[13,16,1], [13,18,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 13/Revelation 13-16-18.md",
+		"date": "2017-10-01"
 	}
 ]
