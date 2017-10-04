@@ -1,0 +1,60 @@
+<:Window on:scroll="updatePosition()" />
+
+<div ref:placeholder class="placeholder" style="{{placeholderStyle}}">
+
+</div>
+
+<div ref:container class="container" style="{{containerStyle}}">
+	<slot></slot>
+</div>
+
+<style>
+.container {
+	background-color: rgba(245, 245, 245, 0.7);
+}
+</style>
+
+<script>
+export default {
+	data() {
+		return {
+			style: ''
+		}
+	},
+	oncreate() {
+		this.updatePosition()
+	},
+	methods: {
+		updatePosition() {
+			this.set({
+				containerHeight: this.refs.container.clientHeight,
+				placeholderWidth: this.refs.placeholder.clientWidth,
+				placeholderPosition: this.refs.placeholder.getBoundingClientRect(),
+				placeholderTop: this.refs.placeholder.offsetTop,
+			})
+		}
+	},
+	computed: {
+		placeholderStyle(containerHeight) {
+			return containerHeight ? `height: ${containerHeight}px;` : ``
+		},
+		containerStyle(placeholderPosition, placeholderWidth, placeholderTop) {
+			if (!placeholderPosition) {
+				return `display: none;`
+			}
+
+			const aboveViewport = placeholderPosition.top < 0
+
+			const top = aboveViewport ? 0 : placeholderTop
+			const position = aboveViewport ? 'fixed' : 'absolute'
+
+			return `
+				left: ${placeholderPosition.left}px;
+				width: ${placeholderWidth}px;
+				position: ${position};
+				top: ${top}px;
+			`
+		}
+	}
+}
+</script>

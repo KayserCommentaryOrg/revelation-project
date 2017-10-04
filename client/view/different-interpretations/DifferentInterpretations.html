@@ -31,25 +31,27 @@
 	</h2>
 
 	<div class="chapters-and-beliefs">
-		<div class="chapter-delineations">
-			{{#each chapterChunks as delineation}}
-			<div class="chapter-delineation separated-thing-container" style="width: {{ chapterWidth(delineation.chapters.length) }};">
-				<span class="delineation-title separated-thing">
-					{{delineation.title}}
-				</span>
-				<div class="chapter-numbers">
-					{{#each delineation.chapters as number}}
-						<span
-							class="chapter-number separated-thing"
-							style="{{ chapterNumberStyle(number) }}"
-						>
-							{{number}}
-						</span>
-					{{/each}}
+		<LockToTop>
+			<div class="chapter-delineations">
+				{{#each chapterChunks as delineation}}
+				<div class="chapter-delineation separated-thing-container" style="width: {{ chapterWidth(delineation.chapters.length) }};">
+					<span class="delineation-title separated-thing">
+						{{delineation.title}}
+					</span>
+					<div class="chapter-numbers">
+						{{#each delineation.chapters as number}}
+							<span
+								class="chapter-number separated-thing"
+								style="{{ chapterNumberStyle(number) }}"
+							>
+								{{number}}
+							</span>
+						{{/each}}
+					</div>
 				</div>
+				{{/each}}
 			</div>
-			{{/each}}
-		</div>
+		</LockToTop>
 
 		<div class="belief-container">
 			<h3>Partial Preterist</h3>
@@ -383,9 +385,10 @@ h4 {
 
 
 <script>
-import ColorBar from './ColorBar.html'
 import VerseRange from 'component/VerseRange.html'
+import ColorBar from './ColorBar.html'
 import Collapsible from './Collapsible.html'
+import LockToTop from './LockToTop.html'
 
 import { getChapterColor } from 'lib/structure/identifier-color.js'
 
@@ -464,11 +467,12 @@ export default {
 		ColorBar,
 		VerseRange,
 		Collapsible,
+		LockToTop,
 	},
 	computed: {
 		chapterDelineations(structure) {
 			const simplified = structure.map(({ title, range }) => ({ title, range }))
-			console.log('simplified:', simplified)
+
 			const PROLOGUE = 0
 			const FIRST_SEPTET = 1
 			const first = combine(simplified[PROLOGUE], simplified[FIRST_SEPTET], simplified[FIRST_SEPTET])
