@@ -1,4 +1,4 @@
-<:Window ref:window on:resize="drawOnNextFrame()" on:scroll="drawOnNextFrame()" />
+<:Window ref:window on:resize="drawOnNextFrame()" />
 
 <canvas
 	ref:canvas
@@ -26,6 +26,14 @@ export default {
 	},
 	oncreate() {
 		this.drawOnNextFrame()
+
+		const listener = () => this.drawOnNextFrame()
+		const eventOptions = { passive: false }
+		window.addEventListener('scroll', listener, eventOptions)
+		this.unsubscribe = () => window.removeEventListener('scroll', listener, eventOptions)
+	},
+	ondestroy() {
+		this.unsubscribe()
 	},
 	computed: {
 		leftmostPoint: (from, to) => least(from, to, 'x'),
