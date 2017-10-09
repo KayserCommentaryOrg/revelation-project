@@ -1,17 +1,19 @@
 import Text from './Text.html'
 
+import lazily from 'lib/lazily.js'
+
 import load from 'dynamic-import-iife'
 import pProps from 'p-props'
 
 import combineStructureWithSermons from 'lib/structure/combine-structure-with-sermons'
 
-const structurePromise = load('/static/structure.js')
-const structureWithSermonsPromise = Promise.all([
+const getStructurePromise = lazily(() => load('/static/structure.js'))
+const getStructureWithSermonsPromise = lazily(() => Promise.all([
 	load('/static/sermons.json', { type: 'json' }),
-	structurePromise,
+	getStructurePromise(),
 ]).then(([ sermons, structure ]) => {
 	return combineStructureWithSermons(structure, sermons)
-})
+}))
 
 export default mediator => ({
 	name: 'main.structure.text',
@@ -20,8 +22,8 @@ export default mediator => ({
 	resolve() {
 		return pProps({
 			translations: load('/static/revelation.js'),
-			structureWithSermons: structureWithSermonsPromise,
-			structure: structurePromise,
+			structureWithSermons: getStructureWithSermonsPromise(),
+			structure: getStructurePromise(),
 		})
 	},
 })

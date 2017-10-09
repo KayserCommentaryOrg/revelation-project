@@ -1,0 +1,81 @@
+<div class="centered-container">
+	<div class="intro">
+		<h1>Principles for interpreting Revelation</h1>
+		<p>taken from the first 11 verses</p>
+		<p>By Phil Kayser</p>
+	</div>
+	<p>
+		This outline shows 33 key principles needed for understanding the book as a whole. Since they were given by divine inspiration through the apostle John, they should be authoritative in understanding the book as a whole.
+	</p>
+	<p>
+		I would urge those who study my sermons in the later chapters to listen to all fourteen sermons on these hermeneutical principles first. It is my belief that if you take these principles as presuppositions that govern the exegesis of every passage in the book of Revelation, many errors can be avoided.
+	</p>
+</div>
+
+<table class="pure-table pure-table-bordered">
+	<thead>
+		<tr>
+			<th>Verse</th>
+			<th>Text</th>
+			<th>Principle</th>
+			<th>Sermon</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each principles as row}}
+		<tr>
+			{{#each row as column}}
+				<td rowspan="{{column.height}}" style="{{column.style || ''}}">
+					{{#if column.text}}
+						{{{column.text}}}
+					{{/if}}
+
+					{{#if column.html}}
+						{{{column.html}}}
+					{{/if}}
+
+					{{#if column.sermonAudioId}}
+						<ExternalLink
+							href="{{sermonTextUrl(column.sermonAudioId)}}"
+						>
+							text
+						</ExternalLink>
+						&middot;
+						<ExternalLink
+							href="{{sermonAudioUrl(column.sermonAudioId)}}"
+						>
+							audio
+						</ExternalLink>
+					{{/if}}
+				</td>
+			{{/each}}
+		</tr>
+		{{/each}}
+	</tbody>
+</table>
+
+<script>
+import data from 'lib/principles-of-interpretation/data.js'
+import ExternalLink from 'component/ExternalLink.html'
+
+export default {
+	data() {
+		return {
+			principles: data
+		}
+	},
+	computed: {
+		sermonTextUrl(sermonAudioIdToFilename) {
+			return audioId => `https://kaysercommentary.com/${encodeURI(sermonAudioIdToFilename[audioId])}`
+		}
+	},
+	helpers: {
+		sermonAudioUrl(audioId) {
+			return `http://www.dominioncovenantchurch.com/sermons/?sermon_id=${audioId}`
+		}
+	},
+	components: {
+		ExternalLink
+	}
+}
+</script>
