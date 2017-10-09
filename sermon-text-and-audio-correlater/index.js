@@ -70,15 +70,16 @@ async function main() {
 
 	const postsAndAudio = revelationPosts.map(({ filename, passage, date, title }) => {
 		const isoDateString = formatDate(nextSunday(date), 'YYYY-MM-DD')
+		// console.log(isoDateString, title)
 		const audioId = dateToIdAndTitle[isoDateString] && dateToIdAndTitle[isoDateString].id
 
 		if (audioId) {
 			if (audioIdsSeenAlready.has(audioId)) {
-				throw new Error(`Can't add sermon audioId ${audioId} to the sermon list twice!`)
+				throw new Error(`Can't add sermon audioId ${audioId} to the sermon list twice!, ${isoDateString}`)
 			}
 			audioIdsSeenAlready.add(audioId)
 		}
-		// console.log(isoDateString, dateToId[isoDateString])
+
 		const range = isoDateString === '2015-04-26' ? [ [ 21, 1 ], [ 21, 1 ] ] : passageToRange(passage)
 		return {
 			title,
@@ -123,7 +124,7 @@ function print(structure) {
 
 function save(structure) {
 	const json = toJson(structure)
-	require('fs').writeFileSync('../client/lib/sermons/sermons.json', json)
+	require('fs').writeFileSync('../public/static/sermons.json', json)
 }
 
 function guaranteeRangeSections(sermons) {

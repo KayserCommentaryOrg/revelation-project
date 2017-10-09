@@ -1,7 +1,5 @@
 node_modules
 public/**/*.css*
-public/**/sermons.json
-public/**/timeline*.json
 public/**/structure.js*
 public/**/revelation.js*
 *bundle*.js

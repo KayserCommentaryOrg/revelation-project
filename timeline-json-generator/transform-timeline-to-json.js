@@ -56,7 +56,7 @@ async function main() {
 	const sorted = sortRange(structure, event => [ event.amd.start, event.amd.end ])
 	// const withNicestDates = addLongestAvailableDates(sorted)
 
-	fs.writeFileSync('./client/lib/timeline/data/timeline-data.json', formattedJson(addSlugs(sorted)) + '\n')
+	fs.writeFileSync('./public/static/timeline-data.json', formattedJson(addSlugs(sorted)) + '\n')
 }
 
 main().catch(err => {

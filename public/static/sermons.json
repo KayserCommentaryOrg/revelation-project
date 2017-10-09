@@ -606,5 +606,12 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 13/Revelation 13-16-18.md",
 		"date": "2017-10-01",
 		"audioId": 1074
+	},
+	{
+		"title": "Christ's Shock Troops For Missions",
+		"passage": "Revelation 14:1-5",
+		"range": [[14,1,1], [14,5,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 14/Revelation 14_1.md",
+		"date": "2017-10-08"
 	}
 ]
