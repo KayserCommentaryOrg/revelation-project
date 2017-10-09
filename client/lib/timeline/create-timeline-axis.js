@@ -1,6 +1,6 @@
-const pipe = require('lib/pipe.js')
+import pipe from 'lib/pipe.js'
+import flatMap from 'lib/flat-map.js'
 
-const flatMap = (fn, ary) => ary.reduce((acc, element) => [ ...acc, ...fn(element) ], [])
 const safeGet = (object, property, ...rest) => {
 	const nextObject = object && object[property]
 	return rest.length > 0 ? safeGet(nextObject, ...rest) : nextObject
@@ -13,7 +13,8 @@ const getDates = (property, object) => ({
 })
 const amdSort = (a, b) => a.amd - b.amd
 
-module.exports = createTimelineAxis
+export default createTimelineAxis
+
 function createTimelineAxis({ timelineData, snipSectionsLongerThan, snipBuffer, start, end }) {
 	const naiveAxisMarkers = flatMap(event => {
 		return event.amd.start === event.amd.end

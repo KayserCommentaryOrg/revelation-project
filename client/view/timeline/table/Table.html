@@ -54,9 +54,10 @@ const { relative: sortRange } = multiPartRangeCompare
 import routerInstance from 'svelte-querystring-router'
 const { Link, getCurrentParameters } = routerInstance
 
+import flatMap from 'lib/flat-map.js'
+
 const referenceRegex = createRegex()
 
-const flatMap = (fn, ary) => ary.reduce((acc, element) => [ ...acc, ...fn(element) ], [])
 const relationToTempleBurning = amd => amd - 1486668
 const referenceToRange = ({ chapter, verse }) => [ chapter, verse || 0 ]
 const referenceToString = ({ chapter, verse }) => {
