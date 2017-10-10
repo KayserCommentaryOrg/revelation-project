@@ -158,16 +158,18 @@ const verses = [
 	]),
 ]
 
-export default flatMap(({ number, texts }) => {
+export default flatMap(({ number, texts }, index) => {
 	const principleRows = flatMap(makeTextIntoPrincipleRows, texts)
 
 	const [ firstPrincipleRow, ...restOfPrincipleRows ] = principleRows
 
 	const verseNumberColumn = {
+		type: 'verse number',
 		height: principleRows.length,
 		text: number,
 		style: `text-align: center;`,
 		className: 'verse-number-column',
+		index,
 	}
 
 	return [
@@ -177,16 +179,25 @@ export default flatMap(({ number, texts }) => {
 }, verses)
 
 const sermons = Object.getOwnPropertyNames(sermonSeries).map(key => sermonSeries[key])
-export { sermons }
+const verseCount = verses.length
+const verseTextCount = verses.reduce((count, { texts }) => count + texts.length, 0)
+
+export {
+	sermons,
+	verseCount,
+	verseTextCount,
+}
 
 
-function makeTextIntoPrincipleRows(verseTextObject) {
+function makeTextIntoPrincipleRows(verseTextObject, index) {
 	const { text, principles } = verseTextObject
 
 	const verseTextColumn = {
+		type: 'verse text',
 		height: principles.length,
 		text,
 		style: `font-style: italic`,
+		index,
 	}
 
 	const [ firstPrincipleRow, ...restOfPrincipleRows ] = principles.map(makePrincipleRow)
@@ -199,6 +210,7 @@ function makeTextIntoPrincipleRows(verseTextObject) {
 
 function makePrincipleRow({ principle, sermon }) {
 	const principleColumn = {
+		type: 'principle',
 		height: 1,
 		html: principle,
 	}

@@ -25,7 +25,7 @@
 		{{#each principles as row}}
 		<tr>
 			{{#each row as column}}
-				<td rowspan="{{column.height}}" style="{{column.style || ''}}" class="{{column.className || ''}}">
+				<td rowspan="{{column.height}}" style="{{style(column)}}" class="{{column.className || ''}}">
 					{{#if column.text}}
 						{{{column.text}}}
 					{{/if}}
@@ -88,6 +88,12 @@
 	margin-top: 0;
 }
 
+thead th {
+	position: sticky;
+	top: -2px;
+	background-color: rgba(200, 200, 200, 0.9);
+}
+
 @media (max-width: 900px) {
 	.verse-number-column {
 		display: none;
@@ -101,28 +107,57 @@
 	.sermon-list {
 		display: flex;
 	}
+	thead th {
+		position: initial;
+	}
 }
 </style>
 
 <script>
-import data, { sermons } from 'lib/principles-of-interpretation/data.js'
+import data, { sermons, verseCount, verseTextCount, } from 'lib/principles-of-interpretation/data.js'
+import { startingColor, endingColor } from 'lib/blue-green-range.js'
 import ExternalLink from 'component/ExternalLink.html'
+
+import { fade, contrastRatio } from 'chromatism2'
+
+const joinTruthy = (...args) => args.filter(element => element).join(' ')
+
+const verseColors = fade(verseCount, startingColor, endingColor).hex
+const ifElseNull = (condition, fn) => condition ? fn() : null
+
+const colorFunctions = {
+	'verse number': index => verseColors[index]
+}
 
 export default {
 	data() {
 		return {
 			principles: data,
 			sermons,
+			verseColors,
 		}
 	},
 	computed: {
 		sermonTextUrl(sermonAudioIdToFilename) {
 			return audioId => `https://kaysercommentary.com/${encodeURI(sermonAudioIdToFilename[audioId])}`
-		}
+		},
 	},
 	helpers: {
 		sermonAudioUrl(audioId) {
 			return `http://www.dominioncovenantchurch.com/sermons/?sermon_id=${audioId}`
+		},
+		style(column) {
+			const backgroundColorFunction = colorFunctions[column.type]
+			const backgroundColorStyle = ifElseNull(backgroundColorFunction, () => {
+					const backgroundColor = backgroundColorFunction(column.index)
+
+					return `
+						background-color: ${backgroundColor};
+						color: ${contrastRatio(backgroundColor).hex};
+					`
+			})
+
+			return joinTruthy(column.style, backgroundColorStyle)
 		}
 	},
 	components: {

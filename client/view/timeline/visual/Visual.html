@@ -102,6 +102,7 @@ import addAxisPoints from 'lib/timeline/add-axis-points-to-timeline-data.js'
 import sortRange from 'lib/timeline/sort-range.js'
 
 import pipe from 'lib/pipe.js'
+import { startingColor, endingColor } from 'lib/blue-green-range.js'
 
 import svelteQuerystringRouter from 'svelte-querystring-router'
 const { Link, getCurrentParameters } = svelteQuerystringRouter
@@ -137,12 +138,6 @@ function daysThatOverlapRange(eventRange, zoomRange) {
 	return eventDays - lostAtStart - lostAtEnd
 }
 
-// const startingColor = '#2900ff'
-// const startingColor = '#00cdd4'
-// const endingColor = '#00ccd4'
-const startingColor = '#0074D9'
-const endingColor = '#2ECC40'
-// const eventColors = chromatism.adjacent(20, 5, startingColor).hex
 const eventColors = fade(4, startingColor, endingColor).hex
 const hoverColors = eventColors.map(color => contrast(3, color).hex)
 
