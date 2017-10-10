@@ -1,10 +1,28 @@
 @import "constants";
 @import "mixins";
 
+$bodyPadding: 16px;
+$containerWidth: 800px;
+$containerPadding: 16px;
+
 .centered-container {
-	max-width: 800px;
+	max-width: $containerWidth;
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: $containerPadding;
+	padding-right: $containerPadding;
+}
+@media (max-width: 400px) {
+	.centered-container {
+		padding-left: calc($containerPadding / 2);
+		padding-right: calc($containerPadding / 2);
+	}
+}
+@media (max-width: 350px) {
+	.centered-container {
+		padding-left: 0;
+		padding-right: 0;
+	}
 }
 
 .intro {
@@ -27,7 +45,7 @@ body {
 	font-family: Palatino, Palatino Linotype, Serif;
 	background-color: $white;
 	color: $black;
-	padding: 16px;
+	padding: $bodyPadding;
 	margin: 0;
 }
 
