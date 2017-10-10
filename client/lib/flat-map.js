@@ -1,1 +1,1 @@
-export default (fn, ary) => ary.reduce((acc, element) => [ ...acc, ...fn(element) ], [])
+export default (fn, ary) => ary.reduce((acc, element, index) => [ ...acc, ...fn(element, index) ], [])
