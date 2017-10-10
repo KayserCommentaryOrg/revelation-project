@@ -12,7 +12,7 @@
 	</p>
 </div>
 
-<table class="pure-table pure-table-bordered">
+<table class="principles-table pure-table pure-table-bordered">
 	<thead>
 		<tr>
 			<th class="verse-number-column">Verse</th>
@@ -25,7 +25,12 @@
 		{{#each principles as row}}
 		<tr>
 			{{#each row as column}}
-				<td rowspan="{{column.height}}" style="{{style(column)}}" class="{{column.className || ''}}">
+				<td
+					rowspan="{{column.height}}"
+					style="{{style(column)}}"
+					data-column-type="{{column.type}}"
+					class="{{column.className || ''}}"
+				>
 					{{#if column.text}}
 						{{{column.text}}}
 					{{/if}}
@@ -53,6 +58,19 @@
 		{{/each}}
 	</tbody>
 </table>
+
+<div class="verse-principles-list centered-container">
+	{{#each verseTexts as verseText}}
+		<h5 class="verse-header">{{verseText.text}}</h5>
+		<ol>
+			{{#each verseText.principles as principle}}
+				<li class="principle-list-item">
+					{{{principle.html}}}
+				</li>
+			{{/each}}
+		</ol>
+	{{/each}}
+</div>
 
 <div class="sermon-list centered-container">
 	<h2>Sermon series</h2>
@@ -88,10 +106,30 @@
 	margin-top: 0;
 }
 
+.verse-principles-list {
+	display: none;
+}
+
+.principle-list-item {
+	margin-bottom: 8px;
+}
+
 thead th {
 	position: sticky;
 	top: -2px;
 	background-color: rgba(200, 200, 200, 0.9);
+}
+
+td[data-column-type="verse number"] {
+	text-align: center;
+}
+
+td[data-column-type="verse text"] {
+	font-style: italic;
+}
+
+.verse-header {
+	font-style: italic;
 }
 
 @media (max-width: 900px) {
@@ -101,26 +139,36 @@ thead th {
 }
 
 @media (max-width: 750px) {
-	.sermon-column {
-		display: none;
-	}
 	.sermon-list {
 		display: flex;
+	}
+	.sermon-column {
+		display: none;
 	}
 	thead th {
 		position: initial;
 	}
 }
+
+@media (max-width: 500px) {
+	.principles-table {
+		display: none;
+	}
+	.verse-principles-list {
+		display: block;
+	}
+	.sermon-list {
+		align-items: flex-start;
+	}
+}
 </style>
 
 <script>
-import data, { sermons, verseCount, verseTextCount, } from 'lib/principles-of-interpretation/data.js'
+import data, { sermons, verseTexts, verseCount, } from 'lib/principles-of-interpretation/data.js'
 import { startingColor, endingColor } from 'lib/blue-green-range.js'
 import ExternalLink from 'component/ExternalLink.html'
 
 import { fade, contrastRatio } from 'chromatism2'
-
-const joinTruthy = (...args) => args.filter(element => element).join(' ')
 
 const verseColors = fade(verseCount, startingColor, endingColor).hex
 const ifElseNull = (condition, fn) => condition ? fn() : null
@@ -135,6 +183,7 @@ export default {
 			principles: data,
 			sermons,
 			verseColors,
+			verseTexts,
 		}
 	},
 	computed: {
@@ -157,7 +206,7 @@ export default {
 					`
 			})
 
-			return joinTruthy(column.style, backgroundColorStyle)
+			return backgroundColorStyle || ''
 		}
 	},
 	components: {

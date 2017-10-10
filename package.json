@@ -61,6 +61,7 @@
     "mannish": "~3.0.0",
     "multi-part-range-compare": "~1.0.3",
     "one-to-many-array-zip": "~1.0.2",
+    "ordered-entries": "1.0.0",
     "p-props": "1.0.0",
     "pify": "3.0.0",
     "podcast2": "~1.0.0",
