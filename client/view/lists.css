@@ -2,7 +2,7 @@ ul {
 	padding-left: 1rem;
 }
 
-ol:not(.numbered) {
+ol:not(.indented) {
 	list-style-type: none;
 	padding: 0;
 }

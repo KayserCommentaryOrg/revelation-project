@@ -15,17 +15,17 @@
 <table class="pure-table pure-table-bordered">
 	<thead>
 		<tr>
-			<th>Verse</th>
+			<th class="verse-number-column">Verse</th>
 			<th>Text</th>
 			<th>Principle</th>
-			<th>Sermon</th>
+			<th class="sermon-column">Sermon</th>
 		</tr>
 	</thead>
 	<tbody>
 		{{#each principles as row}}
 		<tr>
 			{{#each row as column}}
-				<td rowspan="{{column.height}}" style="{{column.style || ''}}">
+				<td rowspan="{{column.height}}" style="{{column.style || ''}}" class="{{column.className || ''}}">
 					{{#if column.text}}
 						{{{column.text}}}
 					{{/if}}
@@ -54,14 +54,65 @@
 	</tbody>
 </table>
 
+<div class="sermon-list centered-container">
+	<h2>Sermon series</h2>
+	<ol class="indented">
+		{{#each sermons as sermon}}
+			<li>
+				{{sermon.description}}:
+				<ExternalLink
+					href="{{sermonTextUrl(sermon.audioId)}}"
+				>
+					text
+				</ExternalLink>
+				&middot;
+				<ExternalLink
+					href="{{sermonAudioUrl(sermon.audioId)}}"
+				>
+					audio
+				</ExternalLink>
+			</li>
+		{{/each}}
+	</ol>
+</div>
+
+<style>
+.sermon-list {
+	display: none;
+
+	flex-direction: column;
+	align-items: center;
+}
+
+.sermon-list ol {
+	margin-top: 0;
+}
+
+@media (max-width: 900px) {
+	.verse-number-column {
+		display: none;
+	}
+}
+
+@media (max-width: 750px) {
+	.sermon-column {
+		display: none;
+	}
+	.sermon-list {
+		display: flex;
+	}
+}
+</style>
+
 <script>
-import data from 'lib/principles-of-interpretation/data.js'
+import data, { sermons } from 'lib/principles-of-interpretation/data.js'
 import ExternalLink from 'component/ExternalLink.html'
 
 export default {
 	data() {
 		return {
-			principles: data
+			principles: data,
+			sermons,
 		}
 	},
 	computed: {

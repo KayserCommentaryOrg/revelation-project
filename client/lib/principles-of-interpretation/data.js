@@ -1,20 +1,37 @@
 import flatMap from 'lib/flat-map.js'
 
+const sermonSeries = {
+	ONE: { audioId: 742, description: `Principles 1-8` },
+	TWO: { audioId: 745, description: `Principle 9` },
+	THREE: { audioId: 747, description: `Principles 10-11` },
+	FOUR: { audioId: 750, description: `Principle 12` },
+	FIVE: { audioId: 755, description: `Principles 13` },
+	SIX: { audioId: 754, description: `Principles 14-15` },
+	SEVEN: { audioId: 763, description: `Principles 16-18` },
+	EIGHT: { audioId: 762, description: `Principle 19` },
+	NINE: { audioId: 766, description: `Principle 20` },
+	TEN: { audioId: 765, description: `Principles 21-24` },
+	ELEVEN: { audioId: 769, description: `Principles 25-29` },
+	TWELVE: { audioId: 771, description: `Principle 30` },
+	THIRTEEN: { audioId: 773, description: `Principle 30` },
+	FOURTEEN: { audioId: 776, description: `Principles 32-30` },
+}
+
 const seriesPart = {
-	ONE: seriesPartCounter(742),
-	TWO: seriesPartCounter(745),
-	THREE: seriesPartCounter(747),
-	FOUR: seriesPartCounter(750),
-	FIVE: seriesPartCounter(755),
-	SIX: seriesPartCounter(754),
-	SEVEN: seriesPartCounter(763),
-	EIGHT: seriesPartCounter(762),
-	NINE: seriesPartCounter(766),
-	TEN: seriesPartCounter(765),
-	ELEVEN: seriesPartCounter(769),
-	TWELVE: seriesPartCounter(771),
-	THIRTEEN: seriesPartCounter(773),
-	FOURTEEN: seriesPartCounter(776),
+	ONE: seriesPartCounter(sermonSeries.ONE.audioId),
+	TWO: seriesPartCounter(sermonSeries.TWO.audioId),
+	THREE: seriesPartCounter(sermonSeries.THREE.audioId),
+	FOUR: seriesPartCounter(sermonSeries.FOUR.audioId),
+	FIVE: seriesPartCounter(sermonSeries.FIVE.audioId),
+	SIX: seriesPartCounter(sermonSeries.SIX.audioId),
+	SEVEN: seriesPartCounter(sermonSeries.SEVEN.audioId),
+	EIGHT: seriesPartCounter(sermonSeries.EIGHT.audioId),
+	NINE: seriesPartCounter(sermonSeries.NINE.audioId),
+	TEN: seriesPartCounter(sermonSeries.TEN.audioId),
+	ELEVEN: seriesPartCounter(sermonSeries.ELEVEN.audioId),
+	TWELVE: seriesPartCounter(sermonSeries.TWELVE.audioId),
+	THIRTEEN: seriesPartCounter(sermonSeries.THIRTEEN.audioId),
+	FOURTEEN: seriesPartCounter(sermonSeries.FOURTEEN.audioId),
 }
 
 
@@ -116,7 +133,7 @@ const verses = [
 	verse(9, [
 		text(`I, John, your brother and companion in the tribulation and kingdom and endurance in Christ Jesus, was on the island called Patmos on account of the Word of God and on account of the testimony of Jesus Christ.`, [
 			p(`<strong>30</strong> - The tribulation (τῇ θλίψει) had already begun when John wrote the book and John shared (κοινωνὸς) this experience of tribulation and endurance with the first century churches. We must distinguish between
-				<ol class="numbered">
+				<ol class="indented">
 					<li>general persecution/tribulation (Jn 16:33; Acts 11:19; 14:22; 20:23; Rom 5:3; 8:35; 12:12; 1 Cor 7:28; 2 Cor 1:4; 1:8; 2:4; 4:17; 6:4; 7:4; 8:2; Eph. 3:13; Phil 1:16; 4:14; Col. 1:24; 1 Thess 1:6; 3:3; 3:7; 2 Thess 1:4; Heb 10:33),</li>
 					<li>"the tribulation" or "the great tribulation" that Christians would experience (Matt 24:9-12, 21-29; Rev 1:9; 2:22; Rev 7:14), and</li>
 					<li>the great wrath of God against the Jews (Matt 3:7; Luke 21:21-22; Rom. 9:22; 1 Thes. 2:16; Rev 6:16-17; 11:18; 12:12; 14:8-10; 14:19; 15:1, 7; 16:1, 19; 18:3; 19:15). Christians would never have to face God's wrathful judgment (1 Thess 1:10; Rom 5:9; Matt 3:7; Rom 2:5-8; 1 Thess 5:9).</li>
@@ -150,6 +167,7 @@ export default flatMap(({ number, texts }) => {
 		height: principleRows.length,
 		text: number,
 		style: `text-align: center;`,
+		className: 'verse-number-column',
 	}
 
 	return [
@@ -157,6 +175,9 @@ export default flatMap(({ number, texts }) => {
 		...restOfPrincipleRows,
 	]
 }, verses)
+
+const sermons = Object.getOwnPropertyNames(sermonSeries).map(key => sermonSeries[key])
+export { sermons }
 
 
 function makeTextIntoPrincipleRows(verseTextObject) {
@@ -177,10 +198,14 @@ function makeTextIntoPrincipleRows(verseTextObject) {
 }
 
 function makePrincipleRow({ principle, sermon }) {
-	const principleColumn = { height: 1, html: principle }
+	const principleColumn = {
+		height: 1,
+		html: principle,
+	}
+
 
 	return sermon
-		? [ principleColumn, { height: sermon.principleCount, sermonAudioId: sermon.audioId }]
+		? [ principleColumn, { height: sermon.principleCount, sermonAudioId: sermon.audioId, className: 'sermon-column' }]
 		: [ principleColumn ]
 }
 
