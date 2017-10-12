@@ -2,9 +2,9 @@
 
 <canvas
 	ref:canvas
-	width="{{width}}"
-	height="{{height}}"
-	style="top: {{top}}px; left: {{left}}px;"
+	width="{{liveWidth}}"
+	height="{{liveHeight}}"
+	style="top: {{liveTop}}px; left: {{liveLeft}}px;"
 ></canvas>
 
 <style>
@@ -55,7 +55,7 @@ export default {
 				return
 			}
 
-			const { width, height, leftmostPoint, topmostPoint, color } = this.get()
+			const { width, height, leftmostPoint, topmostPoint, color, top, left  } = this.get()
 
 			const topLeftToBottomRight = leftmostPoint === topmostPoint
 			const bottomLeftToTopRight = !topLeftToBottomRight
@@ -68,6 +68,13 @@ export default {
 				x: width,
 				y: bottomLeftToTopRight ? 0 : height
 			}
+
+			this.set({
+				liveWidth: width,
+				liveHeight: height,
+				liveTop: top,
+				liveLeft: left,
+			})
 
 			const context = this.refs.canvas.getContext('2d')
 			context.lineWidth = lineWidth
