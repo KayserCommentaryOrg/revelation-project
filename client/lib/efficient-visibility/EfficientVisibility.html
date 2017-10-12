@@ -1,4 +1,4 @@
-<:Window on:resize="updateVisibility()" on:scroll="updateVisibility()" on:touchmove="updateVisibility()" />
+<:Window on:resize="debouncedUpdate()" on:scroll="debouncedUpdate()" on:touchmove="debouncedUpdate()" />
 
 <div ref:element>
 	{{yield}}
@@ -40,6 +40,19 @@ export default {
 				this.set({ visible: false })
 				this.fire('change', this.get('notVisibleChange'))
 			}
+		},
+		debouncedUpdate() {
+			this.updateVisibility()
+
+			if (this.timeoutId) {
+				clearTimeout(this.timeoutId)
+				this.timeoutId = null
+			}
+
+			this.timeoutId = setTimeout(() => {
+				this.timeoutId = null
+				this.updateVisibility()
+			}, 100)
 		},
 		updateVisibility() {
 			if (!this.refs.element) {
