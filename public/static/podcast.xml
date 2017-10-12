@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Sat, 07 Oct 2017 05:24:14 GMT</lastBuildDate>
+		<lastBuildDate>Thu, 12 Oct 2017 20:43:48 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -861,6 +861,17 @@
 			<pubDate>Sun, 01 Oct 2017 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2017-10-01-TS-PK-Revelation13.16-18.mp3" length="58324631" type="audio/mpeg"/>
 			<itunes:summary>Revelation 13:16-18</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[Christ's Shock Troops For Missions]]></title>
+			<description><![CDATA[Revelation 14:1-5]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1075</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1075</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 08 Oct 2017 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2017-10-08-TS-PK-Revelation14.1.mp3" length="58714936" type="audio/mpeg"/>
+			<itunes:summary>Revelation 14:1-5</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
