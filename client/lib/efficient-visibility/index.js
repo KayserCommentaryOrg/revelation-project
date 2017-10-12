@@ -22,7 +22,14 @@ const applyChanges = debounce(() => {
 
 	forOf(parentComponents.values(), parentComponent => {
 		const changes = componentsToChange.get(parentComponent)
-		parentComponent.set(changes)
+
+		const changesMergedWithOriginalState = {}
+		Object.keys(changes).forEach(key => {
+			const originalState = parentComponent.get(key)
+			changesMergedWithOriginalState[key] = Object.assign({}, originalState, changes[key])
+		})
+
+		parentComponent.set(changesMergedWithOriginalState)
 	})
 
 	changeTracker.clear()
