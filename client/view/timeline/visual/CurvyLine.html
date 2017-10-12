@@ -15,25 +15,19 @@ canvas {
 </style>
 
 <script>
+import browserEvent from 'lib/browser-event.js'
+
 const greatest = (a, b, property) => a[property] > b[property] ? a : b
 const least = (a, b, property) => a[property] > b[property] ? b : a
+const lineWidth = 2
 
 export default {
-	data() {
-		return {
-			drawingOnNextFrame: false
-		}
-	},
 	oncreate() {
 		this.drawOnNextFrame()
 
-		const listener = () => this.drawOnNextFrame()
-		const eventOptions = { passive: false }
-		window.addEventListener('scroll', listener, eventOptions)
-		this.unsubscribe = () => window.removeEventListener('scroll', listener, eventOptions)
-	},
-	ondestroy() {
-		this.unsubscribe()
+		this.on('destroy', browserEvent(window, 'scroll', () => this.drawOnNextFrame()))
+		this.observe('from', () => this.drawOnNextFrame())
+		this.observe('to', () => this.drawOnNextFrame())
 	},
 	computed: {
 		leftmostPoint: (from, to) => least(from, to, 'x'),
@@ -42,20 +36,19 @@ export default {
 		bottommostPoint: (from, to) => greatest(from, to, 'y'),
 		top: (from, to) => Math.min(from.y, to.y),
 		left: (from, to) => Math.min(from.x, to.x),
-		width: (leftmostPoint, rightmostPoint) => rightmostPoint.x - leftmostPoint.x,
-		height: (topmostPoint, bottommostPoint) => bottommostPoint.y - topmostPoint.y,
+		width: (leftmostPoint, rightmostPoint) => Math.max(rightmostPoint.x - leftmostPoint.x, lineWidth),
+		height: (topmostPoint, bottommostPoint) => Math.max(bottommostPoint.y - topmostPoint.y, lineWidth),
 	},
 	methods: {
 		drawOnNextFrame() {
-			this.set({
-				drawingOnNextFrame: true
-			})
-			window.requestAnimationFrame(() => {
-				this.draw()
-				this.set({
-					drawingOnNextFrame: false
+			if (!this.drawingOnNextFrame) {
+				this.drawingOnNextFrame = true
+
+				window.requestAnimationFrame(() => {
+					this.draw()
+					this.drawingOnNextFrame = false
 				})
-			})
+			}
 		},
 		draw() {
 			if (!this.refs.canvas) {
@@ -77,7 +70,7 @@ export default {
 			}
 
 			const context = this.refs.canvas.getContext('2d')
-			context.lineWidth = 2
+			context.lineWidth = lineWidth
 			context.lineCap = 'stroke'
 
 			context.strokeStyle = color
