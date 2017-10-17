@@ -390,6 +390,10 @@ import VerseRange from 'component/VerseRange.html'
 import ColorBar from './ColorBar.html'
 import Collapsible from './Collapsible.html'
 
+import { startingColor as startingBlue } from 'lib/blue-green-range.js'
+
+import { adjacent } from 'chromatism2'
+
 const chapterChunks = [{
 	chapters: [1, 2, 3],
 	title: 'Letters',
@@ -419,23 +423,21 @@ const chapterChunks = [{
 	title: 'New creation',
 }]
 
-const yellow = '#FFDC00'
-const red = '#FF4136'
-const aqua = '#7FDBFF'
-const purple = '#B10DC9'
-const blue = '#0074D9'
-const olive = '#3D9970'
-const orange = '#FF851B'
-const gray = '#AAAAAA'
 
-const colors = {
-	apostolic: yellow,
-	persecution: red,
-	past: purple,
-	future: blue,
-	eternity: orange,
-	abstract: gray,
-}
+const colors = (() => {
+	const gray = '#AAAAAA'
+
+	const [ apostolic, persecution, past, future, eternity ] = adjacent(51, 5, startingBlue).hex
+
+	return {
+		apostolic,
+		persecution,
+		past,
+		future,
+		eternity,
+		abstract: gray,
+	}
+})()
 
 function combine(first, second, titleContainer) {
 	return {
