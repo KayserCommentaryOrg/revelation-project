@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Mon, 16 Oct 2017 22:11:50 GMT</lastBuildDate>
+		<lastBuildDate>Wed, 25 Oct 2017 16:46:49 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -883,6 +883,17 @@
 			<pubDate>Sun, 15 Oct 2017 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2017-10-15-TS-PK-Revelation14.2-5.mp3" length="43168122" type="audio/mpeg"/>
 			<itunes:summary>Revelation 14:2-5</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[The Role of Angels in Missions]]></title>
+			<description><![CDATA[Revelation 14:6-7]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1079</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1079</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 22 Oct 2017 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2017-10-22-TS-PK-Revelation14.6-7.mp3" length="47691430" type="audio/mpeg"/>
+			<itunes:summary>Revelation 14:6-7</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
