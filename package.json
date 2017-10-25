@@ -69,7 +69,7 @@
     "precss": "2.0.0",
     "regex-fun": "~2.0.2",
     "reify": "0.12.1",
-    "revelation": "2.0.2",
+    "revelation": "2.0.3",
     "rollup": "0.50.0",
     "rollup-plugin-babel": "3.0.1",
     "rollup-plugin-babel-minify": "3.1.2",
