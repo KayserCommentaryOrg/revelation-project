@@ -630,5 +630,21 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 14/Revelation 14_6-7.md",
 		"date": "2017-10-22",
 		"audioId": 1079
+	},
+	{
+		"title": "Judgments & Blessing As Motives in Missions",
+		"passage": "Revelation 14:8-13",
+		"range": [[14,8,1], [14,13,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 14/Revelation 14_8-13.md",
+		"date": "2017-10-29",
+		"audioId": 1082
+	},
+	{
+		"title": "Evangelizing Your Persecutors",
+		"passage": "Revelation 14:14-16",
+		"range": [[14,14,1], [14,16,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 14/Revelation 14_14-16.md",
+		"date": "2017-11-05",
+		"audioId": 1083
 	}
 ]
