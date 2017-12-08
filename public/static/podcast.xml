@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Tue, 07 Nov 2017 17:14:04 GMT</lastBuildDate>
+		<lastBuildDate>Fri, 08 Dec 2017 00:52:11 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -916,6 +916,17 @@
 			<pubDate>Sun, 05 Nov 2017 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2017-11-05-TS-PK-Revelation14.14-16.mp3" length="38186077" type="audio/mpeg"/>
 			<itunes:summary>Revelation 14:14-16</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[Blood Up to the Horses' Bridles]]></title>
+			<description><![CDATA[Revelation 14:17-20]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1091</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1091</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 03 Dec 2017 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2017-12-03-TS-PK-Revelation14.17-20.mp3" length="46506238" type="audio/mpeg"/>
+			<itunes:summary>Revelation 14:17-20</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
