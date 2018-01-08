@@ -670,5 +670,20 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 15/Revelation 15_3-4.md",
 		"date": "2017-12-17",
 		"audioId": 1096
+	},
+	{
+		"title": "Priestly Judgments",
+		"passage": "Revelation 15:5-8",
+		"range": [[15,5,1], [15,8,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 15/Revelation 15_5-8.md",
+		"date": "2017-12-31",
+		"audioId": 1100
+	},
+	{
+		"title": "Introduction to the Seven Bowls",
+		"passage": "Revelation 16:1",
+		"range": [[16,1,1], [16,1,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 16/Revelation 16_1.md",
+		"date": "2018-01-07"
 	}
 ]
