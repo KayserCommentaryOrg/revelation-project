@@ -6,18 +6,6 @@ import json from 'rollup-plugin-json'
 import visualizer from 'rollup-plugin-visualizer'
 import sveltePreprocessPostcss from 'svelte-preprocess-postcss'
 
-import precss from 'precss'
-import autoprefixer from 'autoprefixer'
-
-const reasonablePrecss = precss({
-	import: {
-		path: [ `client/global-css` ],
-		prefix: ``,
-	},
-})
-
-
-
 export default {
 	name: `revelationStructure`,
 	input: `./client/index.js`,
@@ -29,10 +17,7 @@ export default {
 	plugins: [
 		svelte({
 			preprocess: {
-				style: sveltePreprocessPostcss({
-					useConfigFile: false,
-					plugins: [ reasonablePrecss, autoprefixer ],
-				}),
+				style: sveltePreprocessPostcss(),
 			},
 			css(css) {
 				css.write(`public/static/components.css`)
