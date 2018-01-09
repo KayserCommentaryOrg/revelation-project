@@ -27,7 +27,10 @@
 								data-section-number="{{chunk.sectionNumber}}"
 							>
 								{{#if chunk.sectionNumber === 1}}
-									<span class="verse-number" data-visible="{{showVerseNumber}}">
+									<span
+										class="verse-number unselectable"
+										data-visible="{{showVerseNumber}}"
+									>
 										{{chunk.verseNumber}}
 									</span>
 								{{/if}}
