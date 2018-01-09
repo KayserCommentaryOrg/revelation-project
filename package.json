@@ -84,6 +84,7 @@
     "sausage-router": "1.1.2",
     "shell-tag": "1.0.1",
     "svelte": "1.51.0",
+    "svelte-preprocess-postcss": "^1.0.0",
     "svelte-querystring-router": "1.6.1",
     "svelte-state-renderer": "1.2.5",
     "tape": "4.8.0",
