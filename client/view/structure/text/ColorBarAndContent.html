@@ -67,9 +67,6 @@ import svelteQuerystringRouter from 'svelte-querystring-router'
 const { Link } = svelteQuerystringRouter
 import septetLabel from 'lib/structure/septet-label'
 
-import sermonHover from 'lib/structure/sermon-hover-instance'
-import verseHover from 'lib/structure/verse-hover-instance'
-
 export default {
 	data() {
 		return {
@@ -84,8 +81,6 @@ export default {
 	},
 	components: {
 		Link,
-		SermonHoverDetector: sermonHover.HoverDetector,
-		VerseHoverReflector: verseHover.HoverReflector,
 		ParagraphDescription,
 		Paragraphs
 	},
