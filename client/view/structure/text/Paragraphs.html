@@ -3,11 +3,11 @@
 		<span class="section-content {{contentClass}}">
 			{{#if paragraphIndex === 0}}
 				<ParagraphDescription
-					descriptionClass="{{descriptionClass}}"
-					siblingAnchor="{{siblingAnchor}}"
-					siblingIsDown="{{siblingIsDown}}"
-					description="{{description}}"
-					range="{{range}}"
+					:descriptionClass
+					:siblingAnchor
+					:siblingIsDown
+					:description
+					:range
 					sermons="{{sermonsForVerses(paragraph)}}"
 				/>
 			{{else}}
@@ -26,6 +26,11 @@
 								data-verse-number="{{chunk.verseNumber}}"
 								data-section-number="{{chunk.sectionNumber}}"
 							>
+								{{#if chunk.sectionNumber === 1}}
+									<span class="verse-number" data-visible="{{showVerseNumber}}">
+										{{chunk.verseNumber}}
+									</span>
+								{{/if}}
 
 								{{chunk.text}}
 							</span>
@@ -41,6 +46,18 @@
 <style>
 [data-sibling-hovered=true] {
 	color: #ba4460;
+}
+
+.verse-number {
+	vertical-align: super;
+	font-size: .6em;
+	margin-right: -5px;
+	display: inline-block;
+	color: #7d7d7d;
+}
+
+.verse-number[data-visible=false] {
+	display: none;
 }
 </style>
 

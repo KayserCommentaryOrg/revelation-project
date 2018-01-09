@@ -2,25 +2,26 @@
 <div class="section-line" data-visible="{{visible}}">
 	{{#if verses}}
 		<Paragraphs
-			verses="{{verses}}"
-			descriptionClass="{{descriptionClass}}"
-			siblingAnchor="{{siblingAnchor}}"
-			siblingIsDown="{{siblingIsDown}}"
-			description="{{description}}"
-			range="{{range}}"
-			sermons="{{sermons}}"
-			contentClass="{{contentClass}}"
+			:verses
+			:descriptionClass
+			:siblingAnchor
+			:siblingIsDown
+			:description
+			:range
+			:sermons
+			:contentClass
+			:showVerseNumber
 		/>
 	{{else}}
 		<div class="section-horizontal-units">
 			<div class="section-content {{contentClass}}">
 				<ParagraphDescription
-					descriptionClass="{{descriptionClass}}"
-					siblingAnchor="{{siblingAnchor}}"
-					siblingIsDown="{{siblingIsDown}}"
-					description="{{description}}"
-					range="{{range}}"
-					sermons="{{sermons}}"
+					:descriptionClass
+					:siblingAnchor
+					:siblingIsDown
+					:description
+					:range
+					:sermons
 				/>
 				<div class="section-text">
 					{{yield}}

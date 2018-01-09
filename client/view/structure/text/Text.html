@@ -13,12 +13,20 @@
 				Greek
 			{{/if}}
 			</Link>
+			•
+			<Link parameters="{{toggledVerseNumbersParameters}}">
+			{{#if showVerseNumber}}
+				Hide verse numbers
+			{{else}}
+				Show verse numbers
+			{{/if}}
+			</Link>
 		</small>
 	</p>
 </div>
 
 <div class="outline">
-	<Outline linkToSameState="{{true}}" structure="{{structure}}" />
+	<Outline linkToSameState="{{true}}" :structure />
 </div>
 
 <div
@@ -49,6 +57,7 @@
 					siblingAnchor="{{section.siblingAnchor}}"
 					siblingIsDown="{{section.siblingIsDown}}"
 					range="{{getSectionRange(section)}}"
+					:showVerseNumber
 				>
 					<Selectable identifier="meta">
 						<h1 style="color: {{getChiasmColor(section.identifier)}}">
@@ -63,10 +72,11 @@
 						<ChiasmSubsections
 							subsections="{{section.introduction.subsections}}"
 							chiasmIdentifier="{{section.identifier}}"
-							currentSubsection="{{currentSubsection}}"
+							:currentSubsection
 							verses="{{introductionVerses(section)}}"
 							sermons="{{introductionSermons(section)}}"
 							useAnchors="{{sectionIsVisible(section)}}"
+							:showVerseNumber
 						/>
 					{{elseif !currentSubsection || currentSubsection === 'introduction'}}
 						<ColorBarAndContent
@@ -80,6 +90,7 @@
 							range="{{section.introduction.range}}"
 							sermons="{{introductionSermons(section)}}"
 							verses="{{introductionVerses(section)}}"
+							:showVerseNumber
 						/>
 					{{/if}}
 				{{/if}}
@@ -88,16 +99,18 @@
 					<ChiasmSubsections
 						subsections="{{section.subsections}}"
 						chiasmIdentifier="{{section.identifier}}"
-						currentSubsection="{{currentSubsection}}"
+						:currentSubsection
 						verses="{{sectionVerses(section)}}"
 						sermons="{{sectionSermons(section)}}"
 						useAnchors="{{sectionIsVisible(section)}}"
+						:showVerseNumber
 					/>
 				{{elseif !currentSubsection}}
 					<ColorBarAndContent
 						range="{{section.range}}"
 						sermons="{{section.sermons}}"
 						verses="{{sectionVerses(section)}}"
+						:showVerseNumber
 					/>
 				{{/if}}
 			</div>
@@ -142,7 +155,7 @@ import getChiasmColor from 'lib/structure/identifier-color'
 import combineStructureWithVerses from 'lib/structure/combine-structure-with-verses'
 import getParametersWithTranslationToggled from 'lib/structure/toggle-translation-parameter'
 import inViewport from 'lib/in-viewport'
-import { code_g } from 'lib/key-codes'
+import { code_g, code_v } from 'lib/key-codes'
 import positionPreserver from 'lib/position-preserver'
 
 export default {
@@ -161,12 +174,25 @@ export default {
 		toggledTranslationParameters: (querystringParameters) => {
 			return getParametersWithTranslationToggled(querystringParameters)
 		},
+		toggledVerseNumbersParameters: (querystringParameters, showVerseNumber) => {
+			const newParameters = Object.assign({}, querystringParameters, {
+				verseNumbers: 'true'
+			})
+			const verseNumbersShouldBeEnabledInNewParameters = !showVerseNumber
+
+			if (!verseNumbersShouldBeEnabledInNewParameters) {
+				delete newParameters.verseNumbers
+			}
+
+			return newParameters
+		},
 		currentChiasm: querystringParameters => {
 			return querystringParameters.chiasm
 		},
 		currentSubsection: querystringParameters => {
 			return querystringParameters.section
 		},
+		showVerseNumber: querystringParameters => querystringParameters.verseNumbers === 'true',
 		subsectionIsSelected: currentSubsection => !!currentSubsection,
 		getLinkParameters: (currentChiasm, currentSubsection) => {
 			return chiasmIdentifier => {
@@ -216,6 +242,12 @@ export default {
 				event.preventDefault()
 				navigate({
 					parameters: this.get('toggledTranslationParameters'),
+					element: this.firstAnchorInViewport()
+				})
+			} else if (event.keyCode === code_v) {
+				event.preventDefault()
+				navigate({
+					parameters: this.get('toggledVerseNumbersParameters'),
 					element: this.firstAnchorInViewport()
 				})
 			}

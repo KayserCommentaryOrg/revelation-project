@@ -1,7 +1,6 @@
 {{#each subsectionsWithVersesAndSermons as subsection}}
 <ColorBarAndContent
 	description="{{subsection.title}}"
-	chiasmIdentifier="{{chiasmIdentifier}}"
 	sectionIdentifier="{{subsection.identifier}}"
 	zoomedIn="{{!!currentSubsection}}"
 	anchor="{{useAnchors && subsection.anchor}}"
@@ -11,6 +10,8 @@
 	range="{{subsection.range}}"
 	sermons="{{subsection.sermons}}"
 	verses="{{subsection.verses}}"
+	:chiasmIdentifier
+	:showVerseNumber
 />
 {{/each}}
 
