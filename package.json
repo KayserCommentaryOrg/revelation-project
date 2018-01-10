@@ -18,8 +18,7 @@
     "watch:css": "postcss-alt \"client/view/**/*.css\" \"public/static/style.css\" --watch=\"client/**/*.css\"",
     "deploy": "scp -r ./public/. revelation_bb@revelation.biblicalblueprints.org:/home/revelation_bb/revelation.biblicalblueprints.org",
     "update-sermons": "cd sermon-text-and-audio-correlater && node index.js",
-    "dev": "npm-run-all prep-build --parallel watch:* dev:server",
-    "dev:server": "serve public",
+    "dev": "npm-run-all prep-build --parallel watch:*",
     "update-timeline-data": "node timeline-json-generator/transform-timeline-to-json.js "
   },
   "repository": {
@@ -34,7 +33,6 @@
   "homepage": "https://github.com/KayserCommentaryOrg/revelation-project#readme",
   "devDependencies": {
     "gaze": "1.1.2",
-    "serve": "6.0.6",
     "watch": "1.0.2"
   },
   "dependencies": {
