@@ -52,4 +52,6 @@ stateRouter.on(`stateChangeEnd`, (state, params) => console.log(`stateChangeEnd`
 Promise.all(moduleInitializationPromises).then(() => {
 	watchScrollPosition(stateRouter)
 	stateRouter.evaluateCurrentRoute(`main`)
+
+	rendered = true
 })
