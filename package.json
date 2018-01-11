@@ -7,7 +7,7 @@
     "test": "tape client/**/*-test.js",
     "prep-build": "run-p create-symlinks glob && rollup -c -i client/revelation.js -o public/static/revelation.js && rollup -c rollup-minify.config.js -i client/lib/structure/data/structure.js -o public/static/structure.js",
     "build-prod": "cross-env NODE_ENV=production npm-run-all prep-build --parallel build:*",
-    "build:js": "rollup -c rollup-minify.config.js",
+    "build:js": "rollup -c rollup.config.js",
     "watch:js": "rollup -c -w --dev",
     "watch:glob": "watch \"npm run glob\" client/service client/view",
     "glob": "run-p glob:*",
