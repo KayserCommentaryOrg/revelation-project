@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Mon, 08 Jan 2018 21:16:54 GMT</lastBuildDate>
+		<lastBuildDate>Thu, 11 Jan 2018 18:01:35 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -960,6 +960,17 @@
 			<pubDate>Sun, 31 Dec 2017 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2017-12-31-TS-PK-Revelation15.5-8.mp3" length="41734262" type="audio/mpeg"/>
 			<itunes:summary>Revelation 15:5-8</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[Introduction to the Seven Bowls]]></title>
+			<description><![CDATA[Revelation 16:1]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1101</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1101</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 07 Jan 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-1-7-TS-PK-Revelation16.1.mp3" length="47087425" type="audio/mpeg"/>
+			<itunes:summary>Revelation 16:1</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
