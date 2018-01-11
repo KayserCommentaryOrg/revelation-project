@@ -4,6 +4,7 @@ import babel from 'rollup-plugin-babel'
 import svelte from 'rollup-plugin-svelte'
 import json from 'rollup-plugin-json'
 import visualizer from 'rollup-plugin-visualizer'
+import replace from 'rollup-plugin-replace'
 import sveltePreprocessPostcss from 'svelte-preprocess-postcss'
 
 export default {
@@ -15,6 +16,9 @@ export default {
 	},
 	sourcemap: true,
 	plugins: [
+		replace({
+			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+		}),
 		svelte({
 			preprocess: {
 				style: sveltePreprocessPostcss(),
