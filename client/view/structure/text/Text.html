@@ -28,7 +28,7 @@
 </div>
 
 <div class="outline">
-	<Outline linkToSameState="{{true}}" :structure />
+	<Outline linkToSameState="{{true}}" :structure :querystringParameters />
 </div>
 
 <div
@@ -60,6 +60,7 @@
 					siblingIsDown="{{section.siblingIsDown}}"
 					range="{{getSectionRange(section)}}"
 					:showVerseNumber
+					:querystringParameters
 				>
 					<Selectable identifier="meta">
 						<h1 style="color: {{getChiasmColor(section.identifier)}}">
@@ -79,6 +80,7 @@
 							sermons="{{introductionSermons(section)}}"
 							useAnchors="{{sectionIsVisible(section)}}"
 							:showVerseNumber
+							:querystringParameters
 						/>
 					{{elseif !currentSubsection || currentSubsection === 'introduction'}}
 						<ColorBarAndContent
@@ -93,6 +95,7 @@
 							sermons="{{introductionSermons(section)}}"
 							verses="{{introductionVerses(section)}}"
 							:showVerseNumber
+							:querystringParameters
 						/>
 					{{/if}}
 				{{/if}}
@@ -106,6 +109,7 @@
 						sermons="{{sectionSermons(section)}}"
 						useAnchors="{{sectionIsVisible(section)}}"
 						:showVerseNumber
+						:querystringParameters
 					/>
 				{{elseif !currentSubsection}}
 					<ColorBarAndContent
@@ -113,6 +117,7 @@
 						sermons="{{section.sermons}}"
 						verses="{{sectionVerses(section)}}"
 						:showVerseNumber
+						:querystringParameters
 					/>
 				{{/if}}
 			</div>

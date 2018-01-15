@@ -67,6 +67,16 @@ import svelteQuerystringRouter from 'svelte-querystring-router'
 const { Link } = svelteQuerystringRouter
 import septetLabel from 'lib/structure/septet-label'
 
+const removeProperties = (object, properties) => {
+	const clone = Object.assign({}, object)
+
+	properties.forEach(property => {
+		delete clone[property]
+	})
+
+	return clone
+}
+
 export default {
 	data() {
 		return {
@@ -85,10 +95,13 @@ export default {
 		Paragraphs
 	},
 	computed: {
-		linkParameters: (chiasmIdentifier, sectionIdentifier, zoomedIn) => {
-			return zoomedIn
-				? { }
-				: { chiasm: chiasmIdentifier, section: sectionIdentifier }
+		zoomInParameters: (chiasmIdentifier, sectionIdentifier) =>
+			({ chiasm: chiasmIdentifier, section: sectionIdentifier }),
+		linkParameters: (zoomInParameters, zoomedIn, querystringParameters) => {
+			const extraParameters = zoomedIn ? { } : zoomInParameters
+			const parametersToCopy = removeProperties(querystringParameters, ['chiasm', 'section'])
+
+			return Object.assign({}, parametersToCopy, extraParameters)
 		}
 	},
 	helpers: {

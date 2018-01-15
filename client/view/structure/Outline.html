@@ -16,7 +16,7 @@
 		<strong>
 			{{#if linkToSameState}}
 				<QuerystringLink
-					parameters="{{ {} }}"
+					parameters="{{ querystringParameters || {} }}"
 					anchor="{{section.anchor}}"
 				>
 					{{sectionLabel(section)}}:
