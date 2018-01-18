@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Thu, 11 Jan 2018 18:01:35 GMT</lastBuildDate>
+		<lastBuildDate>Thu, 18 Jan 2018 00:26:39 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -971,6 +971,17 @@
 			<pubDate>Sun, 07 Jan 2018 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-1-7-TS-PK-Revelation16.1.mp3" length="47087425" type="audio/mpeg"/>
 			<itunes:summary>Revelation 16:1</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[Bowls 1-3 - the End of Israel]]></title>
+			<description><![CDATA[Revelation 16:2-7]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1103</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1103</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 14 Jan 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-1-14-TS-PK-Revelation16.2-7.mp3" length="34758153" type="audio/mpeg"/>
+			<itunes:summary>Revelation 16:2-7</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>

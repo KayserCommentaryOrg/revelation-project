@@ -686,5 +686,13 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 16/Revelation 16_1.md",
 		"date": "2018-01-07",
 		"audioId": 1101
+	},
+	{
+		"title": "Bowls 1-3 - the End of Israel",
+		"passage": "Revelation 16:2-7",
+		"range": [[16,2,1], [16,7,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 16/Revelation 16_2-7.md",
+		"date": "2018-01-14",
+		"audioId": 1103
 	}
 ]
