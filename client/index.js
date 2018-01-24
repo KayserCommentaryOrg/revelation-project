@@ -46,7 +46,14 @@ stateRouter.on(`routeNotFound`, (route, parameters) => {
 stateRouter.on(`stateChangeStart`, (state, params) => console.log(`stateChangeStart`, state.name, params))
 stateRouter.on(`stateChangeError`, error => console.error(error))
 stateRouter.on(`stateError`, error => console.error(error))
-stateRouter.on(`stateChangeEnd`, (state, params) => console.log(`stateChangeEnd`, state.name, params))
+stateRouter.on(`stateChangeEnd`, (state, params) => {
+	console.log(`stateChangeEnd`, state.name, params)
+
+	if (!TEST) {
+		ga('set', 'page', document.location.pathname)
+		ga('send', 'pageview')
+	}
+})
 
 Promise.all(moduleInitializationPromises).then(() => {
 	watchScrollPosition(stateRouter)
