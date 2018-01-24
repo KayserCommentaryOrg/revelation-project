@@ -1,6 +1,5 @@
 console.log(process.env.NODE_ENV)
-// const TEST = process.env.NODE_ENV !== `production`
-const TEST = true
+const TEST = process.env.NODE_ENV !== `production`
 
 Raven.config(`https://abebea60be4f48689cd1d3c7684c93cd@sentry.io/270211`, {
 	environment: TEST ? `client:development` : `client:production`,
