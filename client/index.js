@@ -50,8 +50,12 @@ stateRouter.on(`stateChangeEnd`, (state, params) => {
 	console.log(`stateChangeEnd`, state.name, params)
 
 	if (!TEST) {
-		ga('set', 'page', document.location.pathname)
-		ga('send', 'pageview')
+		try {
+			ga('set', 'page', document.location.pathname)
+			ga('send', 'pageview')
+		} catch (e) {
+			console.log(`Google Analytics logging failed, you probably have an adblocker`)
+		}
 	}
 })
 
