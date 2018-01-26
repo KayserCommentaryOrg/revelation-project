@@ -694,5 +694,13 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 16/Revelation 16_2-7.md",
 		"date": "2018-01-14",
 		"audioId": 1103
+	},
+	{
+		"title": "Bowls 4-5 - Judgments on the Seven-Headed Beast",
+		"passage": "Revelation 16:8-11",
+		"range": [[16,8,1], [16,11,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 16/Revelation 16-8-11.md",
+		"date": "2018-01-21",
+		"audioId": 1104
 	}
 ]
