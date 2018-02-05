@@ -5,7 +5,7 @@ import afterSuccessfulStateChange from 'lib/after-successful-state-change'
 // on old state, wait for stateChangeEnd, then scroll to the position from state
 // on new state, wait for stateChangeEnd, then scroll to the anchor if it exists, else scroll to top
 
-const currentAnchor = () => window.location.hash.replace(/^#/, '')
+const currentAnchor = () => window.location.hash.replace(/^#/, ``)
 const scrollToElement = element => element && element.scrollIntoView()
 const getElementById = id => id && document.getElementById(id)
 const scrollToTop = () => window.scrollTo(0, 0)
@@ -14,16 +14,16 @@ const windowListener = (event, listener) => window.addEventListener(event, liste
 const currentPosition = () => ({ x: window.scrollX, y: window.scrollY })
 
 export default function watchScrollPosition(stateRouter) {
-	if ('scrollRestoration' in history) {
-		history.scrollRestoration = 'manual'
+	if (`scrollRestoration` in history) {
+		history.scrollRestoration = `manual`
 	}
 
 	setUpInitialPosition(stateRouter)
 
 	let changingStates = false
 
-	stateRouter.on('stateChangeStart', () => changingStates = true)
-	stateRouter.on('stateChangeEnd', () => changingStates = false)
+	stateRouter.on(`stateChangeStart`, () => changingStates = true)
+	stateRouter.on(`stateChangeEnd`, () => changingStates = false)
 
 	function updatePosition() {
 		if (!changingStates) {
@@ -33,7 +33,7 @@ export default function watchScrollPosition(stateRouter) {
 		}
 	}
 
-	historyState.on('new state', () => {
+	historyState.on(`new state`, () => {
 		afterSuccessfulStateChange(stateRouter, () => {
 			const anchorElement = getElementById(currentAnchor())
 
@@ -48,14 +48,14 @@ export default function watchScrollPosition(stateRouter) {
 	})
 
 	historyState.addBeforePushStateMiddleware(state => Object.assign(state, { position: currentPosition() }))
-	windowListener('beforeunload', updatePosition)
+	windowListener(`beforeunload`, updatePosition)
 
 	const updatePositionDebounced = debounce(updatePosition, 100)
 
-	windowListener('scroll', updatePositionDebounced)
-	windowListener('resize', updatePositionDebounced)
+	windowListener(`scroll`, updatePositionDebounced)
+	windowListener(`resize`, updatePositionDebounced)
 
-	historyState.on('old state', ({ position }) => {
+	historyState.on(`old state`, ({ position }) => {
 		scrollToStatePosition(position)
 	})
 }
