@@ -50,7 +50,7 @@ export default function watchScrollPosition(stateRouter) {
 	historyState.addBeforePushStateMiddleware(state => Object.assign(state, { position: currentPosition() }))
 	windowListener(`beforeunload`, updatePosition)
 
-	const updatePositionDebounced = debounce(updatePosition, 100)
+	const updatePositionDebounced = debounce(updatePosition, 350)
 
 	windowListener(`scroll`, updatePositionDebounced)
 	windowListener(`resize`, updatePositionDebounced)
