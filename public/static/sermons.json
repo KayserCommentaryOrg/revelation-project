@@ -702,5 +702,21 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 16/Revelation 16-8-11.md",
 		"date": "2018-01-21",
 		"audioId": 1104
+	},
+	{
+		"title": "Bowl 6 - Armageddon",
+		"passage": "Revelation 16:12-16",
+		"range": [[16,12,1], [16,16,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 16/Revelation 16-12-16.md",
+		"date": "2018-01-28",
+		"audioId": 1107
+	},
+	{
+		"title": "Bowl 7 - Where These Judgments Began",
+		"passage": "Revelation 16:17-21",
+		"range": [[16,17,1], [16,21,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 16/Revelation 16-17-21.md",
+		"date": "2018-02-04",
+		"audioId": 1110
 	}
 ]

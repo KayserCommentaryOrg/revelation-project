@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Fri, 26 Jan 2018 16:44:28 GMT</lastBuildDate>
+		<lastBuildDate>Fri, 09 Feb 2018 21:29:24 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -993,6 +993,28 @@
 			<pubDate>Sun, 21 Jan 2018 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-1-21-TS-PK-Revelation16.8-11.mp3" length="42359392" type="audio/mpeg"/>
 			<itunes:summary>Revelation 16:8-11</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[Bowl 6 - Armageddon]]></title>
+			<description><![CDATA[Revelation 16:12-16]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1107</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1107</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 28 Jan 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-01-28-TS-PK-Revelation16.12-16.mp3" length="49433212" type="audio/mpeg"/>
+			<itunes:summary>Revelation 16:12-16</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[Bowl 7 - Where These Judgments Began]]></title>
+			<description><![CDATA[Revelation 16:17-21]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1110</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1110</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 04 Feb 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-02-04-TS-PK-Revelation16.17-21.mp3" length="55642262" type="audio/mpeg"/>
+			<itunes:summary>Revelation 16:17-21</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
