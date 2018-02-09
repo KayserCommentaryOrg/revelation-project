@@ -26,7 +26,8 @@ cd ${ path.join(__dirname, `../../KayserCommentary`) }
 git fetch upstream
 git checkout upstream/master
 rm -rf content
-node ci/deploy/bin.js Markdown/Web/ ./content
+mkdir -p /tmp/whatever
+node ci/deploy/bin.js Markdown/Web/ ./content /tmp/whatever
 `
 
 const retrieval = new Retrieval(path.join(__dirname, `../../KayserCommentary/content`))
@@ -99,6 +100,10 @@ async function main() {
 			)
 		)
 	)
+
+	sh`
+		rm -rf ${ path.join(__dirname, `../../KayserCommentary/content`) }
+	`
 }
 
 function trimToPropertiesThatNeedToBeDownloadedToClient(structure) {
