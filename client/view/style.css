@@ -78,6 +78,12 @@ small {
 	h1 {
 		font-size: 30px;
 	}
+	h2 {
+		font-size: 24px;
+	}
+	h3 {
+		font-size: 20px;
+	}
 }
 
 @media (max-width: 500px) {
@@ -87,6 +93,15 @@ small {
 
 	h1 {
 		font-size: 20px;
+	}
+	h2 {
+		font-size: 18px;
+	}
+	h3 {
+		font-size: 17px;
+	}
+	h4 {
+		font-size: 16px;
 	}
 }
 
