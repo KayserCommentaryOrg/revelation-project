@@ -1,5 +1,6 @@
 <div class="top-bar">
-	<img src="/static/image/dragon-sword.svg" class="logo" />
+	<img src="/static/image/dragon-sword.svg" class="big-screen-logo" />
+	<img src="/static/image/dragon-sword-wide.svg" class="small-screen-logo" />
 	<div class="menu-container">
 		<Menu asr="{{asr}}" />
 	</div>
@@ -11,9 +12,16 @@
 .top-bar {
 	display: flex;
 }
-.logo {
+.big-screen-logo {
 	width: 150px;
 	height: 150px;
+}
+.small-screen-logo {
+	width: 175px;
+	height: 150px;
+	align-self: center;
+
+	display: none;
 }
 
 .menu-container {
@@ -27,13 +35,16 @@
 	.top-bar {
 		flex-direction: column;
 	}
-	.logo {
-		align-self: center;
-	}
-
 	.menu-container {
 		margin-left: 0;
 		margin-top: 8px;
+	}
+
+	.small-screen-logo {
+		display: inherit;
+	}
+	.big-screen-logo {
+		display: none;
 	}
 }
 </style>
