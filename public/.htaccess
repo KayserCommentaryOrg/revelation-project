@@ -1,4 +1,4 @@
-AddOutputFilterByType DEFLATE text/html text/plain application/javascript text/css
+AddOutputFilterByType DEFLATE text/html text/plain application/javascript text/css application/json image/svg+xml
 
 ExpiresActive On
 ExpiresDefault "access plus 4 hours"
