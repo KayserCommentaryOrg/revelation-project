@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Fri, 09 Feb 2018 21:29:24 GMT</lastBuildDate>
+		<lastBuildDate>Wed, 07 Mar 2018 22:59:08 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -1015,6 +1015,17 @@
 			<pubDate>Sun, 04 Feb 2018 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-02-04-TS-PK-Revelation16.17-21.mp3" length="55642262" type="audio/mpeg"/>
 			<itunes:summary>Revelation 16:17-21</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[Identity of whore Babylon]]></title>
+			<description><![CDATA[Revelation 17:1]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1118</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1118</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 04 Mar 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-03-04-TS-PK-Revelation17.1.mp3" length="44825879" type="audio/mpeg"/>
+			<itunes:summary>Revelation 17:1</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
