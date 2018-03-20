@@ -734,5 +734,12 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 17/Revelation 17_2-3.md",
 		"date": "2018-03-11",
 		"audioId": 1120
+	},
+	{
+		"title": "Sins of the Whore",
+		"passage": "Revelation 17:2-7",
+		"range": [[17,2,1], [17,7,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 17/Revelation 17_4-7.md",
+		"date": "2018-03-18"
 	}
 ]
