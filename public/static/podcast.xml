@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Thu, 15 Mar 2018 17:54:00 GMT</lastBuildDate>
+		<lastBuildDate>Fri, 30 Mar 2018 19:34:36 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -1037,6 +1037,17 @@
 			<pubDate>Sun, 11 Mar 2018 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-03-11-TS-PK-Revelation17.2-3.mp3" length="38368220" type="audio/mpeg"/>
 			<itunes:summary>Revelation 17:2-6</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[Sins of the Whore]]></title>
+			<description><![CDATA[Revelation 17:2-7]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1121</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1121</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 18 Mar 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-03-18-TS-PK-Revelation17.4.7.mp3" length="40306867" type="audio/mpeg"/>
+			<itunes:summary>Revelation 17:2-7</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
