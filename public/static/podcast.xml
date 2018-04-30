@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Fri, 30 Mar 2018 19:34:36 GMT</lastBuildDate>
+		<lastBuildDate>Mon, 30 Apr 2018 22:00:37 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -1048,6 +1048,28 @@
 			<pubDate>Sun, 18 Mar 2018 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-03-18-TS-PK-Revelation17.4.7.mp3" length="40306867" type="audio/mpeg"/>
 			<itunes:summary>Revelation 17:2-7</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[Conspirators Are Not Invincible]]></title>
+			<description><![CDATA[Revelation 17:2-7]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1129</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1129</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 15 Apr 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-04-15-TS-PK-Revelation17.8-18.mp3" length="46777217" type="audio/mpeg"/>
+			<itunes:summary>Revelation 17:2-7</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[The Fall of Jerusalem]]></title>
+			<description><![CDATA[Revelation 18:1-3]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1130</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1130</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 22 Apr 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-04-22-TS-PK-Revelation18.1-3.mp3" length="48173641" type="audio/mpeg"/>
+			<itunes:summary>Revelation 18:1-3</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
