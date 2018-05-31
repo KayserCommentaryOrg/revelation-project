@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Tue, 15 May 2018 16:24:38 GMT</lastBuildDate>
+		<lastBuildDate>Thu, 31 May 2018 18:21:35 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -1092,6 +1092,17 @@
 			<pubDate>Sun, 06 May 2018 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-05-06-TS-PK-Revelation18.9-19.mp3" length="40154078" type="audio/mpeg"/>
 			<itunes:summary>Revelation 18:9-19</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[Old Jerusalem Is No More]]></title>
+			<description><![CDATA[Revelation 18:21-24]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1136</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1136</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 13 May 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-05-13-TS-PK-Revelation18.20-24.mp3" length="44242752" type="audio/mpeg"/>
+			<itunes:summary>Revelation 18:21-24</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
