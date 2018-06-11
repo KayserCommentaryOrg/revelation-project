@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Thu, 31 May 2018 18:21:35 GMT</lastBuildDate>
+		<lastBuildDate>Mon, 11 Jun 2018 15:16:44 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -1103,6 +1103,28 @@
 			<pubDate>Sun, 13 May 2018 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-05-13-TS-PK-Revelation18.20-24.mp3" length="44242752" type="audio/mpeg"/>
 			<itunes:summary>Revelation 18:21-24</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[Learning to Worship God for His Judgments]]></title>
+			<description><![CDATA[Revelation 19:1-5]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1138</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1138</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 20 May 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-05-20-TS-PK-Revelation19.1-5.mp3" length="44240245" type="audio/mpeg"/>
+			<itunes:summary>Revelation 19:1-5</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[The Marriage Supper of the Lamb]]></title>
+			<description><![CDATA[Revelation 19:6-10]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1142</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1142</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 03 Jun 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-%2006-03-TS-PK-Revelation19.6-10.mp3" length="41689542" type="audio/mpeg"/>
+			<itunes:summary>Revelation 19:6-10</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>

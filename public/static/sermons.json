@@ -788,6 +788,22 @@
 		"passage": "Revelation 19:1-5",
 		"range": [[19,1,1], [19,5,9999]],
 		"filename": "Sermons/New Testament/Revelation/Revelation 19/Revelation 19_1-5.md",
-		"date": "2018-05-20"
+		"date": "2018-05-20",
+		"audioId": 1138
+	},
+	{
+		"title": "The Marriage Supper of the Lamb",
+		"passage": "Revelation 19:6-10",
+		"range": [[19,6,1], [19,10,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 19/Revelation 19_6-10.md",
+		"date": "2018-06-03",
+		"audioId": 1142
+	},
+	{
+		"title": "Christ Advancing His Kingdom Worldwide",
+		"passage": "Revelation 19:11-16",
+		"range": [[19,11,1], [19,16,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 19/Revelation 19_11-16.md",
+		"date": "2018-06-10"
 	}
 ]
