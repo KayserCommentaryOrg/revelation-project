@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Mon, 18 Jun 2018 16:30:55 GMT</lastBuildDate>
+		<lastBuildDate>Thu, 21 Jun 2018 15:32:06 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -1136,6 +1136,17 @@
 			<pubDate>Sun, 10 Jun 2018 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-06-10-TS-PK-Revelation19.11-16.mp3" length="38297108" type="audio/mpeg"/>
 			<itunes:summary>Revelation 19:11-16</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[Christ Advancing His Judgments]]></title>
+			<description><![CDATA[Revelation 19:17-21]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1146</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1146</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 17 Jun 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-06-17-TS-PK-Revelation19.17-21.mp3" length="39683068" type="audio/mpeg"/>
+			<itunes:summary>Revelation 19:17-21</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
