@@ -29,6 +29,9 @@
 					Title
 				</th>
 				<th>
+					Reference
+				</th>
+				<th>
 
 				</th>
 				<th>
@@ -44,6 +47,9 @@
 					</td>
 					<td>
 						{{sermon.title}}
+					</td>
+					<td>
+						<VerseRange range={{sermon.range}} faint={{false}} />
 					</td>
 					<td>
 						<ExternalLink href="https://kaysercommentary.com/{{encodeURI(sermon.filename)}}">
@@ -79,6 +85,7 @@ table {
 
 import parseDate from 'date-fns/parse'
 import ExternalLink from 'component/ExternalLink.html'
+import VerseRange from 'component/VerseRange.html'
 
 const months = [
 	'January',
@@ -111,7 +118,8 @@ export default {
 		}
 	},
 	components: {
-		ExternalLink
+		ExternalLink,
+		VerseRange,
 	}
 }
 </script>

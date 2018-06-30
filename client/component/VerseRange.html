@@ -1,10 +1,13 @@
-<span class="verse-range">
+<span class="verse-range" data-faint={{faint}}>
 	{{readableRange}}
 </span>
 
 <style>
 .verse-range {
 	white-space: nowrap;
+}
+
+[data-faint=true] {
 	color: #a9a9a9;
 }
 
@@ -20,6 +23,11 @@ function friendlyName(sectionNumber) {
 }
 
 export default {
+	data() {
+		return {
+			faint: true
+		}
+	},
 	computed: {
 		rangeStart: range => range[0],
 		rangeEnd: range => range[1],
