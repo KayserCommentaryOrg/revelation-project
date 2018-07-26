@@ -27,14 +27,13 @@ const repoUrl = `https://kayser-commentary-bot:${ gitToken }@github.com/KayserCo
 
 console.log(
 	sh`
-		pushd /tmp
+		mkdir -p /tmp/whatever
+		cd /tmp
 		rm -rf KayserCommentary || echo 'whatever'
 		git clone --depth 1 ${ repoUrl }
-		pushd KayserCommentary
-		pushd ci/deploy
+		cd KayserCommentary/ci/deploy
 		npm i
-		popd
-		mkdir -p /tmp/whatever
+		cd ../../
 		node ci/deploy/bin.js Markdown/Web/ ./content /tmp/whatever
 	`
 )
