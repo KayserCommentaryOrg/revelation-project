@@ -23,7 +23,9 @@ const guaranteeRange = require(`../client/lib/structure/guarantee-range`).defaul
 
 const gitToken = process.env.KAYSER_COMMENTARY_BOT_TOKEN
 
-const repoUrl = `https://kayser-commentary-bot:${ gitToken }@github.com/KayserCommentaryOrg/KayserCommentary.git`
+const repoUrl = gitToken
+	? `https://kayser-commentary-bot:${ gitToken }@github.com/KayserCommentaryOrg/KayserCommentary.git`
+	: `git@github.com:KayserCommentaryOrg/KayserCommentary.git`
 
 console.log(
 	sh`
