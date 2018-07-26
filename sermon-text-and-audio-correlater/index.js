@@ -21,11 +21,15 @@ const createPodcastXmlFile = require(`./compile-podcast`)
 
 const guaranteeRange = require(`../client/lib/structure/guarantee-range`).default
 
+const gitToken = process.env.KAYSER_COMMENTARY_BOT_TOKEN
+
+const repoUrl = `https://kayser-commentary-bot:${ gitToken }@github.com/KayserCommentaryOrg/KayserCommentary.git`
+
 console.log(
 	sh`
 		pushd /tmp
 		rm -rf KayserCommentary || echo 'whatever'
-		git clone --depth 1 git@github.com:KayserCommentaryOrg/KayserCommentary.git
+		git clone --depth 1 ${ repoUrl }
 		pushd KayserCommentary
 		pushd ci/deploy
 		npm i
