@@ -21,17 +21,19 @@ const createPodcastXmlFile = require(`./compile-podcast`)
 
 const guaranteeRange = require(`../client/lib/structure/guarantee-range`).default
 
-sh`
-pushd /tmp
-rm -rf KayserCommentary || echo 'whatever'
-git clone --depth 1 git@github.com:KayserCommentaryOrg/KayserCommentary.git
-pushd KayserCommentary
-pushd ci/deploy
-npm i
-popd
-mkdir -p /tmp/whatever
-node ci/deploy/bin.js Markdown/Web/ ./content /tmp/whatever
-`
+console.log(
+	sh`
+		pushd /tmp
+		rm -rf KayserCommentary || echo 'whatever'
+		git clone --depth 1 git@github.com:KayserCommentaryOrg/KayserCommentary.git
+		pushd KayserCommentary
+		pushd ci/deploy
+		npm i
+		popd
+		mkdir -p /tmp/whatever
+		node ci/deploy/bin.js Markdown/Web/ ./content /tmp/whatever
+	`
+)
 
 console.log(`Done checking out and processing...`)
 
