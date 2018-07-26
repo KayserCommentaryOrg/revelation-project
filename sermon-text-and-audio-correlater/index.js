@@ -76,7 +76,7 @@ async function main() {
 		}
 	}).sort((postA, postB) => compareDateAsc(postA.date, postB.date))
 
-	// print(revelationPosts)
+	print(revelationPosts)
 
 	const audioIdsSeenAlready = new Set()
 
