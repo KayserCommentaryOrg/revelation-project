@@ -22,15 +22,21 @@ const createPodcastXmlFile = require(`./compile-podcast`)
 const guaranteeRange = require(`../client/lib/structure/guarantee-range`).default
 
 sh`
-cd ${ path.join(__dirname, `../../KayserCommentary`) }
-git fetch upstream
-git checkout upstream/master
-rm -rf content
+pushd /tmp
+rm -rf KayserCommentary || echo 'whatever'
+git clone --depth 1 git@github.com:KayserCommentaryOrg/KayserCommentary.git
+pushd KayserCommentary
+pushd ci/deploy
+npm i
+popd
 mkdir -p /tmp/whatever
 node ci/deploy/bin.js Markdown/Web/ ./content /tmp/whatever
 `
 
-const retrieval = new Retrieval(path.join(__dirname, `../../KayserCommentary/content`))
+console.log(`Done checking out and processing...`)
+
+// const retrieval = new Retrieval(path.join(__dirname, `../../KayserCommentary/content`))
+const retrieval = new Retrieval(`/tmp/KayserCommentary/content`)
 
 const butler = Butler(retrieval, level(`server`), {
 	parallelPostRequests: 10,
@@ -102,8 +108,30 @@ async function main() {
 	)
 
 	sh`
-		rm -rf ${ path.join(__dirname, `../../KayserCommentary/content`) }
+		rm -rf /tmp/KayserCommentary/content
 	`
+
+	// TODO: change the 0 to 1 once it looks like it works on CircleCI
+	const podcastFeedChanged = getLinesAdded(`../public/static/podcast.xml`) > 0
+
+	if (podcastFeedChanged) {
+		console.log(`Committing public/static/podcast.xml`)
+		sh`git add ../public/static/podcast.xml`
+	}
+
+	const sermonJsonChanged = getLinesAdded(`../public/static/sermons.json`)
+	if (sermonJsonChanged) {
+		console.log(`Committing public/static/sermons.json`)
+		sh`git add public/static/sermons.json`
+	}
+
+	if (podcastFeedChanged || sermonJsonChanged) {
+		console.log(`Pushing...`)
+		sh`
+			git commit -m "Auto-commit"
+			git push
+		`
+	}
 }
 
 function trimToPropertiesThatNeedToBeDownloadedToClient(structure) {
@@ -140,6 +168,12 @@ function nextSunday(date) {
 	} else {
 		return nextSunday(addDays(date, 1))
 	}
+}
+
+function getLinesAdded(path) {
+	const output = sh`git diff --shortstat ${ path }`
+
+	return output ? parseInt(output.match(/ (\d+) insertion/)[1]) : 0
 }
 
 main()
