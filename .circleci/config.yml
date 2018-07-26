@@ -78,7 +78,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "03 19 * * *"
+          cron: "09 19 * * *"
           filters:
             branches:
               only:
