@@ -17,7 +17,7 @@
     "build:css": "postcss-alt \"client/view/**/*.css\" \"public/static/style.css\"",
     "watch:css": "postcss-alt \"client/view/**/*.css\" \"public/static/style.css\" --watch=\"client/**/*.css\"",
     "deploy": "scp -r ./public/. revelation_bb@revelation.biblicalblueprints.org:/home/revelation_bb/revelation.biblicalblueprints.org",
-    "update-sermons": "cd sermon-text-and-audio-correlater && node index.js",
+    "update-sermons": "cd sermon-text-and-audio-correlater && npm i && node index.js",
     "dev": "cross-env NODE_ENV=development npm-run-all prep-build --parallel watch:*",
     "update-timeline-data": "node timeline-json-generator/transform-timeline-to-json.js "
   },
