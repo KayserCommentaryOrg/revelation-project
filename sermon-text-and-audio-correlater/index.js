@@ -28,7 +28,7 @@ const kcRepoUrl = gitToken
 	: `git@github.com:KayserCommentaryOrg/KayserCommentary.git`
 
 const botRevelationRepoUrl = gitToken
-	? `https://kayser-commentary-bot:${ gitToken }@github.com:KayserCommentaryOrg/revelation-project.git`
+	? `https://kayser-commentary-bot:${ gitToken }@github.com/KayserCommentaryOrg/revelation-project.git`
 	: null
 
 console.log(
@@ -149,7 +149,7 @@ async function main() {
 		if (botRevelationRepoUrl) {
 			sh`
 				git remote add bot ${ botRevelationRepoUrl }
-				git push bot
+				git push bot master
 			`
 		} else {
 			sh`
