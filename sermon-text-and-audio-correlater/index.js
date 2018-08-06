@@ -86,7 +86,7 @@ async function main() {
 
 	const postsAndAudio = revelationPosts.map(({ filename, passage, date, title }) => {
 		const isoDateString = formatDate(nextSunday(date), `YYYY-MM-DD`)
-		// console.log(isoDateString, title)
+		console.log(`date:`, date, `next sunday:`, isoDateString, title)
 		const audioId = dateToIdAndTitle[isoDateString] && dateToIdAndTitle[isoDateString].id
 
 		if (audioId) {
