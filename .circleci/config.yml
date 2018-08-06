@@ -71,6 +71,8 @@ jobs:
 
       - deploy:
           command: |
+              git config user.email "josh@biblicalblueprints.org"
+              git config user.name "CircleCI script"
               npm run update-sermons
 
 workflows:
@@ -78,7 +80,7 @@ workflows:
   nightly:
     triggers:
       - schedule:
-          cron: "14 17 * * *"
+          cron: "27 17 * * *"
           filters:
             branches:
               only:

@@ -23,7 +23,7 @@ const guaranteeRange = require(`../client/lib/structure/guarantee-range`).defaul
 
 const gitToken = process.env.KAYSER_COMMENTARY_BOT_TOKEN
 
-const repoUrl = gitToken
+const kcRepoUrl = gitToken
 	? `https://kayser-commentary-bot:${ gitToken }@github.com/KayserCommentaryOrg/KayserCommentary.git`
 	: `git@github.com:KayserCommentaryOrg/KayserCommentary.git`
 
@@ -32,7 +32,7 @@ console.log(
 		mkdir -p /tmp/whatever
 		cd /tmp
 		rm -rf KayserCommentary || echo 'whatever'
-		git clone --depth 1 ${ repoUrl }
+		git clone --depth 1 ${ kcRepoUrl }
 		cd KayserCommentary/ci/deploy
 		npm i
 		cd ../../
