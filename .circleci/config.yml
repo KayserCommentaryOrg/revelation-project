@@ -77,6 +77,12 @@ jobs:
 
 workflows:
   version: 2
+  deploy:
+    jobs:
+      - build
+          filters:
+            branches:
+          only: master
   nightly:
     triggers:
       - schedule:
