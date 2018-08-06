@@ -133,7 +133,7 @@ async function main() {
 	const sermonJsonChanged = getLinesAdded(`../public/static/sermons.json`)
 	if (sermonJsonChanged) {
 		console.log(`Committing public/static/sermons.json`)
-		sh`git add public/static/sermons.json`
+		sh`git add ../public/static/sermons.json`
 	}
 
 	if (podcastFeedChanged || sermonJsonChanged) {
