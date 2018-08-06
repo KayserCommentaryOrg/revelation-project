@@ -62,9 +62,6 @@ async function main() {
 		getPosts(), getSermonAudioData(),
 	])
 
-	console.log(`sermonAudioData:`)
-	print(sermonAudioData)
-
 	const dateToIdAndTitle = sermonAudioData.reduce((map, { id, title, dateString, enclosure }) => {
 		map[dateString] = { id, title, enclosure }
 		return map
@@ -83,14 +80,10 @@ async function main() {
 		}
 	}).sort((postA, postB) => compareDateAsc(postA.date, postB.date))
 
-	console.log(`revelationPosts:`)
-	print(revelationPosts)
-
 	const audioIdsSeenAlready = new Set()
 
 	const postsAndAudio = revelationPosts.map(({ filename, passage, date, title }) => {
 		const isoDateString = formatDate(nextSunday(date), `YYYY-MM-DD`)
-		console.log(`date:`, date, `next sunday:`, isoDateString, title)
 		const audioId = dateToIdAndTitle[isoDateString] && dateToIdAndTitle[isoDateString].id
 
 		if (audioId) {
