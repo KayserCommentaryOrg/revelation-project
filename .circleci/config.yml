@@ -82,7 +82,7 @@ workflows:
       - build_prod:
           filters:
             branches:
-          only: master
+              only: master
   nightly:
     triggers:
       - schedule:
