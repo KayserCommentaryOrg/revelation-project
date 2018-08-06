@@ -27,6 +27,10 @@ const kcRepoUrl = gitToken
 	? `https://kayser-commentary-bot:${ gitToken }@github.com/KayserCommentaryOrg/KayserCommentary.git`
 	: `git@github.com:KayserCommentaryOrg/KayserCommentary.git`
 
+const botRevelationRepoUrl = gitToken
+	? `https://kayser-commentary-bot:${ gitToken }@github.com:KayserCommentaryOrg/revelation-project.git`
+	: null
+
 console.log(
 	sh`
 		mkdir -p /tmp/whatever
@@ -140,8 +144,18 @@ async function main() {
 		console.log(`Pushing...`)
 		sh`
 			git commit -m "Auto-commit"
-			git push
 		`
+		console.log(`current branch is`, sh`git rev-parse --abbrev-ref HEAD --`)
+		if (botRevelationRepoUrl) {
+			sh`
+				git remote add bot ${ botRevelationRepoUrl }
+				git push bot
+			`
+		} else {
+			sh`
+				git push
+			`
+		}
 	}
 }
 
