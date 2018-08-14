@@ -119,8 +119,7 @@ async function main() {
 		rm -rf /tmp/KayserCommentary/content
 	`
 
-	// TODO: change the 0 to 1 once it looks like it works on CircleCI
-	const podcastFeedChanged = getLinesAdded(`../public/static/podcast.xml`) > 0
+	const podcastFeedChanged = getLinesAdded(`../public/static/podcast.xml`) > 1
 
 	if (podcastFeedChanged) {
 		console.log(`Committing public/static/podcast.xml`)
