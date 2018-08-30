@@ -1,4 +1,4 @@
-function contains() {
+const contains = (function () {
 	if (!window.document) {
 		throw new Error('NO GLOBAL DOCUMENT!')
 	}
@@ -9,7 +9,7 @@ function contains() {
 		return (container, element) => container !== element && (container.contains ? container.contains(element) : false)
 	}
 
-	return function(container, element) {
+	return (container, element) => {
 		while (element = element.parentNode) {
 			if (element === container) {
 				return true
@@ -17,7 +17,7 @@ function contains() {
 		}
 		return false
 	}
-}
+})()
 
 export default function isVisible(element, offset = 0) {
 	if (!contains(window.document.documentElement, element)) {
