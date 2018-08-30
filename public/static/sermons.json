@@ -822,5 +822,21 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 20/Revelation 20_1-3.md",
 		"date": "2018-08-05",
 		"audioId": 1160
+	},
+	{
+		"title": "The Two Resurrections",
+		"passage": "Revelation 20:4-6",
+		"range": [[20,4,1], [20,6,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 20/Revelation 20_4-6.md",
+		"date": "2018-08-12",
+		"audioId": 1162
+	},
+	{
+		"title": "The Last Rebellion",
+		"passage": "Revelation 20:7-10",
+		"range": [[20,7,1], [20,10,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 20/Revelation 20_7-10.md",
+		"date": "2018-08-26",
+		"audioId": 1166
 	}
 ]

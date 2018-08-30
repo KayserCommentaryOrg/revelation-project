@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Tue, 14 Aug 2018 03:00:54 GMT</lastBuildDate>
+		<lastBuildDate>Tue, 28 Aug 2018 03:01:03 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -1158,6 +1158,28 @@
 			<pubDate>Sun, 05 Aug 2018 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-08-05-TS-PK-Revelation20.1-3.mp3" length="59999983" type="audio/mpeg"/>
 			<itunes:summary>Revelation 20:1-3</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[The Two Resurrections]]></title>
+			<description><![CDATA[Revelation 20:4-6]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1162</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1162</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 12 Aug 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-08-12-TS-PK-Revelation20.4-6.mp3" length="54508592" type="audio/mpeg"/>
+			<itunes:summary>Revelation 20:4-6</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[The Last Rebellion]]></title>
+			<description><![CDATA[Revelation 20:7-10]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1166</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1166</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 26 Aug 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-08-26-TS-PK-Revelation20.7.10.mp3" length="50494360" type="audio/mpeg"/>
+			<itunes:summary>Revelation 20:7-10</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
