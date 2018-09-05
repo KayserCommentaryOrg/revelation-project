@@ -838,5 +838,13 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 20/Revelation 20_7-10.md",
 		"date": "2018-08-26",
 		"audioId": 1166
+	},
+	{
+		"title": "Judgment Day",
+		"passage": "Revelation 20:11-15",
+		"range": [[20,11,1], [20,15,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 20/Revelation 20_11-15.md",
+		"date": "2018-09-02",
+		"audioId": 1169
 	}
 ]
