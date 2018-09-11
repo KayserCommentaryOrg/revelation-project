@@ -846,5 +846,13 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 20/Revelation 20_11-15.md",
 		"date": "2018-09-02",
 		"audioId": 1169
+	},
+	{
+		"title": "New Heaven and New Earth",
+		"passage": "Revelation 21:1",
+		"range": [[21,1,1], [21,1,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 21/Revelation 21-1.md",
+		"date": "2018-09-09",
+		"audioId": 1171
 	}
 ]

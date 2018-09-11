@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Wed, 05 Sep 2018 03:00:57 GMT</lastBuildDate>
+		<lastBuildDate>Tue, 11 Sep 2018 03:01:24 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -1191,6 +1191,17 @@
 			<pubDate>Sun, 02 Sep 2018 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-09-02-TS-PK-Revelation20.11-15.mp3" length="39453387" type="audio/mpeg"/>
 			<itunes:summary>Revelation 20:11-15</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[New Heaven and New Earth]]></title>
+			<description><![CDATA[Revelation 21:1]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1171</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1171</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 09 Sep 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-09-09-TS-PK-Revelation21.1.mp3" length="39200973" type="audio/mpeg"/>
+			<itunes:summary>Revelation 21:1</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
