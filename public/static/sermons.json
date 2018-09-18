@@ -854,5 +854,12 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 21/Revelation 21-1.md",
 		"date": "2018-09-09",
 		"audioId": 1171
+	},
+	{
+		"title": "How Everything Became New",
+		"passage": "Revelation 21:2-8",
+		"range": [[21,2,1], [21,8,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 21/Revelation 21_2-8.md",
+		"date": "2018-09-16"
 	}
 ]
