@@ -862,5 +862,13 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 21/Revelation 21_2-8.md",
 		"date": "2018-09-16",
 		"audioId": 1173
+	},
+	{
+		"title": "The Glory of the New Jerusalem, part 1",
+		"passage": "Revelation 21:9-17",
+		"range": [[21,9,1], [21,17,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 21/Revelation 21-9-17.md",
+		"date": "2018-09-23",
+		"audioId": 1175
 	}
 ]
