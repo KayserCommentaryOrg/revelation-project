@@ -146,15 +146,15 @@ export default pipe([
 			s('Victory over death guaranteed – reign in life and in death', r([ 20, 4 ], [ 20, 6 ])),
 			s('Final judgment', r([ 20, 7 ], [ 20, 15 ])),
 			s('All things made new', r([ 21, 1 ], [ 21, 8 ])),
-			s('The New Jerusalem as the spotless bride', r([ 21, 9 ], [ 21, 27 ])),
+			s('The New Jerusalem as the spotless bride', r([ 21, 9 ], [ 21, 21 ])),
+			s('Eternal Dominion', r([ 21, 22 ], [ 21, 27 ])),
 			s('The river of life', r([ 22, 1 ], [ 22, 5 ])),
-			s('Reiteration that Christ will come soon to finish the old and to continue the renewal of all things', r([ 22, 6 ], [ 22, 17 ]))
 		),
 	}, {
 		identifier: 'A',
 		title: 'Epilogue',
 		description: 'How to Read This Book',
-		range: r([ 22, 18 ], [ 22, 21 ]),
+		range: r([ 22, 6 ], [ 22, 21 ]),
 	},
 ],
 addPrimeBooleanToChiasmSections,
