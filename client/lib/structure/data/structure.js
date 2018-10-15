@@ -136,7 +136,7 @@ export default pipe([
 		identifier: 'B',
 		title: 'Seventh Septet – Seven visions of the victory of Christ’s Kingdom',
 		description: 'The Church Militant & Triumphant',
-		range: r([ 20, 1 ], [ 22, 17 ]),
+		range: r([ 20, 1 ], [ 22, 5 ]),
 		introduction: {
 			title: 'Introduction to the seven New Covenant visions – Jesus proves that He is King of kings and Lord of lords',
 			range: r([ 19, 11 ], [ 19, 21 ]),
