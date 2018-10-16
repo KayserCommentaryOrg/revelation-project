@@ -878,5 +878,13 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 21/Revelation 21-18-27.md",
 		"date": "2018-09-30",
 		"audioId": 1176
+	},
+	{
+		"title": "The Glory of the New Jerusalem, part 3",
+		"passage": "Revelation 22:1-5",
+		"range": [[22,1,1], [22,5,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 22/Revelation 22_1-5.md",
+		"date": "2018-10-14",
+		"audioId": 1180
 	}
 ]

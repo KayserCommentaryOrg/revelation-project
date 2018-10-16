@@ -10,7 +10,7 @@
 			<link>https://revelation.biblicalblueprints.org/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
-		<lastBuildDate>Tue, 02 Oct 2018 03:00:57 GMT</lastBuildDate>
+		<lastBuildDate>Tue, 16 Oct 2018 03:00:43 GMT</lastBuildDate>
 		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
@@ -1235,6 +1235,17 @@
 			<pubDate>Sun, 30 Sep 2018 00:00:00 GMT</pubDate>
 			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-09-30-TS-PK-Revelation21.18-27.mp3" length="35527492" type="audio/mpeg"/>
 			<itunes:summary>Revelation 21:18-21</itunes:summary>
+			<itunes:explicit>No</itunes:explicit>
+		</item>
+		<item>
+			<title><![CDATA[The Glory of the New Jerusalem, part 3]]></title>
+			<description><![CDATA[Revelation 22:1-5]]></description>
+			<link>http://www.dominioncovenantchurch.com/sermons/?sermon_id=1180</link>
+			<guid isPermaLink="false">phil-kayser-revelation-project-sermon-audio-1180</guid>
+			<dc:creator><![CDATA[Phil Kayser]]></dc:creator>
+			<pubDate>Sun, 14 Oct 2018 00:00:00 GMT</pubDate>
+			<enclosure url="http://www.dominioncovenantchurch.com/sermons/?show&amp;file_name=2018-10-14-TS-PK-Revelation22.1-5.mp3" length="52151208" type="audio/mpeg"/>
+			<itunes:summary>Revelation 22:1-5</itunes:summary>
 			<itunes:explicit>No</itunes:explicit>
 		</item>
 	</channel>
