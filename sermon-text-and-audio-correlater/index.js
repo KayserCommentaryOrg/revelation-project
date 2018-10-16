@@ -33,13 +33,15 @@ const botRevelationRepoUrl = gitToken
 
 console.log(
 	sh`
-		mkdir -p /tmp/whatever
 		cd /tmp
 		rm -rf KayserCommentary || echo 'whatever'
-		git clone --depth 1 ${ kcRepoUrl }
+		echo "cloning..."
+		git clone -b master --depth 1 ${ kcRepoUrl }
+		echo "done cloning"
 		cd KayserCommentary/ci/deploy
 		npm i
 		cd ../../
+		echo "done installing"
 		node ci/deploy/bin.js Markdown/Web/ ./content /tmp/whatever
 	`
 )
