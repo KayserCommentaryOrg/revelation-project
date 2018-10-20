@@ -49,7 +49,13 @@
 						{{sermon.title}}
 					</td>
 					<td>
-						<VerseRange range={{sermon.range}} faint={{false}} />
+						<StateLink
+							state="main.structure.text"
+							params="{{ { verseNumbers: true } }}"
+							anchor="c{{sermon.range[0][0]}}v{{sermon.range[0][1]}}"
+						>
+							<VerseRange range={{sermon.range}} faint={{false}} />
+						</StateLink>
 					</td>
 					<td>
 						<ExternalLink href="https://kaysercommentary.com/{{encodeURI(sermon.filename)}}">
@@ -84,42 +90,44 @@ table {
 <script>
 
 import parseDate from 'date-fns/parse'
+import StateLink from 'component/StateLink.html'
 import ExternalLink from 'component/ExternalLink.html'
 import VerseRange from 'component/VerseRange.html'
 
 const months = [
-	'January',
-	'February',
-	'March',
-	'April',
-	'May',
-	'June',
-	'July',
-	'August',
-	'September',
-	'October',
-	'November',
-	'December',
+	`January`,
+	`February`,
+	`March`,
+	`April`,
+	`May`,
+	`June`,
+	`July`,
+	`August`,
+	`September`,
+	`October`,
+	`November`,
+	`December`,
 ]
 
 export default {
 	data() {
 		return {
-			sermons: []
+			sermons: [],
 		}
 	},
 	computed: {
-		sermonsDescending: sermons => sermons.slice().reverse()
+		sermonsDescending: sermons => sermons.slice().reverse(),
 	},
 	helpers: {
 		displayDate(dateString) {
 			const date = parseDate(dateString)
-			return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
-		}
+			return `${ months[date.getMonth()] } ${ date.getDate() }, ${ date.getFullYear() }`
+		},
 	},
 	components: {
 		ExternalLink,
 		VerseRange,
-	}
+		StateLink,
+	},
 }
 </script>

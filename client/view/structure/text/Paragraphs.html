@@ -28,10 +28,12 @@
 							>
 								{{#if chunk.sectionNumber === 1}}
 									<span
+										id="c{{chunk.chapterNumber}}v{{chunk.verseNumber}}"
 										class="verse-number unselectable"
-										data-visible="{{showVerseNumber}}"
 									>
-										{{chunk.verseNumber}}
+										{{#if showVerseNumber}}
+											{{chunk.verseNumber}}
+										{{/if}}
 									</span>
 								{{/if}}
 
