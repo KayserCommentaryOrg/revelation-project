@@ -90,9 +90,9 @@ function paragraphsOfJustVerses(chunks) {
 	}
 
 	chunks.forEach(chunk => {
-		if (chunk.type === 'paragraph break') {
+		if (chunk.type === `paragraph break`) {
 			finishParagraph()
-		} else if (chunk.type === 'verse') {
+		} else if (chunk.type === `verse`) {
 			currentParagraph.push(chunk)
 		}
 	})
@@ -107,12 +107,12 @@ function getRangeFromVerses(verses) {
 		[
 			verses[0].chapterNumber,
 			verses[0].verseNumber,
-			verses[0].sectionNumber
+			verses[0].sectionNumber,
 		], [
 			verses[verses.length - 1].chapterNumber,
 			verses[verses.length - 1].verseNumber,
-			verses[verses.length - 1].sectionNumber
-		]
+			verses[verses.length - 1].sectionNumber,
+		],
 	]
 }
 
@@ -120,7 +120,7 @@ export default {
 	data() {
 		return {
 			verses: [],
-			sermons: []
+			sermons: [],
 		}
 	},
 	computed: {
@@ -129,18 +129,18 @@ export default {
 		},
 		sermonsForVerses(sermons) {
 			return verses => extractRangeFromSermons(sermons, getRangeFromVerses(verses))
-		}
+		},
 	},
 	helpers: {
 		chunkReference(chunk) {
 			return [ chunk.chapterNumber, chunk.verseNumber, chunk.sectionNumber ]
-		}
+		},
 	},
 	components: {
 		SermonHoverReflector: sermonHover.HoverReflector,
 		VerseHoverDetector: verseHover.HoverDetector,
 		ParagraphDescription,
 		Selectable,
-	}
+	},
 }
 </script>

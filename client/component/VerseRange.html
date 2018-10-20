@@ -17,7 +17,7 @@
 
 import { VERSE_SECTION_RANGE_MIN, VERSE_SECTION_RANGE_MAX } from 'lib/structure/constants'
 
-const verseSectionFriendlyNames = ['a', 'b', 'c', 'd', 'e']
+const verseSectionFriendlyNames = [ `a`, `b`, `c`, `d`, `e` ]
 function friendlyName(sectionNumber) {
 	return verseSectionFriendlyNames[sectionNumber - 1]
 }
@@ -25,7 +25,7 @@ function friendlyName(sectionNumber) {
 export default {
 	data() {
 		return {
-			faint: true
+			faint: true,
 		}
 	},
 	computed: {
@@ -36,35 +36,34 @@ export default {
 			const [ endChapter, endVerse, endSection ] = rangeEnd
 
 			if (startChapter === endChapter && startVerse === endVerse) {
-				const chapterVerse = `${startChapter}:${startVerse}`
+				const chapterVerse = `${ startChapter }:${ startVerse }`
 				const subVerseRange = startSection > VERSE_SECTION_RANGE_MIN
 					|| endSection < VERSE_SECTION_RANGE_MAX
 
 				if (subVerseRange) {
-					const verseWithStartRangeName = `${chapterVerse}${friendlyName(startSection)}`
+					const verseWithStartRangeName = `${ chapterVerse }${ friendlyName(startSection) }`
 					if (startSection === endSection) {
 						return verseWithStartRangeName
 					} else if (endSection === VERSE_SECTION_RANGE_MAX) {
 						return verseWithStartRangeName
 					} else {
-						const verseWithEndRangeName = `${chapterVerse}${friendlyName(endSection)}`
-						return `${verseWithStartRangeName}-${verseWithEndRangeName}`
+						const verseWithEndRangeName = `${ chapterVerse }${ friendlyName(endSection) }`
+						return `${ verseWithStartRangeName }-${ verseWithEndRangeName }`
 					}
 				} else {
 					return chapterVerse
 				}
 			} else {
 				const start = startSection > VERSE_SECTION_RANGE_MIN
-					? `${startChapter}:${startVerse}${friendlyName(startSection)}`
-					: `${startChapter}:${startVerse}`
+					? `${ startChapter }:${ startVerse }${ friendlyName(startSection) }`
+					: `${ startChapter }:${ startVerse }`
 				const end = endSection < VERSE_SECTION_RANGE_MAX
-					? `${endChapter}:${endVerse}${friendlyName(endSection)}`
-					: `${endChapter}:${endVerse}`
+					? `${ endChapter }:${ endVerse }${ friendlyName(endSection) }`
+					: `${ endChapter }:${ endVerse }`
 
-				return `${start}-${end}`
+				return `${ start }-${ end }`
 			}
-
-		}
-	}
+		},
+	},
 }
 </script>
