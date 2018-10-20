@@ -4,18 +4,6 @@
 	<div class="intro">
 		<h1>Revelation's structure</h1>
 	</div>
-	<p>
-		<strong>The really short instructions:</strong> click the colored bars on the right to zoom in and compare that section with its mirror section.  Click on the bar again to zoom back out.
-	</p>
-	<p>
-		Click on the little blue arrows to skip to the matching section without zooming in.
-	</p>
-	<p>
-		Press the "v" key to turn verse numbers on or off, and press the "g" key to toggle between Greek and English. {{#if easterEggActivated}}lol, not on this page, I don't have a greek translation of this explanation text.{{/if}}
-	</p>
-	<h2>
-		This page:
-	</h2>
 	<nav>
 		<ol>
 			<li>
@@ -140,17 +128,17 @@ export default {
 		InnerChiasm,
 		Outline,
 		Subsections,
-		ExternalLink
+		ExternalLink,
 	},
 	methods: {
 		keydown(event) {
 			if (event.keyCode === code_g) {
 				event.preventDefault()
 				this.set({
-					easterEggActivated: true
+					easterEggActivated: true,
 				})
 			}
-		}
-	}
+		},
+	},
 }
 </script>

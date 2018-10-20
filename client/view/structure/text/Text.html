@@ -4,27 +4,35 @@
 	<h1>
 		Revelation
 	</h1>
-	<p>
-		<small>
+
+	<small>
+		<p class=faint>
+			Click the colored bars on the right to zoom in and compare the text with its mirror section.  Click on the bar again to zoom back out.
+		</p>
+		<p class=faint>
+			Click on the little blue arrows to skip to its mirror section (without zooming in).
+		</p>
+		<p>
 			<Link parameters="{{toggledTranslationParameters}}">
-			{{#if currentTranslation === translations.greek}}
-				English
-			{{else}}
-				Greek
-			{{/if}}
+				{{#if currentTranslation === translations.greek}}
+					English
+				{{else}}
+					Greek
+				{{/if}}
 			</Link>
 			(g)
 			•
 			<Link parameters="{{toggledVerseNumbersParameters}}">
-			{{#if showVerseNumber}}
-				Hide verse numbers
-			{{else}}
-				Show verse numbers
-			{{/if}}
+				{{#if showVerseNumber}}
+					Hide verse numbers
+				{{else}}
+					Show verse numbers
+				{{/if}}
 			</Link>
 			(v)
-		</small>
-	</p>
+		</p>
+	</small>
+
 </div>
 
 <div class="outline">
@@ -142,6 +150,10 @@
 [data-chiasm-selected=true] [data-is-selected=true] {
 	margin-bottom: 20px;
 }
+
+.faint {
+	color: #a9a9a9;
+}
 </style>
 
 <script>
@@ -174,16 +186,14 @@ export default {
 	},
 	data() {
 		return {
-			querystringParameters: {}
+			querystringParameters: {},
 		}
 	},
 	computed: {
-		toggledTranslationParameters: (querystringParameters) => {
-			return getParametersWithTranslationToggled(querystringParameters)
-		},
+		toggledTranslationParameters: querystringParameters => getParametersWithTranslationToggled(querystringParameters),
 		toggledVerseNumbersParameters: (querystringParameters, showVerseNumber) => {
 			const newParameters = Object.assign({}, querystringParameters, {
-				verseNumbers: 'true'
+				verseNumbers: `true`,
 			})
 			const verseNumbersShouldBeEnabledInNewParameters = !showVerseNumber
 
@@ -193,39 +203,25 @@ export default {
 
 			return newParameters
 		},
-		currentChiasm: querystringParameters => {
-			return querystringParameters.chiasm
-		},
-		currentSubsection: querystringParameters => {
-			return querystringParameters.section
-		},
-		showVerseNumber: querystringParameters => querystringParameters.verseNumbers === 'true',
+		currentChiasm: querystringParameters => querystringParameters.chiasm,
+		currentSubsection: querystringParameters => querystringParameters.section,
+		showVerseNumber: querystringParameters => querystringParameters.verseNumbers === `true`,
 		subsectionIsSelected: currentSubsection => !!currentSubsection,
-		getLinkParameters: (currentChiasm, currentSubsection) => {
-			return chiasmIdentifier => {
-				return currentChiasm === chiasmIdentifier && !currentSubsection
-					? {}
-					: { chiasm: chiasmIdentifier }
-			}
-		},
+		getLinkParameters: (currentChiasm, currentSubsection) => chiasmIdentifier => currentChiasm === chiasmIdentifier && !currentSubsection
+			? {}
+			: { chiasm: chiasmIdentifier },
 		chiasmColorBarColor(currentChiasm, currentSubsection) {
 			if (currentChiasm && currentSubsection) {
-				return () => '#d8d8d8'
+				return () => `#d8d8d8`
 			} else {
 				return getChiasmColor
 			}
 		},
-		currentTranslation: (querystringParameters, translations) => {
-			return querystringParameters.translation === 'greek'
-				? translations.greek
-				: translations.english
-		},
-		structuredText: (structureWithSermons, currentTranslation) => {
-			return combineStructureWithVerses(structureWithSermons, currentTranslation)
-		},
-		sectionIsVisible: currentChiasm => {
-			return section => !currentChiasm || currentChiasm === section.identifier
-		},
+		currentTranslation: (querystringParameters, translations) => querystringParameters.translation === `greek`
+			? translations.greek
+			: translations.english,
+		structuredText: (structureWithSermons, currentTranslation) => combineStructureWithVerses(structureWithSermons, currentTranslation),
+		sectionIsVisible: currentChiasm => section => !currentChiasm || currentChiasm === section.identifier,
 	},
 	components: {
 		ChiasmSubsections,
@@ -248,21 +244,21 @@ export default {
 			if (event.keyCode === code_g) {
 				event.preventDefault()
 				navigate({
-					parameters: this.get('toggledTranslationParameters'),
-					element: this.firstAnchorInViewport()
+					parameters: this.get(`toggledTranslationParameters`),
+					element: this.firstAnchorInViewport(),
 				})
 			} else if (event.keyCode === code_v) {
 				event.preventDefault()
 				navigate({
-					parameters: this.get('toggledVerseNumbersParameters'),
-					element: this.firstAnchorInViewport()
+					parameters: this.get(`toggledVerseNumbersParameters`),
+					element: this.firstAnchorInViewport(),
 				})
 			}
 		},
 		firstAnchorInViewport() {
-			return [...this.refs.textContainer.querySelectorAll('a')]
+			return [ ...this.refs.textContainer.querySelectorAll(`a`) ]
 				.find(element => element.id && inViewport(element))
-		}
-	}
+		},
+	},
 }
 </script>
