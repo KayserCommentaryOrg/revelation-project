@@ -99,47 +99,38 @@ import StateLink from 'component/StateLink.html'
 
 export default {
 	data() {
+		// menu items can have children here too FYI,
+		// there just don't happen to be any at the moment
 		return {
 			menu: [{
-				name: 'Project Home',
-				state: 'main.home'
+				name: `Project Home`,
+				state: `main.home`,
 			}, {
-				name: 'Historical timeline',
-				state: 'main.timeline',
-				children: [{
-					name: 'Timeline',
-					state: 'main.timeline.visual',
-				}, {
-					name: 'Table of dates',
-					state: 'main.timeline.table',
-				}]
+				name: `Sermons`,
+				state: `main.sermons`,
 			}, {
-				name: 'The structure of Revelation',
-				state: 'main.structure',
-				children: [{
-					name: 'The book',
-					state: 'main.structure.text',
-				}, {
-					name: 'Explanation',
-					state: 'main.structure.explanation',
-				}]
+				name: `The text`,
+				state: `main.structure.text`,
 			}, {
-				name: 'Principles for interpreting Revelation',
-				state: 'main.principles-of-interpretation',
+				name: `The book's structure`,
+				state: `main.structure.explanation`,
 			}, {
-				name: 'Different interpretations of Revelation',
-				state: 'main.different-interpretations'
+				name: `Historical timeline`,
+				state: `main.timeline.table`,
 			}, {
-				name: 'Sermons',
-				state: 'main.sermons',
-			}]
+				name: `Principles for interpreting Revelation`,
+				state: `main.principles-of-interpretation`,
+			}, {
+				name: `Different interpretations of Revelation`,
+				state: `main.different-interpretations`,
+			}],
 		}
 	},
 	computed: {
-		activeParentMenuItem: (menu, asr) => menu.find(item => asr.stateIsActive(item.state))
+		activeParentMenuItem: (menu, asr) => menu.find(item => asr.stateIsActive(item.state)),
 	},
 	components: {
-		StateLink
-	}
+		StateLink,
+	},
 }
 </script>
