@@ -1,6 +1,6 @@
 <a
 	href="{{href}}"
-	data-active="{{asr.stateIsActive(state, params)}}"
+	data-active="{{asr.stateIsActive(state, effectiveParams)}}"
 	on:click="navigate(event)"
 	class="{{className}}"
 >
@@ -16,11 +16,11 @@ import shouldInterceptClick from 'click-should-be-intercepted-for-navigation'
 
 function afterTransitionTo(stateRouter, stateName, params, cb) {
 	const cancelFunctions = [
-		once(stateRouter, 'stateChangeEnd', listener),
-		once(stateRouter, 'stateChangeError', cancel),
-		once(stateRouter, 'stateError', cancel),
-		once(stateRouter, 'routeNotFound', cancel),
-		once(stateRouter, 'stateChangeCancelled', cancel),
+		once(stateRouter, `stateChangeEnd`, listener),
+		once(stateRouter, `stateChangeError`, cancel),
+		once(stateRouter, `stateError`, cancel),
+		once(stateRouter, `routeNotFound`, cancel),
+		once(stateRouter, `stateChangeCancelled`, cancel),
 	]
 	function listener(endState, endParams) {
 		if (endState.name === stateName && deepEqual(params, endParams)) {
@@ -41,36 +41,45 @@ function currentPath() {
 export default {
 	oncreate() {
 		this.stateChangeListener = () => this.set({ asr: stateRouter })
-		stateRouter.on('stateChangeEnd', this.stateChangeListener)
+		stateRouter.on(`stateChangeEnd`, this.stateChangeListener)
 	},
 	ondestroy() {
-		stateRouter.removeListener('stateChangeEnd', this.stateChangeListener)
+		stateRouter.removeListener(`stateChangeEnd`, this.stateChangeListener)
 	},
 	data() {
 		return {
 			asr: stateRouter,
 			params: {},
 			inherit: false,
-			className: '',
-			anchor: '',
+			className: ``,
+			anchor: ``,
 		}
 	},
 	computed: {
-		hashFragment: anchor => anchor ? `#${anchor}` : '',
-		path: (asr, state, params, options) => asr.makePath(state, params, options),
-		href: (path, hashFragment) => path + hashFragment
+		hashFragment: anchor => anchor ? `#${ anchor }` : ``,
+		effectiveParams: params => {
+			const o = {}
+
+			Object.keys(params).forEach(key => {
+				o[key] = params[key].toString()
+			})
+
+			return o
+		},
+		path: (asr, state, effectiveParams, options) => asr.makePath(state, effectiveParams, options),
+		href: (path, hashFragment) => path + hashFragment,
 	},
 	methods: {
 		navigate(event) {
 			if (shouldInterceptClick(event)) {
 				event.preventDefault()
 
-				const { asr, state, params, inherit, hashFragment, anchor, path } = this.get()
+				const { asr, state, effectiveParams, inherit, hashFragment, anchor, path } = this.get()
 
 				if (path !== currentPath()) {
-					asr.go(state, params, { inherit })
+					asr.go(state, effectiveParams, { inherit })
 
-					afterTransitionTo(asr, state, params, () => {
+					afterTransitionTo(asr, state, effectiveParams, () => {
 						if (anchor) {
 							window.location.replace(hashFragment)
 						}
@@ -79,7 +88,7 @@ export default {
 					window.location = hashFragment
 				}
 			}
-		}
-	}
+		},
+	},
 }
 </script>
