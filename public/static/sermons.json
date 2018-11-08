@@ -902,5 +902,13 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 22/Revelation 22_12.md",
 		"date": "2018-10-28",
 		"audioId": 1185
+	},
+	{
+		"title": "Dawning of the Kingdom of Grace",
+		"passage": "Revelation 22:13-17",
+		"range": [[22,13,1], [22,17,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 22/Revelation 22_13-17.md",
+		"date": "2018-11-04",
+		"audioId": 1187
 	}
 ]
