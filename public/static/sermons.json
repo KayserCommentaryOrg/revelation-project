@@ -910,5 +910,13 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 22/Revelation 22_13-17.md",
 		"date": "2018-11-04",
 		"audioId": 1187
+	},
+	{
+		"title": "Final Admonitions",
+		"passage": "Revelation 22:18-19",
+		"range": [[22,18,1], [22,19,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation 22/Revelation 22_18-21.md",
+		"date": "2018-11-25",
+		"audioId": 1193
 	}
 ]
