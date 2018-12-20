@@ -2,8 +2,6 @@ require(`reify`)
 
 require(`loud-rejection`)()
 
-const path = require(`path`)
-
 const Butler = require(`noddity-butler`)
 const level = require(`level-mem`)
 const denodeify = require(`then-denodeify`)
@@ -22,6 +20,8 @@ const createPodcastXmlFile = require(`./compile-podcast`)
 const guaranteeRange = require(`../client/lib/structure/guarantee-range`).default
 
 const gitToken = process.env.KAYSER_COMMENTARY_BOT_TOKEN
+
+const specialCases = (...cases) => cases.reduce((found, [ test, result ]) => found || (test() && result), null)
 
 const kcRepoUrl = gitToken
 	? `https://kayser-commentary-bot:${ gitToken }@github.com/KayserCommentaryOrg/KayserCommentary.git`
@@ -69,10 +69,13 @@ async function main() {
 		return map
 	}, Object.create(null))
 
-	const revelationPosts = posts.filter(post => post.metadata.published
+	const revelationPosts = posts.filter(
+		post => post.metadata.published
 			&& /^Sermons\/New Testament\/Revelation\/Revelation/.test(post.filename)
 			&& !/GraphicsCharts/.test(post.filename)
-			&& !/Revelation timeline/.test(post.filename)).map(({ filename, metadata }) => {
+			&& !/Revelation timeline/.test(post.filename)
+			&& !/WarManual.md$/.test(post.filename)
+	).map(({ filename, metadata }) => {
 		const { passage, date, title } = metadata
 		return {
 			title,
@@ -95,7 +98,18 @@ async function main() {
 			audioIdsSeenAlready.add(audioId)
 		}
 
-		const range = isoDateString === `2015-04-26` ? [ [ 21, 1 ], [ 21, 1 ] ] : passageToRange(passage)
+		const range = specialCases([
+			() => isoDateString === `2015-04-26`,
+			[ [ 21, 1 ], [ 21, 1 ] ],
+		], [
+			() => /\/Revelation Themes\//.test(filename),
+			[ [ 1, 1 ], [ 22, 21 ] ],
+		]) || passageToRange(passage)
+
+		if (!range) {
+			throw new Error(`Unable to construct a range out of "${ passage }" in ${ filename }`)
+		}
+
 		return {
 			title,
 			passage,
