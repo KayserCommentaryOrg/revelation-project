@@ -918,5 +918,29 @@
 		"filename": "Sermons/New Testament/Revelation/Revelation 22/Revelation 22_18-21.md",
 		"date": "2018-11-25",
 		"audioId": 1193
+	},
+	{
+		"title": "The Powerful Songs of Revelation",
+		"passage": "Revelation 1-22A",
+		"range": [[1,1,1], [22,21,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation Themes/Music&Singing.md",
+		"date": "2018-12-02",
+		"audioId": 1194
+	},
+	{
+		"title": "Revelation as a Spiritual War Manual, part 1",
+		"passage": "Revelation 1-22B",
+		"range": [[1,1,1], [22,21,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation Themes/WarManualPreach1.md",
+		"date": "2018-12-09",
+		"audioId": 1196
+	},
+	{
+		"title": "Revelation as a Spiritual War Manual, part 2",
+		"passage": "Revelation 1-22C",
+		"range": [[1,1,1], [22,21,9999]],
+		"filename": "Sermons/New Testament/Revelation/Revelation Themes/WarManualPreach2.md",
+		"date": "2018-12-16",
+		"audioId": 1198
 	}
 ]
