@@ -17,4 +17,4 @@ NameVirtualHost *:81
 </VirtualHost>
 ```
 
-You'll also need mod_expires, mod_deflate, and mod_rewrite enabled.
+You'll also need mod_expires, mod_deflate, mod_filter, and mod_rewrite enabled.
