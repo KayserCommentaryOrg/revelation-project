@@ -1,6 +1,8 @@
 <div class="top-bar">
-	<img src="/static/image/bb-logo-2020-square.svg" class="big-screen-logo" />
-	<img src="/static/image/bb-logo-2020-square.svg" class="small-screen-logo" />
+	<a href="https://biblicalblueprints.com/" class="link-no-underline">
+		<img src="/static/image/bb-logo-2020-square.svg" class="big-screen-logo" />
+		<img src="/static/image/bb-logo-2020-square.svg" class="small-screen-logo" />
+	</a>
 	<div class="nav-responsive-wrap">
 		<div class="menu-container">
 			<ul class="nav-list header-nav-list">
@@ -88,12 +90,16 @@ ul.nav-list {
     border-bottom: 1px #aaaaaa dotted;
     padding-bottom: 1px;
 }
+.link-no-underline, .link-no-underline:hover {
+    border: none;
+    padding-bottom: 0;
+}
 
 @media (max-width: 450px) {
 	.top-bar {
 		flex-direction: column;
 	}
-	
+
 	.nav-responsive-wrap {
 	    flex-direction: column;
 	    align-content: center;
