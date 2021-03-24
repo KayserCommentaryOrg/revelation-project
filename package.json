@@ -66,7 +66,7 @@
     "pify": "3.0.0",
     "podcast2": "~1.0.0",
     "postcss": "6.0.9",
-    "postcss-alt-cli": "^1.0.0",
+    "postcss-alt-cli": "github:tehshrike/postcss-alt-cli#postcss-version-hell",
     "precss": "2.0.0",
     "regex-fun": "~2.0.2",
     "reify": "0.12.1",
