@@ -1,8 +1,30 @@
 <div class="top-bar">
 	<img src="/static/image/dragon-sword.svg" class="big-screen-logo" />
 	<img src="/static/image/dragon-sword-wide.svg" class="small-screen-logo" />
-	<div class="menu-container">
-		<Menu asr="{{asr}}" />
+	<div class="nav-responsive-wrap">
+		<div class="menu-container">
+			<ul class="nav-list header-nav-list">
+				<li class=button-border>
+					<a href="https://biblicalblueprints.com/about">About</a>
+				</li>
+				<li class=button-border>
+					<a href="https://kaysercommentary.com">Research</a>
+				</li>
+				<li class=button-border>
+					<a href="https://biblicalblueprints.com/projects">Projects</a>
+				</li>
+				<li class=button-border>
+					<a href="https://revelation.biblicalblueprints.org/home">Revelation</a>
+				</li>
+				<li class=button-border>
+					<a href="https://kaysercommentary.com/booklets.md">Books</a>
+				</li>
+			</ul>
+		</div>
+		<div class="menu-container">
+			<hr>
+			<Menu asr="{{asr}}" />
+		</div>
 	</div>
 </div>
 
@@ -20,21 +42,63 @@
 	width: 175px;
 	height: 150px;
 	align-self: center;
-
 	display: none;
 }
 
 .menu-container {
-	min-height: 150px;
-
+	/* min-height: 150px; */
 	margin-left: 8px;
 	margin-top: 0px;
+	width: 100%;
+}
+
+/* Styles from KayserCommentary.com */
+.nav-responsive-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+.nav-list {
+    font-family: "source sans pro", sans-serif;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px 10px 0;
+    font-size: 22px;
+}
+ul.nav-list {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.nav-list li {
+    margin: 5px 10px;
+    display: inline-block;
+    padding: 8px 16px;
+    text-align: center;
+}
+.button-border {
+    border: 1px black solid;
+    border-radius: 2px;
+}
+.nav-list a {
+    color: #383839;
+    text-decoration: none;
+    border-bottom: 1px #aaaaaa dotted;
+    padding-bottom: 1px;
 }
 
 @media (max-width: 450px) {
 	.top-bar {
 		flex-direction: column;
 	}
+	
+	.nav-responsive-wrap {
+	    flex-direction: column;
+	    align-content: center;
+	}
+
 	.menu-container {
 		margin-left: 0;
 		margin-top: 8px;
