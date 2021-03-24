@@ -26,7 +26,7 @@ $containerPadding: 16px;
 }
 
 .intro {
-	font-family: Verdana, sans-serif;
+	font-family: helvetica, sans-serif;
 	padding-bottom: .7em;
 	text-align: center;
 	font-size: 1.3em;
@@ -42,7 +42,7 @@ $containerPadding: 16px;
 }
 
 body {
-	font-family: Palatino, Palatino Linotype, Serif;
+	font-family: 'Vollkorn', Georgia, Serif;
 	background-color: $white;
 	color: $black;
 	padding: $bodyPadding;
@@ -55,7 +55,7 @@ p {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: Verdana, sans-serif;
+	font-family: helvetica, arial, sans-serif;
 	line-height: 100%;
 }
 
