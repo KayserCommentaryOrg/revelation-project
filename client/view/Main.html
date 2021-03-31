@@ -1,31 +1,31 @@
 <div class="top-bar">
-	<a href="https://biblicalblueprints.com/" class="link-no-underline">
-		<img src="/static/image/bb-logo-2020-square.svg" class="logo" alt="logo" />
-	</a>
-	<div class="nav-responsive-wrap">
-		<div class="menu-container">
-			<ul class="nav-list header-nav-list">
-				<li class=button-border>
-					<a href="https://biblicalblueprints.com/about">About</a>
-				</li>
-				<li class=button-border>
-					<a href="https://kaysercommentary.com">Research</a>
-				</li>
-				<li class=button-border>
-					<a href="https://biblicalblueprints.com/projects">Projects</a>
-				</li>
-				<li class=button-border>
-					<a href="https://revelation.biblicalblueprints.org/home"><strong>Revelation</strong></a>
-				</li>
-				<li class=button-border>
-					<a href="https://kaysercommentary.com/booklets.md">Books</a>
-				</li>
-			</ul>
-		</div>
-		<div class="menu-container">
-			<hr>
-			<Menu asr="{{asr}}" />
-		</div>
+	<div class="bb-logo">
+		<a href="https://biblicalblueprints.com/" class="link-no-underline">
+			<img src="/static/image/bb-logo-2020-square.svg" class="logo" alt="logo" />
+		</a>
+	</div>
+	<div class="bb-menu">
+		<ul class="nav-list header-nav-list">
+			<li class=button-border>
+				<a href="https://biblicalblueprints.com/about">About</a>
+			</li>
+			<li class=button-border>
+				<a href="https://kaysercommentary.com">Research</a>
+			</li>
+			<li class=button-border>
+				<a href="https://biblicalblueprints.com/projects">Projects</a>
+			</li>
+			<li class=button-border>
+				<a href="https://revelation.biblicalblueprints.org/home"><strong>Revelation</strong></a>
+			</li>
+			<li class=button-border>
+				<a href="https://kaysercommentary.com/booklets.md">Books</a>
+			</li>
+		</ul>
+	</div>
+	<div class="menu-container">
+		<hr>
+		<Menu asr="{{asr}}" />
 	</div>
 </div>
 
@@ -34,6 +34,7 @@
 <style>
 .top-bar {
 	display: flex;
+	flex-wrap: wrap;
 }
 .big-screen-logo {
 	width: 150px;
@@ -56,9 +57,9 @@ img.logo {
 	width: 144px;
 	height: 144px;
 }
-.nav-responsive-wrap {
+.bb-menu {
 	display: flex;
-	flex-wrap: wrap;
+    align-items: center;
 }
 .nav-list {
 	font-family: "source sans pro", sans-serif;
@@ -67,13 +68,6 @@ img.logo {
 	align-items: center;
 	padding: 10px 20px 10px 0;
 	font-size: 22px;
-}
-ul.nav-list {
-	margin-block-start: 1em;
-	margin-block-end: 1em;
-	margin-inline-start: 0px;
-	margin-inline-end: 0px;
-	padding-inline-start: 40px;
 }
 .nav-list li {
 	margin: 5px 10px;
@@ -97,16 +91,15 @@ ul.nav-list {
 }
 
 @media (max-width: 450px) {
-	.top-bar {
-		flex-direction: column;
+	.bb-logo {
+		justify-content: center;
 	}
 	.menu-container {
 		margin-left: 0;
 		margin-top: 8px;
 	}
 	ul.nav-list {
-		flex-direction: column;
-		align-content: center;
+		flex-wrap: wrap;
 	}
 	.small-screen-logo {
 		display: inherit;
