@@ -1,7 +1,7 @@
 <div class="menu">
 	{{#each menu as item}}
-		<span class="parent-menu-box">
-			<a class="parent-placeholder bold-placeholder" aria-hidden="true">{{item.name}}</a>
+		<span class="menu-box">
+			<a class="placeholder bold-placeholder" aria-hidden="true">{{item.name}}</a>
 			<StateLink
 				state="{{item.state}}"
 				href="{{asr.makePath(item.state)}}"
@@ -13,21 +13,6 @@
 	{{/each}}
 </div>
 <hr />
-{{#if activeParentMenuItem && activeParentMenuItem.children}}
-<span class="menu">
-	{{#each activeParentMenuItem.children as child}}
-		<span class="child-menu-box">
-			<a class="bold-placeholder child-placeholder" aria-hidden="true">{{child.name}}</a>
-			<StateLink
-				state="{{child.state}}"
-				className="child-item"
-			>
-				{{child.name}}
-			</StateLink>
-		</span>
-	{{/each}}
-</span>
-{{/if}}
 
 <style>
 a {
@@ -37,22 +22,25 @@ a {
 
 hr {
 	margin: 0;
+	margin-top: 8px;
+	border: .5px solid #9a9a9a;
 }
 
 .menu {
 	display: flex;
+	justify-content: center;
 	flex-wrap: wrap;
 
 	font-family: Verdana, sans-serif;
 	font-size: 16px;
 }
 
-.parent-menu-box {
+.menu-box {
 	text-align: center;
 	margin-bottom: 8px;
 	margin-right: 8px;
 }
-.parent-menu-box:last-of-type {
+.menu-box:last-of-type {
 	margin-right: 0;
 }
 
@@ -62,28 +50,10 @@ hr {
 	color: black;
 	border-radius: 2px;
 }
-.parent-placeholder {
+.placeholder {
 	padding: 0 8px;
 }
 .menu-item[data-active=true] {
-	font-weight: bold;
-}
-
-.child-menu-box {
-	text-align: center;
-}
-
-.child-item {
-	padding: 4px;
-	color: black;
-	background-color: #fdfdfd;
-
-	font-size: 14px;
-}
-.child-placeholder {
-	padding: 0 4px;
-}
-.child-item[data-active=true] {
 	font-weight: bold;
 }
 
