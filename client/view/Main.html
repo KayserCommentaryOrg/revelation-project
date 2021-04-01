@@ -1,7 +1,29 @@
 <div class="top-bar">
-	<img src="/static/image/dragon-sword.svg" class="big-screen-logo" />
-	<img src="/static/image/dragon-sword-wide.svg" class="small-screen-logo" />
-	<div class="menu-container">
+	<div class="bb-logo">
+		<a href="https://biblicalblueprints.com/" class="link-no-underline">
+			<img src="/static/image/bb-logo-2020-square.svg" alt="logo" />
+		</a>
+	</div>
+	<div class="bb-menu">
+		<ul class="nav-list header-nav-list">
+			<li class=button-border>
+				<a href="https://biblicalblueprints.com/about">About</a>
+			</li>
+			<li class=button-border>
+				<a href="https://kaysercommentary.com">Research</a>
+			</li>
+			<li class=button-border>
+				<a href="https://biblicalblueprints.com/projects">Projects</a>
+			</li>
+			<li class=button-border>
+				<a href="https://revelation.biblicalblueprints.org/home"><strong>Revelation</strong></a>
+			</li>
+			<li class=button-border>
+				<a href="https://kaysercommentary.com/booklets.md">Books</a>
+			</li>
+		</ul>
+	</div>
+	<div class="rev-menu">
 		<Menu asr="{{asr}}" />
 	</div>
 </div>
@@ -11,40 +33,74 @@
 <style>
 .top-bar {
 	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
-.big-screen-logo {
-	width: 150px;
-	height: 150px;
-}
-.small-screen-logo {
-	width: 175px;
-	height: 150px;
-	align-self: center;
-
-	display: none;
+.rev-menu {
+	margin: 8px;
+	padding-top: 8px;
 }
 
-.menu-container {
-	min-height: 150px;
-
+/* Styles from KayserCommentary.com */
+.bb-logo {
+	display: flex;
+	justify-content: center;
 	margin-left: 8px;
-	margin-top: 0px;
+}
+.bb-logo img {
+	width: 144px;
+	height: 144px;
+}
+.bb-menu {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+.nav-list {
+	font-family: "source sans pro", sans-serif;
+	list-style: none;
+	align-items: center;
+	margin: 0;
+	padding: 10px 20px;
+	font-size: 22px;
+}
+.nav-list li {
+	margin: 5px 10px;
+	display: inline-block;
+	padding: 8px 16px;
+	text-align: center;
+}
+.button-border {
+	border: 1px black solid;
+	border-radius: 2px;
+}
+.nav-list a {
+	color: #383839;
+	text-decoration: none;
+	border-bottom: 1px #aaaaaa dotted;
+	padding-bottom: 1px;
+}
+.link-no-underline, .link-no-underline:hover {
+	border: none;
+	padding-bottom: 0;
 }
 
-@media (max-width: 450px) {
-	.top-bar {
-		flex-direction: column;
-	}
-	.menu-container {
+@media (max-width: 500px) {
+	.bb-logo {
 		margin-left: 0;
 		margin-top: 8px;
+		width: 100%;
 	}
-
-	.small-screen-logo {
-		display: inherit;
+	.bb-menu {
+		margin-top: 8px;
+		padding-top: 8px;
 	}
-	.big-screen-logo {
-		display: none;
+	.rev-menu {
+		margin-left: 0;
+	}
+	.nav-list {
+		padding: 0;
+		font-size: 17px;
 	}
 }
 </style>
