@@ -1,6 +1,3 @@
-@import "mixins";
-@import "constants";
-
 .text-body {
 	font-size: 1.3em;
 }
@@ -27,34 +24,52 @@
 }
 
 .section-content {
-	padding: calc($paragraphMargin / 2) 0;
+	padding: calc(var(--paragraphMargin) / 2) 0;
 	display: flex;
 	flex-grow: 1;
 	flex-direction: row-reverse;
 	justify-content: center;
-	> p {
-		margin-top: 0;
-		margin-bottom: 0;
+}
+
+.section-content > p {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.content-section-margin {
+	margin-left: 16px;
+	margin-right: 0;
+}
+
+@media (max-width: 900px) {
+	.content-section-margin {
+		margin-right: 16px;
+	}
+}
+
+@media (max-width: 450px) {
+	.content-section-margin {
+		margin-left: 8px;
+		margin-right: 8px;
 	}
 }
 
 .section-text {
-	@mixin content-section-margin;
 	flex-grow: 1;
 	min-width: 270px;
 	max-width: 800px;
 }
 
 .section-description {
-	@mixin content-section-margin;
 	flex-shrink: 0;
 	flex-grow: 0;
 	width: 400px;
-	color: $darkGray;
+	color: var(--darkGray);
 }
 
 .header-section-description {
-	@mixin header-margin;
+	margin-top: 24px;
+	margin-bottom: 24px;
 }
 
 .color-bar {
@@ -75,26 +90,26 @@
 }
 
 .color-bar {
-	color: $lightGray;
+	color: var(--lightGray);
 }
 .color-bar:link {
-	color: $lightGray;
+	color: var(--lightGray);
 }
 .color-bar:visited {
-	color: $lightGray;
+	color: var(--lightGray);
 }
 
 [data-chiasm-selected=true] .chiasm-color-bar {
-	border-radius: $colorBarRounding;
+	border-radius: var(--colorBarRounding);
 }
 
 [data-septet-selected=true] .chiasm-color-bar {
-	color: $darkGray;
+	color: var(--darkGray);
 }
 
 .septet-color-bar {
-	border-radius: $colorBarRounding;
-	margin: calc($paragraphMargin / 2) 0;
+	border-radius: var(--colorBarRounding);
+	margin: calc(var(--paragraphMargin) / 2) 0;
 }
 
 @media (max-width: 1100px) {
@@ -103,7 +118,7 @@
 	}
 }
 
-@media (max-width: $smallScreen) {
+@media (max-width: var(--smallScreen)) {
 	.section-content {
 		flex-direction: column;
 	}

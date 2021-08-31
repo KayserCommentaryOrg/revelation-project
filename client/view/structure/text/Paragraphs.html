@@ -16,7 +16,7 @@
 				/>
 			{{/if}}
 
-			<p class="section-text">
+			<p class="section-text content-section-margin">
 				<Selectable alwaysSelectable="{{true}}">
 				{{#each paragraph as chunk}}
 					<SermonHoverReflector targetIdentifier="{{chunkReference(chunk)}}">
@@ -49,8 +49,6 @@
 </div>
 
 <style>
-@import "constants";
-
 [data-sibling-hovered=true] {
 	color: #ba4460;
 }
@@ -60,7 +58,7 @@
 	font-size: .6em;
 	margin-right: -5px;
 	display: inline-block;
-	color: $darkGray;
+	color: var(--darkGray);
 }
 
 .verse-number[data-visible=false] {

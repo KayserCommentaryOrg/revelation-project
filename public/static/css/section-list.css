@@ -1,0 +1,26 @@
+.section-list {
+	display: inline-block;
+}
+
+.section-list .tiny-color-bar {
+	width: .9rem;
+	height: .9rem;
+	margin-right: .25rem;
+	border-radius: .1rem;
+	display: inline-block;
+}
+
+.section-list [data-unhighlighted=true] {
+	animation-name: lighten;
+	animation-duration: .3s;
+	color: var(--barelyReadableGray);
+}
+
+@keyframes lighten {
+	0% {
+		color: var(--black);
+	}
+	100% {
+		color: var(--barelyReadableGray);
+	}
+}

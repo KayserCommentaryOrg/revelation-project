@@ -5,7 +5,6 @@ import svelte from 'rollup-plugin-svelte'
 import json from 'rollup-plugin-json'
 import visualizer from 'rollup-plugin-visualizer'
 import replace from 'rollup-plugin-replace'
-import sveltePreprocessPostcss from 'svelte-preprocess-postcss'
 
 export default {
 	name: `revelationStructure`,
@@ -20,9 +19,6 @@ export default {
 			'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
 		}),
 		svelte({
-			preprocess: {
-				style: sveltePreprocessPostcss(),
-			},
 			css(css) {
 				css.write(`public/static/components.css`)
 			},

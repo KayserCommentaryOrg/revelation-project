@@ -1,5 +1,5 @@
 node_modules
-public/**/*.css*
+public/static/components.css*
 public/**/structure.js*
 public/**/revelation.js*
 *bundle*.js

@@ -1,21 +1,37 @@
-@import "constants";
-@import "mixins";
-
-$bodyPadding: 16px;
-$containerWidth: 800px;
-$containerPadding: 16px;
+body {
+	--lightGray: #d8d8d8;
+	--barelyReadableGray: #ababab;
+	--darkGray: #7d7d7d;
+	
+	--white: #fdfdfd;
+	--black: #333;
+	
+	--linkBlue: #0066e4;
+	--linkVisitedBlue: #00479f;
+	
+	
+	--colorBarRounding: .2rem;
+	
+	--paragraphMargin: 10px;
+	
+	--smallScreen: 900px;
+	
+	--bodyPadding: 16px;
+	--containerWidth: 800px;
+	--containerPadding: 16px;
+}
 
 .centered-container {
-	max-width: $containerWidth;
+	max-width: var(--containerWidth);
 	margin-left: auto;
 	margin-right: auto;
-	padding-left: $containerPadding;
-	padding-right: $containerPadding;
+	padding-left: var(--containerPadding);
+	padding-right: var(--containerPadding);
 }
 @media (max-width: 400px) {
 	.centered-container {
-		padding-left: calc($containerPadding / 2);
-		padding-right: calc($containerPadding / 2);
+		padding-left: calc(var(--containerPadding) / 2);
+		padding-right: calc(var(--containerPadding) / 2);
 	}
 }
 @media (max-width: 350px) {
@@ -43,15 +59,15 @@ $containerPadding: 16px;
 
 body {
 	font-family: 'Vollkorn', Georgia, Serif;
-	background-color: $white;
-	color: $black;
-	padding: $bodyPadding;
+	background-color: var(--white);
+	color: var(--black);
+	padding: var(--bodyPadding);
 	margin: 0;
 }
 
 p {
 	line-height: 1.5rem;
-	margin: $paragraphMargin 0;
+	margin: var(--paragraphMargin) 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,7 +76,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	@mixin header-margin;
+	margin-top: 24px;
+	margin-bottom: 24px;
 	font-size: 35px;
 }
 
@@ -106,13 +123,13 @@ small {
 }
 
 a:link {
-	color: $linkBlue;
+	color: var(--linkBlue);
 }
 a:visited {
-	color: $linkVisitedBlue;
+	color: var(--linkVisitedBlue);
 }
 a.everblue:visited {
-	color: $linkBlue;
+	color: var(--linkBlue);
 }
 
 .sticky {
