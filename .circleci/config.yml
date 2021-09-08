@@ -43,39 +43,6 @@ jobs:
           command: |
               echo "revelation.biblicalblueprints.org,66.33.223.200 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDN0aj+g1xMsxuyjqFF7bP10Tum1XWV4cR9qExaq9UjHhhA/m718Mjg6Ihu++GaDIM3G2pkPLein1hG6Fz8y0HmYt12JxQbCe5HFvZJoP+E/5KVtf4l/7VKu8XP3NZoN0hUpy4qg+eebZYvZiYxZMq3RjhZ65k/kYMN+mnTjEslbKrl5yHRvwX8NkPgK0Gc0rFU4dnNIJx7+nN72fnOm6Fs8IT3ThH6+HR3MX2LBkvQb0L+WEm+GhIDlCmTm/dpxLhBT9EKB1oTdSuzjl/JQGVBg5iu4TStot1S7vs/8ywMN9YJ7A375lnyh4LuSPrWrxSyDUeZM1h8gUEiWg8ubmaT" >> ~/.ssh/known_hosts
               npm run deploy
-  update_sermons:
-    docker:
-      # specify the version you desire here
-      - image: circleci/node:10
-
-    steps:
-      - add_ssh_keys:
-          fingerprints:
-            - "41:cb:f2:a4:54:2f:61:f3:9a:a8:9f:41:21:be:dd:d9"
-
-      - checkout
-
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "package.json" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run:
-          command: |
-              npm install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-
-      - deploy:
-          command: |
-              git config user.email "josh@biblicalblueprints.org"
-              git config user.name "CircleCI script"
-              npm run update-sermons
 
 workflows:
   version: 2
@@ -85,13 +52,3 @@ workflows:
           filters:
             branches:
               only: master
-  nightly:
-    triggers:
-      - schedule:
-          cron: "00 03 * * *"
-          filters:
-            branches:
-              only:
-                - master
-    jobs:
-      - update_sermons
