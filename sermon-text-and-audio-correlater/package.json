@@ -10,7 +10,7 @@
   "author": "",
   "license": "WTFPL",
   "dependencies": {
-    "got": "6.7.1",
+    "got": "11.8.5",
     "level-mem": "0.18.0",
     "loud-rejection": "1.6.0",
     "noddity-butler": "2.6.2",
