@@ -379,8 +379,8 @@
 			"end": "Hyperberataios 15, 377"
 		},
 		"gregorian": {
-			"start": "Sept 22, 66",
-			"end": "Sept 22, 66"
+			"start": "September 22, 66",
+			"end": "September 22, 66"
 		},
 		"josephus war": "2:515",
 		"amd": {
@@ -640,8 +640,8 @@
 			"end": "Elul 8, 4070"
 		},
 		"gregorian": {
-			"start": "April 12, 70 September 1, 70",
-			"end": "April 12, 70 September 1, 70"
+			"start": "April 12, 70",
+			"end": "September 1, 70"
 		},
 		"amd": {
 			"start": 1486555,
