@@ -336,8 +336,8 @@
 			"end": "Hyperberataios 1, 377"
 		},
 		"gregorian": {
-			"start": "September 8, 66",
-			"end": "September 8, 66"
+			"start": "September 7, 66",
+			"end": "September 7, 66"
 		},
 		"amd": {
 			"start": 1485242,
@@ -357,7 +357,7 @@
 			"end": "Loos 9, 381"
 		},
 		"gregorian": {
-			"start": "September 8, 66",
+			"start": "September 7, 66",
 			"end": "August 3, 70"
 		},
 		"amd": {
@@ -371,6 +371,28 @@
 	{
 		"title": "Second Trumpet",
 		"hebrew": {
+			"start": "Tishri 10, 4066",
+			"end": "Tishri 10, 4066"
+		},
+		"macedonian": {
+			"start": "Hyperberataios 10, 377",
+			"end": "Hyperberataios 10, 377"
+		},
+		"gregorian": {
+			"start": "September 16, 66",
+			"end": "September 16, 66"
+		},
+		"josephus war": "2:515",
+		"amd": {
+			"start": 1485251,
+			"end": 1485251
+		},
+		"reference": "Revelation 8:8-9",
+		"slug": "second-trumpet"
+	},
+	{
+		"title": "Third Trumpet",
+		"hebrew": {
 			"start": "Tishri 15, 4066",
 			"end": "Tishri 15, 4066"
 		},
@@ -379,34 +401,12 @@
 			"end": "Hyperberataios 15, 377"
 		},
 		"gregorian": {
-			"start": "September 22, 66",
-			"end": "September 22, 66"
+			"start": "September 21, 66",
+			"end": "September 21, 66"
 		},
-		"josephus war": "2:515",
 		"amd": {
 			"start": 1485256,
 			"end": 1485256
-		},
-		"reference": "Revelation 8:8-9",
-		"slug": "second-trumpet"
-	},
-	{
-		"title": "Third Trumpet",
-		"hebrew": {
-			"start": "Tishri 22, 4066",
-			"end": "Tishri 22, 4066"
-		},
-		"macedonian": {
-			"start": "Hyperberataios 22, 377",
-			"end": "Hyperberataios 22, 377"
-		},
-		"gregorian": {
-			"start": "September 28, 66",
-			"end": "September 28, 66"
-		},
-		"amd": {
-			"start": 1485263,
-			"end": 1485263
 		},
 		"reference": "Revelation 8:10-11",
 		"slug": "third-trumpet"
