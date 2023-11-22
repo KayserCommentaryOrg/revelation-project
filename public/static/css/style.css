@@ -42,7 +42,7 @@ body {
 }
 
 .intro {
-	font-family: helvetica, sans-serif;
+	font-family: 'Lato', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	padding-bottom: .7em;
 	text-align: center;
 	font-size: 1.3em;
@@ -58,11 +58,12 @@ body {
 }
 
 body {
-	font-family: 'Vollkorn', Georgia, Serif;
+	font-family: 'Lato', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 	background-color: var(--white);
 	color: var(--black);
 	padding: var(--bodyPadding);
 	margin: 0;
+	font-weight: 300;
 }
 
 p {
@@ -70,12 +71,14 @@ p {
 	margin: var(--paragraphMargin) 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-family: helvetica, arial, sans-serif;
+h2, h3, h4, h5, h6 {
+	font-family: 'Lato', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
 	line-height: 100%;
+	font-weight: 700;
 }
 
 h1 {
+	font-family: 'Stix Two Text', 'Times New Roman', Times, serif;
 	margin-top: 24px;
 	margin-bottom: 24px;
 	font-size: 35px;
