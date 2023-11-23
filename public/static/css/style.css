@@ -70,21 +70,21 @@ p {
 	line-height: 1.5rem;
 	margin: var(--paragraphMargin) 0;
 }
-
-h2, h3, h4, h5, h6 {
+h4, h5, h6 {
 	font-family: 'Lato', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
 	line-height: 100%;
 	font-weight: 700;
 }
 
-h1 {
+h1, h2, h3 {
 	font-family: 'Stix Two Text', 'Times New Roman', Times, serif;
-	margin-top: 24px;
-	margin-bottom: 24px;
-	font-size: 35px;
 	font-weight: 400;
 }
-
+h1 { 
+	font-size: 35px;	
+	margin-top: 24px;
+	margin-bottom: 24px; 
+}
 h2 { font-size: 28px; }
 h3 { font-size: 22px; }
 h4 { font-size: 18px; font-weight: 700; }
