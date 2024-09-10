@@ -1,25 +1,3 @@
-AddOutputFilterByType DEFLATE text/html text/plain application/javascript text/css application/json image/svg+xml
-
-ExpiresActive On
-ExpiresDefault "access plus 4 hours"
-ExpiresByType application/javascript A5
-ExpiresByType application/x-javascript A5
-ExpiresByType text/javascript A5
-ExpiresByType application/json A5
-ExpiresByType text/html A5
-ExpiresByType text/plain A5
-ExpiresByType text/css A5
-
 RewriteEngine On
-RewriteCond %{HTTPS} !=on
-RewriteCond %{HTTP_HOST} !localhost [NC]
-RewriteCond %{HTTP_HOST} !192.168 [NC]
-RewriteRule ^(.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-Options +FollowSymLinks
-IndexIgnore */*
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_URI} !^/static/ [NC]
-RewriteRule (.*) index.html
+RewriteCond %{HTTP_HOST} ^revelation\.biblicalblueprints\.org$ [NC]
+RewriteRule ^(.*)$ https://revelation.biblicalblueprints.com/$1 [R=301,L,QSA]
