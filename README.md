@@ -1,5 +1,11 @@
 # [Revelation Project](https://revelation.biblicalblueprints.com/)
 
+## Deploy
+
+This site is deployed on merges to `master` using Cloudflare Pages.
+
+## Local Dev
+
 To run locally, first install Node.js and then run:
 
 ```bash
@@ -21,4 +27,4 @@ One way is to run:
 npx http-server public
 ```
 
-(Have a look at [http-server]([url](https://www.npmjs.com/package/http-server) for options.)
+(Have a look at [http-server](https://www.npmjs.com/package/http-server) for options.)
