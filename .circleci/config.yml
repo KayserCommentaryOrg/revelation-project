@@ -37,12 +37,12 @@ jobs:
       # run tests!
       - run: npm test
 
-      # DO NOT DEPLOY TO DREAMHOST ANYMORE
-      # - run: sudo apt-get update && sudo apt-get install rsync
-      # - deploy:
-      #     command: |
-      #         echo "revelation.biblicalblueprints.org,66.33.223.200 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDN0aj+g1xMsxuyjqFF7bP10Tum1XWV4cR9qExaq9UjHhhA/m718Mjg6Ihu++GaDIM3G2pkPLein1hG6Fz8y0HmYt12JxQbCe5HFvZJoP+E/5KVtf4l/7VKu8XP3NZoN0hUpy4qg+eebZYvZiYxZMq3RjhZ65k/kYMN+mnTjEslbKrl5yHRvwX8NkPgK0Gc0rFU4dnNIJx7+nN72fnOm6Fs8IT3ThH6+HR3MX2LBkvQb0L+WEm+GhIDlCmTm/dpxLhBT9EKB1oTdSuzjl/JQGVBg5iu4TStot1S7vs/8ywMN9YJ7A375lnyh4LuSPrWrxSyDUeZM1h8gUEiWg8ubmaT" >> ~/.ssh/known_hosts
-      #         npm run deploy
+      - run: sudo apt-get update && sudo apt-get install rsync
+
+      - deploy:
+          command: |
+              echo "revelation.biblicalblueprints.org,66.33.223.200 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDN0aj+g1xMsxuyjqFF7bP10Tum1XWV4cR9qExaq9UjHhhA/m718Mjg6Ihu++GaDIM3G2pkPLein1hG6Fz8y0HmYt12JxQbCe5HFvZJoP+E/5KVtf4l/7VKu8XP3NZoN0hUpy4qg+eebZYvZiYxZMq3RjhZ65k/kYMN+mnTjEslbKrl5yHRvwX8NkPgK0Gc0rFU4dnNIJx7+nN72fnOm6Fs8IT3ThH6+HR3MX2LBkvQb0L+WEm+GhIDlCmTm/dpxLhBT9EKB1oTdSuzjl/JQGVBg5iu4TStot1S7vs/8ywMN9YJ7A375lnyh4LuSPrWrxSyDUeZM1h8gUEiWg8ubmaT" >> ~/.ssh/known_hosts
+              npm run deploy
 
 workflows:
   version: 2
