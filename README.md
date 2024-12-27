@@ -118,7 +118,7 @@ graph TB
     %% Styles
     classDef view fill:#4a90e2
     classDef component fill:#67c23a
-    classDef service fill:#e6a23c
+    classDef service fill:#FFF
     classDef lib fill:#409eff
     classDef build fill:#f56c6c
     classDef deploy fill:#9254de
