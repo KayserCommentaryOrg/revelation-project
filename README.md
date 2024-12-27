@@ -32,6 +32,7 @@ npx http-server public
 
 ## Mermaid Diagram of the Project
 ```mermaid
+%%{init: {'theme': 'base', 'themeVariables': { 'background': '#ffffff' }}}%%
 graph TB
     subgraph Client["Client Application"]
         subgraph Views["Views Layer"]
@@ -119,6 +120,7 @@ graph TB
     classDef view fill:#4a90e2
     classDef component fill:#67c23a
     classDef lib fill:#409eff
+    classDef service fill:#e6a23c
     classDef build fill:#f56c6c
     classDef deploy fill:#9254de
     classDef support fill:#ffd04b
