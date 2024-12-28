@@ -37,6 +37,9 @@
 				<th>
 
 				</th>
+				<th>
+					
+				</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -58,16 +61,28 @@
 						</StateLink>
 					</td>
 					<td>
-						<ExternalLink href="https://kaysercommentary.com/{{encodeURI(sermon.filename)}}">
-							text
+						<ExternalLink href="https://biblicalblueprints.com/{{encodeURI(sermon.filename)}}">
+							Text
 						</ExternalLink>
 					</td>
 					<td>
 						{{#if sermon.audioId}}
 							<ExternalLink href="http://www.dominioncovenantchurch.com/sermons/?sermon_id={{sermon.audioId}}">
-								audio
+								Audio
 							</ExternalLink>
 						{{/if}}
+					</td>
+					<td>
+					    {{#each sermon.outlines as outline, i}}
+					        <ExternalLink href="https://biblicalblueprints.com/Outlines/{{encodeURI(outline)}}">
+					            {{#if i === 0}}
+					                Outline
+					            {{else}}
+					                Extra
+					            {{/if}}
+					        </ExternalLink>
+					        {{#if sermon.outlines.length > (i + 1)}} · {{/if}}
+					    {{/each}}
 					</td>
 				</tr>
 			{{/each}}
