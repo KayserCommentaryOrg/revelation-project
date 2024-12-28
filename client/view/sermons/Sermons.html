@@ -37,6 +37,7 @@
 				<th>
 
 				</th>
+				<th>Outlines</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -68,6 +69,18 @@
 								audio
 							</ExternalLink>
 						{{/if}}
+					</td>
+					<td>
+					    {{#each sermon.outlines as outline, i}}
+					        <ExternalLink href="https://biblicalblueprints.com/Outlines/{{encodeURI(outline)}}">
+					            {{#if i === 0}}
+					                Outline
+					            {{else}}
+					                Extra
+					            {{/if}}
+					        </ExternalLink>
+					        {{#if !@last}} · {{/if}}
+					    {{/each}}
 					</td>
 				</tr>
 			{{/each}}
