@@ -43,7 +43,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			{{#each sermonsDescending as sermon}}
+			{{#each sermonsAscending as sermon}}
 				<tr>
 					<td>
 						{{displayDate(sermon.date)}}
@@ -131,6 +131,7 @@ export default {
 		}
 	},
 	computed: {
+		sermonsAscending: sermons => sermons.slice(),
 		sermonsDescending: sermons => sermons.slice().reverse(),
 	},
 	helpers: {
