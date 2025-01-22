@@ -22,7 +22,7 @@ const longPropertyNames = {
 
 async function get() {
 	// const markdown = await readFile('./demo-input.md', { encoding: 'utf8' })
-	const { body: markdown } = await got('https://content.kaysercommentary.com/Sermons/New%20Testament/Revelation/Revelation%20timeline.md')
+	const { body: markdown } = await got('https://biblicalblueprints.com/Sermons/New%20Testament/Revelation/Revelation%20timeline')
 
 	return markdown
 }
