@@ -42,7 +42,10 @@
 					{{#if column.sermonAudioId}}
 						<ExternalLink href="{{sermonTextUrl(column.sermonAudioId)}}">Transcript</ExternalLink>
 						&middot;
-						<ExternalLink href="{{sermonAudioUrl(column.sermonAudioId)}}">Audio</ExternalLink>
+						<ExternalLink href="{{sermonaudioUrlPlay(column.sermonaudioId)}}">Play Audio</ExternalLink>
+						&middot;
+						<ExternalLink href="{{sermonaudioUrlDownload(column.sermonaudioId)}}" download>Download MP3</ExternalLink>
+						<!--<ExternalLink href="{{sermonAudioUrl(column.sermonAudioId)}}">audio</ExternalLink>-->
 					{{/if}}
 				</td>
 			{{/each}}
@@ -72,7 +75,9 @@
 				{{sermon.description}}:
 				<ExternalLink href="{{sermonTextUrl(sermon.audioId)}}">Transcript</ExternalLink>
 				&middot;
-				<ExternalLink href="{{sermonAudioUrl(sermon.audioId)}}">Audio</ExternalLink>
+				<ExternalLink href="{{sermonaudioUrlPlay(sermon.sermonaudioId)}}">Play Audio</ExternalLink>
+				&middot;
+				<ExternalLink href="{{sermonaudioUrlDownload(sermon.sermonaudioId)}}" download>Download MP3</ExternalLink>
 			</li>
 		{{/each}}
 	</ol>
@@ -178,6 +183,12 @@ export default {
 	helpers: {
 		sermonAudioUrl(audioId) {
 			return `http://www.dominioncovenantchurch.com/sermons/?sermon_id=${audioId}`
+		},
+		sermonaudioUrlPlay(sermonaudioId) {
+			return `https://www.sermonaudio.com/sermons/${sermonaudioId}`
+		},
+		sermonaudioUrlDownload(sermonaudioId) {
+			return `https://cloud.sermonaudio.com/media/audio/high/${sermonaudioId}`
 		},
 		style(column) {
 			const backgroundColorFunction = colorFunctions[column.type]
