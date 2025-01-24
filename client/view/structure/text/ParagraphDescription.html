@@ -18,19 +18,17 @@
 				<SermonHoverDetector identifier="{{sermon.range}}">
 					{{sermon.title}}
 					&middot;
-					<ExternalLink
-						href="https://biblicalblueprints.com/{{encodeURI(sermon.filename)}}"
-					>
-						text
-					</ExternalLink>
-					{{#if sermon.audioId}}
+					<ExternalLink href="https://biblicalblueprints.com/{{encodeURI(sermon.filename)}}">Transcript</ExternalLink>
+					{{#if sermon.sermonaudioId}}
 						&middot;
-						<ExternalLink
-							href="http://www.dominioncovenantchurch.com/sermons/?sermon_id={{sermon.audioId}}"
-						>
-							audio
-						</ExternalLink>
+						<ExternalLink href="https://www.sermonaudio.com/sermons/{{sermon.sermonaudioId}}">Play Audio</ExternalLink>
+						&middot;
+						<ExternalLink href="https://cloud.sermonaudio.com/media/audio/high/{{sermon.sermonaudioId}}.mp3" download>Download MP3</ExternalLink>
 					{{/if}}
+					<!--{{#if sermon.audioId}}
+						&middot;
+						<ExternalLink href="http://www.dominioncovenantchurch.com/sermons/?sermon_id={{sermon.audioId}}">audio</ExternalLink>
+					{{/if}}-->
 				</SermonHoverDetector>
 			</VerseHoverReflector>
 		</small>

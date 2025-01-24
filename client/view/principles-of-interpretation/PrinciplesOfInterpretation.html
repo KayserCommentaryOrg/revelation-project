@@ -40,17 +40,9 @@
 					{{/if}}
 
 					{{#if column.sermonAudioId}}
-						<ExternalLink
-							href="{{sermonTextUrl(column.sermonAudioId)}}"
-						>
-							text
-						</ExternalLink>
+						<ExternalLink href="{{sermonTextUrl(column.sermonAudioId)}}">Transcript</ExternalLink>
 						&middot;
-						<ExternalLink
-							href="{{sermonAudioUrl(column.sermonAudioId)}}"
-						>
-							audio
-						</ExternalLink>
+						<ExternalLink href="{{sermonAudioUrl(column.sermonAudioId)}}">Audio</ExternalLink>
 					{{/if}}
 				</td>
 			{{/each}}
@@ -78,17 +70,9 @@
 		{{#each sermons as sermon}}
 			<li>
 				{{sermon.description}}:
-				<ExternalLink
-					href="{{sermonTextUrl(sermon.audioId)}}"
-				>
-					text
-				</ExternalLink>
+				<ExternalLink href="{{sermonTextUrl(sermon.audioId)}}">Transcript</ExternalLink>
 				&middot;
-				<ExternalLink
-					href="{{sermonAudioUrl(sermon.audioId)}}"
-				>
-					audio
-				</ExternalLink>
+				<ExternalLink href="{{sermonAudioUrl(sermon.audioId)}}">Audio</ExternalLink>
 			</li>
 		{{/each}}
 	</ol>
