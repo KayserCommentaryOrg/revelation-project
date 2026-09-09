@@ -6,9 +6,9 @@ const podcastInfo = {
 	title: 'Revelation Project: Sermons',
 	description: 'A series of sermons explaining the book of Revelation.',
 	author: 'Phil Kayser',
-	feed_url: 'https://revelation.biblicalblueprints.org/static/podcast.xml',
-	site_url: 'https://revelation.biblicalblueprints.org/sermons',
-	image_url: 'https://revelation.biblicalblueprints.org/static/image/dragon-sword-1400-graybg.png',
+	feed_url: 'https://biblicalblueprints.com/revelation/static/podcast.xml',
+	site_url: 'https://biblicalblueprints.com/revelation/sermons',
+	image_url: 'https://biblicalblueprints.com/revelation/static/image/dragon-sword-1400-graybg.png',
 	webMaster: 'me@JoshDuff.com (Josh Duff)',
 	language: 'en',
 	itunesOwner: {

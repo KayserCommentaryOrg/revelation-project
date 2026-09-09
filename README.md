@@ -2,7 +2,22 @@
 
 ## Deploy
 
-This site is deployed on merges to `master` using Cloudflare Pages.
+The app is served at <https://biblicalblueprints.com/revelation> by the main
+[biblicalblueprints.com](https://github.com/KayserCommentaryOrg/biblicalblueprints.com)
+site. Its built output is vendored into that repo rather than deployed from here:
+
+```bash
+nix-shell --run "npm ci && npm run vendor"
+```
+
+`vendor` runs the production build, then copies `public/static/` to
+`../biblicalblueprints.com/static/revelation/static/` and `public/index.html` to
+`../biblicalblueprints.com/src/lib/revelation/shell.html` (the two repos must be
+checked out side by side). Commit the result in that repo and its normal deploy
+publishes it. The `shell.nix` pins Node 16 because this build predates modern Node.
+
+The old Cloudflare Pages project (`revelation.biblicalblueprints.com`) is legacy;
+that hostname now 301s to the new path.
 
 ## Local Dev
 

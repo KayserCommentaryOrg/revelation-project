@@ -148,6 +148,7 @@ td[data-column-type="verse text"] {
 </style>
 
 <script>
+import transcriptUrl from 'lib/transcript-url'
 import data, { sermons, verseTexts, verseCount, } from 'lib/principles-of-interpretation/data.js'
 import { startingColor, endingColor } from 'lib/blue-green-range.js'
 import ExternalLink from 'component/ExternalLink.html'
@@ -172,7 +173,7 @@ export default {
 	},
 	computed: {
 		sermonTextUrl(sermonAudioIdToFilename) {
-			return audioId => `https://biblicalblueprints.com/${encodeURI(sermonAudioIdToFilename[audioId])}`
+			return audioId => transcriptUrl(sermonAudioIdToFilename[audioId])
 		},
 	},
 	helpers: {

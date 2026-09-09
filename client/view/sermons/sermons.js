@@ -1,6 +1,7 @@
 import pProps from 'p-props'
 
 import load from 'dynamic-import-iife'
+import { staticUrl } from 'lib/base-path'
 
 import Sermons from './Sermons.html'
 
@@ -13,7 +14,7 @@ export default mediator => ({
 	},
 	resolve() {
 		return pProps({
-			sermons: load('/static/sermons.json', { type: 'json' }),
+			sermons: load(staticUrl('sermons.json'), { type: 'json' }),
 		})
 	},
 })
