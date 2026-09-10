@@ -18,7 +18,7 @@
 				<SermonHoverDetector identifier="{{sermon.range}}">
 					{{sermon.title}}
 					&middot;
-					<ExternalLink href="https://biblicalblueprints.com/{{encodeURI(sermon.filename)}}">Transcript</ExternalLink>
+					<ExternalLink href="{{transcriptUrl(sermon.filename)}}">Transcript</ExternalLink>
 					{{#if sermon.sermonaudioId}}
 						&middot;
 						<ExternalLink href="https://www.sermonaudio.com/sermons/{{sermon.sermonaudioId}}">Play Audio</ExternalLink>
@@ -54,12 +54,16 @@ import Selectable from 'lib/selectable'
 
 import VerseRange from 'component/VerseRange.html'
 import ExternalLink from 'component/ExternalLink.html'
+import transcriptUrl from 'lib/transcript-url'
 
 export default {
 	data() {
 		return {
 			descriptionClass: '',
 		}
+	},
+	helpers: {
+		transcriptUrl,
 	},
 	components: {
 		SermonHoverDetector: sermonHover.HoverDetector,

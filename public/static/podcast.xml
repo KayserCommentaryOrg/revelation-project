@@ -3,19 +3,20 @@
 	<channel>
 		<title><![CDATA[Revelation Project: Sermons]]></title>
 		<description><![CDATA[A series of sermons explaining the book of Revelation.]]></description>
-		<link>https://revelation.biblicalblueprints.org/sermons</link>
+		<link>https://biblicalblueprints.com/revelation/sermons</link>
 		<image>
-			<url>https://revelation.biblicalblueprints.org/static/image/dragon-sword-1400-graybg.png</url>
+			<url>https://biblicalblueprints.com/revelation/static/image/dragon-sword-1400-graybg.png</url>
 			<title>Revelation Project: Sermons</title>
-			<link>https://revelation.biblicalblueprints.org/sermons</link>
+			<link>https://biblicalblueprints.com/revelation/sermons</link>
 		</image>
 		<generator>Podcast for Node</generator>
 		<lastBuildDate>Wed, 01 Sep 2021 03:02:46 GMT</lastBuildDate>
-		<atom:link href="https://revelation.biblicalblueprints.org/static/podcast.xml" rel="self" type="application/rss+xml"/>
+		<atom:link href="https://biblicalblueprints.com/revelation/static/podcast.xml" rel="self" type="application/rss+xml"/>
 		<author><![CDATA[Phil Kayser]]></author>
 		<language><![CDATA[en]]></language>
 		<webMaster><![CDATA[me@JoshDuff.com (Josh Duff)]]></webMaster>
 		<category><![CDATA[Religion & Spirituality]]></category>
+		<itunes:new-feed-url>https://biblicalblueprints.com/revelation/static/podcast.xml</itunes:new-feed-url>
 		<itunes:author>Phil Kayser</itunes:author>
 		<itunes:summary>A series of sermons explaining the book of Revelation.</itunes:summary>
 		<itunes:owner>
@@ -26,7 +27,7 @@
 		<itunes:category text="Religion &amp; Spirituality">
 			<itunes:category text="Christianity"/>
 		</itunes:category>
-		<itunes:image href="https://revelation.biblicalblueprints.org/static/image/dragon-sword-1400-graybg.png"/>
+		<itunes:image href="https://biblicalblueprints.com/revelation/static/image/dragon-sword-1400-graybg.png"/>
 		<item>
 			<title><![CDATA[From Creation To Recreation]]></title>
 			<description><![CDATA[Genesis; Revelation]]></description>

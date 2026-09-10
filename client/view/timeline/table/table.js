@@ -1,4 +1,5 @@
 import load from 'dynamic-import-iife'
+import { staticUrl } from 'lib/base-path'
 import pProps from 'p-props'
 
 import Table from './Table.html'
@@ -12,7 +13,7 @@ export default mediator => ({
 	},
 	resolve() {
 		return pProps({
-			timelineData: load('/static/timeline-data.json', { type: 'json' }),
+			timelineData: load(staticUrl('timeline-data.json'), { type: 'json' }),
 		})
 	},
 })

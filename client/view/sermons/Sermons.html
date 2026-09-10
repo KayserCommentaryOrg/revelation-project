@@ -6,7 +6,7 @@
 
 	<div class="links-and-useful-text">
 		<p>
-			<a href="/static/podcast.xml">Podcast XML feed</a>
+			<a href="/revelation/static/podcast.xml">Podcast XML feed</a>
 			·
 			<ExternalLink
 				href="https://itunes.apple.com/us/podcast/revelation-project-sermons/id1281293180"
@@ -61,7 +61,7 @@
 						</StateLink>
 					</td>
 					<td>
-						<ExternalLink href="https://biblicalblueprints.com/{{encodeURI(sermon.filename)}}">Transcript</ExternalLink>
+						<ExternalLink href="{{transcriptUrl(sermon.filename)}}">Transcript</ExternalLink>
 					</td>
 					<td>
 						{{#if sermon.sermonaudioId}}
@@ -108,6 +108,7 @@ table {
 import parseDate from 'date-fns/parse'
 import StateLink from 'component/StateLink.html'
 import ExternalLink from 'component/ExternalLink.html'
+import transcriptUrl from 'lib/transcript-url'
 import VerseRange from 'component/VerseRange.html'
 
 const months = [
@@ -136,6 +137,7 @@ export default {
 		sermonsDescending: sermons => sermons.slice().reverse(),
 	},
 	helpers: {
+		transcriptUrl,
 		displayDate(dateString) {
 			const date = parseDate(dateString)
 			return `${ months[date.getMonth()] } ${ date.getDate() }, ${ date.getFullYear() }`

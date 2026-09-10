@@ -1,7 +1,7 @@
 <div class="top-bar">
 	<div class="bb-logo">
 		<a href="https://biblicalblueprints.com/" class="link-no-underline">
-			<img src="/static/image/bb-logo-dark-optimized.svg" alt="logo" />
+			<img src="/revelation/static/image/bb-logo-dark-optimized.svg" alt="logo" />
 		</a>
 	</div>
 	<div class="bb-menu">
@@ -16,7 +16,7 @@
 				<a href="https://biblicalblueprints.com/collections">Collections</a>
 			</li>
 			<li>
-				<a href="https://revelation.biblicalblueprints.org/home"><strong>Revelation</strong></a>
+				<StateLink state="main.home"><strong>Revelation</strong></StateLink>
 			</li>
 			<li>
 				<a href="https://store.biblicalblueprints.com">Store</a>
@@ -115,10 +115,12 @@
 
 <script>
 import Menu from './Menu.html'
+import StateLink from 'component/StateLink.html'
 
 export default {
 	components: {
-		Menu
+		Menu,
+		StateLink,
 	}
 }
 </script>

@@ -1,11 +1,12 @@
 import pProps from 'p-props'
 import load from 'dynamic-import-iife'
+import { staticUrl } from 'lib/base-path'
 
 import PrinciplesOfInterpretation from './PrinciplesOfInterpretation.html'
 
 import lazily from 'lib/lazily.js'
 
-const loadSermonAudioIdToFilenameMap = lazily(() => load('/static/sermons.json', { type: 'json' })
+const loadSermonAudioIdToFilenameMap = lazily(() => load(staticUrl('sermons.json'), { type: 'json' })
 	.then(sermons =>
 		sermons.reduce((map, sermon) => {
 			map[sermon.audioId] = sermon.filename

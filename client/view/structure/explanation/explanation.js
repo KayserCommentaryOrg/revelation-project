@@ -2,6 +2,7 @@ import Explanation from './Explanation.html'
 
 import pProps from 'p-props'
 import load from 'dynamic-import-iife'
+import { staticUrl } from 'lib/base-path'
 
 export default mediator => ({
 	name: 'main.structure.explanation',
@@ -9,7 +10,7 @@ export default mediator => ({
 	template: Explanation,
 	resolve() {
 		return pProps({
-			structure: load('/static/structure.js'),
+			structure: load(staticUrl('structure.js')),
 		})
 	},
 })

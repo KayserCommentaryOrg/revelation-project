@@ -2,6 +2,7 @@ import DifferentInterpretations from './DifferentInterpretations.html'
 
 import pProps from 'p-props'
 import load from 'dynamic-import-iife'
+import { staticUrl } from 'lib/base-path'
 
 export default mediator => ({
 	name: 'main.different-interpretations',
@@ -9,7 +10,7 @@ export default mediator => ({
 	template: DifferentInterpretations,
 	resolve() {
 		return pProps({
-			structure: load('/static/structure.js'),
+			structure: load(staticUrl('structure.js')),
 		})
 	},
 })
